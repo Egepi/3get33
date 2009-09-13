@@ -11,11 +11,3 @@ MainMenu::~MainMenu()
 {
     delete ui;
 }
-
-//This method is called when pb_QuitGame is clicked()
-void MainMenu::quitGame()
-{
-    QMainWindow::close();   //This closes the MainMenu
-}
-
-void MainMenu

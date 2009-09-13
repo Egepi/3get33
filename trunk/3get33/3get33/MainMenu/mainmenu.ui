@@ -81,15 +81,15 @@
    <sender>pb_Quit</sender>
    <signal>clicked()</signal>
    <receiver>MainMenu</receiver>
-   <slot>quitGame()</slot>
+   <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>340</x>
-     <y>425</y>
+     <x>364</x>
+     <y>416</y>
     </hint>
     <hint type="destinationlabel">
-     <x>397</x>
-     <y>445</y>
+     <x>429</x>
+     <y>406</y>
     </hint>
    </hints>
   </connection>
@@ -97,21 +97,20 @@
    <sender>pb_PlayGame</sender>
    <signal>clicked()</signal>
    <receiver>MainMenu</receiver>
-   <slot>playGameMenu()</slot>
+   <slot>food()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>307</x>
-     <y>291</y>
+     <x>364</x>
+     <y>300</y>
     </hint>
     <hint type="destinationlabel">
-     <x>427</x>
-     <y>306</y>
+     <x>434</x>
+     <y>297</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>quitGame()</slot>
   <slot>playGameMenu()</slot>
  </slots>
 </ui>
