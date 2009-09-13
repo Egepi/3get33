@@ -18,6 +18,8 @@ public:
 
 private:
     Ui::MainMenu *ui;
+public slots:
+    void quitGame();
 };
 
 #endif // MAINMENU_H

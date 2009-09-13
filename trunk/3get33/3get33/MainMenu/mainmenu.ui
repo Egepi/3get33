@@ -76,5 +76,25 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pb_Quit</sender>
+   <signal>clicked()</signal>
+   <receiver>MainMenu</receiver>
+   <slot>quitGame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>425</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>397</x>
+     <y>445</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>quitGame()</slot>
+ </slots>
 </ui>
