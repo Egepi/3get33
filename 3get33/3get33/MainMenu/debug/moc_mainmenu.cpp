@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainmenu.h'
 **
-** Created: Sat Sep 12 21:45:33 2009
+** Created: Sat Sep 12 22:04:27 2009
 **      by: The Qt Meta Object Compiler version 61 (Qt 4.5.2)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,19 +23,16 @@ static const uint qt_meta_data_MainMenu[] = {
        2,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   12, // methods
+       0,    0, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
-
- // slots: signature, parameters, type, tag, flags
-      10,    9,    9,    9, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_MainMenu[] = {
-    "MainMenu\0\0quitGame()\0"
+    "MainMenu\0"
 };
 
 const QMetaObject MainMenu::staticMetaObject = {
@@ -61,13 +58,6 @@ int MainMenu::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QMainWindow::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
-    if (_c == QMetaObject::InvokeMetaMethod) {
-        switch (_id) {
-        case 0: quitGame(); break;
-        default: ;
-        }
-        _id -= 1;
-    }
     return _id;
 }
 QT_END_MOC_NAMESPACE
