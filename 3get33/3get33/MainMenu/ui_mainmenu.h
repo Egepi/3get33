@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainmenu.ui'
 **
-** Created: Sat Sep 12 18:49:15 2009
+** Created: Sat Sep 12 19:47:27 2009
 **      by: Qt User Interface Compiler version 4.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -64,6 +64,7 @@ public:
         MainMenu->setStatusBar(statusBar);
 
         retranslateUi(MainMenu);
+        QObject::connect(pb_Quit, SIGNAL(clicked()), MainMenu, SLOT(quitGame()));
 
         QMetaObject::connectSlotsByName(MainMenu);
     } // setupUi
