@@ -17,3 +17,5 @@ void MainMenu::quitGame()
 {
     QMainWindow::close();   //This closes the MainMenu
 }
+
+void MainMenu
