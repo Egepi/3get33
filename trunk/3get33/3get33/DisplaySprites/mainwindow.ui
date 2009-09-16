@@ -49,8 +49,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>520</y>
+      <x>280</x>
+      <y>500</y>
       <width>51</width>
       <height>61</height>
      </rect>
@@ -62,16 +62,6 @@
      <pixmap resource="DisplaySprites.qrc">:/new/prefix1/GoodGuy.jpg</pixmap>
     </property>
    </widget>
-   <widget class="QGraphicsView" name="graphicsView">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>300</y>
-      <width>256</width>
-      <height>192</height>
-     </rect>
-    </property>
-   </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
@@ -79,5 +69,22 @@
  <resources>
   <include location="DisplaySprites.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>label_3</sender>
+   <signal>linkActivated(QString)</signal>
+   <receiver>label</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>315</x>
+     <y>529</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>165</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
