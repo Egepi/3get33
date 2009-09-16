@@ -22,6 +22,17 @@
     mainWindow.setPalette(p);
 
     //Add buttons onto the window
+    QPushButton playButton(&mainWindow);
+    QPushButton levelEditButton(&mainWindow);
+    QPushButton quitButton(&mainWindow);
+
+    playButton.setIcon(QIcon(":/images/playButton.jpg"));
+    levelEditButton.setIcon(QIcon(":/images/LevelEditButton.jpg"));
+    quitButton.setIcon(QIcon(":/images/quitButton.jpg"));
+
+    playButton.show();
+    levelEditButton.show();
+    quitButton.show();
 
      return app.exec();
  }
