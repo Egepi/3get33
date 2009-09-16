@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Sun Sep 13 01:59:04 2009
+** Created: Mon Sep 14 00:49:24 2009
 **      by: Qt User Interface Compiler version 4.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -14,6 +14,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QGraphicsView>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QMainWindow>
@@ -29,6 +30,7 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
+    QGraphicsView *graphicsView;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -48,8 +50,11 @@ public:
         label_2->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/badguy black.jpg")));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(350, 510, 51, 61));
+        label_3->setGeometry(QRect(360, 520, 51, 61));
         label_3->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/GoodGuy.jpg")));
+        graphicsView = new QGraphicsView(centralWidget);
+        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+        graphicsView->setGeometry(QRect(270, 300, 256, 192));
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
