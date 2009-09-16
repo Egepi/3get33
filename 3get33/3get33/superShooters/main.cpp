@@ -2,6 +2,9 @@
 #include <QApplication>
 #include <QPushButton>
 #include <QLabel>
+#include <QPalette>
+
+
 
  int main(int argc, char *argv[])
  {
@@ -12,11 +15,13 @@
      mainWindow.setWindowTitle(QString("Super Shooters"));
      mainWindow.show();
 
-     QLabel background(&mainWindow);
-     QString backgroundPath = QApplication::applicationFilePath();
-     //background.setText(backgroundPath);
-     background.setPixmap(QPixmap(":/smile.jpg"));
-     background.show();
+    //Set the background
+    QPalette p;
+    QPixmap pm1(":/images/smile.jpg");
+    p.setBrush(QPalette::Background,  pm1);
+    mainWindow.setPalette(p);
+
+    //Add buttons onto the window
 
      return app.exec();
  }
