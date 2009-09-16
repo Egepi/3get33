@@ -1,26 +1,28 @@
-#include "MainMenu.h"
+
 #include <QApplication>
 #include <QPushButton>
 #include <QLabel>
 #include <QPalette>
+#include <QWidget>
+#include <QMainWindow>
+#include "MainMenu.h"
 
-MainMenu :: QWidget(QWidget *parent)
+MainMenu :: MainMenu(QWidget *parent)
+        : QMainWindow(parent)
 {
-
-    ~MainMenu();
-
-     //Sets properties of the main window
-     mainWindow.resize(640,480);
-     mainWindow.setWindowTitle(QString("Super Shooters"));
+     mainWindow = new QWidget();
+    //Sets properties of the main window
+     mainWindow->resize(640,480);
+     mainWindow->setWindowTitle(QString("Super Shooters"));
+     mainWindow->show();
 
     //Set the background of the menu
-    QPalette p;
     QPixmap pm1(":/images/MenuWithoutButtons640480.jpg");
     p.setBrush(QPalette::Background,  pm1);
-    mainWindow.setPalette(p);
+    mainWindow->setPalette(p);
 
     //Setting up 'Play' button
-    QPushButton *pb_PlayGame = new QPushButton(&mainWindow);
+    pb_PlayGame = new QPushButton(mainWindow);
     pb_PlayGame->setGeometry(220,300,225,42);
     pb_PlayGame->setIconSize(QSize(225,42));
     pb_PlayGame->setIcon(QIcon(":/images/playButton.jpg"));
@@ -28,7 +30,7 @@ MainMenu :: QWidget(QWidget *parent)
     pb_PlayGame->show();
 
     //Setting up 'Level Editor' button
-    QPushButton *pb_LevelEditor = new QPushButton(&mainWindow);
+    pb_LevelEditor = new QPushButton(mainWindow);
     pb_LevelEditor->setGeometry(220,360,225,42);
     pb_LevelEditor->setIconSize(QSize(225,42));
     pb_LevelEditor->setIcon(QIcon(":/images/LevelEditButton.jpg"));
@@ -36,7 +38,7 @@ MainMenu :: QWidget(QWidget *parent)
     pb_LevelEditor->show();
 
     //Setting up 'Quit' button
-    QPushButton *pb_Quit = new QPushButton(&mainWindow);
+    pb_Quit = new QPushButton(mainWindow);
     pb_Quit->setGeometry(220,420,225,42);
     pb_Quit->setIconSize(QSize(225,42));
     pb_Quit->setIcon(QIcon(":/images/quitButton.jpg"));
@@ -46,8 +48,12 @@ MainMenu :: QWidget(QWidget *parent)
     //QObject::connect(pb_PlayGame,SIGNAL(clicked()),&app,
 //                                 SLOT(playGameButton(pb_LevelEditor)));
 
-    QObject::connect(pb_Quit,SIGNAL(clicked()),&app,
-                             SLOT(quit()));
+   // QObject::connect(pb_Quit,SIGNAL(clicked()),mainWindow,SLOT(quit()));
+
+}
+
+MainMenu::~MainMenu()
+{
 
 }
 

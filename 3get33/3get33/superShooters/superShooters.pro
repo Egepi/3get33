@@ -1,3 +1,4 @@
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    MainMenu.cpp
 RESOURCES += superShooters.qrc
-HEADERS += 
+HEADERS += MainMenu.h
