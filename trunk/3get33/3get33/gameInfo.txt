@@ -1,0 +1,124 @@
+***********Title: Super Shooters***********
+
+#------------------------------------------
+Facts:
+
+Armor 	= 100
+	Numerical value only, red text
+
+Shield 	= 100
+	Numerical value only, blue text
+
+Lives	= 3 (To start but possible "1-ups"
+
+Bombs	= 2 types (Maybe more??)
+	1. "Small bombs" (little damage)
+	2. "Large bombs" (lot of damage)
+
+Guns	= 3 types
+	1. basic type
+	2. double shot
+	3. amazing shot (Todd = baddie at naming)
+
+Score	= 0 (To start.... duh)
+
+Single Plaer vs. Computer
+
+Number of levels = 2 + user built levels
+
+#------------------------------------------
+Rules:
+
+PickUps:
+	"1-ups" = add +1 life to total lives
+>>>>	"S" = add + 25 to shiled up 100
+>>>>	"A" = add + 25 to armor up to 100
+Bombs:
+	Small bombs = 25pts of damage
+	Large bombs = 60pts of damage
+Guns:
+	Basic Type = 5pts per shot  - 1 bullet per tick
+	Double Shot = 8pts per shot - 2 bullets per tick
+	Amazing shot = 15pts per shot - 3 bullets per tick
+Ship:
+	Max armor is 100points
+	Max shield is 100points
+	Shield is ALWAYS reduced from damage taken before armor
+
+Regular baddie:
+	Max armor - set depending on level
+		i.e. 25pts lvl 1
+		     40pts lvl 2
+	NO shield
+	Movement straight down from top of screen then
+		stop at pre-determined point
+	Rate of fire = 0.25x
+		when to start firing is random so not
+		all baddies shoot at once
+
+
+
+#------------------------------------------
+When click on premade game:
+
+Start with:
+Armor 	= 100
+Shield	= 100
+Lives	= 3
+Bombs 	= 3 Small bombs, 0 Large bombs
+Start position of character = Center and Bottom
+
+
+#------------------------------------------
+State machine of overall game
+
+Start:
+If play clicked -> GameTypeselect
+If quit clicked -> gameExit
+
+GameTypeSelect:
+If prebuiltLevel clicked -> PrebuiltLevel1
+If userbuilt level clicked -> LoadFileScreen
+If back clicked -> Start
+If quit clicked -> gameExit
+
+PrebuiltLevel1:
+If ship health = 0 -> Game Over Message then ->Start
+If boss's health = 0 -> PrebuiltLevel2
+If quit clicked -> gameExit
+
+PrebuiltLevel2:
+If ship health = 0 -> Game Over Message then ->Start
+If boss's health = 0 -> GameEnd
+If quit clicked -> gameExit
+
+LoadFileScreen:
+If load clicked -> play user built level (if the file exsists)
+If canceled clicked -> GameTypeSelect
+
+UserBuilt:
+If quit clicked() -> gameexit()
+If armor = 0 -> Start()
+If boss armor = 0 -> Start()
+
+
+GameEnd:
+Display "stats" *refer to questions
+If playAgain clicked -> GameTypeSelect
+If quit -> gameExit
+
+
+
+
+#------------------------------------------
+Questions/Issues:
+
+Can the user save the game mid level?
+Can the user pause the game?
+If the user presses quit during play, pop up warning screen?
+	If warning screen, is the game paused till yes or no is pressed?
+What kind of stats will be kept track of?
+	Score, # of enimes killed, Accuracy, Damage taken, Damage delt
+If the user beats a user or prebuilt level and play again is clicked,
+	is the prebuilt level1 or user level automaticall reloaded or
+	is the user brought back to the GameTypeSelect screen?
