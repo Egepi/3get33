@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/images" >
-        <file>smile.jpg</file>
-        <file>LevelEditButton.jpg</file>
-        <file>quitButton.jpg</file>
-        <file>playButton.jpg</file>
-        <file>MenuWithoutButtons640480.jpg</file>
-    </qresource>
-</RCC>
