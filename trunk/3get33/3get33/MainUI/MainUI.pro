@@ -4,7 +4,9 @@
 TARGET = MainUI
 TEMPLATE = app
 SOURCES += main.cpp \
-    mainwindow.cpp
-HEADERS += mainwindow.h
+    mainwindow.cpp \
+    BasicShip.cpp
+HEADERS += mainwindow.h \
+    BasicShip.h
 FORMS += mainwindow.ui
 RESOURCES += uiimages.qrc
