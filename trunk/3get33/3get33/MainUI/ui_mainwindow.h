@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Thu Oct 1 11:06:38 2009
+** Created: Thu Oct 1 12:42:46 2009
 **      by: Qt User Interface Compiler version 4.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -68,6 +68,8 @@ public:
         Display = new QGraphicsView(centralWidget);
         Display->setObjectName(QString::fromUtf8("Display"));
         Display->setGeometry(QRect(140, 0, 500, 480));
+        Display->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        Display->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         playButton = new QPushButton(centralWidget);
         playButton->setObjectName(QString::fromUtf8("playButton"));
         playButton->setGeometry(QRect(0, 20, 140, 50));
@@ -258,7 +260,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Super Shooters", 0, QApplication::UnicodeUTF8));
-        playButton->setText(QApplication::translate("MainWindow", "Play", 0, QApplication::UnicodeUTF8));
+        playButton->setText(QString());
         quitButton->setText(QApplication::translate("MainWindow", "Quit", 0, QApplication::UnicodeUTF8));
         loadButton->setText(QApplication::translate("MainWindow", "Load Game", 0, QApplication::UnicodeUTF8));
         scoreLabel->setText(QApplication::translate("MainWindow", "Score", 0, QApplication::UnicodeUTF8));

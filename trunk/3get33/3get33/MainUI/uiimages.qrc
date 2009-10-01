@@ -1,1 +1,6 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/images" >
+        <file>Menu.jpg</file>
+        <file>playButton.jpg</file>
+    </qresource>
+</RCC>
