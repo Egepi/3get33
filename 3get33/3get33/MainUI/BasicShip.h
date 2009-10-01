@@ -7,13 +7,17 @@ class BasicShip : public QGraphicsItem
 {
     public:
     BasicShip(int theArmor, int theShield, int theLives);
-    int getArmor();
-    int getShield();
-    int getLives();
     QRectF boundingRect() const;
     QPainterPath shape() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                 QWidget *widget);
+
+    int getArmor();
+    int getShield();
+    int getLives();
+    void setArmor(int theArmor);
+    void setShield(int theShield);
+    void setLives(int theLives);
 
     private:
         int shipArmor;

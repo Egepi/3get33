@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Sun Sep 27 11:07:41 2009
+** Created: Thu Oct 1 08:58:55 2009
 **      by: Qt User Interface Compiler version 4.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -48,6 +48,18 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(640, 480);
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        QBrush brush1(QColor(0, 0, 0, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        MainWindow->setPalette(palette);
         MainWindow->setAutoFillBackground(true);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
@@ -69,6 +81,7 @@ public:
         scoreDisplay->setFrameShape(QFrame::Box);
         scoreDisplay->setFrameShadow(QFrame::Raised);
         scoreDisplay->setNumDigits(5);
+        scoreDisplay->setSegmentStyle(QLCDNumber::Flat);
         scoreDisplay->setProperty("value", QVariant(0));
         scoreDisplay->setProperty("intValue", QVariant(0));
         scoreLabel = new QLabel(centralWidget);
@@ -83,6 +96,7 @@ public:
         livesDisplay->setFrameShape(QFrame::Box);
         livesDisplay->setFrameShadow(QFrame::Raised);
         livesDisplay->setNumDigits(5);
+        livesDisplay->setSegmentStyle(QLCDNumber::Flat);
         livesDisplay->setProperty("value", QVariant(0));
         livesDisplay->setProperty("intValue", QVariant(0));
         armorLabel = new QLabel(centralWidget);
@@ -100,6 +114,7 @@ public:
         bombsDisplay->setFrameShape(QFrame::Box);
         bombsDisplay->setFrameShadow(QFrame::Raised);
         bombsDisplay->setNumDigits(5);
+        bombsDisplay->setSegmentStyle(QLCDNumber::Flat);
         bombsDisplay->setProperty("value", QVariant(0));
         bombsDisplay->setProperty("intValue", QVariant(0));
         sheildDisplay = new QLCDNumber(centralWidget);
@@ -108,14 +123,27 @@ public:
         sheildDisplay->setFrameShape(QFrame::Box);
         sheildDisplay->setFrameShadow(QFrame::Raised);
         sheildDisplay->setNumDigits(5);
+        sheildDisplay->setSegmentStyle(QLCDNumber::Flat);
         sheildDisplay->setProperty("value", QVariant(0));
         sheildDisplay->setProperty("intValue", QVariant(0));
         armorDisplay = new QLCDNumber(centralWidget);
         armorDisplay->setObjectName(QString::fromUtf8("armorDisplay"));
         armorDisplay->setGeometry(QRect(50, 380, 80, 30));
+        QPalette palette1;
+        palette1.setBrush(QPalette::Active, QPalette::Base, brush);
+        QBrush brush2(QColor(255, 0, 0, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Active, QPalette::Window, brush2);
+        palette1.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Window, brush2);
+        palette1.setBrush(QPalette::Disabled, QPalette::Base, brush2);
+        palette1.setBrush(QPalette::Disabled, QPalette::Window, brush2);
+        armorDisplay->setPalette(palette1);
+        armorDisplay->setAutoFillBackground(true);
         armorDisplay->setFrameShape(QFrame::Box);
         armorDisplay->setFrameShadow(QFrame::Raised);
         armorDisplay->setNumDigits(5);
+        armorDisplay->setSegmentStyle(QLCDNumber::Flat);
         armorDisplay->setProperty("value", QVariant(0));
         armorDisplay->setProperty("intValue", QVariant(0));
         MainWindow->setCentralWidget(centralWidget);

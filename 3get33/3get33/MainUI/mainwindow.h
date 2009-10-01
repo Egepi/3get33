@@ -1,9 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-
 #include <QtGui/QMainWindow>
-#include "BasicShip.h"
 
 namespace Ui
 {
