@@ -3,10 +3,24 @@
 #include "BasicShip.h"
 #include <QPushButton>
 #include <QObject>
+#include <QPixmap>
+#include <QGraphicsScene>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+
+    QGraphicsScene *gameScene = new QGraphicsScene;
+    int width = ui->Display->geometry().width();
+    int height = ui->Display->geometry().height();
+    gameScene->setSceneRect(0, 0, width,height);
+    ui->Display->setScene(gameScene);
+
+    ui->playButton->setIconSize(QSize(140,50));
+    ui->playButton->setIcon(QIcon(":/images/playButton.jpg"));
+    ui->playButton->setFlat(true);
+
     BasicShip myShip(100,100,3);
     ui->armorDisplay->display(myShip.getArmor());
     ui->sheildDisplay->display(myShip.getShield());

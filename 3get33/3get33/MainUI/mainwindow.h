@@ -21,7 +21,6 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    QPushButton quitButton;
 };
 
 #endif // MAINWINDOW_H
