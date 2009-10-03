@@ -39,8 +39,30 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     myShip->setImage(QImage(":/images/GoodGuy.png"));
 
 
+    BasicShip *bad1 = new BasicShip();
+    bad1->setLoc(0,0);
+    bad1->setImage(QImage(":/images/BadGuy1.png"));
+
+    BasicShip *bad2 = new BasicShip();
+    bad2->setLoc(80,0);
+    bad2->setImage(QImage(":/images/BadGuy2.png"));
+
+    BasicShip *bad3 = new BasicShip();
+    bad3->setLoc(160,0);
+    bad3->setImage(QImage(":/images/BadGuy3.png"));
+
+    BasicShip *bad4 = new BasicShip();
+    bad4->setLoc(240,0);
+    bad4->setImage(QImage(":/images/BadGuy4.png"));
+
+
 
     gameScene->addItem(myShip);
+    gameScene->addItem(bad1);
+    gameScene->addItem(bad2);
+    gameScene->addItem(bad3);
+    gameScene->addItem(bad4);
+
 
 
     ui->armorDisplay->display(myShip->getArmor());
