@@ -5,8 +5,10 @@ TARGET = MainUI
 TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
-    BasicShip.cpp
+    BasicShip.cpp \
+    playership.cpp
 HEADERS += mainwindow.h \
-    BasicShip.h
+    BasicShip.h \
+    playership.h
 FORMS += mainwindow.ui
 RESOURCES += uiimages.qrc
