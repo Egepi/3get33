@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     int width = ui->Display->geometry().width();
     int height = ui->Display->geometry().height();
     gameScene->setSceneRect(0, 0, width,height);
+    gameScene->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
     ui->Display->setScene(gameScene);
 
     ui->playButton->setIconSize(QSize(140,50));
@@ -29,12 +30,22 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->loadButton->setIcon(QIcon(":/images/loadButton.jpg"));
     ui->loadButton->setFlat(true);
 
-    // pb_PlayGame->show();
+    //BasicShip myShip(100,100,3, QImage(":/images/GoodGuy.jpg"));
+    BasicShip *myShip = new BasicShip();
+    myShip->setArmor(100);
+    myShip->setShield(100);
+    myShip->setLives(3);
+    myShip->setLoc(280,400);
+    myShip->setImage(QImage(":/images/GoodGuy.png"));
 
-    BasicShip myShip(100,100,3);
-    ui->armorDisplay->display(myShip.getArmor());
-    ui->sheildDisplay->display(myShip.getShield());
-    ui->livesDisplay->display(myShip.getLives());
+
+
+    gameScene->addItem(myShip);
+
+
+    ui->armorDisplay->display(myShip->getArmor());
+    ui->sheildDisplay->display(myShip->getShield());
+    ui->livesDisplay->display(myShip->getLives());
 
 }
 
