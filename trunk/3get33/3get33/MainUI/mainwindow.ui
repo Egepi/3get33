@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
+    <width>740</width>
     <height>480</height>
    </rect>
   </property>
@@ -86,7 +86,7 @@
      <rect>
       <x>140</x>
       <y>0</y>
-      <width>500</width>
+      <width>600</width>
       <height>480</height>
      </rect>
     </property>
@@ -120,7 +120,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Quit</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="loadButton">
@@ -133,7 +133,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Load Game</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLCDNumber" name="scoreDisplay">
