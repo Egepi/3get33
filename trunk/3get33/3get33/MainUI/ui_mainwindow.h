@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Fri Oct 2 23:54:11 2009
+** Created: Sat Oct 3 01:49:52 2009
 **      by: Qt User Interface Compiler version 4.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -75,10 +75,10 @@ public:
         playButton->setGeometry(QRect(0, 20, 140, 50));
         quitButton = new QPushButton(centralWidget);
         quitButton->setObjectName(QString::fromUtf8("quitButton"));
-        quitButton->setGeometry(QRect(0, 120, 140, 50));
+        quitButton->setGeometry(QRect(0, 130, 140, 50));
         loadButton = new QPushButton(centralWidget);
         loadButton->setObjectName(QString::fromUtf8("loadButton"));
-        loadButton->setGeometry(QRect(0, 70, 140, 50));
+        loadButton->setGeometry(QRect(0, 75, 140, 50));
         scoreDisplay = new QLCDNumber(centralWidget);
         scoreDisplay->setObjectName(QString::fromUtf8("scoreDisplay"));
         scoreDisplay->setGeometry(QRect(50, 440, 80, 30));
