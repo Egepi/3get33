@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Thu Oct 1 12:42:46 2009
+** Created: Fri Oct 2 23:54:11 2009
 **      by: Qt User Interface Compiler version 4.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -49,7 +49,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(640, 480);
+        MainWindow->resize(740, 480);
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -67,7 +67,7 @@ public:
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         Display = new QGraphicsView(centralWidget);
         Display->setObjectName(QString::fromUtf8("Display"));
-        Display->setGeometry(QRect(140, 0, 500, 480));
+        Display->setGeometry(QRect(140, 0, 600, 480));
         Display->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         Display->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         playButton = new QPushButton(centralWidget);
@@ -261,8 +261,8 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Super Shooters", 0, QApplication::UnicodeUTF8));
         playButton->setText(QString());
-        quitButton->setText(QApplication::translate("MainWindow", "Quit", 0, QApplication::UnicodeUTF8));
-        loadButton->setText(QApplication::translate("MainWindow", "Load Game", 0, QApplication::UnicodeUTF8));
+        quitButton->setText(QString());
+        loadButton->setText(QString());
         scoreLabel->setText(QApplication::translate("MainWindow", "Score", 0, QApplication::UnicodeUTF8));
         livesLabel->setText(QApplication::translate("MainWindow", "Lives", 0, QApplication::UnicodeUTF8));
         armorLabel->setText(QApplication::translate("MainWindow", "Armor", 0, QApplication::UnicodeUTF8));

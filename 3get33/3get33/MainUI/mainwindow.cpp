@@ -21,6 +21,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->playButton->setIcon(QIcon(":/images/playButton.jpg"));
     ui->playButton->setFlat(true);
 
+    ui->quitButton->setIconSize(QSize(140,50));
+    ui->quitButton->setIcon(QIcon(":/images/quitButton.jpg"));
+    ui->quitButton->setFlat(true);
+
+    ui->loadButton->setIconSize(QSize(140,50));
+    ui->loadButton->setIcon(QIcon(":/images/loadButton.jpg"));
+    ui->loadButton->setFlat(true);
+
+    // pb_PlayGame->show();
+
     BasicShip myShip(100,100,3);
     ui->armorDisplay->display(myShip.getArmor());
     ui->sheildDisplay->display(myShip.getShield());
