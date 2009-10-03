@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Sat Oct 3 01:49:52 2009
+** Created: Sat Oct 3 13:03:01 2009
 **      by: Qt User Interface Compiler version 4.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -50,6 +50,8 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(740, 480);
+        MainWindow->setMinimumSize(QSize(740, 480));
+        MainWindow->setMaximumSize(QSize(740, 480));
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -68,6 +70,7 @@ public:
         Display = new QGraphicsView(centralWidget);
         Display->setObjectName(QString::fromUtf8("Display"));
         Display->setGeometry(QRect(140, 0, 600, 480));
+        Display->setFrameShape(QFrame::NoFrame);
         Display->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         Display->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         playButton = new QPushButton(centralWidget);
