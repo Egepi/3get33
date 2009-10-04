@@ -83,3 +83,7 @@ void MainWindow::closeGame()
 {
     this->close();
 }
+void MainWindow::loadGame()
+{
+
+}
