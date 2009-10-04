@@ -18,6 +18,7 @@ public:
     ~MainWindow();
 public slots:
     void closeGame();
+    void loadGame();
 
 private:
     Ui::MainWindow *ui;

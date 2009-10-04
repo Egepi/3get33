@@ -1042,8 +1042,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>loadButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>loadGame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>46</x>
+     <y>106</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>76</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>closeGame()</slot>
+  <slot>loadGame()</slot>
  </slots>
 </ui>
