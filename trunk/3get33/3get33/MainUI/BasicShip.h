@@ -24,9 +24,9 @@ class BasicShip : public QGraphicsItem
     void setArmor(int theArmor);
     void setShield(int theShield);
     void setLives(int theLives);
-    void setLoc(int x, int y);
     void setImage(QImage theImage);
-    QImage shipImage;
+    void move(qreal xMove, qreal yMove);
+
 
     private:
         int shipArmor;
@@ -34,7 +34,7 @@ class BasicShip : public QGraphicsItem
         int shipLives;
         int xLoc;
         int yLoc;
-
+        QImage shipImage;
 };
 
 #endif // BASICSHIP_H
