@@ -35,27 +35,25 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     myShip->setArmor(100);
     myShip->setShield(100);
     myShip->setLives(3);
-    myShip->setLoc(280,400);
+    myShip->setPos(280,400);
     myShip->setImage(QImage(":/images/GoodGuy.png"));
 
 
     BasicShip *bad1 = new BasicShip();
-    bad1->setLoc(0,0);
+    bad1->setPos(0,0);
     bad1->setImage(QImage(":/images/BadGuy1.png"));
 
     BasicShip *bad2 = new BasicShip();
-    bad2->setLoc(80,0);
+    bad2->setPos(80,0);
     bad2->setImage(QImage(":/images/BadGuy2.png"));
 
     BasicShip *bad3 = new BasicShip();
-    bad3->setLoc(160,0);
+    bad3->setPos(160,0);
     bad3->setImage(QImage(":/images/BadGuy3.png"));
 
     BasicShip *bad4 = new BasicShip();
-    bad4->setLoc(240,0);
+    bad4->setPos(240,0);
     bad4->setImage(QImage(":/images/BadGuy4.png"));
-
-
 
     gameScene->addItem(myShip);
     gameScene->addItem(bad1);
@@ -86,4 +84,7 @@ void MainWindow::closeGame()
 void MainWindow::loadGame()
 {
 
+}
+void MainWindow::playGame()
+{
 }

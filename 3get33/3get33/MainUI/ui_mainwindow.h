@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Sat Oct 3 19:15:27 2009
+** Created: Mon Oct 5 01:30:49 2009
 **      by: Qt User Interface Compiler version 4.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -257,6 +257,7 @@ public:
         retranslateUi(MainWindow);
         QObject::connect(quitButton, SIGNAL(clicked()), MainWindow, SLOT(closeGame()));
         QObject::connect(loadButton, SIGNAL(clicked()), MainWindow, SLOT(loadGame()));
+        QObject::connect(playButton, SIGNAL(clicked()), MainWindow, SLOT(playGame()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi

@@ -55,10 +55,11 @@ void BasicShip::setImage(QImage theImage)
 {
     BasicShip::shipImage = theImage;
 }
-void BasicShip::setLoc(int x, int y)
+void BasicShip::move(qreal xMove, qreal yMove)
 {
-    BasicShip::xLoc = x;
-    BasicShip::yLoc = y;
+    qreal xLoc = this->x() + xMove;
+    qreal yLoc = this->y() + yMove;
+    setPos(xLoc, yLoc);
 }
 
 QRectF BasicShip::boundingRect() const
@@ -74,5 +75,5 @@ QPainterPath BasicShip::shape() const
 
 void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    painter->drawImage(xLoc,yLoc, shipImage);
+    painter->drawImage(0,0, shipImage);
 }
