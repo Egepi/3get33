@@ -5,6 +5,7 @@
 #include <QObject>
 #include <QPixmap>
 #include <QGraphicsScene>
+#include "PlayerShip.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -31,13 +32,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->loadButton->setFlat(true);
 
     //BasicShip myShip(100,100,3, QImage(":/images/GoodGuy.jpg"));
-    BasicShip *myShip = new BasicShip();
+
+    PlayerShip *myShip = new PlayerShip();
     myShip->setArmor(100);
     myShip->setShield(100);
     myShip->setLives(3);
     myShip->setPos(280,400);
     myShip->setImage(QImage(":/images/GoodGuy.png"));
-
 
     BasicShip *bad1 = new BasicShip();
     bad1->setPos(0,0);

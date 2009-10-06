@@ -3,7 +3,7 @@
 #include <QGraphicsItem>
 #include <iostream>
 #include <QPixmap>
- #include <QPainter>
+#include <QPainter>
 
 using namespace std;
 
