@@ -53,6 +53,12 @@ class MyScene : public QGraphicsScene {
             case Qt::Key_Down:
             setBackgroundBrush(Qt::yellow);
             break;
+            case Qt::Key_B:
+            setBackgroundBrush(Qt::black);
+            break;
+            case Qt::Key_Space:
+            setBackgroundBrush(Qt::white);
+            break;
             default:
             cout << "key pressed " << key->text().data() << endl << flush;
         }
