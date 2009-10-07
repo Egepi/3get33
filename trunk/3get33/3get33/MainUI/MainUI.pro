@@ -7,10 +7,12 @@ SOURCES += main.cpp \
     mainwindow.cpp \
     BasicShip.cpp \
     playership.cpp \
+    MyScene.cpp \
     MyScene.cpp
 HEADERS += mainwindow.h \
     BasicShip.h \
     playership.h \
+    MyScene.h \
     MyScene.h
 FORMS += mainwindow.ui
 RESOURCES += uiimages.qrc
