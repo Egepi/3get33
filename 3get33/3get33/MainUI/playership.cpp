@@ -12,25 +12,6 @@ PlayerShip::PlayerShip()
 
 }
 
-void PlayerShip::keyPressEvent(QKeyEvent *key)
-{
-    switch(key->key())
-    {
-    case Qt::Key_Left:
-       this->advanceLeft();
-       break;
-    case Qt::Key_Right:
-       this->advanceRight();
-       break;
-    case Qt::Key_Up:
-       this->advanceUp();
-       break;
-    case Qt::Key_Down:
-       this->advanceDown();
-       break;
-    }
-}
-
 void PlayerShip::advanceLeft()
 {
     this->move(-5,0);
