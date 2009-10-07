@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
 
 
-    QGraphicsScene *gameScene = new QGraphicsScene;
+    MyScene *gameScene = new MyScene;
     int width = ui->Display->geometry().width();
     int height = ui->Display->geometry().height();
     gameScene->setSceneRect(0, 0, width,height);
