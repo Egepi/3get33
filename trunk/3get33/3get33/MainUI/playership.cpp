@@ -28,3 +28,14 @@ void PlayerShip::advanceDown()
 {
     this->move(0,5);
 }
+
+int PlayerShip::getLives()
+{
+    return shipLives;
+}
+
+void PlayerShip::setLives(int theLives)
+{
+    PlayerShip::shipLives = theLives;
+}
+

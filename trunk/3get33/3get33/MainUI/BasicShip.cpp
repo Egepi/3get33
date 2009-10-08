@@ -7,11 +7,10 @@
 
 using namespace std;
 
-BasicShip::BasicShip(int theArmor, int theShield, int theLives, qreal theX, qreal theY)
+BasicShip::BasicShip(int theArmor, int theShield, qreal theX, qreal theY)
  {
     shipArmor = theArmor;
     shipShield = theShield;
-    shipLives = theLives;
     this->setPos(theX,theY);
 }
 
@@ -31,10 +30,6 @@ int BasicShip::getShield()
     return shipShield;
 }
 
-int BasicShip::getLives()
-{
-    return shipLives;
-}
 
 void BasicShip::setArmor(int theArmor)
 {
@@ -46,10 +41,7 @@ void BasicShip::setShield(int theShield)
     BasicShip::shipShield = theShield;
 }
 
-void BasicShip::setLives(int theLives)
-{
-    BasicShip::shipLives = theLives;
-}
+
 
 void BasicShip::setImage(QImage theImage)
 {
