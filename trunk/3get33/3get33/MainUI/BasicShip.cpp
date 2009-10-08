@@ -7,19 +7,20 @@
 
 using namespace std;
 
-BasicShip::BasicShip(int theArmor, int theShield, int theLives, QImage theImage)
+BasicShip::BasicShip(int theArmor, int theShield, int theLives, qreal theX,qreal theY)
 {
     shipArmor = theArmor;
     shipShield = theShield;
     shipLives = theLives;
-    shipImage = theImage;
+    //shipImage = theImage;
+    this->setPos(theX,theY);
 }
 
 BasicShip::BasicShip()
 {
-    BasicShip::xLoc = 0;
-    BasicShip::yLoc = 0;
+
 }
+
 
 int BasicShip::getArmor()
 {
