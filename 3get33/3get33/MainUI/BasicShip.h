@@ -11,7 +11,7 @@ using namespace std;
 class BasicShip : public QGraphicsItem
 {
     public:
-    BasicShip(int theArmor, int theShield, int theLives, qreal theX, qreal theY);
+    BasicShip(int theArmor, int theShield, qreal theX, qreal theY);
     BasicShip();
     QRectF boundingRect() const;
     QPainterPath shape() const;
@@ -20,10 +20,9 @@ class BasicShip : public QGraphicsItem
 
     int getArmor();
     int getShield();
-    int getLives();
+
     void setArmor(int theArmor);
     void setShield(int theShield);
-    void setLives(int theLives);
     void setImage(QImage theImage);
     void move(qreal xMove, qreal yMove);
 
@@ -31,7 +30,7 @@ class BasicShip : public QGraphicsItem
     private:
         int shipArmor;
         int shipShield;
-        int shipLives;
+
         int xLoc;
         int yLoc;
         QImage shipImage;

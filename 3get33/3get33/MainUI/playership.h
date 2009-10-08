@@ -15,7 +15,13 @@ public:
     void PlayerShip::advanceRight();
     void PlayerShip::advanceUp();
     void PlayerShip::advanceDown();
+    int getLives();
+    void setLives(int theLives);
 private:
+    int shipLives;
+    int sBombs;
+    int bBombs;
+    int gunType;
 };
 
 #endif // PLAYERSHIP_H
