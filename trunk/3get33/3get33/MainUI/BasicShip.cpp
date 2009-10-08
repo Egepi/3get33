@@ -7,12 +7,11 @@
 
 using namespace std;
 
-BasicShip::BasicShip(int theArmor, int theShield, int theLives, qreal theX,qreal theY)
-{
+BasicShip::BasicShip(int theArmor, int theShield, int theLives, qreal theX, qreal theY)
+ {
     shipArmor = theArmor;
     shipShield = theShield;
     shipLives = theLives;
-    //shipImage = theImage;
     this->setPos(theX,theY);
 }
 
