@@ -9,6 +9,7 @@
 #include <QPixmap>
 #include <QGraphicsScene>
 #include <QKeyEvent>
+#include <QDialog>
 
 
 namespace Ui

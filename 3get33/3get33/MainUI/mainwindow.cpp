@@ -6,6 +6,8 @@
 #include <QPixmap>
 #include <QGraphicsScene>
 #include "PlayerShip.h"
+#include <QDialog>
+#include <QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -13,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 
     MyScene *gameScene = new MyScene;
+
     int width = ui->Display->geometry().width();
     int height = ui->Display->geometry().height();
     gameScene->setSceneRect(0, 0, width,height);
@@ -30,8 +33,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->loadButton->setIconSize(QSize(140,50));
     ui->loadButton->setIcon(QIcon(":/images/loadButton.jpg"));
     ui->loadButton->setFlat(true);
-
-    //BasicShip myShip(100,100,3, QImage(":/images/GoodGuy.jpg"));
 
     PlayerShip *myShip = new PlayerShip();
     myShip->setArmor(100);
@@ -84,7 +85,16 @@ void MainWindow::closeGame()
 }
 void MainWindow::loadGame()
 {
+    QFileDialog fileDlg;
+    QStringList newFile;
+    // open file dialog
+        if ( fileDlg.exec() != QDialog::Accepted )
+            return;     // the user clicked cancel
+    // get the file path
+        newFile = fileDlg.selectedFiles();
 
+    QString theFile = newFile.first();
+    ui->armorLabel->setText(theFile);
 }
 void MainWindow::playGame()
 {

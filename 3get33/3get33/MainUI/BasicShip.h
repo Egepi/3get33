@@ -11,7 +11,7 @@ using namespace std;
 class BasicShip : public QGraphicsItem
 {
     public:
-    BasicShip(int theArmor, int theShield, int theLives, QImage theImage);
+    BasicShip(int theArmor, int theShield, int theLives, qreal theX, qreal theY);
     BasicShip();
     QRectF boundingRect() const;
     QPainterPath shape() const;
