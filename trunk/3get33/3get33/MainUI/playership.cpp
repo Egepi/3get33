@@ -13,6 +13,11 @@ PlayerShip::PlayerShip()
     rFlag = false;
     dFlag = false;
     uFlag = false;
+    this->setPos(1,1);
+    this->setArmor(100);
+    this->setShield(100);
+    this->setLives(3);
+    this->setImage(QImage(":/images/GoodGuy.png"));
 }
 
 void PlayerShip::setLFlag( bool keyPress )

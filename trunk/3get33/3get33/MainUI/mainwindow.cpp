@@ -35,14 +35,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     //BasicShip myShip(100,100,3, QImage(":/images/GoodGuy.jpg"));
 
     myShip = new PlayerShip();
-    myShip->setArmor(100);
-    myShip->setShield(100);
-    myShip->setLives(3);
-    myShip->setPos(280,400);
-    myShip->setImage(QImage(":/images/GoodGuy.png"));
-
     gameScene->addItem(myShip);
-
 
     ui->armorDisplay->display(myShip->getArmor());
     ui->sheildDisplay->display(myShip->getShield());
