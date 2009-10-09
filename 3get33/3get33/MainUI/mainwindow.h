@@ -9,6 +9,7 @@
 #include <QPixmap>
 #include <QGraphicsScene>
 #include <QKeyEvent>
+#include "PlayerShip.h"
 
 
 namespace Ui
@@ -23,6 +24,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void MainWindow::keyPressEvent(QKeyEvent *key);
+
 public slots:
     void closeGame();
     void loadGame();
@@ -30,37 +33,9 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
+    PlayerShip *myShip;
+    enum Action { Left, Right, Up, Down, ShootGun, ShootSBomb, ShootBBomb, Pause};
+    QMap<int,Action> actions;
 
-};
-
-
-
-class MyScene : public QGraphicsScene {
-
-    void keyPressEvent(QKeyEvent *key) {
-        switch(key->key()) {
-            case Qt::Key_Left:
-            setBackgroundBrush(Qt::blue);
-            break;
-            case Qt::Key_Right:
-            setBackgroundBrush(Qt::red);
-            break;
-            case Qt::Key_Up:
-            setBackgroundBrush(Qt::green);
-            break;
-            case Qt::Key_Down:
-            setBackgroundBrush(Qt::yellow);
-            break;
-            case Qt::Key_B:
-            setBackgroundBrush(Qt::black);
-            break;
-            case Qt::Key_Space:
-            setBackgroundBrush(Qt::white);
-            break;
-            default:
-            cout << "key pressed " << endl << flush;
-        }
-
-    }
 };
 #endif // MAINWINDOW_H

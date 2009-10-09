@@ -11,17 +11,30 @@ class PlayerShip : public BasicShip
 {
 public:
     PlayerShip();
+    void PlayerShip::advance();
     void PlayerShip::advanceLeft();
+    void PlayerShip::advanceLeftDown();
+    void PlayerShip::advanceLeftUp();
     void PlayerShip::advanceRight();
+    void PlayerShip::advanceRightDown();
+    void PlayerShip::advanceRightUp();
     void PlayerShip::advanceUp();
     void PlayerShip::advanceDown();
-    int getLives();
-    void setLives(int theLives);
+    void PlayerShip::shootGun();
+    void PlayerShip::shootSBomb();
+    void PlayerShip::shootBBomb();
+    int PlayerShip::getLives();
+    void PlayerShip::setLives(int theLives);
 private:
     int shipLives;
     int sBombs;
     int bBombs;
     int gunType;
+    bool lFlag;
+    bool rFlag;
+    bool dFlag;
+    bool uFlag;
+
 };
 
 #endif // PLAYERSHIP_H

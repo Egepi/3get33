@@ -13,8 +13,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     ui->setupUi(this);
 
-
-    MyScene *gameScene = new MyScene;
+    QGraphicsScene *gameScene = new QGraphicsScene;
     int width = ui->Display->geometry().width();
     int height = ui->Display->geometry().height();
     gameScene->setSceneRect(0, 0, width,height);
@@ -35,7 +34,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     //BasicShip myShip(100,100,3, QImage(":/images/GoodGuy.jpg"));
 
-    PlayerShip *myShip = new PlayerShip();
+    myShip = new PlayerShip();
     myShip->setArmor(100);
     myShip->setShield(100);
     myShip->setLives(3);
@@ -48,6 +47,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->armorDisplay->display(myShip->getArmor());
     ui->sheildDisplay->display(myShip->getShield());
     ui->livesDisplay->display(myShip->getLives());
+
+    actions.insert( Qt::Key_A, Left );
+    actions.insert( Qt::Key_D, Right );
+    actions.insert( Qt::Key_W, Up );
+    actions.insert( Qt::Key_S, Down );
+    actions.insert( Qt::Key_Space, ShootGun );
+    actions.insert( Qt::Key_V, ShootSBomb );
+    actions.insert( Qt::Key_B, ShootBBomb );
+    actions.insert( Qt::Key_Escape, Pause );
 
 }
 
@@ -77,6 +85,36 @@ void MainWindow::loadGame()
     ui->armorLabel->setText(theFile);
 
 }
+
 void MainWindow::playGame()
 {
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *key) {
+
+    Action a = actions[ key->key() ];
+    switch(a) {
+        case Left:
+        myShip->advanceLeft();
+        break;
+        case Right:
+        myShip->advanceRight();
+        break;
+        case Up:
+        myShip->advanceUp();
+        break;
+        case Down:
+        myShip->advanceDown();
+        break;
+        case ShootBBomb:
+        break;
+        case ShootSBomb:
+        break;
+        case ShootGun:
+        break;
+        case Pause:
+        break;
+        default:
+        cout << "key pressed " << endl << flush;
+    }
 }
