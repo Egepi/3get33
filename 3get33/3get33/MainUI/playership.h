@@ -12,6 +12,10 @@ class PlayerShip : public BasicShip
 public:
     PlayerShip();
     void PlayerShip::advance();
+    void PlayerShip::setLFlag( bool );
+    void PlayerShip::setRFlag( bool );
+    void PlayerShip::setDFlag( bool );
+    void PlayerShip::setUFlag( bool );
     void PlayerShip::advanceLeft();
     void PlayerShip::advanceLeftDown();
     void PlayerShip::advanceLeftUp();
@@ -24,7 +28,7 @@ public:
     void PlayerShip::shootSBomb();
     void PlayerShip::shootBBomb();
     int PlayerShip::getLives();
-    void PlayerShip::setLives(int theLives);
+    void PlayerShip::setLives( int theLives );
 private:
     int shipLives;
     int sBombs;

@@ -9,8 +9,29 @@
 
 PlayerShip::PlayerShip()
 {
-
+    lFlag = false;
+    rFlag = false;
+    dFlag = false;
+    uFlag = false;
 }
+
+void PlayerShip::setLFlag( bool keyPress )
+{
+    lFlag = keyPress;
+}
+void PlayerShip::setRFlag( bool keyPress )
+{
+    rFlag = keyPress;
+}
+void PlayerShip::setDFlag( bool keyPress )
+{
+    dFlag = keyPress;
+}
+void PlayerShip::setUFlag( bool keyPress )
+{
+    uFlag = keyPress;
+}
+
 void PlayerShip::advance()
 {
     //left movement
@@ -25,7 +46,7 @@ void PlayerShip::advance()
     else if(( !lFlag ) && ( dFlag ) && ( !rFlag ) && ( !uFlag )){
         advanceDown();
     }
-    else if(( lFlag ) && ( dFlag ) && ( !rFlag ) && ( !uFlag )){
+    else if(( !lFlag ) && ( !dFlag ) && ( !rFlag ) && ( uFlag )){
         advanceUp();
     }
     //up movement

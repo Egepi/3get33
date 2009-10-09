@@ -95,16 +95,20 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
     Action a = actions[ key->key() ];
     switch(a) {
         case Left:
-        myShip->advanceLeft();
+        myShip->setLFlag( true );
+        myShip->advance();
         break;
         case Right:
-        myShip->advanceRight();
+        myShip->setRFlag( true );
+        myShip->advance();
         break;
         case Up:
-        myShip->advanceUp();
+        myShip->setUFlag( true );
+        myShip->advance();
         break;
         case Down:
-        myShip->advanceDown();
+        myShip->setDFlag( true );
+        myShip->advance();
         break;
         case ShootBBomb:
         break;
@@ -116,5 +120,40 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
         break;
         default:
         cout << "key pressed " << endl << flush;
+        myShip->advance();
+    }
+}
+
+void MainWindow::keyReleaseEvent(QKeyEvent *key) {
+
+    Action a = actions[ key->key() ];
+    switch(a) {
+        case Left:
+        myShip->setLFlag( false );
+        myShip->advance();
+        break;
+        case Right:
+        myShip->setRFlag( false );
+        myShip->advance();
+        break;
+        case Up:
+        myShip->setUFlag( false );
+        myShip->advance();
+        break;
+        case Down:
+        myShip->setDFlag( false );
+        myShip->advance();
+        break;
+        case ShootBBomb:
+        break;
+        case ShootSBomb:
+        break;
+        case ShootGun:
+        break;
+        case Pause:
+        break;
+        default:
+        cout << "key pressed " << endl << flush;
+        myShip->advance();
     }
 }
