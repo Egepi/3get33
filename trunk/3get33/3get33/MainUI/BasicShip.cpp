@@ -49,9 +49,12 @@ void BasicShip::setImage(QImage theImage)
 }
 void BasicShip::move(qreal xMove, qreal yMove)
 {
-    qreal xLoc = this->x() + xMove;
-    qreal yLoc = this->y() + yMove;
-    setPos(xLoc, yLoc);
+    //if( this->x() >= 0 )
+    //{
+        qreal xLoc = this->x() + xMove;
+        qreal yLoc = this->y() + yMove;
+        setPos(xLoc, yLoc);
+    //}
 }
 
 QRectF BasicShip::boundingRect() const

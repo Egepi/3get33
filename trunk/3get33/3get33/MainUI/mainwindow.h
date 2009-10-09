@@ -25,6 +25,7 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void MainWindow::keyPressEvent(QKeyEvent *key);
+    void MainWindow::keyReleaseEvent(QKeyEvent *key);
 
 public slots:
     void closeGame();
