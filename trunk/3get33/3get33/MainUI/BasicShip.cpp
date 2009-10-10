@@ -8,7 +8,7 @@
 using namespace std;
 
 BasicShip::BasicShip(int theArmor, int theShield, qreal theX, qreal theY)
- {
+{
     shipArmor = theArmor;
     shipShield = theShield;
     this->setPos(theX,theY);
