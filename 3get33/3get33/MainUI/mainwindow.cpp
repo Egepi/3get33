@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     ui->setupUi(this);
 
-    QGraphicsScene *gameScene = new QGraphicsScene;
+    gameScene = new QGraphicsScene;
     int width = ui->Display->geometry().width();
     int height = ui->Display->geometry().height();
     gameScene->setSceneRect(0, 0, width,height);
@@ -33,13 +33,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->loadButton->setFlat(true);
 
     //BasicShip myShip(100,100,3, QImage(":/images/GoodGuy.jpg"));
-
-    myShip = new PlayerShip();
-    gameScene->addItem(myShip);
-
-    ui->armorDisplay->display(myShip->getArmor());
-    ui->sheildDisplay->display(myShip->getShield());
-    ui->livesDisplay->display(myShip->getLives());
 
     actions.insert( Qt::Key_A, Left );
     actions.insert( Qt::Key_D, Right );
@@ -81,6 +74,11 @@ void MainWindow::loadGame()
 
 void MainWindow::playGame()
 {
+    myShip = new PlayerShip();
+    gameScene->addItem(myShip);
+    ui->armorDisplay->display(myShip->getArmor());
+    ui->sheildDisplay->display(myShip->getShield());
+    ui->livesDisplay->display(myShip->getLives());
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *key) {

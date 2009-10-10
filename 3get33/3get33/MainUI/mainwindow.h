@@ -35,6 +35,8 @@ public slots:
 private:
     Ui::MainWindow *ui;
     PlayerShip *myShip;
+    QGraphicsScene *gameScene;
+    bool gameStarted;
     enum Action { Left, Right, Up, Down, ShootGun, ShootSBomb, ShootBBomb, Pause};
     QMap<int,Action> actions;
 

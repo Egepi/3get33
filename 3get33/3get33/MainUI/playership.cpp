@@ -13,7 +13,7 @@ PlayerShip::PlayerShip()
     rFlag = false;
     dFlag = false;
     uFlag = false;
-    this->setPos(1,1);
+    this->setPos(260,400);
     this->setArmor(100);
     this->setShield(100);
     this->setLives(3);
