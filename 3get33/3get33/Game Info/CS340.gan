@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="CS340" company="" webLink="" view-date="2009-09-23" view-index="0" gantt-divider-location="367" resource-divider-location="301" version="2.0">
-    <description><![CDATA[Super Shooters
-]]></description>
-    <view zooming-state="default:2" id="gantt-chart"/>
+<project name="Untitled Gantt Project" company="" webLink="http://" view-date="2009-10-11" view-index="0" gantt-divider-location="485" resource-divider-location="301" version="2.0">
+    <description/>
+    <view zooming-state="default:0" id="gantt-chart"/>
     <view id="resource-table">
         <field id="0" name="Name" width="55" order="0"/>
-        <field id="1" name="Default role" width="44" order="0"/>
+        <field id="1" name="Default role" width="44" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -13,7 +12,7 @@
             <day-type id="0"/>
             <day-type id="1"/>
             <calendar id="1" name="default">
-                <default-week sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+                <default-week sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
                 <overriden-day-types/>
                 <days/>
             </calendar>
@@ -32,18 +31,50 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="State Diagrams" color="#8cb6ce" meeting="false" start="2009-09-23" duration="6" complete="0" priority="1" expand="true"/>
-        <task id="1" name="New task_1" color="#8cb6ce" meeting="false" start="2009-09-23" duration="1" complete="0" priority="1" expand="true"/>
-        <task id="3" name="New task_3" color="#8cb6ce" meeting="false" start="2009-09-23" duration="1" complete="0" priority="1" expand="true"/>
-        <task id="2" name="New task_2" color="#8cb6ce" meeting="false" start="2009-09-23" duration="1" complete="0" priority="1" expand="true"/>
+        <task id="0" name="Project Length" color="#8cb6ce" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2009-09-01" duration="85" complete="45" priority="1" expand="true">
+            <notes><![CDATA[How long we have for project]]></notes>
+            <task id="1" name="Mid point Date" color="#ff9933" meeting="false" start="2009-09-01" duration="44" complete="100" priority="1" expand="true"/>
+            <task id="2" name="Decisions/Discussion/Planning" color="#ff9933" meeting="false" start="2009-09-01" duration="22" complete="100" priority="1" expand="true"/>
+            <task id="29" name="Website" color="#00ff00" meeting="false" start="2009-10-11" duration="3" complete="40" priority="1" expand="true"/>
+            <task id="30" name="Documentation" color="#33ffff" meeting="false" start="2009-10-11" duration="3" complete="0" priority="1" expand="true"/>
+            <task id="31" name="Gaant Chaart// Task Assignment" color="#8cb6ce" meeting="false" start="2009-09-22" duration="1" complete="0" priority="1" expand="true"/>
+            <task id="3" name="State Machines" color="#33ffff" meeting="false" start="2009-09-23" duration="7" complete="100" priority="1" expand="true"/>
+            <task id="4" name="StoryBoard" color="#00ff00" meeting="false" start="2009-09-23" duration="8" complete="100" priority="1" expand="true"/>
+            <task id="5" name="Basic UI" color="#ff0000" meeting="false" start="2009-09-23" duration="7" complete="100" priority="1" expand="true"/>
+            <task id="6" name="Images" color="#ffff00" meeting="false" start="2009-09-29" duration="2" complete="100" priority="1" expand="true"/>
+            <task id="7" name="Ship" color="#8cb6ce" meeting="false" start="2009-09-28" duration="11" complete="75" priority="1" expand="true">
+                <task id="8" name="Ship Basic" color="#33ffff" meeting="false" start="2009-09-28" duration="4" complete="100" priority="1" expand="true"/>
+                <task id="9" name="Ship Movement" color="#00ff00" meeting="false" start="2009-10-02" duration="4" complete="100" priority="1" expand="true"/>
+                <task id="10" name="Ship Reactions" color="#33ffff" meeting="false" start="2009-10-02" duration="7" complete="0" priority="1" expand="true"/>
+                <task id="11" name="Player Ship" color="#00ff00" meeting="false" start="2009-10-02" duration="7" complete="80" priority="1" expand="true"/>
+                <task id="12" name="Enemy Ship" color="#ff0000" meeting="false" start="2009-10-02" duration="7" complete="100" priority="1" expand="true"/>
+                <task id="13" name="Boss Ship" color="#ff0000" meeting="false" start="2009-10-02" duration="7" complete="100" priority="1" expand="true"/>
+            </task>
+            <task id="14" name="Levels" color="#8cb6ce" meeting="false" start="2009-10-09" duration="22" complete="0" priority="1" expand="true">
+                <task id="15" name="Level Filies Formating" color="#33ffff" meeting="false" start="2009-10-09" duration="14" complete="0" priority="1" expand="true"/>
+                <task id="16" name="Level Filies Reading" color="#ff0000" meeting="false" start="2009-10-09" duration="7" complete="0" priority="1" expand="true"/>
+                <task id="17" name="Generating Content from Level Filies" color="#ff0000" meeting="false" start="2009-10-16" duration="7" complete="0" priority="1" expand="true"/>
+                <task id="18" name="Level(Display) Class" color="#ff0000" meeting="false" start="2009-10-23" duration="8" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="19" name="Displaying Score etc." color="#00ff00" meeting="false" start="2009-10-19" duration="5" complete="0" priority="1" expand="true"/>
+            <task id="20" name="Implement diff weapons" color="#00ff00" meeting="false" start="2009-10-23" duration="8" complete="0" priority="1" expand="true"/>
+            <task id="21" name="Main game Implementation" color="#000000" meeting="false" start="2009-11-02" duration="23" complete="0" priority="1" expand="true"/>
+            <task id="22" name="Testing" color="#000000" meeting="false" start="2009-11-02" duration="23" complete="0" priority="1" expand="true"/>
+            <task id="23" name="Level Editor" color="#8cb6ce" meeting="false" start="2009-10-09" duration="15" complete="0" priority="1" expand="true">
+                <task id="24" name="Level Editor Gui" color="#33ffff" meeting="false" start="2009-10-09" duration="15" complete="0" priority="1" expand="true"/>
+                <task id="25" name="Level Editor Options" color="#33ffff" meeting="false" start="2009-10-09" duration="15" complete="0" priority="1" expand="true"/>
+                <task id="26" name="Level Editor saving" color="#33ffff" meeting="false" start="2009-10-09" duration="15" complete="0" priority="1" expand="true"/>
+            </task>
+            <task id="27" name="Sound" color="#00ff00" meeting="false" start="2009-10-09" duration="15" complete="0" priority="1" expand="true"/>
+        </task>
     </tasks>
     <resources/>
     <allocations/>
     <vacations/>
     <taskdisplaycolumns>
-        <displaycolumn property-id="tpd3" order="0" width="89"/>
-        <displaycolumn property-id="tpd4" order="1" width="69"/>
-        <displaycolumn property-id="tpd5" order="2" width="67"/>
+        <displaycolumn property-id="tpd3" order="0" width="190"/>
+        <displaycolumn property-id="tpd4" order="1" width="32"/>
+        <displaycolumn property-id="tpd5" order="2" width="32"/>
     </taskdisplaycolumns>
     <previous/>
     <roles roleset-name="Default"/>
