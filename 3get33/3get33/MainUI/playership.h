@@ -27,10 +27,15 @@ public:
     void PlayerShip::shootGun();
     void PlayerShip::shootSBomb();
     void PlayerShip::shootBBomb();
-    int PlayerShip::getLives();
+    void PlayerShip::setShield(int theShield);
     void PlayerShip::setLives( int theLives );
+    int PlayerShip::getShield();
+    int PlayerShip::getLives();
+
+
 private:
     int shipLives;
+    int shipShield;
     int sBombs;
     int bBombs;
     int gunType;
