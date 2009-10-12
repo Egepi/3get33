@@ -37,7 +37,7 @@ private:
     PlayerShip *myShip;
     QGraphicsScene *gameScene;
     bool gameStarted;
-    enum Action { Left, Right, Up, Down, ShootGun, ShootSBomb, ShootBBomb, Pause};
+    enum Action {Blank, Left, Right, Up, Down, ShootGun, ShootSBomb, ShootBBomb, Pause};
     QMap<int,Action> actions;
 
 };
