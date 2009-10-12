@@ -7,36 +7,49 @@
 
 using namespace std;
 
+/*!
+ *
+ */
 BasicShip::BasicShip(int theArmor, qreal theX, qreal theY)
 {
     shipArmor = theArmor;
     this->setPos(theX,theY);
 }
 
+/*!
+ *
+ */
 BasicShip::BasicShip()
 {
 
 }
 
-
+/*!
+ *
+ */
 int BasicShip::getArmor()
 {
     return shipArmor;
 }
 
+/*!
+ *
+ */
 void BasicShip::setArmor(int theArmor)
 {
     BasicShip::shipArmor = theArmor;
 }
 
-
-
-
-
+/*!
+ *
+ */
 void BasicShip::setImage(QImage theImage)
 {
     BasicShip::shipImage = theImage;
 }
+/*!
+ *
+ */
 void BasicShip::move(qreal xMove, qreal yMove)
 {
     qreal xLoc = this->x();
@@ -51,11 +64,16 @@ void BasicShip::move(qreal xMove, qreal yMove)
     }
     setPos(xLoc, yLoc);
 }
-
+/*!
+ *
+ */
 QRectF BasicShip::boundingRect() const
 {
     return QRectF(0,0,80,80);
 }
+/*!
+ *
+ */
 QPainterPath BasicShip::shape() const
 {
     QPainterPath path;
@@ -63,6 +81,9 @@ QPainterPath BasicShip::shape() const
     return path;
 }
 
+/*!
+ *
+ */
 void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     painter->drawImage(0,0, shipImage);
