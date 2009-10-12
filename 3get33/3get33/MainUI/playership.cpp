@@ -7,6 +7,9 @@
 #include "BasicShip.h"
 #include <QPushButton>
 
+/*!
+ *
+ */
 PlayerShip::PlayerShip()
 {
     lFlag = false;
@@ -20,23 +23,38 @@ PlayerShip::PlayerShip()
     this->setImage(QImage(":/images/GoodGuy.png"));
 }
 
+/*!
+ *
+ */
 void PlayerShip::setLFlag( bool keyPress )
 {
     lFlag = keyPress;
 }
+/*!
+ *
+ */
 void PlayerShip::setRFlag( bool keyPress )
 {
     rFlag = keyPress;
 }
+/*!
+ *
+ */
 void PlayerShip::setDFlag( bool keyPress )
 {
     dFlag = keyPress;
 }
+/*!
+ *
+ */
 void PlayerShip::setUFlag( bool keyPress )
 {
     uFlag = keyPress;
 }
 
+/*!
+ *
+ */
 void PlayerShip::advance()
 {
     //left movement
@@ -71,41 +89,68 @@ void PlayerShip::advance()
         advanceRightUp();
     }
 }
+/*!
+ *
+ */
 void PlayerShip::advanceLeft()
 {
     this->move(-5,0);
 }
+/*!
+ *
+ */
 void PlayerShip::advanceLeftDown()
 {
     // half of the hypotenuse
     this->move(-3.53,3.53);
 }
+/*!
+ *
+ */
 void PlayerShip::advanceLeftUp()
 {
     // half of the hypotenuse
     this->move(-3.53,-3.53);
 }
+/*!
+ *
+ */
 void PlayerShip::advanceRight()
 {
     this->move(5,0);
 }
+/*!
+ *
+ */
 void PlayerShip::advanceRightDown()
 {
     this->move(3.53,3.53);
 }
+/*!
+ *
+ */
 void PlayerShip::advanceRightUp()
 {
     this->move(3.53,-3.53);
 }
+/*!
+ *
+ */
 void PlayerShip::advanceUp()
 {
     this->move(0,-5);
 }
+/*!
+ *
+ */
 void PlayerShip::advanceDown()
 {
        this->move(0,5);
 }
 
+/*!
+ *
+ */
 void PlayerShip::shootGun()
 {
     if ( gunType == 0 )
@@ -119,31 +164,48 @@ void PlayerShip::shootGun()
     }
 }
 
+/*!
+ *
+ */
 void PlayerShip::shootSBomb()
 {
 }
 
+/*!
+ *
+ */
 void PlayerShip::shootBBomb()
 {
 }
 
+/*!
+ *
+ */
 int PlayerShip::getLives()
 {
     return shipLives;
 }
 
+/*!
+ *
+ */
 void PlayerShip::setLives( int theLives )
 {
     PlayerShip::shipLives = theLives;
 }
 
+/*!
+ *
+ */
 int PlayerShip::getShield()
 {
     return shipShield;
 }
 
+/*!
+ *
+ */
 void PlayerShip::setShield(int theShield)
 {
     PlayerShip::shipShield = theShield;
 }
-
