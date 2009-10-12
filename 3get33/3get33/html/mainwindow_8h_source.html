@@ -53,68 +53,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00009"></a>00009 <span class="preprocessor">#include &lt;QPixmap&gt;</span>
 <a name="l00010"></a>00010 <span class="preprocessor">#include &lt;QGraphicsScene&gt;</span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &lt;QKeyEvent&gt;</span>
-<a name="l00012"></a>00012 
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="playership_8h.html">PlayerShip.h</a>&quot;</span>
 <a name="l00013"></a>00013 
-<a name="l00014"></a><a class="code" href="namespace_ui.html">00014</a> <span class="keyword">namespace </span>Ui
-<a name="l00015"></a>00015 {
-<a name="l00016"></a>00016     <span class="keyword">class </span><a class="code" href="class_ui_1_1_main_window.html">MainWindow</a>;
-<a name="l00017"></a>00017 }
-<a name="l00018"></a>00018 
-<a name="l00019"></a><a class="code" href="class_main_window.html">00019</a> <span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow
-<a name="l00020"></a>00020 {
-<a name="l00021"></a>00021     Q_OBJECT
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023 <span class="keyword">public</span>:
-<a name="l00024"></a>00024     <a class="code" href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow</a>(QWidget *parent = 0);
-<a name="l00025"></a>00025     <a class="code" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();
-<a name="l00026"></a>00026 <span class="keyword">public</span> slots:
-<a name="l00027"></a>00027     <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a57a17b24a0c1a25ea3f2575febfa2daa">closeGame</a>();
-<a name="l00028"></a>00028     <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#af32531cf9be0011b3b3aa9cb1c159633">loadGame</a>();
-<a name="l00029"></a>00029     <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a400071005bde6fee0623aafdb071ba89">playGame</a>();
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <span class="keyword">private</span>:
-<a name="l00032"></a><a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">00032</a>     <a class="code" href="class_ui_1_1_main_window.html">Ui::MainWindow</a> *<a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>;
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 };
-<a name="l00035"></a>00035 
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="class_my_scene.html">00038</a> <span class="keyword">class </span><a class="code" href="class_my_scene.html">MyScene</a> : <span class="keyword">public</span> QGraphicsScene {
-<a name="l00039"></a>00039 
-<a name="l00040"></a><a class="code" href="class_my_scene.html#a977b9a41f8727498441a3f69889ef96a">00040</a>     <span class="keywordtype">void</span> <a class="code" href="class_my_scene.html#a977b9a41f8727498441a3f69889ef96a">keyPressEvent</a>(QKeyEvent *key) {
-<a name="l00041"></a>00041         <span class="keywordflow">switch</span>(key-&gt;key()) {
-<a name="l00042"></a>00042             <span class="keywordflow">case</span> Qt::Key_Left:
-<a name="l00043"></a>00043             setBackgroundBrush(Qt::blue);
-<a name="l00044"></a>00044             <span class="keywordflow">break</span>;
-<a name="l00045"></a>00045             <span class="keywordflow">case</span> Qt::Key_Right:
-<a name="l00046"></a>00046             setBackgroundBrush(Qt::red);
-<a name="l00047"></a>00047             <span class="keywordflow">break</span>;
-<a name="l00048"></a>00048             <span class="keywordflow">case</span> Qt::Key_Up:
-<a name="l00049"></a>00049             setBackgroundBrush(Qt::green);
-<a name="l00050"></a>00050             <span class="keywordflow">break</span>;
-<a name="l00051"></a>00051             <span class="keywordflow">case</span> Qt::Key_Down:
-<a name="l00052"></a>00052             setBackgroundBrush(Qt::yellow);
-<a name="l00053"></a>00053             <span class="keywordflow">break</span>;
-<a name="l00054"></a>00054             <span class="keywordflow">case</span> Qt::Key_B:
-<a name="l00055"></a>00055             setBackgroundBrush(Qt::black);
-<a name="l00056"></a>00056             <span class="keywordflow">break</span>;
-<a name="l00057"></a>00057             <span class="keywordflow">case</span> Qt::Key_Space:
-<a name="l00058"></a>00058             setBackgroundBrush(Qt::white);
-<a name="l00059"></a>00059             <span class="keywordflow">break</span>;
-<a name="l00060"></a>00060             <span class="keywordflow">default</span>:
-<a name="l00061"></a>00061             cout &lt;&lt; <span class="stringliteral">&quot;key pressed &quot;</span> &lt;&lt; endl &lt;&lt; flush;
-<a name="l00062"></a>00062         }
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064     }
-<a name="l00065"></a>00065 };
-<a name="l00066"></a>00066 <span class="preprocessor">#endif // MAINWINDOW_H</span>
+<a name="l00014"></a>00014 
+<a name="l00015"></a><a class="code" href="namespace_ui.html">00015</a> <span class="keyword">namespace </span>Ui
+<a name="l00016"></a>00016 {
+<a name="l00017"></a>00017     <span class="keyword">class </span><a class="code" href="class_ui_1_1_main_window.html">MainWindow</a>;
+<a name="l00018"></a>00018 }
+<a name="l00019"></a>00019 
+<a name="l00020"></a><a class="code" href="class_main_window.html">00020</a> <span class="keyword">class </span><a class="code" href="class_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow
+<a name="l00021"></a>00021 {
+<a name="l00022"></a>00022     Q_OBJECT
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="keyword">public</span>:
+<a name="l00025"></a>00025     <a class="code" href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow</a>(QWidget *parent = 0);
+<a name="l00026"></a>00026     <a class="code" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();
+<a name="l00027"></a>00027     <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#aaeaabe6c0ce404c8a3ef79045a59417e">MainWindow::keyPressEvent</a>(QKeyEvent *key);
+<a name="l00028"></a>00028     <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#aa0145f20e4b068f4674ab778b85857d0">MainWindow::keyReleaseEvent</a>(QKeyEvent *key);
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="keyword">public</span> slots:
+<a name="l00031"></a>00031     <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a57a17b24a0c1a25ea3f2575febfa2daa">closeGame</a>();
+<a name="l00032"></a>00032     <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#af32531cf9be0011b3b3aa9cb1c159633">loadGame</a>();
+<a name="l00033"></a>00033     <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a400071005bde6fee0623aafdb071ba89">playGame</a>();
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="keyword">private</span>:
+<a name="l00036"></a><a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">00036</a>     <a class="code" href="class_ui_1_1_main_window.html">Ui::MainWindow</a> *<a class="code" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a>;
+<a name="l00037"></a><a class="code" href="class_main_window.html#aa0f07b3ef54f209493cb70d122ddc713">00037</a>     <a class="code" href="class_player_ship.html">PlayerShip</a> *<a class="code" href="class_main_window.html#aa0f07b3ef54f209493cb70d122ddc713">myShip</a>;
+<a name="l00038"></a><a class="code" href="class_main_window.html#ae6b3a1dcd021cb0a975feb854409b958">00038</a>     QGraphicsScene *<a class="code" href="class_main_window.html#ae6b3a1dcd021cb0a975feb854409b958">gameScene</a>;
+<a name="l00039"></a><a class="code" href="class_main_window.html#a4de8f836bbe3d40d65df956db304898c">00039</a>     <span class="keywordtype">bool</span> <a class="code" href="class_main_window.html#a4de8f836bbe3d40d65df956db304898c">gameStarted</a>;
+<a name="l00040"></a><a class="code" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a5fdf266c742f77fa9c95fa21382de767">00040</a>     <span class="keyword">enum</span> <a class="code" href="class_main_window.html#a697bd350550b15fa593b0855e779c936">Action</a> { <a class="code" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a4a14fd7e3e28ce0c69dcf3cd11225024">Left</a>, <a class="code" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a388cf0f7e03c04e6e7f6070e73eba34d">Right</a>, <a class="code" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a5fdf266c742f77fa9c95fa21382de767">Up</a>, <a class="code" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a533eca42b1bda83b47239fdad7e676eb">Down</a>, <a class="code" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a3f64c7c78089080a1c41a5e9353c2a9e">ShootGun</a>, <a class="code" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a225596ee5593b510b8f524939556c1b7">ShootSBomb</a>, <a class="code" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a5615869a301d36f62a259732092bd15e">ShootBBomb</a>, <a class="code" href="class_main_window.html#a697bd350550b15fa593b0855e779c936abb89b2fe64fa57b2653a60f0ad09506c">Pause</a>};
+<a name="l00041"></a><a class="code" href="class_main_window.html#a3c4561cf4e4d8245a1d81d0dd338931b">00041</a>     QMap&lt;int,Action&gt; <a class="code" href="class_main_window.html#a3c4561cf4e4d8245a1d81d0dd338931b">actions</a>;
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 };
+<a name="l00044"></a>00044 <span class="preprocessor">#endif // MAINWINDOW_H</span>
 </pre></div></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -123,7 +101,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Oct 8 13:08:14 2009 for SuperShooters by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Sun Oct 11 20:09:10 2009 for SuperShooters by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

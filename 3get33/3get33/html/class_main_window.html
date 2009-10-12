@@ -57,9 +57,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2>Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow</a> (QWidget *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aaeaabe6c0ce404c8a3ef79045a59417e">keyPressEvent</a> (QKeyEvent *key)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa0145f20e4b068f4674ab778b85857d0">keyReleaseEvent</a> (QKeyEvent *key)</td></tr>
+<tr><td colspan="2"><h2>Private Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a697bd350550b15fa593b0855e779c936">Action</a> { <br/>
+&nbsp;&nbsp;<a class="el" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a4a14fd7e3e28ce0c69dcf3cd11225024">Left</a>, 
+<a class="el" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a388cf0f7e03c04e6e7f6070e73eba34d">Right</a>, 
+<a class="el" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a5fdf266c742f77fa9c95fa21382de767">Up</a>, 
+<a class="el" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a533eca42b1bda83b47239fdad7e676eb">Down</a>, 
+<br/>
+&nbsp;&nbsp;<a class="el" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a3f64c7c78089080a1c41a5e9353c2a9e">ShootGun</a>, 
+<a class="el" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a225596ee5593b510b8f524939556c1b7">ShootSBomb</a>, 
+<a class="el" href="class_main_window.html#a697bd350550b15fa593b0855e779c936a5615869a301d36f62a259732092bd15e">ShootBBomb</a>, 
+<a class="el" href="class_main_window.html#a697bd350550b15fa593b0855e779c936abb89b2fe64fa57b2653a60f0ad09506c">Pause</a>
+<br/>
+ }</td></tr>
 <tr><td colspan="2"><h2>Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ui_1_1_main_window.html">Ui::MainWindow</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a35466a70ed47252a0191168126a352a5">ui</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_player_ship.html">PlayerShip</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa0f07b3ef54f209493cb70d122ddc713">myShip</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QGraphicsScene *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae6b3a1dcd021cb0a975feb854409b958">gameScene</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a4de8f836bbe3d40d65df956db304898c">gameStarted</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QMap&lt; int, <a class="el" href="class_main_window.html#a697bd350550b15fa593b0855e779c936">Action</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a3c4561cf4e4d8245a1d81d0dd338931b">actions</a></td></tr>
 </table>
+<hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a697bd350550b15fa593b0855e779c936"></a><!-- doxytag: member="MainWindow::Action" ref="a697bd350550b15fa593b0855e779c936" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_main_window.html#a697bd350550b15fa593b0855e779c936">MainWindow::Action</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a697bd350550b15fa593b0855e779c936a4a14fd7e3e28ce0c69dcf3cd11225024"></a><!-- doxytag: member="Left" ref="a697bd350550b15fa593b0855e779c936a4a14fd7e3e28ce0c69dcf3cd11225024" args="" -->Left</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a697bd350550b15fa593b0855e779c936a388cf0f7e03c04e6e7f6070e73eba34d"></a><!-- doxytag: member="Right" ref="a697bd350550b15fa593b0855e779c936a388cf0f7e03c04e6e7f6070e73eba34d" args="" -->Right</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a697bd350550b15fa593b0855e779c936a5fdf266c742f77fa9c95fa21382de767"></a><!-- doxytag: member="Up" ref="a697bd350550b15fa593b0855e779c936a5fdf266c742f77fa9c95fa21382de767" args="" -->Up</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a697bd350550b15fa593b0855e779c936a533eca42b1bda83b47239fdad7e676eb"></a><!-- doxytag: member="Down" ref="a697bd350550b15fa593b0855e779c936a533eca42b1bda83b47239fdad7e676eb" args="" -->Down</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a697bd350550b15fa593b0855e779c936a3f64c7c78089080a1c41a5e9353c2a9e"></a><!-- doxytag: member="ShootGun" ref="a697bd350550b15fa593b0855e779c936a3f64c7c78089080a1c41a5e9353c2a9e" args="" -->ShootGun</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a697bd350550b15fa593b0855e779c936a225596ee5593b510b8f524939556c1b7"></a><!-- doxytag: member="ShootSBomb" ref="a697bd350550b15fa593b0855e779c936a225596ee5593b510b8f524939556c1b7" args="" -->ShootSBomb</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a697bd350550b15fa593b0855e779c936a5615869a301d36f62a259732092bd15e"></a><!-- doxytag: member="ShootBBomb" ref="a697bd350550b15fa593b0855e779c936a5615869a301d36f62a259732092bd15e" args="" -->ShootBBomb</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a697bd350550b15fa593b0855e779c936abb89b2fe64fa57b2653a60f0ad09506c"></a><!-- doxytag: member="Pause" ref="a697bd350550b15fa593b0855e779c936abb89b2fe64fa57b2653a60f0ad09506c" args="" -->Pause</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8b244be8b7b7db1b08de2a2acb9409db"></a><!-- doxytag: member="MainWindow::MainWindow" ref="a8b244be8b7b7db1b08de2a2acb9409db" args="(QWidget *parent=0)" -->
 <div class="memitem">
@@ -76,7 +129,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Main Window Class. This class makes the main window of the game </p>
 
 </div>
 </div>
@@ -94,6 +146,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
+<p>This is the destructor for <a class="el" href="class_main_window.html">MainWindow</a> Class.</p>
+<p>Where you can put more detailed information for the program if you wanted to put it here. </p>
 
 </div>
 </div>
@@ -112,7 +166,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Called from the "Quit" button to close the game. </p>
+
+</div>
+</div>
+<a class="anchor" id="aaeaabe6c0ce404c8a3ef79045a59417e"></a><!-- doxytag: member="MainWindow::keyPressEvent" ref="aaeaabe6c0ce404c8a3ef79045a59417e" args="(QKeyEvent *key)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&nbsp;</td>
+          <td class="paramname"> <em>key</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa0145f20e4b068f4674ab778b85857d0"></a><!-- doxytag: member="MainWindow::keyReleaseEvent" ref="aa0145f20e4b068f4674ab778b85857d0" args="(QKeyEvent *key)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::keyReleaseEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *&nbsp;</td>
+          <td class="paramname"> <em>key</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -151,6 +240,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a3c4561cf4e4d8245a1d81d0dd338931b"></a><!-- doxytag: member="MainWindow::actions" ref="a3c4561cf4e4d8245a1d81d0dd338931b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;int,<a class="el" href="class_main_window.html#a697bd350550b15fa593b0855e779c936">Action</a>&gt; <a class="el" href="class_main_window.html#a3c4561cf4e4d8245a1d81d0dd338931b">MainWindow::actions</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae6b3a1dcd021cb0a975feb854409b958"></a><!-- doxytag: member="MainWindow::gameScene" ref="ae6b3a1dcd021cb0a975feb854409b958" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsScene* <a class="el" href="class_main_window.html#ae6b3a1dcd021cb0a975feb854409b958">MainWindow::gameScene</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4de8f836bbe3d40d65df956db304898c"></a><!-- doxytag: member="MainWindow::gameStarted" ref="a4de8f836bbe3d40d65df956db304898c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_main_window.html#a4de8f836bbe3d40d65df956db304898c">MainWindow::gameStarted</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa0f07b3ef54f209493cb70d122ddc713"></a><!-- doxytag: member="MainWindow::myShip" ref="aa0f07b3ef54f209493cb70d122ddc713" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_player_ship.html">PlayerShip</a>* <a class="el" href="class_main_window.html#aa0f07b3ef54f209493cb70d122ddc713">MainWindow::myShip</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a35466a70ed47252a0191168126a352a5"></a><!-- doxytag: member="MainWindow::ui" ref="a35466a70ed47252a0191168126a352a5" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +315,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -183,7 +324,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Oct 8 13:08:14 2009 for SuperShooters by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Sun Oct 11 20:09:10 2009 for SuperShooters by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>
