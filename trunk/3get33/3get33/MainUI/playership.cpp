@@ -137,3 +137,13 @@ void PlayerShip::setLives( int theLives )
     PlayerShip::shipLives = theLives;
 }
 
+int PlayerShip::getShield()
+{
+    return shipShield;
+}
+
+void PlayerShip::setShield(int theShield)
+{
+    PlayerShip::shipShield = theShield;
+}
+
