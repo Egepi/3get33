@@ -32,31 +32,35 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->loadButton->setIcon(QIcon(":/images/loadButton.jpg"));
     ui->loadButton->setFlat(true);
 
-    //BasicShip myShip(100,100,3, QImage(":/images/GoodGuy.jpg"));
-
-    actions.insert( Qt::Key_A, Left );
-    actions.insert( Qt::Key_D, Right );
-    actions.insert( Qt::Key_W, Up );
-    actions.insert( Qt::Key_S, Down );
-    actions.insert( Qt::Key_Space, ShootGun );
-    actions.insert( Qt::Key_V, ShootSBomb );
-    actions.insert( Qt::Key_B, ShootBBomb );
-    actions.insert( Qt::Key_Escape, Pause );
-
 }
 
+/*! This is the destructor for MainWindow Class.
+  */
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-/**************************************************
- * This SLOT is called when the quitButton is clicked
+/**************************************************/
+/*! This slot is called when the 'Quit' button is
+  * pressed in the Main Window.
  */
 void MainWindow::closeGame()
 {
+    //Closes the program.
     this->close();
 }
+
+/**************************************************/
+/*! This slot is called when the 'Load Game' button is
+  * clicked.
+  *
+  * The generic OS file load window is opened and the
+  * current directory from which the game is running
+  * is the default folder it opens up to.\n
+  * The user loads a level file and the game will then
+  * run with the level specifications.
+  */
 void MainWindow::loadGame()
 
 {
@@ -72,10 +76,31 @@ void MainWindow::loadGame()
 
 }
 
+/**************************************************/
+/*! Loads and iniates the pre-loaded game.
+  *
+  * A new PlayerShip is created and added to the scene.
+  * The method then proceeds to up date the armor,
+  * shield, and lives displays. \n
+  * The pre-loaded game then is iniated.
+  */
 void MainWindow::playGame()
 {
+    //Maps the keys to play the game
+    actions.insert( Qt::Key_A, Left );
+    actions.insert( Qt::Key_D, Right );
+    actions.insert( Qt::Key_W, Up );
+    actions.insert( Qt::Key_S, Down );
+    actions.insert( Qt::Key_Space, ShootGun );
+    actions.insert( Qt::Key_V, ShootSBomb );
+    actions.insert( Qt::Key_B, ShootBBomb );
+    actions.insert( Qt::Key_Escape, Pause );
+
+    //The player controled PlayerShip is created.
     myShip = new PlayerShip();
-    gameScene->addItem(myShip);
+    gameScene->addItem(myShip); //Adds PlayerShip to scene
+
+    //Updates the armor, shield, and lives displays.
     ui->armorDisplay->display(myShip->getArmor());
     ui->sheildDisplay->display(myShip->getShield());
     ui->livesDisplay->display(myShip->getLives());
@@ -110,8 +135,7 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
         case Pause:
         break;
         default:
-        cout << "key pressed " << endl << flush;
-        myShip->advance();
+        break;
     }
 }
 
