@@ -11,15 +11,15 @@ using namespace std;
 class BasicShip : public QGraphicsItem
 {
     public:
-    BasicShip(int theArmor, qreal theX, qreal theY);
+    BasicShip(int theArmor, int theLives);
     BasicShip();
     QRectF boundingRect() const;
     QPainterPath shape() const;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                 QWidget *widget);
-
     int getArmor();
-
+    void BasicShip::setLives( int theLives );
+    int BasicShip::getLives();
     void setArmor(int theArmor);
     void setImage(QImage theImage);
     void move(qreal xMove, qreal yMove);
@@ -27,11 +27,11 @@ class BasicShip : public QGraphicsItem
 
     private:
         int shipArmor;
-
-
+        int shipLives;
         int xLoc;
         int yLoc;
         QImage shipImage;
 };
 
 #endif // BASICSHIP_H
+
