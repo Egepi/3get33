@@ -2,11 +2,8 @@
 #define BASICSHIP_H\
 
 #include <QGraphicsItem>
-#include <iostream>
 #include <QPixmap>
 #include <QPainter>
-
-using namespace std;
 
 class BasicShip : public QGraphicsItem
 {
@@ -26,12 +23,18 @@ class BasicShip : public QGraphicsItem
 
 
     private:
+        /*! The amount of armor. */
         int shipArmor;
+        /*! The amount of lives. */
         int shipLives;
+        /*! The current location along the x-axis */
         int xLoc;
+        /*! The current location along the y-axis */
         int yLoc;
+        /*! The imgae drawn for this ship. */
         QImage shipImage;
 };
 
 #endif // BASICSHIP_H
+
 
