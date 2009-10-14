@@ -130,3 +130,4 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     painter->drawImage(0,0, shipImage);
 }
 
+
