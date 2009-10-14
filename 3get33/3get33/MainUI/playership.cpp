@@ -1,14 +1,13 @@
 #include "playership.h"
+#include "BasicShip.h"
 #include <QGraphicsItem>
 #include <QPixmap>
 #include <QKeyEvent>
 #include <QPainter>
-#include <iostream>
-#include "BasicShip.h"
 #include <QPushButton>
 
-/*!
- *
+/**********************************************************************/
+/*! Constructor for PlayerShip. Sets default characteristics.
  */
 PlayerShip::PlayerShip()
 {
@@ -23,37 +22,40 @@ PlayerShip::PlayerShip()
     this->setImage(QImage(":/images/GoodGuy.png"));
 }
 
-/*!
- *
+/**********************************************************************/
+/*! Sets flag to true if user is pressing 'a' and false if 'a' is released.
  */
 void PlayerShip::setLFlag( bool keyPress )
 {
     lFlag = keyPress;
 }
-/*!
- *
+
+/**********************************************************************/
+/*! Sets flag to true if user is pressing 'd' and false if 'd' is released.
  */
 void PlayerShip::setRFlag( bool keyPress )
 {
     rFlag = keyPress;
 }
-/*!
- *
+
+/**********************************************************************/
+/*! Sets flag to true if user is pressing 's' and false if 's' is released.
  */
 void PlayerShip::setDFlag( bool keyPress )
 {
     dFlag = keyPress;
 }
-/*!
- *
+
+/**********************************************************************/
+/*! Sets flag to true if user is pressing 'w' and false if 'w' is released.
  */
 void PlayerShip::setUFlag( bool keyPress )
 {
     uFlag = keyPress;
 }
 
-/*!
- *
+/**********************************************************************/
+/*! Decides which direction to move the ship based on the 4 directinoal flags.
  */
 void PlayerShip::advance()
 {
@@ -89,67 +91,76 @@ void PlayerShip::advance()
         advanceRightUp();
     }
 }
-/*!
+
+/**********************************************************************/
+/*! Moves the PlayerShip Left 5 pixels.
  *
  */
 void PlayerShip::advanceLeft()
 {
     this->move(-5,0);
 }
-/*!
- *
+
+/**********************************************************************/
+/*! Moves the Player Ship Left and Down diagonally equal to 5 pixels each direction.
  */
 void PlayerShip::advanceLeftDown()
 {
     // half of the hypotenuse
     this->move(-3.53,3.53);
 }
-/*!
- *
+
+/**********************************************************************/
+/*! Moves the PlayerShip Left and Up diagonally equal to 5 pixels each direction.
  */
 void PlayerShip::advanceLeftUp()
 {
     // half of the hypotenuse
     this->move(-3.53,-3.53);
 }
-/*!
- *
+
+/**********************************************************************/
+/*! Moves the PlayerShip right 5 pixels.
  */
 void PlayerShip::advanceRight()
 {
     this->move(5,0);
 }
-/*!
- *
+
+/**********************************************************************/
+/*! Moves the PlayerShip Right and Down diagonally equal to 5 pixels each direction.
  */
 void PlayerShip::advanceRightDown()
 {
     this->move(3.53,3.53);
 }
-/*!
- *
+
+/**********************************************************************/
+/*! Moves the PlayerShip Right and Up diagonally equal to 5 pixels each direction.
  */
 void PlayerShip::advanceRightUp()
 {
     this->move(3.53,-3.53);
 }
-/*!
- *
+
+/**********************************************************************/
+/*! Moves the PlayerShip up 5 pixels.
  */
 void PlayerShip::advanceUp()
 {
     this->move(0,-5);
 }
-/*!
- *
+
+/**********************************************************************/
+/*! Moves the PlayerShip down 5 pixels.
  */
 void PlayerShip::advanceDown()
 {
        this->move(0,5);
 }
 
-/*!
- *
+/**********************************************************************/
+/*! Currently under construction.
  */
 void PlayerShip::shootGun()
 {
@@ -164,48 +175,33 @@ void PlayerShip::shootGun()
     }
 }
 
-/*!
- *
+/**********************************************************************/
+/*! Currently under construction.
  */
 void PlayerShip::shootSBomb()
 {
 }
 
-/*!
- *
+/**********************************************************************/
+/*! Currently under construction.
  */
 void PlayerShip::shootBBomb()
 {
 }
 
-/*!
- *
- */
-int PlayerShip::getLives()
-{
-    return shipLives;
-}
-
-/*!
- *
- */
-void PlayerShip::setLives( int theLives )
-{
-    PlayerShip::shipLives = theLives;
-}
-
-/*!
- *
+/**********************************************************************/
+/*! Returns the amoung of shield the PlayerShip has.
  */
 int PlayerShip::getShield()
 {
     return shipShield;
 }
 
-/*!
- *
+/**********************************************************************/
+/*! Sets the amount of shield the PlayerShip has equal to theShield.
  */
 void PlayerShip::setShield(int theShield)
 {
     PlayerShip::shipShield = theShield;
 }
+
