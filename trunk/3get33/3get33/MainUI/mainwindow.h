@@ -1,15 +1,15 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QtGui/QMainWindow>
 #include "ui_mainwindow.h"
 #include "BasicShip.h"
+#include "PlayerShip.h"
+#include <QtGui/QMainWindow>
 #include <QPushButton>
 #include <QObject>
 #include <QPixmap>
 #include <QGraphicsScene>
 #include <QKeyEvent>
-#include "PlayerShip.h"
 
 
 namespace Ui
@@ -42,3 +42,4 @@ private:
 
 };
 #endif // MAINWINDOW_H
+

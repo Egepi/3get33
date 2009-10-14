@@ -1,25 +1,30 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "BasicShip.h"
+#include "PlayerShip.h"
 #include <QPushButton>
 #include <QObject>
 #include <QPixmap>
 #include <QGraphicsScene>
-#include "PlayerShip.h"
 #include <QDialog>
 #include <QFileDialog>
 
+/**********************************************************************/
+/*! Constructor for a new MainWindow in which the whole program/game is run.
+ */
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+    ui->setupUi(this);  //Sets up the user interface based of mainwindow.ui
 
-    gameScene = new QGraphicsScene;
+    gameScene = new QGraphicsScene; //Scene to display the whole game
     int width = ui->Display->geometry().width();
     int height = ui->Display->geometry().height();
     gameScene->setSceneRect(0, 0, width,height);
+    //Sets the default background for the gameScene
     gameScene->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
     ui->Display->setScene(gameScene);
 
+    //Creates and displays the "Play", "Load Game", and "Quit" buttons
     ui->playButton->setIconSize(QSize(140,50));
     ui->playButton->setIcon(QIcon(":/images/playButton.jpg"));
     ui->playButton->setFlat(true);
@@ -34,16 +39,18 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 }
 
-/*! This is the destructor for MainWindow Class.
-  */
+/**********************************************************************/
+/*! Destructor for MainWindow
+ */
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-/**************************************************/
-/*! This slot is called when the 'Quit' button is
-  * pressed in the Main Window.
+/**********************************************************************/
+/*! Closes the program.
+ *
+ * Slot that is called when the 'Quit' button is clicked in the MainWindow.
  */
 void MainWindow::closeGame()
 {
@@ -51,15 +58,15 @@ void MainWindow::closeGame()
     this->close();
 }
 
-/**************************************************/
-/*! This slot is called when the 'Load Game' button is
-  * clicked.
+/**********************************************************************/
+/*! Prompts user to load a level file using OS generic load file ui.
   *
-  * The generic OS file load window is opened and the
-  * current directory from which the game is running
-  * is the default folder it opens up to.\n
-  * The user loads a level file and the game will then
-  * run with the level specifications.
+  * Slot is called when the 'Load Game' button is clicked from MainWindow.
+  *
+  * The generic OS file load window is opened and the current directory
+  * from which the game is running is the default folder it opens up to.\n
+  * The user loads a level file and the game will then run with the level
+  * specifications.
   */
 void MainWindow::loadGame()
 
@@ -72,11 +79,12 @@ void MainWindow::loadGame()
     // get the file path
     newFile = fileDlg.selectedFiles();
     QString theFile = newFile.first();
-    ui->armorLabel->setText(theFile);
 
+    //Disabled for now, because this was for testing only
+    //ui->armorLabel->setText(theFile);
 }
 
-/**************************************************/
+/**********************************************************************/
 /*! Loads and iniates the pre-loaded game.
   *
   * A new PlayerShip is created and added to the scene.
@@ -106,39 +114,51 @@ void MainWindow::playGame()
     ui->livesDisplay->display(myShip->getLives());
 }
 
+/**********************************************************************/
+/*! When ever a key is pressed this method is called to decide what action to take.
+ *
+ *  This method is used for key press events for moving the ship, shooting bombs,
+ *  shooting guns, and pausing the game. All other keys just do nothing.
+ */
 void MainWindow::keyPressEvent(QKeyEvent *key) {
 
     Action a = actions[ key->key() ];
     switch(a) {
-        case Left:
+        case Left:  //Move ship Left
         myShip->setLFlag( true );
         myShip->advance();
         break;
-        case Right:
+        case Right: //Move ship Right
         myShip->setRFlag( true );
         myShip->advance();
         break;
-        case Up:
+        case Up:    //Move ship Up
         myShip->setUFlag( true );
         myShip->advance();
         break;
-        case Down:
+        case Down:  //Move ship Down
         myShip->setDFlag( true );
         myShip->advance();
         break;
-        case ShootBBomb:
+        case ShootBBomb:    //Shoot Big Bomb
         break;
-        case ShootSBomb:
+        case ShootSBomb:    //Shoot Small Bomb
         break;
-        case ShootGun:
+        case ShootGun:      //Shoot normal gun
         break;
-        case Pause:
+        case Pause:         //Pause the game
         break;
         default:
         break;
     }
 }
 
+/**********************************************************************/
+/*! When ever a key has been released this method decides to stop the current action.
+ *
+ *  This method just ends all of the actions that are initiated in
+ *  MainWindow.keyPressEvent().
+ */
 void MainWindow::keyReleaseEvent(QKeyEvent *key) {
 
     Action a = actions[ key->key() ];
@@ -168,7 +188,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *key) {
         case Pause:
         break;
         default:
-        cout << "key pressed " << endl << flush;
-        myShip->advance();
+        break;
     }
 }
+
