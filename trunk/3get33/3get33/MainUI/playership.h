@@ -28,22 +28,27 @@ public:
     void PlayerShip::shootSBomb();
     void PlayerShip::shootBBomb();
     void PlayerShip::setShield(int theShield);
-    void PlayerShip::setLives( int theLives );
-    int PlayerShip::getShield();
-    int PlayerShip::getLives();
 
 
 private:
-    int shipLives;
+    /*! The amount of shield the ship has. */
     int shipShield;
+    /*! Number of small bombs the ship has. */
     int sBombs;
+    /*! Number of big bombs the ship has. */
     int bBombs;
+    /*! The type of gun the ship has as an integer. */
     int gunType;
+    /*! Flag for ship moving left. */
     bool lFlag;
+    /*! Flag for ship moving right. */
     bool rFlag;
+    /*! Flag for ship moving down. */
     bool dFlag;
+    /*! Flag for ship moving up. */
     bool uFlag;
 
 };
 
 #endif // PLAYERSHIP_H
+
