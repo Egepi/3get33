@@ -8,6 +8,11 @@
 
 /**********************************************************************/
 /*! Constructor for PlayerShip. Sets default characteristics.
+ *
+ *
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 PlayerShip::PlayerShip()
 {
@@ -24,6 +29,8 @@ PlayerShip::PlayerShip()
 
 /**********************************************************************/
 /*! Sets flag to true if user is pressing 'a' and false if 'a' is released.
+ *
+ *  Author: Jennifer Kinahan
  */
 void PlayerShip::setLFlag( bool keyPress )
 {
@@ -32,6 +39,8 @@ void PlayerShip::setLFlag( bool keyPress )
 
 /**********************************************************************/
 /*! Sets flag to true if user is pressing 'd' and false if 'd' is released.
+ *
+ *  Author: Jennifer Kinahan
  */
 void PlayerShip::setRFlag( bool keyPress )
 {
@@ -40,6 +49,8 @@ void PlayerShip::setRFlag( bool keyPress )
 
 /**********************************************************************/
 /*! Sets flag to true if user is pressing 's' and false if 's' is released.
+ *
+ *  Author: Jennifer Kinahan
  */
 void PlayerShip::setDFlag( bool keyPress )
 {
@@ -48,6 +59,8 @@ void PlayerShip::setDFlag( bool keyPress )
 
 /**********************************************************************/
 /*! Sets flag to true if user is pressing 'w' and false if 'w' is released.
+ *
+ *  Author: Jennifer Kinahan
  */
 void PlayerShip::setUFlag( bool keyPress )
 {
@@ -56,6 +69,9 @@ void PlayerShip::setUFlag( bool keyPress )
 
 /**********************************************************************/
 /*! Decides which direction to move the ship based on the 4 directinoal flags.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void PlayerShip::advance()
 {
@@ -95,6 +111,8 @@ void PlayerShip::advance()
 /**********************************************************************/
 /*! Moves the PlayerShip Left 5 pixels.
  *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void PlayerShip::advanceLeft()
 {
@@ -103,6 +121,9 @@ void PlayerShip::advanceLeft()
 
 /**********************************************************************/
 /*! Moves the Player Ship Left and Down diagonally equal to 5 pixels each direction.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void PlayerShip::advanceLeftDown()
 {
@@ -112,6 +133,9 @@ void PlayerShip::advanceLeftDown()
 
 /**********************************************************************/
 /*! Moves the PlayerShip Left and Up diagonally equal to 5 pixels each direction.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void PlayerShip::advanceLeftUp()
 {
@@ -121,6 +145,9 @@ void PlayerShip::advanceLeftUp()
 
 /**********************************************************************/
 /*! Moves the PlayerShip right 5 pixels.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void PlayerShip::advanceRight()
 {
@@ -129,6 +156,9 @@ void PlayerShip::advanceRight()
 
 /**********************************************************************/
 /*! Moves the PlayerShip Right and Down diagonally equal to 5 pixels each direction.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void PlayerShip::advanceRightDown()
 {
@@ -137,6 +167,9 @@ void PlayerShip::advanceRightDown()
 
 /**********************************************************************/
 /*! Moves the PlayerShip Right and Up diagonally equal to 5 pixels each direction.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void PlayerShip::advanceRightUp()
 {
@@ -145,6 +178,9 @@ void PlayerShip::advanceRightUp()
 
 /**********************************************************************/
 /*! Moves the PlayerShip up 5 pixels.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void PlayerShip::advanceUp()
 {
@@ -153,6 +189,9 @@ void PlayerShip::advanceUp()
 
 /**********************************************************************/
 /*! Moves the PlayerShip down 5 pixels.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void PlayerShip::advanceDown()
 {
@@ -161,6 +200,9 @@ void PlayerShip::advanceDown()
 
 /**********************************************************************/
 /*! Currently under construction.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void PlayerShip::shootGun()
 {
@@ -177,6 +219,9 @@ void PlayerShip::shootGun()
 
 /**********************************************************************/
 /*! Currently under construction.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void PlayerShip::shootSBomb()
 {
@@ -184,6 +229,9 @@ void PlayerShip::shootSBomb()
 
 /**********************************************************************/
 /*! Currently under construction.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void PlayerShip::shootBBomb()
 {
@@ -191,6 +239,9 @@ void PlayerShip::shootBBomb()
 
 /**********************************************************************/
 /*! Returns the amoung of shield the PlayerShip has.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 int PlayerShip::getShield()
 {
@@ -199,6 +250,9 @@ int PlayerShip::getShield()
 
 /**********************************************************************/
 /*! Sets the amount of shield the PlayerShip has equal to theShield.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void PlayerShip::setShield(int theShield)
 {
