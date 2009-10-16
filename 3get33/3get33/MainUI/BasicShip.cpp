@@ -10,6 +10,8 @@
  *  This constructor only accepts an integer to set the shipArmor and
  *  shipLives because they are the only universal properties among the
  *  different types of ship in the game.
+ *
+ * Author: Todd Silvia
  */
 BasicShip::BasicShip(int theArmor, int theLives)
 {
@@ -26,6 +28,8 @@ BasicShip::BasicShip()
 
 /**********************************************************************/
 /*! Returns the amount of armor the given ship has, as an int
+ *
+ * Author: Todd Silvia
  */
 int BasicShip::getArmor()
 {
@@ -34,6 +38,8 @@ int BasicShip::getArmor()
 
 /**********************************************************************/
 /*! Returns the number of lives of given BasicShip object.
+ *
+ * Author: Todd Silvia
  */
 int BasicShip::getLives()
 {
@@ -42,6 +48,8 @@ int BasicShip::getLives()
 }
 /**********************************************************************/
 /*! Sets the number of lives of the given ship equal to theLives.
+ *
+ * Author: Todd Silvia
  */
 void BasicShip::setLives( int theLives )
 {
@@ -50,7 +58,9 @@ void BasicShip::setLives( int theLives )
 
 /**********************************************************************/
 /*! Sets the given BasicShip 's shipArmor equal to theArmor.
-  */
+ *
+ * Author: Todd Silvia
+ */
 void BasicShip::setArmor(int theArmor)
 {
     BasicShip::shipArmor = theArmor;
@@ -62,6 +72,8 @@ void BasicShip::setArmor(int theArmor)
  *  Note: The image generally has to be a of type
  *  .png inorder for the picture to have a tansparent
  *  background.
+ *
+ *  Author: Karan Chakrapani
   */
 void BasicShip::setImage(QImage theImage)
 {
@@ -74,6 +86,9 @@ void BasicShip::setImage(QImage theImage)
  *  This is the generic move method for all BasicShip.\n
  *  This method also takes into account the bounds of
  *  gameScene.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void BasicShip::move(qreal xMove, qreal yMove)
 {
@@ -99,6 +114,9 @@ void BasicShip::move(qreal xMove, qreal yMove)
 
 /**********************************************************************/
 /*! Sets the bounding rectangle of the BasicShip which is used in collision detection.
+ *
+ *  Author: Karan Chakrapani,
+ *          Todd Silvia
  */
 QRectF BasicShip::boundingRect() const
 {
@@ -110,6 +128,9 @@ QRectF BasicShip::boundingRect() const
  *
  * This is a virtual function nessecary to be
  * implemented for all QGraphicsItems
+ *
+ *  Author: Karan Chakrapani,
+ *          Todd Silvia
  */
 QPainterPath BasicShip::shape() const
 {
@@ -123,6 +144,9 @@ QPainterPath BasicShip::shape() const
  *
  *  Pass the object the location to draw and the image
  *  to draw.
+ *
+ *  Author: Karan Chakrapani,
+ *          Todd Silvia
  */
 void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {

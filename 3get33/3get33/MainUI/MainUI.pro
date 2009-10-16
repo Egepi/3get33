@@ -6,9 +6,13 @@ TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
     BasicShip.cpp \
-    playership.cpp
+    playership.cpp \
+    Bullet.cpp \
+    Bomb.cpp
 HEADERS += mainwindow.h \
     BasicShip.h \
-    playership.h
+    playership.h \
+    Bullet.h \
+    Bomb.h
 FORMS += mainwindow.ui
 RESOURCES += uiimages.qrc

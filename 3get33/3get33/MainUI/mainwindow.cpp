@@ -51,6 +51,8 @@ MainWindow::~MainWindow()
 /*! Closes the program.
  *
  * Slot that is called when the 'Quit' button is clicked in the MainWindow.
+ *
+ *  Author: Karan Chakrapani
  */
 void MainWindow::closeGame()
 {
@@ -67,6 +69,9 @@ void MainWindow::closeGame()
   * from which the game is running is the default folder it opens up to.\n
   * The user loads a level file and the game will then run with the level
   * specifications.
+  *
+  *  Author: Karan Chakrapani,
+  *          Todd Silvia
   */
 void MainWindow::loadGame()
 
@@ -91,6 +96,8 @@ void MainWindow::loadGame()
   * The method then proceeds to up date the armor,
   * shield, and lives displays. \n
   * The pre-loaded game then is iniated.
+  *
+  *  Author: Karan Chakrapani
   */
 void MainWindow::playGame()
 {
@@ -119,6 +126,9 @@ void MainWindow::playGame()
  *
  *  This method is used for key press events for moving the ship, shooting bombs,
  *  shooting guns, and pausing the game. All other keys just do nothing.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void MainWindow::keyPressEvent(QKeyEvent *key) {
 
@@ -158,6 +168,9 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
  *
  *  This method just ends all of the actions that are initiated in
  *  MainWindow.keyPressEvent().
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
  */
 void MainWindow::keyReleaseEvent(QKeyEvent *key) {
 
