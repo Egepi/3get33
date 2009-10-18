@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_player_ship.html#ab03e055a19df343828ed705fa05d6d5f" title="PlayerShip::advance" alt="" coords="267,192,421,221"/>
+<area shape="rect" id="node30" href="$class_player_ship.html#afa576113093b15958d5b64bea60c302a" title="PlayerShip::setDFlag" alt="" coords="265,245,423,275"/>
+<area shape="rect" id="node32" href="$class_player_ship.html#a52c30b5039d38b1d285fbc65689b377b" title="PlayerShip::setLFlag" alt="" coords="267,299,421,328"/>
+<area shape="rect" id="node34" href="$class_player_ship.html#a56bef96439b3cd3e061b391808ec2e98" title="PlayerShip::setRFlag" alt="" coords="265,352,423,381"/>
+<area shape="rect" id="node36" href="$class_player_ship.html#ac49a1a6d117dc84b84c8c6b3ad1ecd83" title="PlayerShip::setUFlag" alt="" coords="265,405,423,435"/>
+<area shape="rect" id="node5" href="$class_player_ship.html#ad694b0af407197fc41e1ba315fcda2af" title="PlayerShip::advanceDown" alt="" coords="489,5,681,35"/>
+<area shape="rect" id="node9" href="$class_player_ship.html#a2a0aac9fb8f004c27a4a1604371b47e0" title="PlayerShip::advanceLeft" alt="" coords="496,59,675,88"/>
+<area shape="rect" id="node12" href="$class_player_ship.html#a2228442633ae57de580a1c6115b90089" title="PlayerShip::advanceLeftDown" alt="" coords="477,112,693,141"/>
+<area shape="rect" id="node15" href="$class_player_ship.html#ae477d97dffc355e078e4a5af127a78ba" title="PlayerShip::advanceLeftUp" alt="" coords="488,165,683,195"/>
+<area shape="rect" id="node18" href="$class_player_ship.html#a866688ea6c48fc516f6cf6038c0cfc46" title="PlayerShip::advanceRight" alt="" coords="492,219,679,248"/>
+<area shape="rect" id="node21" href="$class_player_ship.html#a4333efbd9521a255c2a5b9ca65fab5a2" title="PlayerShip::advanceRightDown" alt="" coords="472,272,699,301"/>
+<area shape="rect" id="node24" href="$class_player_ship.html#acd8e51c0081895c5c2203ecc67bc6c94" title="PlayerShip::advanceRightUp" alt="" coords="483,325,688,355"/>
+<area shape="rect" id="node27" href="$class_player_ship.html#a7ba1816c5d45fbfadf18df2272d79063" title="PlayerShip::advanceUp" alt="" coords="500,379,671,408"/>
+<area shape="rect" id="node7" href="$class_basic_ship.html#a18da035282b9ecb5f5fdab232bf7ac27" title="BasicShip::move" alt="" coords="748,192,879,221"/>
+</map>

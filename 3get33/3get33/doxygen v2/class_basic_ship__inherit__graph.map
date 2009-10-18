@@ -1,0 +1,3 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_player_ship.html" title="{PlayerShip\n|&#45; shipShield\l&#45; sBombs\l&#45; bBombs\l&#45; gunType\l&#45; lFlag\l&#45; rFlag\l&#45; dFlag\l&#45; uFlag\l|+ PlayerShip()\l+ advance()\l+ setLFlag()\l+ setRFlag()\l+ setDFlag()\l+ setUFlag()\l+ advanceLeft()\l+ advanceLeftDown()\l+ advanceLeftUp()\l+ advanceRight()\l+ advanceRightDown()\l+ advanceRightUp()\l+ advanceUp()\l+ advanceDown()\l+ shootGun()\l+ shootSBomb()\l+ shootBBomb()\l+ setShield()\l}" alt="" coords="5,381,176,883"/>
+</map>

@@ -1,0 +1,3 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$class_ui___main_window.html" title="{Ui_MainWindow\n|+ centralWidget\l+ Display\l+ playButton\l+ quitButton\l+ loadButton\l+ scoreDisplay\l+ scoreLabel\l+ livesLabel\l+ livesDisplay\l+ armorLabel\l+ sheildLabel\l+ bombsLabel\l+ sheildDisplay\l+ armorDisplay\l+ bigBombDisplay\l+ smallBombsDisplay\l+ label\l|+ setupUi()\l+ retranslateUi()\l}" alt="" coords="5,6,168,386"/>
+</map>
