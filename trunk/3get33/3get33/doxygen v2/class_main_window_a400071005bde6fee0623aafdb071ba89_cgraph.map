@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_basic_ship.html#a54134d4fe367db9649ffb4bd6a1123b7" title="BasicShip::getArmor" alt="" coords="233,5,388,35"/>
+<area shape="rect" id="node5" href="$class_basic_ship.html#a3df2d25ee4bda266b5087ae6581f0162" title="BasicShip::getLives" alt="" coords="236,59,385,88"/>
+</map>

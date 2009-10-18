@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_basic_ship.html#ad7fbff0029da6b55b5a5f60fcad4030f" title="BasicShip::setArmor" alt="" coords="227,5,381,35"/>
+<area shape="rect" id="node5" href="$class_basic_ship.html#ad0dc07d6f5934c938efd31be0ca56a06" title="BasicShip::setImage" alt="" coords="227,59,381,88"/>
+<area shape="rect" id="node7" href="$class_basic_ship.html#a4f4ffdf5a17c9148478ada53b06d3e2e" title="BasicShip::setLives" alt="" coords="229,112,379,141"/>
+<area shape="rect" id="node9" href="$class_player_ship.html#a2d736a12bc12fa351810aea18ccd1433" title="PlayerShip::setShield" alt="" coords="224,165,384,195"/>
+</map>

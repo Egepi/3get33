@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_player_ship.html#ab03e055a19df343828ed705fa05d6d5f" title="PlayerShip::advance" alt="" coords="269,32,424,61"/>
+<area shape="rect" id="node5" href="$class_main_window.html#aaeaabe6c0ce404c8a3ef79045a59417e" title="MainWindow::keyPressEvent" alt="" coords="480,5,691,35"/>
+<area shape="rect" id="node7" href="$class_main_window.html#aa0145f20e4b068f4674ab778b85857d0" title="MainWindow::keyReleaseEvent" alt="" coords="473,59,697,88"/>
+</map>

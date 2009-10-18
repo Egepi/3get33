@@ -1,0 +1,3 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$class_basic_ship.html" title="{BasicShip\n|&#45; shipArmor\l&#45; shipLives\l&#45; xLoc\l&#45; yLoc\l&#45; shipImage\l|+ BasicShip()\l+ BasicShip()\l+ boundingRect()\l+ shape()\l+ paint()\l+ getArmor()\l+ setLives()\l+ getLives()\l+ setArmor()\l+ setImage()\l+ move()\l}" alt="" coords="24,5,157,333"/>
+</map>
