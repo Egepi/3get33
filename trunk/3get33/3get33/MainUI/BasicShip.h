@@ -7,6 +7,7 @@
 
 class BasicShip : public QGraphicsItem
 {
+    Q_OBJECT
     public:
     BasicShip(int theArmor, int theLives);
     BasicShip();

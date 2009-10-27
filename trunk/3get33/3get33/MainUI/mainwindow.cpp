@@ -37,6 +37,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->loadButton->setIcon(QIcon(":/images/loadButton.jpg"));
     ui->loadButton->setFlat(true);
 
+    //connect(ui->playButton, SIGNAL(clicked()), ui->armorDisplay, SLOT(hide()));
+
 }
 
 /**********************************************************************/
@@ -101,6 +103,7 @@ void MainWindow::loadGame()
   */
 void MainWindow::playGame()
 {
+    connect(myShip, SIGNAL(transmit()), this, SLOT(updateShield()));
     //Maps the keys to play the game
     actions.insert( Qt::Key_A, Left );
     actions.insert( Qt::Key_D, Right );

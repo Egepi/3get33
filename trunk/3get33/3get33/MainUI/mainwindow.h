@@ -31,6 +31,7 @@ public slots:
     void closeGame();
     void loadGame();
     void playGame();
+    void updateShield();
 
 private:
     Ui::MainWindow *ui;
