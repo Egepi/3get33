@@ -1,2 +1,10 @@
 #include "Level.h"
 
+Level::Level()
+{
+}
+
+Level::~Level()
+{
+    delete this;
+}
