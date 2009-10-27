@@ -292,6 +292,12 @@
       </disabled>
      </palette>
     </property>
+    <property name="font">
+     <font>
+      <family>MS Gothic</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Score</string>
     </property>
@@ -341,6 +347,12 @@
        </colorrole>
       </disabled>
      </palette>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Gothic</family>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Lives</string>
@@ -487,6 +499,12 @@
       </disabled>
      </palette>
     </property>
+    <property name="font">
+     <font>
+      <family>MS Gothic</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Armor</string>
     </property>
@@ -507,7 +525,7 @@
         <brush brushstyle="SolidPattern">
          <color alpha="255">
           <red>0</red>
-          <green>85</green>
+          <green>255</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -518,7 +536,7 @@
         <brush brushstyle="SolidPattern">
          <color alpha="255">
           <red>0</red>
-          <green>85</green>
+          <green>255</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -536,6 +554,12 @@
        </colorrole>
       </disabled>
      </palette>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Gothic</family>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Sheild</string>
@@ -587,6 +611,12 @@
       </disabled>
      </palette>
     </property>
+    <property name="font">
+     <font>
+      <family>MS Gothic</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Bombs</string>
     </property>
@@ -616,7 +646,7 @@
         <brush brushstyle="SolidPattern">
          <color alpha="255">
           <red>0</red>
-          <green>0</green>
+          <green>85</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -636,7 +666,7 @@
         <brush brushstyle="SolidPattern">
          <color alpha="255">
           <red>0</red>
-          <green>0</green>
+          <green>85</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -647,7 +677,7 @@
         <brush brushstyle="SolidPattern">
          <color alpha="255">
           <red>0</red>
-          <green>0</green>
+          <green>85</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -656,7 +686,7 @@
         <brush brushstyle="SolidPattern">
          <color alpha="255">
           <red>0</red>
-          <green>0</green>
+          <green>85</green>
           <blue>255</blue>
          </color>
         </brush>
@@ -974,8 +1004,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>35</x>
-      <y>290</y>
+      <x>30</x>
+      <y>300</y>
       <width>91</width>
       <height>20</height>
      </rect>
@@ -1017,8 +1047,14 @@
       </disabled>
      </palette>
     </property>
+    <property name="font">
+     <font>
+      <family>MS Gothic</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>Small:       Large:</string>
+     <string>Small:   Large:</string>
     </property>
    </widget>
   </widget>
