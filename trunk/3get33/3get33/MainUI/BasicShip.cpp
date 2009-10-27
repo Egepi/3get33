@@ -13,10 +13,13 @@
  *
  * Author: Todd Silvia
  */
-BasicShip::BasicShip(int theArmor, int theLives)
+BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int theY)
 {
     BasicShip::shipArmor = theArmor;
     BasicShip::shipLives = theLives;
+    BasicShip::shipImage = theImage;
+    setPos(theX, theY);
+
 }
 
 /**********************************************************************/
