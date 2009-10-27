@@ -103,7 +103,7 @@ void MainWindow::loadGame()
   */
 void MainWindow::playGame()
 {
-    gameScene->setBackgroundBrush(QBrush(QImage(":/images/Background.jpg")));
+    gameScene->setBackgroundBrush(QBrush(QImage(":/images/background640480.png")));
     ui->loadButton->hide();
     ui->playButton->hide();
     ui->quitButton->hide();
@@ -126,11 +126,18 @@ void MainWindow::playGame()
     ui->sheildDisplay->display(myShip->getShield());
     ui->livesDisplay->display(myShip->getLives());
 
-    //QImage a = new QImage(":/images/BadGuy4.png");
-    Enemy1 = new BasicShip(0, 0, (QImage(":/images/BadGuy4.png")), 40, 40 );
-    Enemy2 = new BasicShip(0, 0, (QImage(":/images/BadGuy4.png")), 100, 100 );
+    this->gamelvl();
+
+
 }
 
+void MainWindow::gamelvl()
+{
+    Enemy1 = new BasicShip(0, 0, (QImage(":/images/BadGuy4.png")), 40, 40 );
+    Enemy2 = new BasicShip(0, 0, (QImage(":/images/BadGuy4.png")), 200, 100 );
+    gameScene->addItem(Enemy1);
+    gameScene->addItem(Enemy2);
+}
 /**********************************************************************/
 /*! When ever a key is pressed this method is called to decide what action to take.
  *

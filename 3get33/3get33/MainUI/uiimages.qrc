@@ -14,5 +14,6 @@
         <file>GreenBullet.png</file>
         <file>MagentaBullet.png</file>
         <file>WhiteBullet.png</file>
+        <file>background640480.png</file>
     </qresource>
 </RCC>
