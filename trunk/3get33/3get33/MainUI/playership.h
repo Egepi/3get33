@@ -5,12 +5,10 @@
 #include <QGraphicsItem>
 #include <QPixmap>
 #include <QPainter>
-#include <QObject>
 #include "BasicShip.h"
 
 class PlayerShip : public BasicShip
 {
-    Q_OBJECT
     public:
         PlayerShip();
         void PlayerShip::advance();
@@ -32,9 +30,6 @@ class PlayerShip : public BasicShip
         void PlayerShip::setShield(int theShield);
         int  PlayerShip::getShield();
     int PlayerShip::getShield();
-
-    signals:
-        void transmit();
 
 
     private:

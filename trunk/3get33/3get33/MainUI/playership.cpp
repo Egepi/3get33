@@ -257,6 +257,5 @@ int PlayerShip::getShield()
 void PlayerShip::setShield(int theShield)
 {
     PlayerShip::shipShield = theShield;
-    emit transmit();
 }
 
