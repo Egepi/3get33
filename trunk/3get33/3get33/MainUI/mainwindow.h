@@ -26,6 +26,7 @@ public:
     ~MainWindow();
     void MainWindow::keyPressEvent(QKeyEvent *key);
     void MainWindow::keyReleaseEvent(QKeyEvent *key);
+    void gamelvl();
 
 public slots:
     void closeGame();

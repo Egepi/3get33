@@ -28,7 +28,7 @@ class PlayerShip : public BasicShip
         void PlayerShip::shootSBomb();
         void PlayerShip::shootBBomb();
         void PlayerShip::setShield(int theShield);
-        int  PlayerShip::getShield();
+        int PlayerShip::getShield();
 
 
     private:
@@ -48,7 +48,6 @@ class PlayerShip : public BasicShip
         bool dFlag;
         /*! Flag for ship moving up. */
         bool uFlag;
-
 };
 
 #endif // PLAYERSHIP_H
