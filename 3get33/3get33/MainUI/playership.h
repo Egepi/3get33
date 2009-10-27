@@ -31,6 +31,7 @@ class PlayerShip : public BasicShip
         void PlayerShip::shootBBomb();
         void PlayerShip::setShield(int theShield);
         int  PlayerShip::getShield();
+    int PlayerShip::getShield();
 
     signals:
         void transmit();
