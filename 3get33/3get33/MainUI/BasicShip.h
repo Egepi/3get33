@@ -7,9 +7,9 @@
 
 class BasicShip : public QGraphicsItem
 {
-    Q_OBJECT
+
     public:
-    BasicShip(int theArmor, int theLives);
+    BasicShip(int theArmor, int theLives, QImage theImage, int theX, int theY);
     BasicShip();
     QRectF boundingRect() const;
     QPainterPath shape() const;
