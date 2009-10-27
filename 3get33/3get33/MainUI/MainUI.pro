@@ -8,11 +8,13 @@ SOURCES += main.cpp \
     BasicShip.cpp \
     playership.cpp \
     Bullet.cpp \
-    Bomb.cpp
+    Bomb.cpp \
+    Level.cpp
 HEADERS += mainwindow.h \
     BasicShip.h \
     playership.h \
     Bullet.h \
-    Bomb.h
+    Bomb.h \
+    Level.h
 FORMS += mainwindow.ui
 RESOURCES += uiimages.qrc
