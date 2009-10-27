@@ -103,7 +103,10 @@ void MainWindow::loadGame()
   */
 void MainWindow::playGame()
 {
-    connect(myShip, SIGNAL(transmit()), this, SLOT(updateShield()));
+    gameScene->setBackgroundBrush(QBrush(QImage(":/images/Background.jpg")));
+    ui->loadButton->hide();
+    ui->playButton->hide();
+    ui->quitButton->hide();
     //Maps the keys to play the game
     actions.insert( Qt::Key_A, Left );
     actions.insert( Qt::Key_D, Right );
@@ -122,6 +125,10 @@ void MainWindow::playGame()
     ui->armorDisplay->display(myShip->getArmor());
     ui->sheildDisplay->display(myShip->getShield());
     ui->livesDisplay->display(myShip->getLives());
+
+    //QImage a = new QImage(":/images/BadGuy4.png");
+    Enemy1 = new BasicShip(0, 0, (QImage(":/images/BadGuy4.png")), 40, 40 );
+    Enemy2 = new BasicShip(0, 0, (QImage(":/images/BadGuy4.png")), 100, 100 );
 }
 
 /**********************************************************************/
