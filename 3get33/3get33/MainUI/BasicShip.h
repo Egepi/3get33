@@ -21,6 +21,7 @@ class BasicShip : public QGraphicsItem
     void setArmor(int theArmor);
     void setImage(QImage theImage);
     void move(qreal xMove, qreal yMove);
+    void advance(int phase);
 
 
     private:
@@ -28,10 +29,6 @@ class BasicShip : public QGraphicsItem
         int shipArmor;
         /*! The amount of lives. */
         int shipLives;
-        /*! The current location along the x-axis */
-        int xLoc;
-        /*! The current location along the y-axis */
-        int yLoc;
         /*! The imgae drawn for this ship. */
         QImage shipImage;
 };

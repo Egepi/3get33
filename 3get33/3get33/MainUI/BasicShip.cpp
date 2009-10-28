@@ -157,4 +157,20 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     painter->drawImage(0,0, shipImage);
 }
 
+ void BasicShip::advance(int phase)
+ {
+     if(!phase) return;
 
+     qreal asdf = 5;
+     qreal xLoc = this->x();
+     qreal yLoc = this->y();
+
+    //Checks if the object is within the y-axis bounds of the gameScene
+    if(( this->y() + asdf >= 0 )&&( this->y() + asdf <= 400 ))
+    {// The object was within the gameScene bounds so the ship is moved
+     // along the y-axis as determined from yMove.
+        yLoc += asdf;
+    }
+    setPos(xLoc, yLoc);
+
+}
