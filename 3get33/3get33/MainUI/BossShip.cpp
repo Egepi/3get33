@@ -47,3 +47,10 @@ void BossShip::advance(int phase)
     }
 }
 
+void BossShip::bossShoot()
+{
+    Bullet *aBullet = new Bullet(this->x(),this->y(),QImage(":/images/BlueBullet.png"), true);
+    //MainWindow::gameScene->addItem(aBullet);
+
+}
+
