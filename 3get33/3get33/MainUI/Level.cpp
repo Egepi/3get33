@@ -20,7 +20,6 @@ Level::Level(QGraphicsScene *theScene, QImage *enemyType, int theWaveSize)
  */
 Level::~Level()
 {
-    //
 }
 
 /**********************************************************************/
@@ -58,10 +57,6 @@ void Level::addWave()
     QObject::connect(timer, SIGNAL(timeout()), myScene, SLOT(advance()));
     // Set the timer to trigger ever 1/3 of a second.
     timer->start(1000/33);
-
-
-
-
 }
 
 /**********************************************************************/
@@ -71,6 +66,6 @@ void Level::addWave()
  */
 void Level::startBoss()
 {
-    BasicShip *boss = new BasicShip(100,1,QImage(":/images/BadGuy1.png"),0,0);
-    myScene->addItem(boss);
+    BossShip *theBoss = new BossShip();
+    myScene->addItem(theBoss);
 }

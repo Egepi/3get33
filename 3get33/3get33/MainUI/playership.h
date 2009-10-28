@@ -11,6 +11,7 @@ class PlayerShip : public BasicShip
 {
     public:
         PlayerShip();
+        ~PlayerShip();
         void PlayerShip::advance(int phase);
         void PlayerShip::setLFlag( bool );
         void PlayerShip::setRFlag( bool );
