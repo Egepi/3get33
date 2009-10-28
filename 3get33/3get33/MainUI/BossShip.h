@@ -2,6 +2,7 @@
 #define BOSSSHIP_H
 
 #include "BasicShip.h"
+#include "Bullet.h"
 #include <QGraphicsItem>
 #include <QImage>
 
@@ -12,6 +13,9 @@ class BossShip : public BasicShip
         ~BossShip();
         void BossShip::advance(int phase);
         bool moveLeft;
+
+    public slots:
+        void bossShoot();
 };
 
 
