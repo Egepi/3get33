@@ -29,7 +29,6 @@ Level::~Level()
  */
 void Level::addWave()
 {
-    QList<BasicShip*> waveList;
     int tempX = 50;
     int tempY = 50;
     int lineCounter = 0;
@@ -53,10 +52,11 @@ void Level::addWave()
     }
     // Create a timer that sends a signal to the "advance()" slot of any
     // characters that are created.
-    QTimer *timer = new QTimer;
-    QObject::connect(timer, SIGNAL(timeout()), myScene, SLOT(advance()));
+    advanceTimer = new QTimer;
+    QObject::connect(advanceTimer, SIGNAL(timeout()), myScene, SLOT(advance()));
+    //QObject::connect(advanceTimer, SIGNAL(timeout()), theBoss, SLOT(
     // Set the timer to trigger ever 1/3 of a second.
-    timer->start(1000/33);
+    advanceTimer->start(1000/33);
 }
 
 /**********************************************************************/
