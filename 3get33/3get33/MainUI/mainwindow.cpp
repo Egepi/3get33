@@ -16,6 +16,7 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);  //Sets up the user interface based of mainwindow.ui
+    atBoss = false;
 
     gameScene = new QGraphicsScene; //Scene to display the whole game
     int width = ui->Display->geometry().width();
@@ -145,7 +146,6 @@ void MainWindow::gamelvl()
     if(gameStarted == true)
     {
         QTimer::singleShot(5000, this, SLOT(startBoss()));
-        //QTimer *levelTimer = new QTimer;
         preLevel->addWave();
     }
 
@@ -254,6 +254,7 @@ void MainWindow::checkQuit()
  */
 void MainWindow::startBoss()
 {
+    atBoss = true;
     preLevel->startBoss();
 }
 
