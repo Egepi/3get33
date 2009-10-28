@@ -11,7 +11,7 @@ Bullet::Bullet()
 Bullet::Bullet(qreal shipX, qreal shipY, QImage bullImage, bool owner)
 {
 
-    setPos(shipX+36, shipY-5);
+    setPos(shipX+36, shipY-9);
     bulletImage = bullImage;
 }
 
