@@ -35,7 +35,6 @@ public slots:
     void loadGame();
     void playGame();
     void checkQuit();
-    void startBoss();
 
 private:
     Ui::MainWindow *ui;
