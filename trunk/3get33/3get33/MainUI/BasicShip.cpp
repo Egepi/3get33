@@ -30,6 +30,13 @@ BasicShip::BasicShip()
 }
 
 /**********************************************************************/
+/*! A deconstructor for BasicShip.
+ */
+BasicShip::~BasicShip()
+{
+}
+
+/**********************************************************************/
 /*! Returns the amount of armor the given ship has, as an int
  *
  * Author: Todd Silvia

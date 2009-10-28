@@ -207,15 +207,7 @@ void PlayerShip::advanceDown()
  */
 void PlayerShip::shootGun()
 {
-    if ( gunType == 0 )
-    {
-    }
-    if ( gunType == 1 )
-    {
-    }
-    if ( gunType == 2 )
-    {
-    }
+
 }
 
 /**********************************************************************/
