@@ -61,3 +61,14 @@ void Level::addWave()
 
 
 }
+
+/**********************************************************************/
+/*!
+ *
+ *  Author: Todd Silvia
+ */
+void Level::startBoss()
+{
+    BasicShip *boss = new BasicShip(100,1,QImage(":/images/BadGuy1.png"),0,0);
+    myScene->addItem(boss);
+}

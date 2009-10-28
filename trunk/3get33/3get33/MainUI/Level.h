@@ -12,6 +12,7 @@ class Level //: public QObject
         Level(QGraphicsScene *theScene, QImage *enemyType, int theWaveSize);
         ~Level();
         void addWave();
+        void startBoss();
 
     private:
         QImage *enemyImage;
