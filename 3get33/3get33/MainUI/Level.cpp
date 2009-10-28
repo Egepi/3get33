@@ -20,7 +20,7 @@ Level::Level(QGraphicsScene *theScene, QImage *enemyType, int theWaveSize)
  */
 Level::~Level()
 {
-    delete this;
+    //
 }
 
 /**********************************************************************/
@@ -52,14 +52,12 @@ void Level::addWave()
             tempY = tempY + 110;
         }
     }
-
-
-
     // Create a timer that sends a signal to the "advance()" slot of any
     // characters that are created.
     QTimer *timer = new QTimer;
     QObject::connect(timer, SIGNAL(timeout()), myScene, SLOT(advance()));
-
     // Set the timer to trigger ever 1/3 of a second.
     timer->start(1000 / 33);
+
+
 }
