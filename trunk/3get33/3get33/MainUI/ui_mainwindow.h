@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Tue Oct 27 18:42:56 2009
+** Created: Wed Oct 28 09:11:50 2009
 **      by: Qt User Interface Compiler version 4.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -264,7 +264,6 @@ public:
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
-        QObject::connect(quitButton, SIGNAL(clicked()), MainWindow, SLOT(closeGame()));
         QObject::connect(loadButton, SIGNAL(clicked()), MainWindow, SLOT(loadGame()));
         QObject::connect(playButton, SIGNAL(clicked()), MainWindow, SLOT(playGame()));
 
