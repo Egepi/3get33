@@ -147,6 +147,9 @@ void MainWindow::gamelvl()
     {
         QTimer::singleShot(5000, this, SLOT(startBoss()));
         preLevel->addWave();
+        enemyShootTimer = new QTimer();
+        QObject::connect(enemyShootTimer, SIGNAL(timeout()), this, SLOT(enemyShoot()));
+        enemyShootTimer->start(500);
     }
 
 }
@@ -256,5 +259,14 @@ void MainWindow::startBoss()
 {
     atBoss = true;
     preLevel->startBoss();
+}
+
+void MainWindow::enemyShoot()
+{
+    if(atBoss == true)
+    {
+        Bullet *aBullet = new Bullet(preLevel->theBoss->x(),preLevel->theBoss->y(),QImage(":/images/BlueBullet.png"), false);
+        gameScene->addItem(aBullet);
+    }
 }
 

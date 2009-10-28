@@ -37,6 +37,7 @@ public slots:
     void playGame();
     void checkQuit();
     void startBoss();
+    void enemyShoot();
 
 private:
     Ui::MainWindow *ui;
@@ -47,6 +48,7 @@ private:
     QMap<int,Action> actions;
     Level *preLevel;
     Bullet *aBullet;
+    QTimer *enemyShootTimer;
 
 
 };
