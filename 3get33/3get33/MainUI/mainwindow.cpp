@@ -133,6 +133,11 @@ void MainWindow::playGame()
 
 }
 
+/**********************************************************************/
+/*!
+ *
+ *  Author: Todd Silvia
+ */
 void MainWindow::gamelvl()
 {
     QImage *theType = new QImage(":/images/BadGuy4.png");
@@ -231,6 +236,11 @@ void MainWindow::keyReleaseEvent(QKeyEvent *key) {
     }
 }
 
+/**********************************************************************/
+/*!
+ *
+ *  Author: Todd Silvia
+ */
 void MainWindow::checkQuit()
 {
     switch (QMessageBox::warning(this, "Quit Program ?",
@@ -246,9 +256,13 @@ void MainWindow::checkQuit()
         }
 }
 
+/**********************************************************************/
+/*!
+ *
+ *  Author: Todd Silvia
+ */
 void MainWindow::startBoss()
 {
-    BasicShip *boss = new BasicShip(100,1,QImage(":/images/BadGuy1.png"),0,0);
-    gameScene->addItem(boss);
+    preLevel->startBoss();
 }
 
