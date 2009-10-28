@@ -5,8 +5,9 @@
 #include <QList>
 #include "BasicShip.h"
 
-class Level
+class Level //: public QObject
 {
+    //Q_OBJECT
     public:
         Level(QGraphicsScene *theScene, QImage *enemyType, int theWaveSize);
         ~Level();
@@ -17,8 +18,6 @@ class Level
         QGraphicsScene *myScene;
         int waveSize;
         BasicShip *enemy;
-
-
 };
 
 
