@@ -103,12 +103,7 @@ void BasicShip::setImage(QImage theImage)
  */
 void BasicShip::move(qreal xMove, qreal yMove)
 {
-    QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
 
-    if (!listOfCollidingItems.isEmpty())
-    {
-
-    }
 
     qreal xLoc = this->x();
     qreal yLoc = this->y();
@@ -169,8 +164,17 @@ QPainterPath BasicShip::shape() const
  */
 void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    //Draws the BasicShip object.
-    painter->drawImage(0,0, shipImage);
+    QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
+
+    if (listOfCollidingItems.isEmpty())
+    {
+        //Draws the BasicShip object.
+        painter->drawImage(0,0, shipImage);
+    }
+    else
+    {
+        painter->drawImage(0,0, QImage(":/images/WhiteBullet.png"));
+    }
 }
 
  void BasicShip::advance(int phase)
