@@ -73,8 +73,9 @@ void PlayerShip::setUFlag( bool keyPress )
  *  Author: Karan Chakrapani,
  *          Jennifer Kinahan
  */
-void PlayerShip::advance()
+void PlayerShip::advance(int phase)
 {
+    if(!phase) return;
     //left movement
     if(( lFlag ) && ( !dFlag ) && ( !rFlag ) && ( !uFlag )){
         advanceLeft();
@@ -258,4 +259,5 @@ void PlayerShip::setShield(int theShield)
 {
     PlayerShip::shipShield = theShield;
 }
+
 

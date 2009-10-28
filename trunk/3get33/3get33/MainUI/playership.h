@@ -11,7 +11,7 @@ class PlayerShip : public BasicShip
 {
     public:
         PlayerShip();
-        void PlayerShip::advance();
+        void PlayerShip::advance(int phase);
         void PlayerShip::setLFlag( bool );
         void PlayerShip::setRFlag( bool );
         void PlayerShip::setDFlag( bool );
@@ -29,6 +29,7 @@ class PlayerShip : public BasicShip
         void PlayerShip::shootBBomb();
         void PlayerShip::setShield(int theShield);
         int PlayerShip::getShield();
+
 
 
     private:

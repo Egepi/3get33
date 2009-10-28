@@ -10,6 +10,7 @@
 #include <QPixmap>
 #include <QGraphicsScene>
 #include <QKeyEvent>
+#include <QTimer>
 
 
 namespace Ui

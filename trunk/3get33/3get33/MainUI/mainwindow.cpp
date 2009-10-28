@@ -134,9 +134,17 @@ void MainWindow::playGame()
 void MainWindow::gamelvl()
 {
     Enemy1 = new BasicShip(0, 0, (QImage(":/images/BadGuy4.png")), 40, 40 );
-    Enemy2 = new BasicShip(0, 0, (QImage(":/images/BadGuy4.png")), 200, 100 );
+    Enemy2 = new BasicShip(0, 0, (QImage(":/images/BadGuy3.png")), 200, 100 );
     gameScene->addItem(Enemy1);
     gameScene->addItem(Enemy2);
+
+        // Create a timer that sends a signal to the "advance()" slot of any
+    // characters that are created.
+    QTimer *timer = new QTimer;
+    QObject::connect(timer, SIGNAL(timeout()), gameScene, SLOT(advance()));
+
+    // Set the timer to trigger ever 1/3 of a second.
+    timer->start(1000 / 33);
 }
 /**********************************************************************/
 /*! When ever a key is pressed this method is called to decide what action to take.
@@ -153,19 +161,19 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
     switch(a) {
         case Left:  //Move ship Left
         myShip->setLFlag( true );
-        myShip->advance();
+        myShip->advance(1);
         break;
         case Right: //Move ship Right
         myShip->setRFlag( true );
-        myShip->advance();
+        myShip->advance(1);
         break;
         case Up:    //Move ship Up
         myShip->setUFlag( true );
-        myShip->advance();
+        myShip->advance(1);
         break;
         case Down:  //Move ship Down
         myShip->setDFlag( true );
-        myShip->advance();
+        myShip->advance(1);
         break;
         case ShootBBomb:    //Shoot Big Bomb
         break;
@@ -195,19 +203,19 @@ void MainWindow::keyReleaseEvent(QKeyEvent *key) {
     switch(a) {
         case Left:
         myShip->setLFlag( false );
-        myShip->advance();
+        myShip->advance(1);
         break;
         case Right:
         myShip->setRFlag( false );
-        myShip->advance();
+        myShip->advance(1);
         break;
         case Up:
         myShip->setUFlag( false );
-        myShip->advance();
+        myShip->advance(1);
         break;
         case Down:
         myShip->setDFlag( false );
-        myShip->advance();
+        myShip->advance(1);
         break;
         case ShootBBomb:
         break;
