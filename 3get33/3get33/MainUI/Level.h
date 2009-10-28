@@ -1,11 +1,17 @@
 #ifndef LEVEL_H
 #define LEVEL_H
+#include <QGraphicsScene>
 
 class Level
 {
     public:
-        Level();
+        Level(QGraphicsScene *theScene);
         ~Level();
+        void addWave();
+
+    private:
+        QImage *enemyImage;
+        QGraphicsScene *myScene;
 
 };
 
