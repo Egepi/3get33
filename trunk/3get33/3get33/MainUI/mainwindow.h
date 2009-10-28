@@ -38,6 +38,7 @@ public slots:
     void checkQuit();
     void startBoss();
     void enemyShoot();
+    void updateArmor();
 
 private:
     Ui::MainWindow *ui;

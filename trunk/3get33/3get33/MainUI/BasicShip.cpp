@@ -19,6 +19,8 @@ BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int 
     BasicShip::shipLives = theLives;
     BasicShip::shipImage = theImage;
     setPos(theX, theY);
+    damageCounter = 0;
+    this->setGraphicType(1);
 
 }
 
@@ -75,6 +77,7 @@ void BasicShip::setLives( int theLives )
 void BasicShip::setArmor(int theArmor)
 {
     BasicShip::shipArmor = theArmor;
+    emit void armorChanged();
 }
 
 /**********************************************************************/
@@ -164,31 +167,25 @@ QPainterPath BasicShip::shape() const
  */
 void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
+    //QList<myGraphics> listColliding = new QList<myGraphics>();
 
-    if (listOfCollidingItems.isEmpty())
-    {
+    //listColliding = (QList<myGraphics>)collidingItems();
+
+    //if (listOfCollidingItems.isEmpty())
+    //{
         //Draws the BasicShip object.
         painter->drawImage(0,0, shipImage);
-    }
-    else
-    {
-        painter->drawImage(0,0, QImage(":/images/WhiteBullet.png"));
-    }
+    //}
+    //else if(listOfCollidingItems.first()->getGraphicType() == 4)
+    //{
+        //painter->drawImage(0,0, QImage(":/images/WhiteBullet.png"));
+        //this->setArmor(this->getArmor()-1);
+    //}
 }
 
  void BasicShip::advance(int phase)
  {
      if(!phase) return;
-
-    QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
-
-    if (!listOfCollidingItems.isEmpty())
-    {
-
-
-    }
-
      qreal asdf = 5;
      qreal xLoc = this->x();
      qreal yLoc = this->y();

@@ -40,7 +40,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->loadButton->setFlat(true);
 
     QObject::connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(checkQuit()));
-    //  QObject::connect(timer, SIGNAL(timeout()), myScene, SLOT(advance()));
 
 }
 
@@ -150,6 +149,10 @@ void MainWindow::gamelvl()
         enemyShootTimer = new QTimer();
         QObject::connect(enemyShootTimer, SIGNAL(timeout()), this, SLOT(enemyShoot()));
         enemyShootTimer->start(500);
+
+        QTimer *kk = new QTimer;
+        QObject::connect(kk,SIGNAL(timeout()), this, SLOT(updateArmor()));
+        kk->start(1000/33);
     }
 
 }
@@ -268,5 +271,10 @@ void MainWindow::enemyShoot()
         Bullet *aBullet = new Bullet(preLevel->theBoss->x(),preLevel->theBoss->y(),QImage(":/images/BlueBullet.png"), false);
         gameScene->addItem(aBullet);
     }
+}
+
+void MainWindow::updateArmor()
+{
+    ui->armorDisplay->display(myShip->getArmor());
 }
 

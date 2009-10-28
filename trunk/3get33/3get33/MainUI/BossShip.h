@@ -13,9 +13,6 @@ class BossShip : public BasicShip
         ~BossShip();
         void BossShip::advance(int phase);
         bool moveLeft;
-
-    public slots:
-        void bossShoot();
 };
 
 

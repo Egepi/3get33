@@ -4,8 +4,10 @@
 #include <QGraphicsItem>
 #include <QPixmap>
 #include <QPainter>
+#include "Bullet.h"
+#include "myGraphics.h"
 
-class BasicShip : public QGraphicsItem
+class BasicShip : public myGraphics
 {
 
     public:
@@ -25,6 +27,11 @@ class BasicShip : public QGraphicsItem
     void advance(int phase);
 
 
+    signals:
+         void armorChanged();
+
+
+
     private:
         /*! The amount of armor. */
         int shipArmor;
@@ -32,6 +39,7 @@ class BasicShip : public QGraphicsItem
         int shipLives;
         /*! The imgae drawn for this ship. */
         QImage shipImage;
+        int damageCounter;
 };
 
 #endif // BASICSHIP_H

@@ -10,6 +10,7 @@ BossShip::BossShip()
     this->setPos(250,10);
     this->setImage(QImage(":/images/BadGuy1.png"));
     moveLeft = true;
+    this->setGraphicType(3);
 }
 
 /**********************************************************************/
@@ -45,12 +46,5 @@ void BossShip::advance(int phase)
     {
         moveLeft = true;
     }
-}
-
-void BossShip::bossShoot()
-{
-    Bullet *aBullet = new Bullet(this->x(),this->y(),QImage(":/images/BlueBullet.png"), true);
-    //MainWindow::gameScene->addItem(aBullet);
-
 }
 
