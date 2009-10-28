@@ -8,9 +8,10 @@ Bullet::Bullet()
 {
 }
 
-Bullet::Bullet(int shipX, int shipY)
+Bullet::Bullet(int shipX, int shipY, QImage bullImage, bool owner)
 {
-
+    setPos(shipX+100, shipY+100);
+    bulletImage = bullImage;
 }
 
 Bullet::~Bullet()
@@ -29,12 +30,12 @@ void Bullet::setBulletImage(QImage theBulletImage)
     Bullet::bulletImage = theBulletImage;
 }
 
-QRectF Bullet::boundingRectangle() const
+QRectF Bullet::boundingRect() const
 {
     return QRectF(0,0,8,8);
 }
 
-QPainterPath Bullet::bulletShape() const
+QPainterPath Bullet::shape() const
 {
     QPainterPath path;
     path.addRect(0, 0, 8, 8);
