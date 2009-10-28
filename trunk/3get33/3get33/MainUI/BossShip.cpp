@@ -9,6 +9,7 @@ BossShip::BossShip()
 {
     this->setPos(250,10);
     this->setImage(QImage(":/images/BadGuy1.png"));
+    moveLeft = true;
 }
 
 /**********************************************************************/
@@ -28,6 +29,21 @@ BossShip::~BossShip()
 void BossShip::advance(int phase)
 {
     if(!phase) return;
-    this->move(-3,0);
+    if(((this->x() - 2) >=0)&&(moveLeft == true))
+    {
+        this->move(-2,0);
+    }
+    else
+    {
+        moveLeft = false;
+    }
+    if(((this->x() + 2) <=520)&&(moveLeft == false))
+    {
+        this->move(2,0);
+    }
+    else
+    {
+        moveLeft = true;
+    }
 }
 
