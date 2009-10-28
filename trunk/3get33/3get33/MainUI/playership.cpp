@@ -28,6 +28,16 @@ PlayerShip::PlayerShip()
 }
 
 /**********************************************************************/
+/*! Destructor for PlayerShip
+ *
+ *  Author: Todd Silvia
+ */
+PlayerShip::~PlayerShip()
+{
+    delete this;
+}
+
+/**********************************************************************/
 /*! Sets flag to true if user is pressing 'a' and false if 'a' is released.
  *
  *  Author: Jennifer Kinahan

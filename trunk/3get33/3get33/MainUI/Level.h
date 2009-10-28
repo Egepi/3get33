@@ -4,6 +4,7 @@
 #include <QTimer>
 #include <QList>
 #include "BasicShip.h"
+#include "BossShip.h"
 
 class Level //: public QObject
 {
