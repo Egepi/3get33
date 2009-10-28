@@ -8,9 +8,10 @@ Bullet::Bullet()
 {
 }
 
-Bullet::Bullet(int shipX, int shipY, QImage bullImage, bool owner)
+Bullet::Bullet(qreal shipX, qreal shipY, QImage bullImage, bool owner)
 {
-    setPos(shipX+100, shipY+100);
+
+    setPos(shipX+36, shipY-5);
     bulletImage = bullImage;
 }
 

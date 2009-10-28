@@ -12,7 +12,7 @@
 #include <QGraphicsScene>
 #include <QKeyEvent>
 #include <QMessageBox>
-
+#include "Bullet.h"
 
 namespace Ui
 {
@@ -46,6 +46,7 @@ private:
     enum Action {Blank, Left, Right, Up, Down, ShootGun, ShootSBomb, ShootBBomb, Pause};
     QMap<int,Action> actions;
     Level *preLevel;
+    Bullet *aBullet;
 
 
 };
