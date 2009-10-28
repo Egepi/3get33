@@ -16,6 +16,8 @@ class Bullet : public QGraphicsItem
         void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
         void Bullet::setBulletImage(QImage theBulletImage);
         //void Bullet::shoot();
+        QRectF Bullet::boundingRectangle() const;
+        QPainterPath Bullet::bulletShape() const;
 
     private:
         int shipX;
