@@ -40,8 +40,6 @@ public slots:
 private:
     Ui::MainWindow *ui;
     PlayerShip *myShip;
-    BasicShip *Enemy1;
-    BasicShip *Enemy2;
     QGraphicsScene *gameScene;
     bool gameStarted;
     enum Action {Blank, Left, Right, Up, Down, ShootGun, ShootSBomb, ShootBBomb, Pause};

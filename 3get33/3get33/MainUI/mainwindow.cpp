@@ -165,19 +165,15 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
     switch(a) {
         case Left:  //Move ship Left
         myShip->setLFlag( true );
-        myShip->advance(1);
         break;
         case Right: //Move ship Right
         myShip->setRFlag( true );
-        myShip->advance(1);
         break;
         case Up:    //Move ship Up
         myShip->setUFlag( true );
-        myShip->advance(1);
         break;
         case Down:  //Move ship Down
         myShip->setDFlag( true );
-        myShip->advance(1);
         break;
         case ShootBBomb:    //Shoot Big Bomb
         break;
@@ -209,19 +205,15 @@ void MainWindow::keyReleaseEvent(QKeyEvent *key) {
     switch(a) {
         case Left:
         myShip->setLFlag( false );
-        myShip->advance(1);
         break;
         case Right:
         myShip->setRFlag( false );
-        myShip->advance(1);
         break;
         case Up:
         myShip->setUFlag( false );
-        myShip->advance(1);
         break;
         case Down:
         myShip->setDFlag( false );
-        myShip->advance(1);
         break;
         case ShootBBomb:
         break;
@@ -248,7 +240,6 @@ void MainWindow::checkQuit()
                          QMessageBox::No | QMessageBox::Default,
                          QMessageBox::Yes | QMessageBox::Escape)) {
     case QMessageBox::No:
-            //return;
             break;
     case QMessageBox::Yes:
             this->closeGame();
