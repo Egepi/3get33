@@ -66,6 +66,6 @@ void Level::addWave()
  */
 void Level::startBoss()
 {
-    BossShip *theBoss = new BossShip();
+    theBoss = new BossShip();
     myScene->addItem(theBoss);
 }

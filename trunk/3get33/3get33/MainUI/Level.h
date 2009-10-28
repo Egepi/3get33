@@ -13,6 +13,7 @@ class Level
         ~Level();
         void addWave();
         void startBoss();
+        BossShip *theBoss;
 
     private:
         QImage *enemyImage;
@@ -20,7 +21,7 @@ class Level
         int waveSize;
         BasicShip *enemy;
         QList<BasicShip*> waveList;
-         QTimer *advanceTimer;
+        QTimer *advanceTimer;
 };
 
 

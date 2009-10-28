@@ -8,11 +8,18 @@ Bullet::Bullet()
 {
 }
 
-Bullet::Bullet(qreal shipX, qreal shipY, QImage bullImage, bool owner)
+Bullet::Bullet(qreal shipX, qreal shipY, QImage bullImage, bool theOwner)
 {
-
-    setPos(shipX+36, shipY-9);
     bulletImage = bullImage;
+    owner = theOwner;
+    if(owner == true)
+    {
+        setPos(shipX+36, shipY-9);
+    }
+    else
+    {
+        setPos(shipX+36, shipY+89);
+    }
 }
 
 Bullet::~Bullet()
@@ -48,8 +55,17 @@ void Bullet::advance(int phase)
     if(!phase) return;
     qreal xLoc = this->x();
     qreal yLoc = this->y();
+    qreal yMove = 0;
+    if(owner == true)
+    {
+        yMove = -10;
+    }
+    else
+    {
+        yMove = 10;
+    }
+
     qreal xMove = 0;
-    qreal yMove = -10;
     //Checks if the object is within the x-axis bounds of the gameScene
     if(( this->x() + xMove >= 0 )&&( this->x() + xMove <= 592 ))
     {// The object was within the gameScene bounds so the ship is moved
