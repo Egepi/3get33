@@ -18,6 +18,7 @@ class Bullet : public QGraphicsItem
         //void Bullet::shoot();
         QRectF Bullet::boundingRect() const;
         QPainterPath Bullet::shape() const;
+        void Bullet::advance(int phase);
 
     private:
         qreal shipX;
@@ -26,6 +27,11 @@ class Bullet : public QGraphicsItem
         int bulletY;
         QImage bulletImage;
         bool owner;
+        int phase;
+        int xLoc;
+        int xMove;
+        int yLoc;
+        int yMove;
         //QGraphicsItem parent;
 };
 
