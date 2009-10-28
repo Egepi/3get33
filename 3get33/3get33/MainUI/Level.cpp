@@ -2,17 +2,32 @@
 #include "BasicShip.h"
 #include <QGraphicsScene>
 
+/**********************************************************************/
+/*!
+ *
+ * Author: Todd Silvia
+ */
 Level::Level(QGraphicsScene *theScene, QImage *enemyType, int theWaveSize)
 {
     myScene = theScene;
     waveSize = theWaveSize;
 }
 
+/**********************************************************************/
+/*!
+ *
+ * Author: Todd Silvia
+ */
 Level::~Level()
 {
     delete this;
 }
 
+/**********************************************************************/
+/*!
+ *
+ * Author: Todd Silvia
+ */
 void Level::addWave()
 {
     QList<BasicShip*> waveList;
