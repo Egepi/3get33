@@ -34,6 +34,7 @@ BasicShip::BasicShip()
  */
 BasicShip::~BasicShip()
 {
+    delete this;
 }
 
 /**********************************************************************/

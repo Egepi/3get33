@@ -29,6 +29,18 @@ void Bullet::setBulletImage(QImage theBulletImage)
     Bullet::bulletImage = theBulletImage;
 }
 
+QRectF Bullet::boundingRectangle() const
+{
+    return QRectF(0,0,8,8);
+}
+
+QPainterPath Bullet::bulletShape() const
+{
+    QPainterPath path;
+    path.addRect(0, 0, 8, 8);
+    return path;
+}
+
 
 //void Bullet::shoot()
 //{
