@@ -1,13 +1,14 @@
 #ifndef BULLET_H
 #define BULLET_H
 
+#include "myGraphics.h"
 #include <QPixmap>
 #include <QPainter>
 #include <QGraphicsItem>
 #include <QWidget>
 #include <QStyleOptionGraphicsItem>
 
-class Bullet : public QGraphicsItem
+class Bullet : public myGraphics
 {
     public:
         Bullet();

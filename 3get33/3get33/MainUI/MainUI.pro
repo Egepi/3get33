@@ -10,13 +10,15 @@ SOURCES += main.cpp \
     Bullet.cpp \
     Bomb.cpp \
     Level.cpp \
-    BossShip.cpp
+    BossShip.cpp \
+    myGraphics.cpp
 HEADERS += mainwindow.h \
     BasicShip.h \
     playership.h \
     Bullet.h \
     Bomb.h \
     Level.h \
-    BossShip.h
+    BossShip.h \
+    myGraphics.h
 FORMS += mainwindow.ui
 RESOURCES += uiimages.qrc
