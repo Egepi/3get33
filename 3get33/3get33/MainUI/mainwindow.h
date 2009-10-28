@@ -29,19 +29,20 @@ public:
     void MainWindow::keyPressEvent(QKeyEvent *key);
     void MainWindow::keyReleaseEvent(QKeyEvent *key);
     void gamelvl();
-    void MainWindow::startBoss();
+    QGraphicsScene *gameScene;
 
 public slots:
     void closeGame();
     void loadGame();
     void playGame();
     void checkQuit();
+    void startBoss();
 
 private:
     Ui::MainWindow *ui;
     PlayerShip *myShip;
-    QGraphicsScene *gameScene;
     bool gameStarted;
+    bool atBoss;
     enum Action {Blank, Left, Right, Up, Down, ShootGun, ShootSBomb, ShootBBomb, Pause};
     QMap<int,Action> actions;
     Level *preLevel;
