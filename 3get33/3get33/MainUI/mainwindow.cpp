@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "BasicShip.h"
 #include "PlayerShip.h"
+#include "Level.h"
 #include <QPushButton>
 #include <QObject>
 #include <QPixmap>
@@ -37,7 +38,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->loadButton->setIcon(QIcon(":/images/loadButton.jpg"));
     ui->loadButton->setFlat(true);
 
-    //connect(ui->playButton, SIGNAL(clicked()), ui->armorDisplay, SLOT(hide()));
+    QObject::connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(checkQuit()));
+    //  QObject::connect(timer, SIGNAL(timeout()), myScene, SLOT(advance()));
 
 }
 
@@ -106,7 +108,6 @@ void MainWindow::playGame()
     gameScene->setBackgroundBrush(QBrush(QImage(":/images/background640480.png")));
     ui->loadButton->hide();
     ui->playButton->hide();
-    ui->quitButton->hide();
     //Maps the keys to play the game
     actions.insert( Qt::Key_A, Left );
     actions.insert( Qt::Key_D, Right );
@@ -125,7 +126,7 @@ void MainWindow::playGame()
     ui->armorDisplay->display(myShip->getArmor());
     ui->sheildDisplay->display(myShip->getShield());
     ui->livesDisplay->display(myShip->getLives());
-
+    gameStarted = true;
     this->gamelvl();
 
 
@@ -133,18 +134,10 @@ void MainWindow::playGame()
 
 void MainWindow::gamelvl()
 {
-    Enemy1 = new BasicShip(0, 0, (QImage(":/images/BadGuy4.png")), 40, 40 );
-    Enemy2 = new BasicShip(0, 0, (QImage(":/images/BadGuy3.png")), 200, 100 );
-    gameScene->addItem(Enemy1);
-    gameScene->addItem(Enemy2);
-
-        // Create a timer that sends a signal to the "advance()" slot of any
-    // characters that are created.
-    QTimer *timer = new QTimer;
-    QObject::connect(timer, SIGNAL(timeout()), gameScene, SLOT(advance()));
-
-    // Set the timer to trigger ever 1/3 of a second.
-    timer->start(1000 / 33);
+    QImage *theType = new QImage(":/images/BadGuy4.png");
+    preLevel = new Level(gameScene, theType, 9);
+    if(gameStarted == true)
+        preLevel->addWave();
 }
 /**********************************************************************/
 /*! When ever a key is pressed this method is called to decide what action to take.
@@ -228,5 +221,20 @@ void MainWindow::keyReleaseEvent(QKeyEvent *key) {
         default:
         break;
     }
+}
+
+void MainWindow::checkQuit()
+{
+    switch (QMessageBox::warning(this, "Quit Program ?",
+                         "Are you sure you want to quit the game?",
+                         QMessageBox::No | QMessageBox::Default,
+                         QMessageBox::Yes | QMessageBox::Escape)) {
+    case QMessageBox::No:
+            //return;
+            break;
+    case QMessageBox::Yes:
+            this->closeGame();
+            break;
+        }
 }
 

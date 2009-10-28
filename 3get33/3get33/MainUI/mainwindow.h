@@ -4,13 +4,14 @@
 #include "ui_mainwindow.h"
 #include "BasicShip.h"
 #include "PlayerShip.h"
+#include "Level.h"
 #include <QtGui/QMainWindow>
 #include <QPushButton>
 #include <QObject>
 #include <QPixmap>
 #include <QGraphicsScene>
 #include <QKeyEvent>
-#include <QTimer>
+#include <QMessageBox>
 
 
 namespace Ui
@@ -33,6 +34,7 @@ public slots:
     void closeGame();
     void loadGame();
     void playGame();
+    void checkQuit();
 
 private:
     Ui::MainWindow *ui;
@@ -43,6 +45,8 @@ private:
     bool gameStarted;
     enum Action {Blank, Left, Right, Up, Down, ShootGun, ShootSBomb, ShootBBomb, Pause};
     QMap<int,Action> actions;
+    Level *preLevel;
+
 
 };
 #endif // MAINWINDOW_H
