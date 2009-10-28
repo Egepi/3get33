@@ -126,6 +126,7 @@ void MainWindow::playGame()
     ui->armorDisplay->display(myShip->getArmor());
     ui->sheildDisplay->display(myShip->getShield());
     ui->livesDisplay->display(myShip->getLives());
+    ui->quitButton->clearFocus();
     gameStarted = true;
     this->gamelvl();
 
@@ -173,6 +174,8 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
         case ShootSBomb:    //Shoot Small Bomb
         break;
         case ShootGun:      //Shoot normal gun
+        Bullet *aBullet = new Bullet(myShip->x(),myShip->y(),QImage(":/images/BlueBullet.png"), true);
+        gameScene->addItem(aBullet);
         break;
         case Pause:         //Pause the game
         break;

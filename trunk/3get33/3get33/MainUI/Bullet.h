@@ -11,7 +11,7 @@ class Bullet : public QGraphicsItem
 {
     public:
         Bullet();
-        Bullet(int shipX, int shipY, QImage bulletImage, bool owner);
+        Bullet(qreal shipX, qreal shipY, QImage bulletImage, bool owner);
         ~Bullet();
         void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
         void Bullet::setBulletImage(QImage theBulletImage);
@@ -20,8 +20,8 @@ class Bullet : public QGraphicsItem
         QPainterPath Bullet::shape() const;
 
     private:
-        int shipX;
-        int shipY;
+        qreal shipX;
+        qreal shipY;
         int bulletX;
         int bulletY;
         QImage bulletImage;
