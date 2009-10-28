@@ -29,6 +29,7 @@ public:
     void MainWindow::keyPressEvent(QKeyEvent *key);
     void MainWindow::keyReleaseEvent(QKeyEvent *key);
     void gamelvl();
+    void MainWindow::startBoss();
 
 public slots:
     void closeGame();
