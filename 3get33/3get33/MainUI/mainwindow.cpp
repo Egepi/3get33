@@ -138,7 +138,12 @@ void MainWindow::gamelvl()
     QImage *theType = new QImage(":/images/BadGuy4.png");
     preLevel = new Level(gameScene, theType, 9);
     if(gameStarted == true)
+    {
+        QTimer::singleShot(5000, this, SLOT(startBoss()));
+        //QTimer *levelTimer = new QTimer;
         preLevel->addWave();
+    }
+
 }
 /**********************************************************************/
 /*! When ever a key is pressed this method is called to decide what action to take.
@@ -239,5 +244,11 @@ void MainWindow::checkQuit()
             this->closeGame();
             break;
         }
+}
+
+void MainWindow::startBoss()
+{
+    BasicShip *boss = new BasicShip(100,1,QImage(":/images/BadGuy1.png"),0,0);
+    gameScene->addItem(boss);
 }
 
