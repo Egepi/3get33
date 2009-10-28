@@ -103,6 +103,13 @@ void BasicShip::setImage(QImage theImage)
  */
 void BasicShip::move(qreal xMove, qreal yMove)
 {
+    QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
+
+    if (!listOfCollidingItems.isEmpty())
+    {
+
+    }
+
     qreal xLoc = this->x();
     qreal yLoc = this->y();
 
@@ -121,6 +128,7 @@ void BasicShip::move(qreal xMove, qreal yMove)
     }
 
     setPos(xLoc, yLoc); //Sets the new position of the object.
+
 }
 
 /**********************************************************************/
@@ -168,6 +176,14 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
  void BasicShip::advance(int phase)
  {
      if(!phase) return;
+
+    QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
+
+    if (!listOfCollidingItems.isEmpty())
+    {
+
+
+    }
 
      qreal asdf = 5;
      qreal xLoc = this->x();

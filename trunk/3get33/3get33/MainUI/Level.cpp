@@ -57,7 +57,9 @@ void Level::addWave()
     QTimer *timer = new QTimer;
     QObject::connect(timer, SIGNAL(timeout()), myScene, SLOT(advance()));
     // Set the timer to trigger ever 1/3 of a second.
-    timer->start(1000 / 33);
+    timer->start(1000/33);
+
+
 
 
 }
