@@ -20,6 +20,8 @@ class Bullet : public myGraphics
         QRectF Bullet::boundingRect() const;
         QPainterPath Bullet::shape() const;
         void Bullet::advance(int phase);
+        enum { Type = 65536 + 4 };
+        int Bullet::type() const;
 
     private:
         qreal shipX;

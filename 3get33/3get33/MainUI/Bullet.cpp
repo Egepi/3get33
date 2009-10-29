@@ -93,6 +93,11 @@ void Bullet::advance(int phase)
     setPos(xLoc, yLoc);
 }
 
+ int Bullet::type() const
+ {
+    // Enable the use of qgraphicsitem_cast with this item.
+    return Type;
+ }
 
 //void Bullet::shoot()
 //{

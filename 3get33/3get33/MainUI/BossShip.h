@@ -13,6 +13,9 @@ class BossShip : public BasicShip
         ~BossShip();
         void BossShip::advance(int phase);
         bool moveLeft;
+        enum { Type = 65536 + 3 };
+        int BossShip::type() const;
+
 };
 
 

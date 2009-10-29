@@ -30,6 +30,8 @@ class PlayerShip : public BasicShip
         void PlayerShip::shootBBomb();
         void PlayerShip::setShield(int theShield);
         int PlayerShip::getShield();
+        enum { Type = 65536 + 2 };
+        int PlayerShip::type() const;
 
 
 
