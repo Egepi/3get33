@@ -14,6 +14,7 @@ class Level
         void addWave();
         void startBoss();
         BossShip *theBoss;
+        static const int ROW_SIZE = 5;
 
     private:
         QImage *enemyImage;
