@@ -43,7 +43,7 @@ void Level::addWave()
         tempX = tempX + 110;
         lineCounter++;
         //Checks if there are enough enemys in current row.
-        if(lineCounter > 3)
+        if(lineCounter >= ROW_SIZE)
         {//Creates new row for to fit more enimies
             lineCounter = 0;
             tempX = 50;

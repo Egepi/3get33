@@ -141,7 +141,7 @@ void MainWindow::playGame()
 void MainWindow::gamelvl()
 {
     QImage *theType = new QImage(":/images/BadGuy4.png");
-    preLevel = new Level(gameScene, theType, 9);
+    preLevel = new Level(gameScene, theType, 20);
     if(gameStarted == true)
     {
         QTimer::singleShot(5000, this, SLOT(startBoss()));
