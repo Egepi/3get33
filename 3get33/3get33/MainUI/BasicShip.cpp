@@ -169,43 +169,46 @@ QPainterPath BasicShip::shape() const
 void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
 
-    QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
-
-    if (listOfCollidingItems.isEmpty())
-    {
         //Draws the BasicShip object.
-        painter->drawImage(0,0, shipImage);
-    }
-    else
+        painter->drawImage(0,0, shipImage);    
+}
+
+ void BasicShip::advance(int phase)
+ {
+     QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
+
+    if (!listOfCollidingItems.isEmpty())
     {
         int length = listOfCollidingItems.length();
 
         for (int i = 0; i < length; i++)
         {
             QGraphicsItem *item = listOfCollidingItems.at(i);
+            //if a basic enemy ship
             if (item->type() == 65537)
             {
-                painter->drawImage(0,0, QImage(":/images/WhiteBullet.png"));
+                this->setArmor(this->getArmor()-10);
             }
+            //if a player ship
             if (item->type() == 65538)
             {
-                painter->drawImage(0,0, QImage(":/images/BlueBullet.png"));
+                this->setArmor(this->getArmor()-10);
             }
+            //if a boss ship
             if (item->type() == 65539)
             {
-                painter->drawImage(0,0, QImage(":/images/MagentaBullet.png"));
+                this->setArmor(this->getArmor()-30);
             }
+            //if a bullet
             if (item->type() == 65540)
             {
-                painter->drawImage(0,0, QImage(":/images/GreenBullet.png"));
+                this->setArmor(this->getArmor()-1);
+                item->setPos(500,500);
             }
         }
 
     }
-}
 
- void BasicShip::advance(int phase)
- {
      if(!phase) return;
      qreal moveDelta = 5;
      qreal xLoc = this->x();
