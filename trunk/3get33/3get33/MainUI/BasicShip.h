@@ -25,6 +25,10 @@ class BasicShip : public myGraphics
     void setImage(QImage theImage);
     void move(qreal xMove, qreal yMove);
     void advance(int phase);
+    int shipSize;
+    enum { Type = 65536 + 1 };
+    int BasicShip::type() const;
+
 
 
     signals:

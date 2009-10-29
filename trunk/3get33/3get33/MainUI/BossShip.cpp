@@ -11,6 +11,7 @@ BossShip::BossShip()
     this->setImage(QImage(":/images/BadGuy1.png"));
     moveLeft = true;
     this->setGraphicType(3);
+    this->shipSize = 40;
 }
 
 /**********************************************************************/
@@ -48,3 +49,8 @@ void BossShip::advance(int phase)
     }
 }
 
+ int BossShip::type() const
+ {
+    // Enable the use of qgraphicsitem_cast with this item.
+    return Type;
+ }

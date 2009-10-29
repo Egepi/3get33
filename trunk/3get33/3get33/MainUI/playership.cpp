@@ -26,6 +26,7 @@ PlayerShip::PlayerShip()
     this->setLives(3);
     this->setImage(QImage(":/images/GoodGuy.png"));
     this->setGraphicType(2);
+    this->shipSize = 80;
 }
 
 /**********************************************************************/
@@ -263,4 +264,8 @@ void PlayerShip::setShield(int theShield)
     PlayerShip::shipShield = theShield;
 }
 
-
+ int PlayerShip::type() const
+ {
+    // Enable the use of qgraphicsitem_cast with this item.
+    return Type;
+ }

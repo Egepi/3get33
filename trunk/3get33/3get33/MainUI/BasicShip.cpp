@@ -21,6 +21,7 @@ BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int 
     setPos(theX, theY);
     damageCounter = 0;
     this->setGraphicType(1);
+    this->shipSize = 40;
 
 }
 
@@ -112,14 +113,14 @@ void BasicShip::move(qreal xMove, qreal yMove)
     qreal yLoc = this->y();
 
     //Checks if the object is within the x-axis bounds of the gameScene
-    if(( this->x() + xMove >= 0 )&&( this->x() + xMove <= 520 ))
+    if(( this->x() + xMove >= 0 )&&( this->x() + xMove <= 600 - this->shipSize ))
     {// The object was within the gameScene bounds so the ship is moved
      // along the x-axis as determined from xMove.
         xLoc += xMove;
     }
 
     //Checks if the object is within the y-axis bounds of the gameScene
-    if(( this->y() + yMove >= 0 )&&( this->y() + yMove <= 400 ))
+    if(( this->y() + yMove >= 0 )&&( this->y() + yMove <= 480 - this->shipSize ))
     {// The object was within the gameScene bounds so the ship is moved
      // along the y-axis as determined from yMove.
         yLoc += yMove;
@@ -137,7 +138,7 @@ void BasicShip::move(qreal xMove, qreal yMove)
  */
 QRectF BasicShip::boundingRect() const
 {
-    return QRectF(0,0,80,80);
+    return QRectF(0,0,this->shipSize,this->shipSize);
 }
 
 /**********************************************************************/
@@ -152,7 +153,7 @@ QRectF BasicShip::boundingRect() const
 QPainterPath BasicShip::shape() const
 {
     QPainterPath path;
-    path.addRect(0, 0, 80, 80);
+    path.addRect(0, 0, this->shipSize, this->shipSize);
     return path;
 }
 
@@ -167,20 +168,40 @@ QPainterPath BasicShip::shape() const
  */
 void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    //QList<myGraphics> listColliding = new QList<myGraphics>();
 
-    //listColliding = (QList<myGraphics>)collidingItems();
+    QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
 
-    //if (listOfCollidingItems.isEmpty())
-    //{
+    if (listOfCollidingItems.isEmpty())
+    {
         //Draws the BasicShip object.
         painter->drawImage(0,0, shipImage);
-    //}
-    //else if(listOfCollidingItems.first()->getGraphicType() == 4)
-    //{
-        //painter->drawImage(0,0, QImage(":/images/WhiteBullet.png"));
-        //this->setArmor(this->getArmor()-1);
-    //}
+    }
+    else
+    {
+        int length = listOfCollidingItems.length();
+
+        for (int i = 0; i < length; i++)
+        {
+            QGraphicsItem *item = listOfCollidingItems.at(i);
+            if (item->type() == 65537)
+            {
+                painter->drawImage(0,0, QImage(":/images/WhiteBullet.png"));
+            }
+            if (item->type() == 65538)
+            {
+                painter->drawImage(0,0, QImage(":/images/BlueBullet.png"));
+            }
+            if (item->type() == 65539)
+            {
+                painter->drawImage(0,0, QImage(":/images/MagenBullet.png"));
+            }
+            if (item->type() == 65540)
+            {
+                painter->drawImage(0,0, QImage(":/images/WhiteBullet.png"));
+            }
+        }
+
+    }
 }
 
  void BasicShip::advance(int phase)
@@ -191,7 +212,7 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
      qreal yLoc = this->y();
 
     //Checks if the object is within the y-axis bounds of the gameScene
-    if(( this->y() + moveDelta >= 0 )&&( this->y() + moveDelta <= 400 ))
+    if(( this->y() + moveDelta >= 0 )&&( this->y() + moveDelta <= 480 - this->shipSize ))
     {// The object was within the gameScene bounds so the ship is moved
      // along the y-axis as determined from yMove.
         yLoc += moveDelta;
@@ -199,3 +220,9 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     setPos(xLoc, yLoc);
 
 }
+
+  int BasicShip::type() const
+ {
+    // Enable the use of qgraphicsitem_cast with this item.
+    return Type;
+ }
