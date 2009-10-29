@@ -193,11 +193,11 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
             }
             if (item->type() == 65539)
             {
-                painter->drawImage(0,0, QImage(":/images/MagenBullet.png"));
+                painter->drawImage(0,0, QImage(":/images/MagentaBullet.png"));
             }
             if (item->type() == 65540)
             {
-                painter->drawImage(0,0, QImage(":/images/WhiteBullet.png"));
+                painter->drawImage(0,0, QImage(":/images/GreenBullet.png"));
             }
         }
 
