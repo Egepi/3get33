@@ -87,6 +87,40 @@ void PlayerShip::setUFlag( bool keyPress )
  */
 void PlayerShip::advance(int phase)
 {
+    QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
+
+    if (!listOfCollidingItems.isEmpty())
+    {
+        int length = listOfCollidingItems.length();
+
+        for (int i = 0; i < length; i++)
+        {
+            QGraphicsItem *item = listOfCollidingItems.at(i);
+            //if a basic enemy ship
+            if (item->type() == 65537)
+            {
+                //this->setArmor(this->getArmor()-10);
+            }
+            //if a player ship
+            if (item->type() == 65538)
+            {
+                //this->setArmor(this->getArmor()-10);
+            }
+            //if a boss ship
+            if (item->type() == 65539)
+            {
+                //this->setArmor(this->getArmor()-30);
+            }
+            //if a bullet
+            if (item->type() == 65540)
+            {
+                this->setArmor(this->getArmor()-1);
+                item->setPos(500,500);
+            }
+        }
+
+    }
+
     if(!phase) return;
     //left movement
     if(( lFlag ) && ( !dFlag ) && ( !rFlag ) && ( !uFlag )){

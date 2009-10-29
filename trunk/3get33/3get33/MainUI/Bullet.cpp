@@ -19,7 +19,7 @@ Bullet::Bullet(qreal shipX, qreal shipY, QImage bullImage, bool theOwner)
     }
     else
     {
-        setPos(shipX+36, shipY+89);
+        setPos(shipX+18, shipY+49);
     }
 }
 
