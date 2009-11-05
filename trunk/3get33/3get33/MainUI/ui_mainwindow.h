@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Wed Oct 28 09:11:50 2009
+** Created: Thu Nov 5 11:42:26 2009
 **      by: Qt User Interface Compiler version 4.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -37,9 +37,9 @@ public:
     QLabel *livesLabel;
     QLCDNumber *livesDisplay;
     QLabel *armorLabel;
-    QLabel *sheildLabel;
+    QLabel *shieldLabel;
     QLabel *bombsLabel;
-    QLCDNumber *sheildDisplay;
+    QLCDNumber *shieldDisplay;
     QLCDNumber *armorDisplay;
     QLCDNumber *bigBombDisplay;
     QLCDNumber *smallBombsDisplay;
@@ -154,17 +154,17 @@ public:
         palette5.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
         armorLabel->setPalette(palette5);
         armorLabel->setFont(font);
-        sheildLabel = new QLabel(centralWidget);
-        sheildLabel->setObjectName(QString::fromUtf8("sheildLabel"));
-        sheildLabel->setGeometry(QRect(10, 350, 40, 30));
+        shieldLabel = new QLabel(centralWidget);
+        shieldLabel->setObjectName(QString::fromUtf8("shieldLabel"));
+        shieldLabel->setGeometry(QRect(10, 350, 40, 30));
         QPalette palette6;
         QBrush brush5(QColor(0, 255, 255, 255));
         brush5.setStyle(Qt::SolidPattern);
         palette6.setBrush(QPalette::Active, QPalette::WindowText, brush5);
         palette6.setBrush(QPalette::Inactive, QPalette::WindowText, brush5);
         palette6.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
-        sheildLabel->setPalette(palette6);
-        sheildLabel->setFont(font);
+        shieldLabel->setPalette(palette6);
+        shieldLabel->setFont(font);
         bombsLabel = new QLabel(centralWidget);
         bombsLabel->setObjectName(QString::fromUtf8("bombsLabel"));
         bombsLabel->setGeometry(QRect(60, 270, 40, 30));
@@ -174,9 +174,9 @@ public:
         palette7.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
         bombsLabel->setPalette(palette7);
         bombsLabel->setFont(font);
-        sheildDisplay = new QLCDNumber(centralWidget);
-        sheildDisplay->setObjectName(QString::fromUtf8("sheildDisplay"));
-        sheildDisplay->setGeometry(QRect(50, 350, 80, 30));
+        shieldDisplay = new QLCDNumber(centralWidget);
+        shieldDisplay->setObjectName(QString::fromUtf8("shieldDisplay"));
+        shieldDisplay->setGeometry(QRect(50, 350, 80, 30));
         QPalette palette8;
         palette8.setBrush(QPalette::Active, QPalette::Base, brush);
         QBrush brush6(QColor(0, 85, 255, 255));
@@ -186,14 +186,14 @@ public:
         palette8.setBrush(QPalette::Inactive, QPalette::Window, brush6);
         palette8.setBrush(QPalette::Disabled, QPalette::Base, brush6);
         palette8.setBrush(QPalette::Disabled, QPalette::Window, brush6);
-        sheildDisplay->setPalette(palette8);
-        sheildDisplay->setAutoFillBackground(true);
-        sheildDisplay->setFrameShape(QFrame::Box);
-        sheildDisplay->setFrameShadow(QFrame::Raised);
-        sheildDisplay->setNumDigits(3);
-        sheildDisplay->setSegmentStyle(QLCDNumber::Flat);
-        sheildDisplay->setProperty("value", QVariant(0));
-        sheildDisplay->setProperty("intValue", QVariant(0));
+        shieldDisplay->setPalette(palette8);
+        shieldDisplay->setAutoFillBackground(true);
+        shieldDisplay->setFrameShape(QFrame::Box);
+        shieldDisplay->setFrameShadow(QFrame::Raised);
+        shieldDisplay->setNumDigits(3);
+        shieldDisplay->setSegmentStyle(QLCDNumber::Flat);
+        shieldDisplay->setProperty("value", QVariant(0));
+        shieldDisplay->setProperty("intValue", QVariant(0));
         armorDisplay = new QLCDNumber(centralWidget);
         armorDisplay->setObjectName(QString::fromUtf8("armorDisplay"));
         armorDisplay->setGeometry(QRect(50, 380, 80, 30));
@@ -279,7 +279,7 @@ public:
         scoreLabel->setText(QApplication::translate("MainWindow", "Score", 0, QApplication::UnicodeUTF8));
         livesLabel->setText(QApplication::translate("MainWindow", "Lives", 0, QApplication::UnicodeUTF8));
         armorLabel->setText(QApplication::translate("MainWindow", "Armor", 0, QApplication::UnicodeUTF8));
-        sheildLabel->setText(QApplication::translate("MainWindow", "Sheild", 0, QApplication::UnicodeUTF8));
+        shieldLabel->setText(QApplication::translate("MainWindow", "Shield", 0, QApplication::UnicodeUTF8));
         bombsLabel->setText(QApplication::translate("MainWindow", "Bombs", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("MainWindow", "Small:   Large:", 0, QApplication::UnicodeUTF8));
         Q_UNUSED(MainWindow);

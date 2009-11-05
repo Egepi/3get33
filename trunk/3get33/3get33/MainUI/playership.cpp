@@ -114,7 +114,24 @@ void PlayerShip::advance(int phase)
             //if a bullet
             if (item->type() == 65540)
             {
-                this->setArmor(this->getArmor()-1);
+                if (this->getShield() > 0)
+                {
+                    this->setShield(this->getShield()-10);
+                }
+                else if (this->getArmor() > 0)
+                {
+                    this->setArmor(this->getArmor()-10);
+                }
+                else if (this->getLives() > 0)
+                {
+                    this->setLives(this->getLives()-1);
+                    this->setShield(100);
+                    this->setArmor(100);
+                }
+                else
+                {
+                   this->setImage(QImage(":/images/BadGuy3.png"));
+                }
                 item->setPos(500,500);
             }
         }
