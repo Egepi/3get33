@@ -5,6 +5,7 @@
 #include "Level.h"
 #include <QPushButton>
 #include <QObject>
+#include <QSound>
 #include <QPixmap>
 #include <QGraphicsScene>
 #include <QDialog>
@@ -124,11 +125,15 @@ void MainWindow::playGame()
 
     //Updates the armor, shield, and lives displays.
     ui->armorDisplay->display(myShip->getArmor());
-    ui->sheildDisplay->display(myShip->getShield());
+    ui->shieldDisplay->display(myShip->getShield());
     ui->livesDisplay->display(myShip->getLives());
     ui->quitButton->clearFocus();
     gameStarted = true;
     this->gamelvl();
+
+//    QSound *sound1 = new QSound(QString(":/images/EXFULL.wav"));
+  //  sound1->setLoops(-1);
+   // sound1->play();
 
 
 }
@@ -148,7 +153,7 @@ void MainWindow::gamelvl()
         preLevel->addWave();
         enemyShootTimer = new QTimer();
         QObject::connect(enemyShootTimer, SIGNAL(timeout()), this, SLOT(enemyShoot()));
-        enemyShootTimer->start(500);
+        enemyShootTimer->start(5000);
 
         QTimer *kk = new QTimer;
         QObject::connect(kk,SIGNAL(timeout()), this, SLOT(updateArmor()));
@@ -276,5 +281,7 @@ void MainWindow::enemyShoot()
 void MainWindow::updateArmor()
 {
     ui->armorDisplay->display(myShip->getArmor());
+    ui->shieldDisplay->display(myShip->getShield());
+    ui->livesDisplay->display(myShip->getLives());
 }
 

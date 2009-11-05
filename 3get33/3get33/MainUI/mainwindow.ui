@@ -509,7 +509,7 @@
      <string>Armor</string>
     </property>
    </widget>
-   <widget class="QLabel" name="sheildLabel">
+   <widget class="QLabel" name="shieldLabel">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -562,7 +562,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Sheild</string>
+     <string>Shield</string>
     </property>
    </widget>
    <widget class="QLabel" name="bombsLabel">
@@ -621,7 +621,7 @@
      <string>Bombs</string>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="sheildDisplay">
+   <widget class="QLCDNumber" name="shieldDisplay">
     <property name="geometry">
      <rect>
       <x>50</x>
