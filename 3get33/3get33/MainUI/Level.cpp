@@ -43,15 +43,14 @@ void Level::addWave()
         tempX = tempX + 110;
         lineCounter++;
         //Checks if there are enough enemys in current row.
-        if(lineCounter >= ROW_SIZE)
+        if(lineCounter >=
+           ROW_SIZE)
         {//Creates new row for to fit more enimies
             lineCounter = 0;
             tempX = 50;
             tempY = tempY + 110;
         }
     }
-    // Create a timer that sends a signal to the "advance()" slot of any
-    // characters that are created.
     advanceTimer = new QTimer;
     QObject::connect(advanceTimer, SIGNAL(timeout()), myScene, SLOT(advance()));
     //QObject::connect(advanceTimer, SIGNAL(timeout()), theBoss, SLOT(
