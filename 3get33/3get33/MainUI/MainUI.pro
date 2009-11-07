@@ -8,16 +8,16 @@ SOURCES += main.cpp \
     BasicShip.cpp \
     playership.cpp \
     Bullet.cpp \
-    Bomb.cpp \
     Level.cpp \
+    Missile.cpp \
     BossShip.cpp \
     myGraphics.cpp
 HEADERS += mainwindow.h \
     BasicShip.h \
     playership.h \
     Bullet.h \
-    Bomb.h \
     Level.h \
+    Missile.h \
     BossShip.h \
     myGraphics.h
 FORMS += mainwindow.ui
