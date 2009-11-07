@@ -568,9 +568,9 @@
    <widget class="QLabel" name="bombsLabel">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>50</x>
       <y>270</y>
-      <width>40</width>
+      <width>51</width>
       <height>30</height>
      </rect>
     </property>
@@ -618,7 +618,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Bombs</string>
+     <string>Missiles</string>
     </property>
    </widget>
    <widget class="QLCDNumber" name="shieldDisplay">

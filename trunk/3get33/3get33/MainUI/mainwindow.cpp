@@ -131,9 +131,6 @@ void MainWindow::playGame()
     gameStarted = true;
     this->gamelvl();
 
-//    QSound *sound1 = new QSound(QString(":/images/EXFULL.wav"));
-  //  sound1->setLoops(-1);
-   // sound1->play();
 
 
 }
@@ -197,6 +194,7 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
         case ShootGun:      //Shoot normal gun
         Bullet *aBullet = new Bullet(myShip->x(),myShip->y(),QImage(":/images/WhiteBullet.png"), true);
         gameScene->addItem(aBullet);
+        QSound::play(QString(":/images/pew2.wav"));
         break;
         case Pause:         //Pause the game
         break;
@@ -204,6 +202,7 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
         break;
     }
 }
+
 
 /**********************************************************************/
 /*! When ever a key has been released this method decides to stop the current action.
