@@ -145,7 +145,7 @@ void MainWindow::playGame()
  */
 void MainWindow::gamelvl()
 {
-    QImage *theType = new QImage(":/images/BadGuy4.png");
+    QImage theType(":/images/BadGuy4.png");
     preLevel = new Level(gameScene, theType, 20);
     if(gameStarted == true)
     {
