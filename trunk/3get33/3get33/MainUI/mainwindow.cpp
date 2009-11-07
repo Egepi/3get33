@@ -187,11 +187,15 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
         myShip->setDFlag( true );
         break;
         case ShootBBomb:    //Shoot Big Bomb
+        Missile *aBigMissile = new Missile(myShip->x(), myShip->y(),QImage(":/images/BlueBullet.png"), true, true);
+        gameScene->addItem(aBigMissile);
         break;
         case ShootSBomb:    //Shoot Small Bomb
+        Missile *aSmallMissile = new Missile(myShip->x(), myShip->y(),QImage(":/images/GreenBullet.png"), true, false);
+        gameScene->addItem(aSmallMissile);
         break;
         case ShootGun:      //Shoot normal gun
-        Bullet *aBullet = new Bullet(myShip->x(),myShip->y(),QImage(":/images/BlueBullet.png"), true);
+        Bullet *aBullet = new Bullet(myShip->x(),myShip->y(),QImage(":/images/WhiteBullet.png"), true);
         gameScene->addItem(aBullet);
         break;
         case Pause:         //Pause the game
