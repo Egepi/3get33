@@ -54,7 +54,6 @@ private:
     Missile *aSmallMissile;
     QTimer *enemyShootTimer;
 
-
 };
 #endif // MAINWINDOW_H
 

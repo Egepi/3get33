@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Thu Nov 5 11:42:26 2009
+** Created: Sat Nov 7 16:50:28 2009
 **      by: Qt User Interface Compiler version 4.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -167,7 +167,7 @@ public:
         shieldLabel->setFont(font);
         bombsLabel = new QLabel(centralWidget);
         bombsLabel->setObjectName(QString::fromUtf8("bombsLabel"));
-        bombsLabel->setGeometry(QRect(60, 270, 40, 30));
+        bombsLabel->setGeometry(QRect(50, 270, 51, 30));
         QPalette palette7;
         palette7.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette7.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
@@ -280,7 +280,7 @@ public:
         livesLabel->setText(QApplication::translate("MainWindow", "Lives", 0, QApplication::UnicodeUTF8));
         armorLabel->setText(QApplication::translate("MainWindow", "Armor", 0, QApplication::UnicodeUTF8));
         shieldLabel->setText(QApplication::translate("MainWindow", "Shield", 0, QApplication::UnicodeUTF8));
-        bombsLabel->setText(QApplication::translate("MainWindow", "Bombs", 0, QApplication::UnicodeUTF8));
+        bombsLabel->setText(QApplication::translate("MainWindow", "Missiles", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("MainWindow", "Small:   Large:", 0, QApplication::UnicodeUTF8));
         Q_UNUSED(MainWindow);
     } // retranslateUi
