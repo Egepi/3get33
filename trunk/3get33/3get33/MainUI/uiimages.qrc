@@ -16,7 +16,7 @@
         <file>WhiteBullet.png</file>
         <file>background640480.png</file>
         <file>explosion.png</file>
-        <file>bMissle.png</file>
-        <file>sMissle.png</file>
+        <file>bMissile.png</file>
+        <file>sMissile.png</file>
     </qresource>
 </RCC>
