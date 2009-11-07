@@ -194,7 +194,7 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
         case ShootGun:      //Shoot normal gun
         Bullet *aBullet = new Bullet(myShip->x(),myShip->y(),QImage(":/images/WhiteBullet.png"), true);
         gameScene->addItem(aBullet);
-        QSound::play(QString(":/images/pew2.wav"));
+        QSound::play(QString("pew2.wav"));
         break;
         case Pause:         //Pause the game
         break;
