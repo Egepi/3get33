@@ -13,6 +13,7 @@
 #include <QKeyEvent>
 #include <QMessageBox>
 #include "Bullet.h"
+#include "Missile.h"
 
 namespace Ui
 {
@@ -49,6 +50,8 @@ private:
     QMap<int,Action> actions;
     Level *preLevel;
     Bullet *aBullet;
+    Missile *aBigMissile;
+    Missile *aSmallMissile;
     QTimer *enemyShootTimer;
 
 

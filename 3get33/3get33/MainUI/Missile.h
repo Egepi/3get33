@@ -5,18 +5,39 @@
 #include <QGraphicsItem>
 #include <QPixmap>
 #include <QPainter>
-#include "Bullet.h"
+#include "myGraphics.h"
 
-class Missile : public Bullet
+class Missile : public myGraphics
 {
-    public:
-        Missile::Missile(bool a);
-        QRectF Missile::boundingRect(bool big) const;
-        QPainterPath Missile::shape(bool big) const;
+public:
+        Missile();
+        Missile(qreal shipX, qreal shipY, QImage missImage, bool owner, bool big);
+        ~Missile();
+        void Missile::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
+        void Missile::setMissileImage(QImage theMissileImage);
+        QRectF Missile::boundingRect() const;
         QPainterPath Missile::shape() const;
+        void Missile::advance(int phase);
+        enum { Type = 65536 + 5 };
+        int Missile::type() const;
 
     private:
-        bool big;
-
+        qreal shipX;
+        qreal shipY;
+        int MissileX;
+        int MissileY;
+        QImage MissileImage;
+        bool bigMissile;
+        bool owner;
+        int phase;
+        int xLoc;
+        int xMove;
+        int yLoc;
+        int yMove;
 };
 #endif // MISSILE_H
+
+
+
+
+
