@@ -16,7 +16,6 @@
         <file>WhiteBullet.png</file>
         <file>background640480.png</file>
         <file>explosion.png</file>
-        <file>pew2.wav</file>
         <file>bMissle.png</file>
         <file>sMissle.png</file>
     </qresource>
