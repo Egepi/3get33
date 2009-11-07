@@ -18,7 +18,7 @@ public:
         QRectF Missile::boundingRect() const;
         QPainterPath Missile::shape() const;
         void Missile::advance(int phase);
-        enum { Type = 65536 + 5 };
+        enum {Type = 65536 + 5};
         int Missile::type() const;
 
     private:

@@ -32,6 +32,9 @@ class PlayerShip : public BasicShip
         int PlayerShip::getShield();
         enum { Type = 65536 + 2 };
         int PlayerShip::type() const;
+        void PlayerShip::collCheck();
+        void PlayerShip::damage(int dTaken);
+
 
 
 

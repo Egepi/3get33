@@ -113,6 +113,13 @@ void Missile::advance(int phase)
  int Missile::type() const
  {
     // Enable the use of qgraphicsitem_cast with this item.
-    return Type;
+     if(this->bigMissile)
+     {
+         return Type;
+     }
+     else
+     {
+         return Type + 1;
+     }
  }
 

@@ -21,9 +21,9 @@ PlayerShip::PlayerShip()
     dFlag = false;
     uFlag = false;
     this->setPos(260,400);
-    this->setArmor(10);
-    this->setShield(10);
-    this->setLives(0);
+    this->setArmor(100);
+    this->setShield(100);
+    this->setLives(3);
     this->setImage(QImage(":/images/GoodGuy.png"));
     this->setGraphicType(2);
     this->shipSize = 80;
@@ -87,56 +87,8 @@ void PlayerShip::setUFlag( bool keyPress )
  */
 void PlayerShip::advance(int phase)
 {
-    QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
+    this->collCheck();
 
-    if (!listOfCollidingItems.isEmpty())
-    {
-        int length = listOfCollidingItems.length();
-
-        for (int i = 0; i < length; i++)
-        {
-            QGraphicsItem *item = listOfCollidingItems.at(i);
-            //if a basic enemy ship
-            if (item->type() == 65537)
-            {
-                //this->setArmor(this->getArmor()-10);
-            }
-            //if a player ship
-            if (item->type() == 65538)
-            {
-                //this->setArmor(this->getArmor()-10);
-            }
-            //if a boss ship
-            if (item->type() == 65539)
-            {
-                //this->setArmor(this->getArmor()-30);
-            }
-            //if a bullet
-            if (item->type() == 65540)
-            {
-                if (this->getShield() > 0)
-                {
-                    this->setShield(this->getShield()-10);
-                }
-                else if (this->getArmor() > 0)
-                {
-                    this->setArmor(this->getArmor()-10);
-                }
-                else if (this->getLives() > 0)
-                {
-                    this->setLives(this->getLives()-1);
-                    this->setShield(100);
-                    this->setArmor(100);
-                }
-                else
-                {
-                   this->setImage(QImage(":/images/explosion.png"));
-                }
-                item->setPos(500,500);
-            }
-        }
-
-    }
 
     if(!phase) return;
     //left movement
@@ -319,4 +271,76 @@ void PlayerShip::setShield(int theShield)
  {
     // Enable the use of qgraphicsitem_cast with this item.
     return Type;
+ }
+
+ void PlayerShip::collCheck()
+ {
+    QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
+    int decr = 0;
+
+    if (!listOfCollidingItems.isEmpty())
+    {
+        int length = listOfCollidingItems.length();
+
+        for (int i = 0; i < length; i++)
+        {
+            decr = 0;
+            QGraphicsItem *item = listOfCollidingItems.at(i);
+            //if a basic enemy ship
+            if (item->type() == 65537)
+            {
+                decr = 10;
+            }
+            //if a player ship
+            if (item->type() == 65538)
+            {
+                decr = 10;
+            }
+            //if a boss ship
+            if (item->type() == 65539)
+            {
+                decr = 30;
+            }
+            //if a bullet
+            if (item->type() == 65540)
+            {
+                decr = 10;
+                item->setPos(500,500);
+            }
+            if (item->type() == 65541)
+            {
+                decr = 50;
+                item->setPos(500,500);
+            }
+            if (item->type() == 65542)
+            {
+                decr = 25;
+                item->setPos(500,500);
+            }
+            this->damage(decr);
+        }
+
+    }
+ }
+
+ void PlayerShip::damage(int dTaken)
+ {
+     if (this->getShield() > 0)
+     {
+        this->setShield(this->getShield()-dTaken);
+     }
+     else if (this->getArmor() > 0)
+     {
+         this->setArmor(this->getArmor()-dTaken);
+     }
+     else if (this->getLives() > 1)
+     {
+         this->setLives(this->getLives()-1);
+         this->setShield(100);
+         this->setArmor(100);
+     }
+     else
+     {
+         this->setImage(QImage(":/images/explosion.png"));
+     }
  }
