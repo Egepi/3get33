@@ -172,29 +172,37 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
     Action a = actions[ key->key() ];
     switch(a) {
         case Left:  //Move ship Left
-        myShip->setLFlag( true );
+            myShip->setLFlag( true );
         break;
         case Right: //Move ship Right
-        myShip->setRFlag( true );
+            myShip->setRFlag( true );
         break;
         case Up:    //Move ship Up
-        myShip->setUFlag( true );
+            myShip->setUFlag( true );
         break;
         case Down:  //Move ship Down
-        myShip->setDFlag( true );
+            myShip->setDFlag( true );
         break;
         case ShootBBomb:    //Shoot Big Bomb
-        Missile *aBigMissile = new Missile(myShip->x(), myShip->y(),QImage(":/images/bMissile.png"), true, true);
-        gameScene->addItem(aBigMissile);
+            if(myShip->getbMissile() > 0)
+            {
+                Missile *aBigMissile = new Missile(myShip->x(), myShip->y(),QImage(":/images/bMissile.png"), true, true);
+                gameScene->addItem(aBigMissile);
+                myShip->setbMissile(myShip->getbMissile() -1);
+            }
         break;
         case ShootSBomb:    //Shoot Small Bomb
-        Missile *aSmallMissile = new Missile(myShip->x(), myShip->y(),QImage(":/images/sMissile.png"), true, false);
-        gameScene->addItem(aSmallMissile);
+            if(myShip->getsMissile() > 0)
+            {
+                Missile *aSmallMissile = new Missile(myShip->x(), myShip->y(),QImage(":/images/sMissile.png"), true, false);
+                gameScene->addItem(aSmallMissile);
+                myShip->setsMissile(myShip->getsMissile() -1);
+            }
         break;
         case ShootGun:      //Shoot normal gun
-        Bullet *aBullet = new Bullet(myShip->x(),myShip->y(),QImage(":/images/WhiteBullet.png"), true);
-        gameScene->addItem(aBullet);
-        QSound::play(QString("pew2.wav"));
+            Bullet *aBullet = new Bullet(myShip->x(),myShip->y(),QImage(":/images/WhiteBullet.png"), true);
+            gameScene->addItem(aBullet);
+            QSound::play(QString("pew2.wav"));
         break;
         case Pause:         //Pause the game
         break;
