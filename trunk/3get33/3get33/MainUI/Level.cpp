@@ -32,6 +32,7 @@ void Level::addWave()
 {
     QImage theEnemyPicture(":/images/BadGuy4.png");
     EnemyWave *theEnemyWave = new EnemyWave(myScene, enemyImage,10,50);
+    theEnemyWave->addWave();
 
     advanceTimer = new QTimer;
     QObject::connect(advanceTimer, SIGNAL(timeout()), myScene, SLOT(advance()));

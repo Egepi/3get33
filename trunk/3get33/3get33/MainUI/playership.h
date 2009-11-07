@@ -5,6 +5,7 @@
 #include <QGraphicsItem>
 #include <QPixmap>
 #include <QPainter>
+#include <QMessageBox>
 #include "BasicShip.h"
 
 class PlayerShip : public BasicShip
