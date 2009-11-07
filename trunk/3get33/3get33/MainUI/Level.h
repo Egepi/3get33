@@ -5,11 +5,12 @@
 #include <QList>
 #include "BasicShip.h"
 #include "BossShip.h"
+#include "EnemyWave.h"
 
 class Level
 {
     public:
-        Level(QGraphicsScene *theScene, QImage *enemyType, int theWaveSize);
+        Level(QGraphicsScene *theScene, QImage enemyType, int theWaveSize);
         ~Level();
         void addWave();
         void startBoss();
@@ -17,7 +18,7 @@ class Level
         static const int ROW_SIZE = 5;
 
     private:
-        QImage *enemyImage;
+        QImage enemyImage;
         QGraphicsScene *myScene;
         int waveSize;
         BasicShip *enemy;
