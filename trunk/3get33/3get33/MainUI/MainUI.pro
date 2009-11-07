@@ -11,7 +11,8 @@ SOURCES += main.cpp \
     Level.cpp \
     Missile.cpp \
     BossShip.cpp \
-    myGraphics.cpp
+    myGraphics.cpp \
+    EnemyWave.cpp
 HEADERS += mainwindow.h \
     BasicShip.h \
     playership.h \
@@ -19,6 +20,7 @@ HEADERS += mainwindow.h \
     Level.h \
     Missile.h \
     BossShip.h \
-    myGraphics.h
+    myGraphics.h \
+    EnemyWave.h
 FORMS += mainwindow.ui
 RESOURCES += uiimages.qrc
