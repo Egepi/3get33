@@ -811,7 +811,7 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="bigBombDisplay">
+   <widget class="QLCDNumber" name="bigMissilesDisplay">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -906,7 +906,7 @@
      <number>0</number>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="smallBombsDisplay">
+   <widget class="QLCDNumber" name="smallMissilesDisplay">
     <property name="geometry">
      <rect>
       <x>30</x>
