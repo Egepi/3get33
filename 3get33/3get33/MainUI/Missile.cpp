@@ -46,7 +46,7 @@ QRectF Missile::boundingRect() const
     {
         return QRectF(0,0,20,20);
     }
-    else if(this->bigMissile == true)
+    else
     {
         return QRectF(0,0,40,40);
     }
@@ -60,7 +60,7 @@ QPainterPath Missile::shape() const
         path.addRect(0, 0, 20, 20);
         return path;
     }
-    else if (this->bigMissile == true)
+    else
     {
         QPainterPath path;
         path.addRect(0, 0, 20, 20);
