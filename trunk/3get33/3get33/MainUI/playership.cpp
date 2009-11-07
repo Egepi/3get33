@@ -21,9 +21,9 @@ PlayerShip::PlayerShip()
     dFlag = false;
     uFlag = false;
     this->setPos(260,400);
-    this->setArmor(100);
-    this->setShield(100);
-    this->setLives(3);
+    this->setArmor(10);
+    this->setShield(10);
+    this->setLives(0);
     this->setImage(QImage(":/images/GoodGuy.png"));
     this->setGraphicType(2);
     this->shipSize = 80;
@@ -130,7 +130,7 @@ void PlayerShip::advance(int phase)
                 }
                 else
                 {
-                   this->setImage(QImage(":/images/BadGuy3.png"));
+                   this->setImage(QImage(":/images/explosion.png"));
                 }
                 item->setPos(500,500);
             }

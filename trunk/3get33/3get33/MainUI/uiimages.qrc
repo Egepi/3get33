@@ -15,5 +15,6 @@
         <file>MagentaBullet.png</file>
         <file>WhiteBullet.png</file>
         <file>background640480.png</file>
+        <file>explosion.png</file>
     </qresource>
 </RCC>
