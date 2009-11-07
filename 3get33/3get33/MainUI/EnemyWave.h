@@ -9,6 +9,8 @@ class EnemyWave
         EnemyWave(QGraphicsScene *theScene, QImage theEnemyType, int theWaveSize, int theArmor);
         ~EnemyWave();
         void addWave();
+        //void
+
         static const int ROW_SIZE = 5;
         static const int SHIP_LIVES = 1;
 

@@ -333,7 +333,7 @@ void PlayerShip::setShield(int theShield)
      {
          this->setArmor(this->getArmor()-dTaken);
      }
-     else if (this->getLives() > 1)
+     else if (this->getLives() > 0)
      {
          this->setLives(this->getLives()-1);
          this->setShield(100);
@@ -342,5 +342,19 @@ void PlayerShip::setShield(int theShield)
      else
      {
          this->setImage(QImage(":/images/explosion.png"));
+         this->move(0,0);
+
+//         if(this->getLives() >= 0)
+//         {
+//            switch (QMessageBox::warning(0, "Continue ?",
+//                            "Do you want to continue?",
+//                            QMessageBox::No | QMessageBox::Default,
+//                            QMessageBox::Yes | QMessageBox::Escape)) {
+//           case QMessageBox::No:
+//               break;
+//            case QMessageBox::Yes:
+//                break;
+//           }
+//        }
      }
  }
