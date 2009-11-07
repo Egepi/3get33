@@ -27,6 +27,8 @@ PlayerShip::PlayerShip()
     this->setImage(QImage(":/images/GoodGuy.png"));
     this->setGraphicType(2);
     this->shipSize = 80;
+    this->setsMissile(10);
+    this->setbMissile(10);
 }
 
 /**********************************************************************/
@@ -215,37 +217,6 @@ void PlayerShip::advanceDown()
 }
 
 /**********************************************************************/
-/*! Currently under construction.
- *
- *  Author: Karan Chakrapani,
- *          Jennifer Kinahan
- */
-void PlayerShip::shootGun()
-{
-
-}
-
-/**********************************************************************/
-/*! Currently under construction.
- *
- *  Author: Karan Chakrapani,
- *          Jennifer Kinahan
- */
-void PlayerShip::shootSBomb()
-{
-}
-
-/**********************************************************************/
-/*! Currently under construction.
- *
- *  Author: Karan Chakrapani,
- *          Jennifer Kinahan
- */
-void PlayerShip::shootBBomb()
-{
-}
-
-/**********************************************************************/
 /*! Returns the amoung of shield the PlayerShip has.
  *
  *  Author: Karan Chakrapani,
@@ -358,3 +329,51 @@ void PlayerShip::setShield(int theShield)
 //        }
      }
  }
+
+
+/**********************************************************************/
+/*! Returns the amoung of sMissiles the PlayerShip has.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
+ */
+int PlayerShip::getsMissile()
+{
+    return sMissile;
+}
+
+/**********************************************************************/
+/*! Sets the amount of shield the PlayerShip has equal to theShield.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
+ */
+void PlayerShip::setsMissile(int thesMissile)
+{
+    PlayerShip::sMissile = thesMissile;
+}
+
+
+/**********************************************************************/
+/*! Sets the amount of bMissile the PlayerShip has equal to theShield.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
+ */
+void PlayerShip::setbMissile(int thebMissile)
+{
+    PlayerShip::bMissile = thebMissile;
+}
+
+
+/**********************************************************************/
+/*! Returns the amoung of shield the PlayerShip has.
+ *
+ *  Author: Karan Chakrapani,
+ *          Jennifer Kinahan
+ */
+int PlayerShip::getbMissile()
+{
+    return bMissile;
+}
+

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Sat Nov 7 16:50:28 2009
+** Created: Sat Nov 7 17:37:01 2009
 **      by: Qt User Interface Compiler version 4.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -41,8 +41,8 @@ public:
     QLabel *bombsLabel;
     QLCDNumber *shieldDisplay;
     QLCDNumber *armorDisplay;
-    QLCDNumber *bigBombDisplay;
-    QLCDNumber *smallBombsDisplay;
+    QLCDNumber *bigMissilesDisplay;
+    QLCDNumber *smallMissilesDisplay;
     QLabel *label;
 
     void setupUi(QMainWindow *MainWindow)
@@ -214,9 +214,9 @@ public:
         armorDisplay->setSegmentStyle(QLCDNumber::Flat);
         armorDisplay->setProperty("value", QVariant(0));
         armorDisplay->setProperty("intValue", QVariant(0));
-        bigBombDisplay = new QLCDNumber(centralWidget);
-        bigBombDisplay->setObjectName(QString::fromUtf8("bigBombDisplay"));
-        bigBombDisplay->setGeometry(QRect(80, 320, 51, 30));
+        bigMissilesDisplay = new QLCDNumber(centralWidget);
+        bigMissilesDisplay->setObjectName(QString::fromUtf8("bigMissilesDisplay"));
+        bigMissilesDisplay->setGeometry(QRect(80, 320, 51, 30));
         QPalette palette10;
         palette10.setBrush(QPalette::Active, QPalette::Base, brush);
         QBrush brush8(QColor(0, 255, 0, 255));
@@ -226,17 +226,17 @@ public:
         palette10.setBrush(QPalette::Inactive, QPalette::Window, brush8);
         palette10.setBrush(QPalette::Disabled, QPalette::Base, brush8);
         palette10.setBrush(QPalette::Disabled, QPalette::Window, brush8);
-        bigBombDisplay->setPalette(palette10);
-        bigBombDisplay->setAutoFillBackground(true);
-        bigBombDisplay->setFrameShape(QFrame::Box);
-        bigBombDisplay->setFrameShadow(QFrame::Raised);
-        bigBombDisplay->setNumDigits(2);
-        bigBombDisplay->setSegmentStyle(QLCDNumber::Flat);
-        bigBombDisplay->setProperty("value", QVariant(0));
-        bigBombDisplay->setProperty("intValue", QVariant(0));
-        smallBombsDisplay = new QLCDNumber(centralWidget);
-        smallBombsDisplay->setObjectName(QString::fromUtf8("smallBombsDisplay"));
-        smallBombsDisplay->setGeometry(QRect(30, 320, 51, 30));
+        bigMissilesDisplay->setPalette(palette10);
+        bigMissilesDisplay->setAutoFillBackground(true);
+        bigMissilesDisplay->setFrameShape(QFrame::Box);
+        bigMissilesDisplay->setFrameShadow(QFrame::Raised);
+        bigMissilesDisplay->setNumDigits(2);
+        bigMissilesDisplay->setSegmentStyle(QLCDNumber::Flat);
+        bigMissilesDisplay->setProperty("value", QVariant(0));
+        bigMissilesDisplay->setProperty("intValue", QVariant(0));
+        smallMissilesDisplay = new QLCDNumber(centralWidget);
+        smallMissilesDisplay->setObjectName(QString::fromUtf8("smallMissilesDisplay"));
+        smallMissilesDisplay->setGeometry(QRect(30, 320, 51, 30));
         QPalette palette11;
         palette11.setBrush(QPalette::Active, QPalette::Base, brush);
         palette11.setBrush(QPalette::Active, QPalette::Window, brush8);
@@ -244,14 +244,14 @@ public:
         palette11.setBrush(QPalette::Inactive, QPalette::Window, brush8);
         palette11.setBrush(QPalette::Disabled, QPalette::Base, brush8);
         palette11.setBrush(QPalette::Disabled, QPalette::Window, brush8);
-        smallBombsDisplay->setPalette(palette11);
-        smallBombsDisplay->setAutoFillBackground(true);
-        smallBombsDisplay->setFrameShape(QFrame::Box);
-        smallBombsDisplay->setFrameShadow(QFrame::Raised);
-        smallBombsDisplay->setNumDigits(2);
-        smallBombsDisplay->setSegmentStyle(QLCDNumber::Flat);
-        smallBombsDisplay->setProperty("value", QVariant(0));
-        smallBombsDisplay->setProperty("intValue", QVariant(0));
+        smallMissilesDisplay->setPalette(palette11);
+        smallMissilesDisplay->setAutoFillBackground(true);
+        smallMissilesDisplay->setFrameShape(QFrame::Box);
+        smallMissilesDisplay->setFrameShadow(QFrame::Raised);
+        smallMissilesDisplay->setNumDigits(2);
+        smallMissilesDisplay->setSegmentStyle(QLCDNumber::Flat);
+        smallMissilesDisplay->setProperty("value", QVariant(0));
+        smallMissilesDisplay->setProperty("intValue", QVariant(0));
         label = new QLabel(centralWidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(30, 300, 91, 20));

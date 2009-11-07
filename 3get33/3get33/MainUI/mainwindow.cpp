@@ -286,5 +286,7 @@ void MainWindow::updateArmor()
     ui->armorDisplay->display(myShip->getArmor());
     ui->shieldDisplay->display(myShip->getShield());
     ui->livesDisplay->display(myShip->getLives());
+    ui->smallMissilesDisplay->display(myShip->getsMissile());
+    ui->bigMissilesDisplay->display(myShip->getbMissile());
 }
 
