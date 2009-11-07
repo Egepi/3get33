@@ -14,13 +14,13 @@ Missile::Missile(qreal shipX, qreal shipY, QImage missImage, bool theOwner, bool
     MissileImage = missImage;
     owner = theOwner;
     this->setGraphicType(4);
-    if(owner == true)
+    if(bigMissile == true)
     {
-        setPos(shipX+36, shipY-9);
+        setPos(shipX+30, shipY-41);
     }
-    else
+    else if (bigMissile == false)
     {
-        setPos(shipX+18, shipY+49);
+        setPos(shipX+35, shipY-21);
     }
 }
 
@@ -112,14 +112,14 @@ void Missile::advance(int phase)
 
  int Missile::type() const
  {
-    // Enable the use of qgraphicsitem_cast with this item.
-     if(this->bigMissile)
-     {
+   // // Enable the use of qgraphicsitem_cast with this item.
+    // if(this->bigMissile)
+     //{
          return Type;
-     }
-     else
-     {
-         return Type + 1;
-     }
+     //}
+     ///else
+     //{
+     //    return Type + 1;
+     //}
  }
 
