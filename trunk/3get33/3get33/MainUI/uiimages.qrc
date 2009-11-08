@@ -24,5 +24,6 @@
         <file>greenLM.png</file>
         <file>purpleDS.png</file>
         <file>purpleLS.png</file>
+        <file>shieldpowerup.gif</file>
     </qresource>
 </RCC>
