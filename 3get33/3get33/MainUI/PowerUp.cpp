@@ -32,19 +32,23 @@ QRectF PowerUp::boundingRect() const
 {
     if(this->puType == 1 )
     {
-
+        return QRectF(0,0,20,20);
     }
     else if(this->puType == 2 )
     {
-
+        return QRectF(0,0,20,20);
     }
     else if(this->puType == 3 )
     {
-
+        return QRectF(0,0,20,20);
     }
     else if(this->puType == 4 )
     {
-
+        return QRectF(0,0,20,20);
+    }
+    else
+    {
+        return QRectF(0,0,20,20);
     }
 }
 
@@ -74,6 +78,12 @@ QPainterPath PowerUp::shape() const
         path.addRect(0, 0, 20, 20);
         return path;
     }
+    else
+    {
+        QPainterPath path;
+        path.addRect(0, 0, 20, 20);
+        return path;
+    }
 
 }
 
@@ -95,6 +105,10 @@ int PowerUp::type() const
     else if(this->puType == 4 )
     {
         return Type + 3;
+    }
+    else
+    {
+        return Type;
     }
 }
 

@@ -18,6 +18,7 @@ class PowerUp : public myGraphics
         void PowerUp::setPowerUpImage(QImage thePowerUpImage);
         QRectF PowerUp::boundingRect() const;
         QPainterPath PowerUp::shape() const;
+        enum {Type = 65536 + 7};
         int PowerUp::type() const;
 
     private:
