@@ -18,5 +18,6 @@
         <file>explosion.png</file>
         <file>bMissile.png</file>
         <file>sMissile.png</file>
+        <file>boss.png</file>
     </qresource>
 </RCC>

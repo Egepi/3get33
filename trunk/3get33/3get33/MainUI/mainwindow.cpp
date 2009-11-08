@@ -18,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     ui->setupUi(this);  //Sets up the user interface based of mainwindow.ui
     atBoss = false;
-
     gameScene = new QGraphicsScene; //Scene to display the whole game
     int width = ui->Display->geometry().width();
     int height = ui->Display->geometry().height();

@@ -2,7 +2,8 @@
 #include <QGraphicsItem>
 #include <QPixmap>
 #include <QPainter>
-
+#include <QObject>
+#include <QTimer>
 
 /**********************************************************************/
 /*! Constructor for BasicShip.
@@ -21,7 +22,8 @@ BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int 
     setPos(theX, theY);
     damageCounter = 0;
     this->setGraphicType(1);
-    this->shipSize = 40;
+    this->shipSizeX = 80;
+    this->shipSizeY = 80;
     this->moveRight = true;
 }
 
@@ -113,14 +115,14 @@ void BasicShip::move(qreal xMove, qreal yMove)
     qreal yLoc = this->y();
 
     //Checks if the object is within the x-axis bounds of the gameScene
-    if(( this->x() + xMove >= 0 )&&( this->x() + xMove <= 600 - this->shipSize ))
+    if(( this->x() + xMove >= 0 )&&( this->x() + xMove <= 600 - this->shipSizeX ))
     {// The object was within the gameScene bounds so the ship is moved
      // along the x-axis as determined from xMove.
         xLoc += xMove;
     }
 
     //Checks if the object is within the y-axis bounds of the gameScene
-    if(( this->y() + yMove >= 0 )&&( this->y() + yMove <= 480 - this->shipSize ))
+    if(( this->y() + yMove >= 0 )&&( this->y() + yMove <= 480 - this->shipSizeY ))
     {// The object was within the gameScene bounds so the ship is moved
      // along the y-axis as determined from yMove.
         yLoc += yMove;
@@ -138,7 +140,7 @@ void BasicShip::move(qreal xMove, qreal yMove)
  */
 QRectF BasicShip::boundingRect() const
 {
-    return QRectF(0,0,this->shipSize,this->shipSize);
+    return QRectF(0,0,this->shipSizeX,this->shipSizeY);
 }
 
 /**********************************************************************/
@@ -153,7 +155,7 @@ QRectF BasicShip::boundingRect() const
 QPainterPath BasicShip::shape() const
 {
     QPainterPath path;
-    path.addRect(0, 0, this->shipSize, this->shipSize);
+    path.addRect(0, 0, this->shipSizeX, this->shipSizeY);
     return path;
 }
 
@@ -175,39 +177,8 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
 
  void BasicShip::advance(int phase)
  {
-     QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
+     this->collCheck();
 
-    if (!listOfCollidingItems.isEmpty())
-    {
-        int length = listOfCollidingItems.length();
-
-        for (int i = 0; i < length; i++)
-        {
-            QGraphicsItem *item = listOfCollidingItems.at(i);
-            //if a basic enemy ship
-            if (item->type() == 65537)
-            {
-                this->setArmor(this->getArmor()-10);
-            }
-            //if a player ship
-            if (item->type() == 65538)
-            {
-                this->setArmor(this->getArmor()-10);
-            }
-            //if a boss ship
-            if (item->type() == 65539)
-            {
-                this->setArmor(this->getArmor()-30);
-            }
-            //if a bullet
-            if (item->type() == 65540)
-            {
-                this->setArmor(this->getArmor()-1);
-                item->setPos(500,500);
-            }
-        }
-
-    }
    /*
      if(!phase) return;
      qreal moveDelta = 5;
@@ -215,7 +186,7 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
      qreal yLoc = this->y();
 
     //Checks if the object is within the y-axis bounds of the gameScene
-    if(( this->y() + moveDelta >= 0 )&&( this->y() + moveDelta <= 480 - this->shipSize ))
+    if(( this->y() + moveDelta >= 0 )&&( this->y() + moveDelta <= 480 - this->shipSizeY ))
     {// The object was within the gameScene bounds so the ship is moved
      // along the y-axis as determined from yMove.
         yLoc += moveDelta;
@@ -225,7 +196,6 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
 
      if(!phase) return;
      qreal xDelta = 3;
-     qreal yDelta = 40;
      qreal xLoc = this->x();
      qreal yLoc = this->y();
 
@@ -235,13 +205,13 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
      }
      if(this->moveRight == true)
      {
-         if((xLoc + xDelta + SHIP_SIZE) <= SCENE_WIDTH)
+         if((xLoc + xDelta + shipSizeX) <= SCENE_WIDTH)
          {
              this->setPos(xLoc + xDelta, yLoc);
          }
          else
          {
-             this->setPos(xLoc, yLoc + yDelta);
+             this->setPos(xLoc, yLoc + shipSizeY);
              moveRight = false;
          }
      }
@@ -253,7 +223,7 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
          }
          else
          {
-             this->setPos(xLoc, yLoc + yDelta);
+             this->setPos(xLoc, yLoc + shipSizeY);
              moveRight = true;
          }
      }
@@ -275,3 +245,82 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     // Enable the use of qgraphicsitem_cast with this item.
     return Type;
  }
+
+    void BasicShip::collCheck()
+ {
+    QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
+    int decr = 0;
+
+    if (!listOfCollidingItems.isEmpty())
+    {
+        int length = listOfCollidingItems.length();
+
+        for (int i = 0; i < length; i++)
+        {
+            decr = 0;
+            QGraphicsItem *item = listOfCollidingItems.at(i);
+            //if a basic enemy ship
+            if (item->type() == 65537)
+            {
+            }
+            //if a player ship
+            if (item->type() == 65538)
+            {
+                decr = 10;
+            }
+            //if a boss ship
+            if (item->type() == 65539)
+            {
+            }
+            //if a bullet
+            if (item->type() == 65540)
+            {
+                decr = 10;
+                item->setPos(500,500);
+            }
+            if (item->type() == 65541)
+            {
+                decr = 50;
+                item->setPos(500,500);
+            }
+            if (item->type() == 65542)
+            {
+                decr = 25;
+                item->setPos(500,500);
+            }
+            if (item->type() == 65543)
+            {
+            }
+            if (item->type() == 65544)
+            {
+            }
+            if (item->type() == 65545)
+            {
+            }
+            if (item->type() == 65546)
+            {
+            }
+            this->damage(decr);
+        }
+
+    }
+ }
+
+ void BasicShip::damage(int dTaken)
+ {
+      if (this->getArmor() > 0)
+     {
+         this->setArmor(this->getArmor()-dTaken);
+     }
+     else
+     {
+         this->setImage(QImage(":/images/explosion.png"));
+         this->move(0,0);
+        // this->setPos(500,500);
+     }
+ }
+
+void BasicShip::getridof()
+{
+
+}
