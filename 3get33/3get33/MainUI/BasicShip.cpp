@@ -308,9 +308,14 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
 
  void BasicShip::damage(int dTaken)
  {
-      if (this->getArmor() > 0)
+     if (this->getArmor() > 0)
      {
          this->setArmor(this->getArmor()-dTaken);
+         if (this->getArmor() <= 0)
+         {
+            this->setImage(QImage(":/images/explosion.png"));
+            this->move(0,0);
+         }
      }
      else
      {

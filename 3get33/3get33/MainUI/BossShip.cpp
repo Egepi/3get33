@@ -13,6 +13,7 @@ BossShip::BossShip()
     this->setGraphicType(3);
     this->shipSizeX = 150;
     this->shipSizeY = 63;
+    this->setArmor(20);
 }
 
 /**********************************************************************/
@@ -32,6 +33,7 @@ BossShip::~BossShip()
 void BossShip::advance(int phase)
 {
     if(!phase) return;
+    this->collCheck();
     if(((this->x() - 2) >=0)&&(moveLeft == true))
     {
         this->move(-2,0);

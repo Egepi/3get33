@@ -294,9 +294,19 @@ void PlayerShip::setShield(int theShield)
                 this->setShield(this->getShield()+10);
                 item->setPos(500,500);
             }
-            if (item->type() == 65542)
+            if (item->type() == 65544)
             {
                 this->setArmor(this->getArmor()+10);
+                item->setPos(500,500);
+            }
+             if (item->type() == 65545)
+            {
+                this->setsMissile(this->getsMissile()+1);
+                item->setPos(500,500);
+            }
+            if (item->type() == 65546)
+            {
+                this->setbMissile(this->getbMissile()+1);
                 item->setPos(500,500);
             }
             this->damage(decr);

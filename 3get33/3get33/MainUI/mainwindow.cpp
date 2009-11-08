@@ -311,7 +311,7 @@ void MainWindow::updateArmor()
 }
 void MainWindow::makePowerUp()
 {
-    PowerUp *aPU = new PowerUp(QImage(":/images/shieldpowerup.gif") ,1);
+    PowerUp *aPU = new PowerUp((qrand() % 4) +1);
     gameScene->addItem(aPU);
 }
 
