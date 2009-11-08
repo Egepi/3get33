@@ -40,11 +40,11 @@ void EnemyWave::addWave()
 
     if(waveSize >= ROW_SIZE)
     {
-        waveRight = waveList.at(ROW_SIZE)->x() + SHIP_SIZE;
+        //waveRight = waveList.at(ROW_SIZE)->x() + SHIP_SIZE;
     }
     else
     {
-        waveRight = waveList.last()->x() + SHIP_SIZE;
+        //waveRight = waveList.last()->x() + SHIP_SIZE;
     }
 }
 

@@ -12,7 +12,6 @@ class EnemyWave : QObject
         void addWave();
         static const int ROW_SIZE = 5;
         static const int SHIP_LIVES = 1;
-        static const int SHIP_SIZE = 80;
         static const int VIEW_SIZE = 600;
         static const int SHIP_SPACING = 30;
    public slots:
