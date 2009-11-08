@@ -316,7 +316,6 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
      {
          this->setImage(QImage(":/images/explosion.png"));
          this->move(0,0);
-        // this->setPos(500,500);
      }
  }
 
