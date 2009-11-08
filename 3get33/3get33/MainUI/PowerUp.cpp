@@ -9,8 +9,8 @@ PowerUp::PowerUp(QImage powerUpImage, int powerUpType)
     puType = powerUpType;
     this->setGraphicType(7);
     puImage = powerUpImage;
-    puLocX = qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
-    puLocY = qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
+    //puLocX = qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
+    //puLocY = qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
 
 }
 
