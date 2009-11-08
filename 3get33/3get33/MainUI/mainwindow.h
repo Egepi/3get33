@@ -14,6 +14,7 @@
 #include <QMessageBox>
 #include "Bullet.h"
 #include "Missile.h"
+#include "PowerUp.h"
 
 namespace Ui
 {
@@ -31,6 +32,7 @@ public:
     void MainWindow::keyReleaseEvent(QKeyEvent *key);
     void gamelvl();
     QGraphicsScene *gameScene;
+    void spawnPowerUp();
 
 public slots:
     void closeGame();
@@ -40,7 +42,7 @@ public slots:
     void startBoss();
     void enemyShoot();
     void updateArmor();
-
+    void makePowerUp();
 private:
     Ui::MainWindow *ui;
     PlayerShip *myShip;
@@ -53,6 +55,7 @@ private:
     Missile *aBigMissile;
     Missile *aSmallMissile;
     QTimer *enemyShootTimer;
+    PowerUp *aPU;
 
 };
 #endif // MAINWINDOW_H

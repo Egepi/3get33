@@ -9,9 +9,9 @@ PowerUp::PowerUp(QImage powerUpImage, int powerUpType)
     puType = powerUpType;
     this->setGraphicType(7);
     puImage = powerUpImage;
-    //puLocX = qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
-    //puLocY = qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
-
+    puLocX = qrand() % 600;
+    puLocY = qrand() % 480;
+    setPos(puLocX, puLocY);
 }
 
 PowerUp::PowerUp()
@@ -25,7 +25,7 @@ PowerUp::~PowerUp()
 void PowerUp::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     //draws the power up to the screen
-    painter->drawImage(0,0, puImage);
+    painter->drawImage(0, 0, puImage);
 }
 
 QRectF PowerUp::boundingRect() const

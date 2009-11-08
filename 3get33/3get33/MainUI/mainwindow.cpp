@@ -154,6 +154,8 @@ void MainWindow::gamelvl()
         QTimer *kk = new QTimer;
         QObject::connect(kk,SIGNAL(timeout()), this, SLOT(updateArmor()));
         kk->start(1000/33);
+
+        this->spawnPowerUp();
     }
 
 }
@@ -296,4 +298,15 @@ void MainWindow::updateArmor()
     ui->smallMissilesDisplay->display(myShip->getsMissile());
     ui->bigMissilesDisplay->display(myShip->getbMissile());
 }
+void MainWindow::makePowerUp()
+{
+    PowerUp *aPU = new PowerUp(QImage(":/images/BadGuy3.png") ,1);
+    gameScene->addItem(aPU);
+}
 
+void MainWindow::spawnPowerUp()
+{
+    QTimer *powerUpTimer = new QTimer();
+    QObject::connect(powerUpTimer, SIGNAL(timeout()), this, SLOT(makePowerUp()));
+    powerUpTimer->start((qrand() % 40) + (10000) );
+}
