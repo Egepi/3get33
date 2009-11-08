@@ -22,7 +22,7 @@ BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int 
     damageCounter = 0;
     this->setGraphicType(1);
     this->shipSize = 40;
-
+    this->moveRight = true;
 }
 
 /**********************************************************************/
@@ -208,7 +208,7 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
         }
 
     }
-
+   /*
      if(!phase) return;
      qreal moveDelta = 5;
      qreal xLoc = this->x();
@@ -221,7 +221,53 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
         yLoc += moveDelta;
     }
     setPos(xLoc, yLoc);
+    */
 
+     if(!phase) return;
+     qreal xDelta = 3;
+     qreal yDelta = 40;
+     qreal xLoc = this->x();
+     qreal yLoc = this->y();
+
+     if(yLoc >= SCENE_HEIGHT)
+     {
+         //remove me from scene.
+     }
+     if(this->moveRight == true)
+     {
+         if((xLoc + xDelta + SHIP_SIZE) <= SCENE_WIDTH)
+         {
+             this->setPos(xLoc + xDelta, yLoc);
+         }
+         else
+         {
+             this->setPos(xLoc, yLoc + yDelta);
+             moveRight = false;
+         }
+     }
+     else
+     {
+         if((xLoc - xDelta) >= 0)
+         {
+             this->setPos(xLoc - xDelta, yLoc);
+         }
+         else
+         {
+             this->setPos(xLoc, yLoc + yDelta);
+             moveRight = true;
+         }
+     }
+
+
+    /*
+    //Checks if the object is within the y-axis bounds of the gameScene
+    if(( this->y() + moveDelta >= 0 )&&( this->y() + moveDelta <= 480 - this->shipSize ))
+    {// The object was within the gameScene bounds so the ship is moved
+     // along the y-axis as determined from yMove.
+        yLoc += moveDelta;
+    }
+    setPos(xLoc, yLoc);
+    */
 }
 
   int BasicShip::type() const
