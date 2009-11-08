@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     ui->setupUi(this);  //Sets up the user interface based of mainwindow.ui
     atBoss = false;
+
     gameScene = new QGraphicsScene; //Scene to display the whole game
     int width = ui->Display->geometry().width();
     int height = ui->Display->geometry().height();
@@ -80,17 +81,27 @@ void MainWindow::closeGame()
 void MainWindow::loadGame()
 
 {
-    QFileDialog fileDlg;
-    QStringList newFile;
-    // open file dialog
-    if ( fileDlg.exec() != QDialog::Accepted )
-    return; // the user clicked cancel
-    // get the file path
-    newFile = fileDlg.selectedFiles();
-    QString theFile = newFile.first();
+    QString fileName = QFileDialog::getOpenFileName(this,
+                                        tr("Open Level"), ".",
+                                        tr("Level Files (*.lvl)"));
 
-    //Disabled for now, because this was for testing only
-    //ui->armorLabel->setText(theFile);
+    if(!fileName.isEmpty())
+    {
+        QFile levelFile(fileName);
+        QString line;
+
+        if(levelFile.open(QIODevice::ReadOnly))
+        {
+            QTextStream t(&levelFile);
+            while(!t.atEnd() )
+            {
+                line = t.readLine();
+                gameScene->setBackgroundBrush(QBrush(QImage(QString(line))));
+            }
+            levelFile.close();
+
+        }
+    }
 }
 
 /**********************************************************************/

@@ -12,6 +12,8 @@
 #include <QGraphicsScene>
 #include <QKeyEvent>
 #include <QMessageBox>
+#include <QTextStream>
+ #include <QFile>
 #include "Bullet.h"
 #include "Missile.h"
 #include "PowerUp.h"
