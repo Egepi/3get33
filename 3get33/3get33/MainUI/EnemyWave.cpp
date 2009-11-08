@@ -34,7 +34,7 @@ void EnemyWave::addWave()
        {
            lineCounter = 0;
            tempX = 0;
-           tempY += 110;
+           tempY += 150;
        }
     }
 

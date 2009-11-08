@@ -9,7 +9,6 @@
 
 class BasicShip : public myGraphics
 {
-
     public:
     BasicShip(int theArmor, int theLives, QImage theImage, int theX, int theY);
     BasicShip();
@@ -25,18 +24,21 @@ class BasicShip : public myGraphics
     void setImage(QImage theImage);
     void move(qreal xMove, qreal yMove);
     void advance(int phase);
-    int shipSize;
+    int shipSizeX;
+    int shipSizeY;
     enum { Type = 65536 + 1 };
     int BasicShip::type() const;
     static const qreal SCENE_WIDTH = 600;
-    static const int SHIP_SIZE = 40;
+    static const int SHIP_SIZE = 80;
     static const qreal SCENE_HEIGHT = 480;
-
+    void BasicShip::collCheck();
+    void BasicShip::damage(int dTaken);
 
     signals:
          void armorChanged();
 
-
+    public slots:
+        void getridof();
 
     private:
         /*! The amount of armor. */
