@@ -19,5 +19,10 @@
         <file>bMissile.png</file>
         <file>sMissile.png</file>
         <file>boss.png</file>
+        <file>greenBossBullet.png</file>
+        <file>greenDM.png</file>
+        <file>greenLM.png</file>
+        <file>purpleDS.png</file>
+        <file>purpleLS.png</file>
     </qresource>
 </RCC>
