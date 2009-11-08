@@ -4,14 +4,38 @@
 // power up type 2 = health
 // power up type 3 = small missile
 // power up type 4 = big missile
-PowerUp::PowerUp(QImage powerUpImage, int powerUpType)
+PowerUp::PowerUp(int powerUpType)
 {
     puType = powerUpType;
     this->setGraphicType(7);
-    puImage = powerUpImage;
-    puLocX = qrand() % 600;
-    puLocY = qrand() % 480;
+    puLocX = qrand() % 560;
+    puLocY = qrand() % 440;
     setPos(puLocX, puLocY);
+    //sheild
+    if(this->puType == 1 )
+    {
+        puImage = QImage(":/images/shieldpowerup.gif");
+    }
+    //armor
+    else if(this->puType == 2 )
+    {
+        puImage = QImage(":/images/greenBossBullet.png");
+    }
+    //smissile
+    else if(this->puType == 3 )
+    {
+        puImage = QImage(":/images/purpleDS.png");
+    }
+    //bmissile
+    else if(this->puType == 4 )
+    {
+        puImage = QImage(":/images/greenDM.png");
+    }
+    //sheild if nothin
+    else
+    {
+        puImage = QImage(":/images/shieldpowerup.gif");
+    }
 }
 
 PowerUp::PowerUp()
