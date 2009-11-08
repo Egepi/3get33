@@ -28,8 +28,8 @@ PlayerShip::PlayerShip()
     this->setGraphicType(2);
     this->shipSizeX = 80;
     this->shipSizeY = 80;
-    this->setsMissile(10);
-    this->setbMissile(10);
+    this->setsMissile(98);
+    this->setbMissile(98);
 }
 
 /**********************************************************************/
@@ -291,23 +291,52 @@ void PlayerShip::setShield(int theShield)
             }
             if (item->type() == 65543)
             {
-                this->setShield(this->getShield()+10);
-                item->setPos(500,500);
+                if(this->getShield() <= 90)
+                {
+                    this->setShield(this->getShield()+10);
+                    item->setPos(500,500);
+                }
+                else if(this->getShield() <= 99)
+                {
+                    this->setShield(100);
+                    item->setPos(500,500);
+                }
+                else
+                {
+                }
+
             }
             if (item->type() == 65544)
             {
-                this->setArmor(this->getArmor()+10);
-                item->setPos(500,500);
+                if(this->getArmor() <= 90)
+                {
+                    this->setArmor(this->getArmor()+10);
+                    item->setPos(500,500);
+                }
+                else if(this->getArmor() <= 99)
+                {
+                    this->setArmor(100);
+                    item->setPos(500,500);
+                }
+                else
+                {
+                }
             }
              if (item->type() == 65545)
             {
-                this->setsMissile(this->getsMissile()+1);
-                item->setPos(500,500);
+                 if(this->getsMissile() < 99)
+                 {
+                     this->setsMissile(this->getsMissile()+1);
+                     item->setPos(500,500);
+                 }
             }
             if (item->type() == 65546)
             {
-                this->setbMissile(this->getbMissile()+1);
-                item->setPos(500,500);
+                if(this->getbMissile() < 99)
+                {
+                    this->setbMissile(this->getbMissile()+1);
+                    item->setPos(500,500);
+                }
             }
             this->damage(decr);
         }

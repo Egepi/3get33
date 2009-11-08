@@ -11,7 +11,6 @@
 class PowerUp : public myGraphics
 {
     public:
-        PowerUp::PowerUp(int powerUpType);
         PowerUp::PowerUp();
         PowerUp::~PowerUp();
         void PowerUp::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
