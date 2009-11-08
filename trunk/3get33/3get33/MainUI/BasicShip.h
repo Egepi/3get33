@@ -28,7 +28,9 @@ class BasicShip : public myGraphics
     int shipSize;
     enum { Type = 65536 + 1 };
     int BasicShip::type() const;
-
+    static const qreal SCENE_WIDTH = 600;
+    static const int SHIP_SIZE = 40;
+    static const qreal SCENE_HEIGHT = 480;
 
 
     signals:
@@ -44,6 +46,7 @@ class BasicShip : public myGraphics
         /*! The imgae drawn for this ship. */
         QImage shipImage;
         int damageCounter;
+        bool moveRight;
 };
 
 #endif // BASICSHIP_H
