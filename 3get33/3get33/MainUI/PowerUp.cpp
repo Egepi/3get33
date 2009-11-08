@@ -4,9 +4,9 @@
 // power up type 2 = health
 // power up type 3 = small missile
 // power up type 4 = big missile
-PowerUp::PowerUp(int powerUpType)
+PowerUp::PowerUp()
 {
-    puType = powerUpType;
+    puType = (qrand() % 4) +1;
     this->setGraphicType(7);
     puLocX = qrand() % 560;
     puLocY = qrand() % 440;
@@ -38,10 +38,6 @@ PowerUp::PowerUp(int powerUpType)
     }
 }
 
-PowerUp::PowerUp()
-{
-}
-
 PowerUp::~PowerUp()
 {
 }
@@ -64,11 +60,11 @@ QRectF PowerUp::boundingRect() const
     }
     else if(this->puType == 3 )
     {
-        return QRectF(0,0,20,20);
+        return QRectF(0,0,15,38);
     }
     else if(this->puType == 4 )
     {
-        return QRectF(0,0,20,20);
+        return QRectF(0,0,15,38);
     }
     else
     {
@@ -93,13 +89,13 @@ QPainterPath PowerUp::shape() const
     else if(this->puType == 3 )
     {
         QPainterPath path;
-        path.addRect(0, 0, 20, 20);
+        path.addRect(0, 0, 15, 38);
         return path;
     }
     else if(this->puType == 4 )
     {
         QPainterPath path;
-        path.addRect(0, 0, 20, 20);
+        path.addRect(0, 0, 15, 38);
         return path;
     }
     else
