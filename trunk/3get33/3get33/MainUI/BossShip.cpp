@@ -10,7 +10,6 @@ BossShip::BossShip()
     this->setPos(250,10);
     this->setImage(QImage(":/images/boss.png"));
     moveLeft = true;
-   // this->setGraphicType(3);
     this->shipSizeX = 150;
     this->shipSizeY = 63;
     this->setArmor(20);
