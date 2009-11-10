@@ -87,6 +87,8 @@ void MainWindow::loadGame()
 
     if(!fileName.isEmpty())
     {
+        myShip = new PlayerShip();
+        gameScene->addItem(myShip);
         QFile levelFile(fileName);
         QString line;
 
@@ -96,7 +98,27 @@ void MainWindow::loadGame()
             while(!t.atEnd() )
             {
                 line = t.readLine();
-                gameScene->setBackgroundBrush(QBrush(QImage(QString(line))));
+                QStringList tokLine = line.split("#");
+                if(tokLine.first().compare(QString("Background")) == 0)
+                {
+                    QString temp(tokLine.at(1));
+                    gameScene->setBackgroundBrush(QBrush(QImage(temp)));
+                }
+                else if(tokLine.first().compare(QString("PlayerArmor")) == 0)
+                {
+                    bool ok = true;
+                    myShip->setArmor(tokLine.at(1).toDouble(&ok));
+                    ui->armorDisplay->display(myShip->getArmor());
+                }
+                else if(tokLine.first().compare(QString("PlayerImage")) == 0)
+                {
+                    myShip->setImage(QImage(tokLine.at(1)));
+                }
+                else if(tokLine.first().compare(QString("PlayerShield")) == 0)
+                {
+                    //myShip->set
+                }
+
             }
             levelFile.close();
 

@@ -14,6 +14,7 @@
 #include <QMessageBox>
 #include <QTextStream>
  #include <QFile>
+#include <QString>
 #include "Bullet.h"
 #include "Missile.h"
 #include "PowerUp.h"
@@ -51,6 +52,7 @@ private:
     bool gameStarted;
     bool atBoss;
     enum Action {Blank, Left, Right, Up, Down, ShootGun, ShootSBomb, ShootBBomb, Pause};
+    enum String {Background = 0, playerArmor = 1};
     QMap<int,Action> actions;
     Level *preLevel;
     Bullet *aBullet;
