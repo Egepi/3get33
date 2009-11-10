@@ -8,11 +8,11 @@ Bullet::Bullet()
 {
 }
 
-Bullet::Bullet(qreal shipX, qreal shipY, QImage bullImage, bool theOwner)
+Bullet::Bullet(qreal locX, qreal locY, QImage bullImage, bool theOwner)
 {
     bulletImage = bullImage;
     owner = theOwner;
-    setPos(shipX, shipY);
+    setPos(locX, locY);
 }
 
 Bullet::~Bullet()

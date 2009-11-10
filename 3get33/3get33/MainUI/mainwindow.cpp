@@ -221,7 +221,7 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
         case ShootBBomb:    //Shoot Big Bomb
             if(myShip->getbMissile() > 0)
             {
-                Missile *aBigMissile = new Missile(myShip->x(), myShip->y(),QImage(":/images/bMissile.png"), true, true);
+                Missile *aBigMissile = new Missile(myShip->x()+30, myShip->y()-41,QImage(":/images/bMissile.png"), true, true);
                 gameScene->addItem(aBigMissile);
                 myShip->setbMissile(myShip->getbMissile() -1);
             }
@@ -229,7 +229,7 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
         case ShootSBomb:    //Shoot Small Bomb
             if(myShip->getsMissile() > 0)
             {
-                Missile *aSmallMissile = new Missile(myShip->x(), myShip->y(),QImage(":/images/sMissile.png"), true, false);
+                Missile *aSmallMissile = new Missile(myShip->x()+35, myShip->y()-21,QImage(":/images/sMissile.png"), true, false);
                 gameScene->addItem(aSmallMissile);
                 myShip->setsMissile(myShip->getsMissile() -1);
             }

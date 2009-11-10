@@ -8,19 +8,12 @@ Missile::Missile()
 {
 }
 
-Missile::Missile(qreal shipX, qreal shipY, QImage missImage, bool theOwner, bool big)
+Missile::Missile(qreal locX, qreal locY, QImage missImage, bool theOwner, bool big)
 {
     bigMissile = big;
     MissileImage = missImage;
     owner = theOwner;
-    if(bigMissile == true)
-    {
-        setPos(shipX+30, shipY-41);
-    }
-    else if (bigMissile == false)
-    {
-        setPos(shipX+35, shipY-21);
-    }
+    setPos(locX, locY);
 }
 
 Missile::~Missile()
