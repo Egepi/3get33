@@ -21,7 +21,7 @@ BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int 
     BasicShip::shipImage = theImage;
     setPos(theX, theY);
     damageCounter = 0;
-    this->setGraphicType(1);
+    //this->setGraphicType(1);
     this->shipSizeX = 80;
     this->shipSizeY = 80;
     this->moveRight = true;

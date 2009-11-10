@@ -8,7 +8,7 @@
 #include <QTime>
 #include "myGraphics.h"
 
-class PowerUp : public myGraphics
+class PowerUp : public QGraphicsItem
 {
     public:
         PowerUp::PowerUp();

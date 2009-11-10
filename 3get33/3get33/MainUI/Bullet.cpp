@@ -12,7 +12,7 @@ Bullet::Bullet(qreal shipX, qreal shipY, QImage bullImage, bool theOwner)
 {
     bulletImage = bullImage;
     owner = theOwner;
-    this->setGraphicType(4);
+    //this->setGraphicType(4);
     if(owner == true)
     {
         setPos(shipX+36, shipY-9);
