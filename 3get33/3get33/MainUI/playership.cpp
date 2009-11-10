@@ -90,10 +90,10 @@ void PlayerShip::setUFlag( bool keyPress )
  */
 void PlayerShip::advance(int phase)
 {
+    if(!phase) return;
+    if (this->isEnabled() == false) return;
     this->collCheck();
 
-
-    if(!phase) return;
     //left movement
     if(( lFlag ) && ( !dFlag ) && ( !rFlag ) && ( !uFlag )){
         advanceLeft();
@@ -258,87 +258,97 @@ void PlayerShip::setShield(int theShield)
         {
             decr = 0;
             QGraphicsItem *item = listOfCollidingItems.at(i);
-            //if a basic enemy ship
-            if (item->type() == 65537)
+            if (item->isEnabled()==true)
             {
-                decr = 10;
-            }
-            //if a player ship
-            if (item->type() == 65538)
-            {
-                decr = 10;
-            }
-            //if a boss ship
-            if (item->type() == 65539)
-            {
-                decr = 30;
-            }
-            //if a bullet
-            if (item->type() == 65540)
-            {
-                decr = 10;
-                item->setPos(500,500);
-            }
-            if (item->type() == 65541)
-            {
-                decr = 50;
-                item->setPos(500,500);
-            }
-            if (item->type() == 65542)
-            {
-                decr = 25;
-                item->setPos(500,500);
-            }
-            if (item->type() == 65543)
-            {
-                if(this->getShield() <= 90)
+                //if a basic enemy ship
+                if (item->type() == 65537)
                 {
-                    this->setShield(this->getShield()+10);
+                    decr = 10;
+                }
+                //if a player ship
+                if (item->type() == 65538)
+                {
+                    decr = 10;
+                }
+                //if a boss ship
+                if (item->type() == 65539)
+                {
+                    decr = 30;
+                }
+                //if a bullet
+                if (item->type() == 65540)
+                {
+                    decr = 10;
                     item->setPos(500,500);
                 }
-                else if(this->getShield() <= 99)
+                //if big missile
+                if (item->type() == 65541)
                 {
-                    this->setShield(100);
+                    decr = 50;
                     item->setPos(500,500);
                 }
-                else
+                //if small missile
+                if (item->type() == 65542)
                 {
+                    decr = 25;
+                    item->setPos(500,500);
                 }
+                //if shield powerup
+                if (item->type() == 65543)
+                {
+                    if(this->getShield() <= 90)
+                    {
+                        this->setShield(this->getShield()+10);
+                        item->setPos(500,500);
+                    }
 
-            }
-            if (item->type() == 65544)
-            {
-                if(this->getArmor() <= 90)
-                {
-                    this->setArmor(this->getArmor()+10);
-                    item->setPos(500,500);
+                    else if(this->getShield() <= 99)
+                    {
+                        this->setShield(100);
+                        item->setPos(500,500);
+                    }
+                    else
+                    {
+                    }
+
                 }
-                else if(this->getArmor() <= 99)
+                //if armor powerup
+                if (item->type() == 65544)
                 {
-                    this->setArmor(100);
-                    item->setPos(500,500);
+                    if(this->getArmor() <= 90)
+                    {
+                        this->setArmor(this->getArmor()+10);
+                        item->setPos(500,500);
+                    }
+                    else if(this->getArmor() <= 99)
+                    {
+                        this->setArmor(100);
+                        item->setPos(500,500);
+                    }
+                    else
+                    {
+                    }
                 }
-                else
+                //if small missile powerup
+                if (item->type() == 65545)
                 {
+                    if(this->getsMissile() < 99)
+                    {
+                        this->setsMissile(this->getsMissile()+1);
+                        item->setPos(500,500);
+                    }
                 }
-            }
-             if (item->type() == 65545)
-            {
-                 if(this->getsMissile() < 99)
-                 {
-                     this->setsMissile(this->getsMissile()+1);
-                     item->setPos(500,500);
-                 }
-            }
-            if (item->type() == 65546)
-            {
-                if(this->getbMissile() < 99)
+                //if big missile powerup
+                if (item->type() == 65546)
                 {
-                    this->setbMissile(this->getbMissile()+1);
-                    item->setPos(500,500);
+                    if(this->getbMissile() < 99)
+                    {
+                        this->setbMissile(this->getbMissile()+1);
+                        item->setPos(500,500);
+                    }
                 }
+                this->damage(decr);
             }
-            this->damage(decr);
         }
 
     }
@@ -362,8 +372,11 @@ void PlayerShip::setShield(int theShield)
      }
      else
      {
-         this->setImage(QImage(":/images/explosion.png"));
-         this->move(0,0);
+         this->hide();
+         this->setEnabled(false);
+
+         //this->setImage(QImage(":/images/explosion.png"));
+         //this->move(0,0);
 
 //         if(this->getLives() >= 0)
 //         {

@@ -33,6 +33,7 @@ BossShip::~BossShip()
 void BossShip::advance(int phase)
 {
     if(!phase) return;
+    if(this->isEnabled()==false) return;
     this->collCheck();
     if(((this->x() - 2) >=0)&&(moveLeft == true))
     {

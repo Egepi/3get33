@@ -177,7 +177,7 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
 
  void BasicShip::advance(int phase)
  {
-     this->collCheck();
+
 
    /*
      if(!phase) return;
@@ -195,6 +195,9 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     */
 
      if(!phase) return;
+     if(this->isEnabled()==false) return;
+     this->collCheck();
+
      qreal xDelta = 3;
      qreal xLoc = this->x();
      qreal yLoc = this->y();
@@ -259,48 +262,51 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
         {
             decr = 0;
             QGraphicsItem *item = listOfCollidingItems.at(i);
-            //if a basic enemy ship
-            if (item->type() == 65537)
+            if(item->isEnabled() ==true)
+            {
+                //if a basic enemy ship
+                if (item->type() == 65537)
             {
             }
-            //if a player ship
-            if (item->type() == 65538)
+                //if a player ship
+                if (item->type() == 65538)
             {
                 decr = 10;
             }
-            //if a boss ship
-            if (item->type() == 65539)
+                //if a boss ship
+                if (item->type() == 65539)
             {
             }
-            //if a bullet
-            if (item->type() == 65540)
+                //if a bullet
+                if (item->type() == 65540)
             {
                 decr = 10;
                 item->setPos(500,500);
             }
-            if (item->type() == 65541)
+                if (item->type() == 65541)
             {
                 decr = 50;
                 item->setPos(500,500);
             }
-            if (item->type() == 65542)
+                if (item->type() == 65542)
             {
                 decr = 25;
                 item->setPos(500,500);
             }
-            if (item->type() == 65543)
+                if (item->type() == 65543)
             {
             }
-            if (item->type() == 65544)
+                if (item->type() == 65544)
             {
             }
-            if (item->type() == 65545)
+                if (item->type() == 65545)
             {
             }
-            if (item->type() == 65546)
+                if (item->type() == 65546)
             {
             }
-            this->damage(decr);
+                this->damage(decr);
+            }
         }
 
     }
@@ -313,14 +319,20 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
          this->setArmor(this->getArmor()-dTaken);
          if (this->getArmor() <= 0)
          {
-            this->setImage(QImage(":/images/explosion.png"));
-            this->move(0,0);
+             this->hide();
+             this->setEnabled(false);
+
+             //this->setImage(QImage(":/images/explosion.png"));
+             //this->move(0,0);
          }
      }
      else
      {
-         this->setImage(QImage(":/images/explosion.png"));
-         this->move(0,0);
+         this->hide();
+         this->setEnabled(false);
+
+         //this->setImage(QImage(":/images/explosion.png"));
+         //this->move(0,0);
      }
  }
 

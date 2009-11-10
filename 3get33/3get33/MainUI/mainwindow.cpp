@@ -294,7 +294,7 @@ void MainWindow::startBoss()
 
 void MainWindow::enemyShoot()
 {
-    if(atBoss == true)
+    if(atBoss == true && preLevel->theBoss->isEnabled() == true)
     {
         Bullet *aBullet = new Bullet(preLevel->theBoss->x(),preLevel->theBoss->y(),QImage(":/images/BlueBullet.png"), false);
         gameScene->addItem(aBullet);
