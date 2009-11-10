@@ -21,7 +21,6 @@ BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int 
     BasicShip::shipImage = theImage;
     setPos(theX, theY);
     damageCounter = 0;
-    //this->setGraphicType(1);
     this->shipSizeX = 80;
     this->shipSizeY = 80;
     this->moveRight = true;
@@ -250,7 +249,7 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     return Type;
  }
 
-    void BasicShip::collCheck()
+ void BasicShip::collCheck()
  {
     QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
     int decr = 0;

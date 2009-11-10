@@ -27,7 +27,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     gameScene->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
     ui->Display->setScene(gameScene);
 
-    //ui->Display->
     //Creates and displays the "Play", "Load Game", and "Quit" buttons
     ui->playButton->setIconSize(QSize(140,50));
     ui->playButton->setIcon(QIcon(":/images/playButton.jpg"));
@@ -108,7 +107,7 @@ void MainWindow::loadGame()
                 else if(tokLine.first().compare(QString("PlayerArmor")) == 0)
                 {
                     bool ok = true;
-                    myShip->setArmor(tokLine.at(1).toDouble(&ok));
+                    myShip->setArmor(tokLine.at(1).toInt(&ok));
                     ui->armorDisplay->display(myShip->getArmor());
                 }
                 else if(tokLine.first().compare(QString("PlayerImage")) == 0)
@@ -235,7 +234,7 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
             }
         break;
         case ShootGun:      //Shoot normal gun
-            Bullet *aBullet = new Bullet(myShip->x(),myShip->y(),QImage(":/images/WhiteBullet.png"), true);
+            Bullet *aBullet = new Bullet(myShip->x()+36,myShip->y()-9,QImage(":/images/WhiteBullet.png"), true);
             gameScene->addItem(aBullet);
             QSound::play(QString("pew2.wav"));
         break;
@@ -319,7 +318,7 @@ void MainWindow::enemyShoot()
 {
     if(atBoss == true && preLevel->theBoss->isEnabled() == true)
     {
-        Bullet *aBullet = new Bullet(preLevel->theBoss->x(),preLevel->theBoss->y(),QImage(":/images/BlueBullet.png"), false);
+        Bullet *aBullet = new Bullet(preLevel->theBoss->x()+75,preLevel->theBoss->y()+72,QImage(":/images/BlueBullet.png"), false);
         gameScene->addItem(aBullet);
     }
 }

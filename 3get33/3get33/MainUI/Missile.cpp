@@ -13,7 +13,6 @@ Missile::Missile(qreal shipX, qreal shipY, QImage missImage, bool theOwner, bool
     bigMissile = big;
     MissileImage = missImage;
     owner = theOwner;
-    //this->setGraphicType(4);
     if(bigMissile == true)
     {
         setPos(shipX+30, shipY-41);
