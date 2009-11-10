@@ -10,7 +10,7 @@ class Missile : public QGraphicsItem
 {
 public:
         Missile();
-        Missile(qreal shipX, qreal shipY, QImage missImage, bool owner, bool big);
+        Missile(qreal locX, qreal locY, QImage missImage, bool owner, bool big);
         ~Missile();
         void Missile::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
         void Missile::setMissileImage(QImage theMissileImage);
