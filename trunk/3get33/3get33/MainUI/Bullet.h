@@ -8,7 +8,7 @@
 #include <QWidget>
 #include <QStyleOptionGraphicsItem>
 
-class Bullet : public myGraphics
+class Bullet : public QGraphicsItem
 {
     public:
         Bullet();

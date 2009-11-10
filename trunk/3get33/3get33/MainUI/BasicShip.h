@@ -4,10 +4,11 @@
 #include <QGraphicsItem>
 #include <QPixmap>
 #include <QPainter>
+#include <QGraphicsItem>
 #include "Bullet.h"
 #include "myGraphics.h"
 
-class BasicShip : public myGraphics
+class BasicShip : public QGraphicsItem
 {
     public:
     BasicShip(int theArmor, int theLives, QImage theImage, int theX, int theY);

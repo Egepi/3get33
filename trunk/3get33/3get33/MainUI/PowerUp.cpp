@@ -7,7 +7,7 @@
 PowerUp::PowerUp()
 {
     puType = (qrand() % 4) +1;
-    this->setGraphicType(7);
+    //this->setGraphicType(7);
     puLocX = qrand() % 560;
     puLocY = qrand() % 440;
     setPos(puLocX, puLocY);

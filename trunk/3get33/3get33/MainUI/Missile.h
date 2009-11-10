@@ -7,7 +7,7 @@
 #include <QPainter>
 #include "myGraphics.h"
 
-class Missile : public myGraphics
+class Missile : public QGraphicsItem
 {
 public:
         Missile();
