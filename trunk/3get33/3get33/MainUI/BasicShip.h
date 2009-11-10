@@ -6,7 +6,6 @@
 #include <QPainter>
 #include <QGraphicsItem>
 #include "Bullet.h"
-#include "myGraphics.h"
 
 class BasicShip : public QGraphicsItem
 {

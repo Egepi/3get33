@@ -11,7 +11,6 @@ SOURCES += main.cpp \
     Level.cpp \
     Missile.cpp \
     BossShip.cpp \
-    myGraphics.cpp \
     EnemyWave.cpp \
     PowerUp.cpp
 HEADERS += mainwindow.h \
@@ -21,7 +20,6 @@ HEADERS += mainwindow.h \
     Level.h \
     Missile.h \
     BossShip.h \
-    myGraphics.h \
     EnemyWave.h \
     PowerUp.h
 FORMS += mainwindow.ui
