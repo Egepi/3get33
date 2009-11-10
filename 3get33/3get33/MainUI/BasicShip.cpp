@@ -25,6 +25,7 @@ BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int 
     this->shipSizeX = 80;
     this->shipSizeY = 80;
     this->moveRight = true;
+
 }
 
 /**********************************************************************/
@@ -321,18 +322,10 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
          {
              this->hide();
              this->setEnabled(false);
-
+             //this->~BasicShip();
              //this->setImage(QImage(":/images/explosion.png"));
              //this->move(0,0);
          }
-     }
-     else
-     {
-         this->hide();
-         this->setEnabled(false);
-
-         //this->setImage(QImage(":/images/explosion.png"));
-         //this->move(0,0);
      }
  }
 

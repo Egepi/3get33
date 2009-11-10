@@ -44,11 +44,11 @@ QRectF Missile::boundingRect() const
 {
     if (this->bigMissile == false)
     {
-        return QRectF(0,0,20,20);
+        return QRectF(0,0,10,20);
     }
     else
     {
-        return QRectF(0,0,40,40);
+        return QRectF(0,0,20,40);
     }
 }
 
@@ -57,13 +57,13 @@ QPainterPath Missile::shape() const
     if (this->bigMissile == false)
     {
         QPainterPath path;
-        path.addRect(0, 0, 20, 20);
+        path.addRect(0, 0, 10, 20);
         return path;
     }
     else
     {
         QPainterPath path;
-        path.addRect(0, 0, 20, 20);
+        path.addRect(0, 0, 20, 40);
         return path;
     }
 }

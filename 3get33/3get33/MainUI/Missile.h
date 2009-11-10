@@ -5,7 +5,6 @@
 #include <QGraphicsItem>
 #include <QPixmap>
 #include <QPainter>
-#include "myGraphics.h"
 
 class Missile : public QGraphicsItem
 {
