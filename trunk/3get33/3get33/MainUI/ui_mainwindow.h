@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Sat Nov 7 17:37:01 2009
-**      by: Qt User Interface Compiler version 4.5.2
+** Created: Tue Nov 10 11:03:38 2009
+**      by: Qt User Interface Compiler version 4.5.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
 ********************************************************************************/
@@ -145,7 +145,7 @@ public:
         livesDisplay->setProperty("intValue", QVariant(0));
         armorLabel = new QLabel(centralWidget);
         armorLabel->setObjectName(QString::fromUtf8("armorLabel"));
-        armorLabel->setGeometry(QRect(10, 380, 40, 30));
+        armorLabel->setGeometry(QRect(10, 380, 41, 30));
         QPalette palette5;
         QBrush brush4(QColor(255, 85, 0, 255));
         brush4.setStyle(Qt::SolidPattern);
@@ -156,7 +156,7 @@ public:
         armorLabel->setFont(font);
         shieldLabel = new QLabel(centralWidget);
         shieldLabel->setObjectName(QString::fromUtf8("shieldLabel"));
-        shieldLabel->setGeometry(QRect(10, 350, 40, 30));
+        shieldLabel->setGeometry(QRect(10, 350, 41, 30));
         QPalette palette6;
         QBrush brush5(QColor(0, 255, 255, 255));
         brush5.setStyle(Qt::SolidPattern);
