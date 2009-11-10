@@ -36,8 +36,6 @@ void Level::addWave()
 
     advanceTimer = new QTimer;
     QObject::connect(advanceTimer, SIGNAL(timeout()), myScene, SLOT(advance()));
-    //QObject::connect(advanceTimer, SIGNAL(timeout()), theEnemyWave, SLOT(moveWave()));
-    //QObject::connect(advanceTimer, SIGNAL(timeout()), theBoss, SLOT(
     // Set the timer to trigger ever 1/3 of a second.
     advanceTimer->start(1000/33);
 }
