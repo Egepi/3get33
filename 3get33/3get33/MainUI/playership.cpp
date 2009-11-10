@@ -338,8 +338,9 @@ void PlayerShip::setShield(int theShield)
                     if(this->getsMissile() < 99)
                     {
                         this->setsMissile(this->getsMissile()+1);
-                        item->setPos(500,500);
+
                     }
+                    item->setPos(500,500);
                 }
                 //if big missile powerup
                 if (item->type() == 65546)
@@ -347,8 +348,9 @@ void PlayerShip::setShield(int theShield)
                     if(this->getbMissile() < 99)
                     {
                         this->setbMissile(this->getbMissile()+1);
-                        item->setPos(500,500);
+
                     }
+                    item->setPos(500,500);
                 }
                 this->damage(decr);
             }

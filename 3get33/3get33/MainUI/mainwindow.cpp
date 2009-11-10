@@ -27,6 +27,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     gameScene->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
     ui->Display->setScene(gameScene);
 
+    //ui->Display->
     //Creates and displays the "Play", "Load Game", and "Quit" buttons
     ui->playButton->setIconSize(QSize(140,50));
     ui->playButton->setIcon(QIcon(":/images/playButton.jpg"));
