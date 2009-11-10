@@ -202,7 +202,7 @@ void MainWindow::gamelvl()
  *          Jennifer Kinahan
  */
 void MainWindow::keyPressEvent(QKeyEvent *key) {
-
+    if(myShip->isEnabled()==false) return;
     Action a = actions[ key->key() ];
     switch(a) {
         case Left:  //Move ship Left
@@ -256,7 +256,7 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
  *          Jennifer Kinahan
  */
 void MainWindow::keyReleaseEvent(QKeyEvent *key) {
-
+    if(myShip->isEnabled()==false) return;
     Action a = actions[ key->key() ];
     switch(a) {
         case Left:

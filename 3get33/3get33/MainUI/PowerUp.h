@@ -6,7 +6,6 @@
 #include <QPixmap>
 #include <QPainter>
 #include <QTime>
-#include "myGraphics.h"
 
 class PowerUp : public QGraphicsItem
 {

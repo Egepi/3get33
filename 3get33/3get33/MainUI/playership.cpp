@@ -310,6 +310,7 @@ void PlayerShip::setShield(int theShield)
                     }
                     else
                     {
+                        item->setPos(500,500);
                     }
 
                 }
@@ -328,6 +329,7 @@ void PlayerShip::setShield(int theShield)
                     }
                     else
                     {
+                        item->setPos(500,500);
                     }
                 }
                 //if small missile powerup
