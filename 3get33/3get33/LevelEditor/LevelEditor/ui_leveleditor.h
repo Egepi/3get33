@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'leveleditor.ui'
 **
-** Created: Tue Nov 10 11:36:57 2009
+** Created: Tue Nov 10 12:55:32 2009
 **      by: Qt User Interface Compiler version 4.5.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -37,12 +37,13 @@ public:
     {
         if (LevelEditor->objectName().isEmpty())
             LevelEditor->setObjectName(QString::fromUtf8("LevelEditor"));
+        LevelEditor->setEnabled(true);
         LevelEditor->resize(600, 400);
         centralWidget = new QWidget(LevelEditor);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         categoryCombo = new QComboBox(centralWidget);
         categoryCombo->setObjectName(QString::fromUtf8("categoryCombo"));
-        categoryCombo->setGeometry(QRect(20, 30, 121, 21));
+        categoryCombo->setGeometry(QRect(20, 40, 121, 21));
         LevelEditor->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(LevelEditor);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
