@@ -38,11 +38,20 @@ private:
     QComboBox *playerArmorIn;
     QLabel *playerShield;
     QComboBox *playerShieldIn;
+    QComboBox *playerLivesIn;
+    QLabel *playerLives;
+    QLabel *playerSmallBomb;
+    QComboBox *playerSmallBombIn;
+    QLabel *playerBigBomb;
+    QComboBox *playerBigBombIn;
+
     QPushButton *saveLevel;
 
-    QString *valuePlayerArmor;
-    QString *valuePlayerShield;
-    QString *valuePlayerLives;
+    int valuePlayerArmor;
+    int valuePlayerShield;
+    int valuePlayerLives;
+    int valuePlayerSmallBombs;
+    int valuePlayerBigBombs;
 };
 
 #endif // LEVELEDITOR_H
