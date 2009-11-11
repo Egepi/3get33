@@ -116,8 +116,16 @@ void MainWindow::loadGame()
                 }
                 else if(tokLine.first().compare(QString("PlayerShield")) == 0)
                 {
-                    //myShip->set
+                    bool ok = true;
+                    myShip->setShield(tokLine.at(1).toInt(&ok));
+                    ui->shieldDisplay->display(myShip->getShield());
+
                 }
+                else if(tokLine.first().compare(QString("PlayerLives")) == 0)
+                {
+                    bool ok = true;
+                    myShip->setLives(tokLine.at(1).toInt(&ok));
+                    ui->livesDisplay->display(myShip->getLives());
 
             }
             levelFile.close();
