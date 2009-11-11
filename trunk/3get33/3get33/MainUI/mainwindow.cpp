@@ -179,7 +179,7 @@ void MainWindow::gamelvl()
     if(gameStarted == true)
     {
         QTimer::singleShot(5000, this, SLOT(startBoss()));
-        //preLevel->addWave();
+        preLevel->addWave();
         enemyShootTimer = new QTimer();
         QObject::connect(enemyShootTimer, SIGNAL(timeout()), this, SLOT(enemyShoot()));
         enemyShootTimer->start(5000);
@@ -187,8 +187,8 @@ void MainWindow::gamelvl()
         QTimer *kk = new QTimer;
         QObject::connect(kk,SIGNAL(timeout()), this, SLOT(updateArmor()));
         kk->start(1000/33);
-        QTimer *moreWaves = new QTimer;
-        moreWaves->start(38000);
+       // QTimer *moreWaves = new QTimer;
+        //moreWaves->start(38000);
         this->spawnPowerUp();
     }
 
