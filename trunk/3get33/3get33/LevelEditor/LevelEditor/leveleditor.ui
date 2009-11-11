@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>LevelEditor</class>
  <widget class="QMainWindow" name="LevelEditor">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -18,7 +21,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>30</y>
+      <y>40</y>
       <width>121</width>
       <height>21</height>
      </rect>
