@@ -9,18 +9,14 @@
 
 class Level
 {
-    Q_OBJECT
     public:
         Level(QGraphicsScene *theScene, QImage enemyType, int theWaveSize);
         ~Level();
-        //void addWave();
+        void addWave();
         void startBoss();
         //void set
         BossShip *theBoss;
         static const int ROW_SIZE = 5;
-
-    public slots:
-        void addWave();
 
     private:
         QImage enemyImage;
