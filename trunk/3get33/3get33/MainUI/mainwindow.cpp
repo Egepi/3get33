@@ -126,6 +126,7 @@ void MainWindow::loadGame()
                     bool ok = true;
                     myShip->setLives(tokLine.at(1).toInt(&ok));
                     ui->livesDisplay->display(myShip->getLives());
+                }
 
             }
             levelFile.close();
