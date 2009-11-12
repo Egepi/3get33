@@ -14,7 +14,7 @@
 class PlayerShip : public BasicShip
 {
     public:
-        PlayerShip(QGraphicsScene *par);
+        PlayerShip();
         ~PlayerShip();
         void PlayerShip::advance(int phase);
         void PlayerShip::setLFlag( bool );
@@ -67,7 +67,6 @@ class PlayerShip : public BasicShip
         bool shootGunFlag;
         bool shootSMissileFlag;
         bool shootBMissileFlag;
-        QGraphicsScene *parentScene;
 
 
 };

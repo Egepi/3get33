@@ -14,7 +14,7 @@
  *  Author: Karan Chakrapani,
  *          Jennifer Kinahan
  */
-PlayerShip::PlayerShip(QGraphicsScene *par)
+PlayerShip::PlayerShip()
 {
     lFlag = false;
     rFlag = false;
@@ -23,7 +23,6 @@ PlayerShip::PlayerShip(QGraphicsScene *par)
     shootGunFlag = false;
     shootSMissileFlag = false;
     shootBMissileFlag = false;
-    this->parentScene = par;
     this->setPos(260,400);
     this->setArmor(100);
     this->setShield(100);
