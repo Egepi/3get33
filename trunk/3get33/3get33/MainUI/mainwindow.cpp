@@ -87,7 +87,7 @@ void MainWindow::loadGame()
 
     if(!fileName.isEmpty())
     {
-        //myShip = new PlayerShip(gameScene);
+        myShip = new PlayerShip();
         gameScene->addItem(myShip);
         QFile levelFile(fileName);
         QString line;
@@ -161,7 +161,7 @@ void MainWindow::playGame()
     actions.insert( Qt::Key_Escape, Pause );
 
     //The player controled PlayerShip is created.
-    myShip = new PlayerShip(gameScene);
+    myShip = new PlayerShip();
     gameScene->addItem(myShip); //Adds PlayerShip to scene
 
     //Updates the armor, shield, and lives displays.
