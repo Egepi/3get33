@@ -20,6 +20,10 @@ PlayerShip::PlayerShip()
     rFlag = false;
     dFlag = false;
     uFlag = false;
+    shootGunFlag = false;
+    shootSMissileFlag = false;
+    shootBMissileFlag = false;
+
     this->setPos(260,400);
     this->setArmor(100);
     this->setShield(100);
@@ -442,5 +446,20 @@ void PlayerShip::setbMissile(int thebMissile)
 int PlayerShip::getbMissile()
 {
     return bMissile;
+}
+
+void PlayerShip::setShootGunFlag( bool keyPress )
+{
+    this->shootGunFlag = keyPress;
+}
+
+void PlayerShip::setShootSMissileFlag( bool keyPress )
+{
+    this->shootSMissileFlag = keyPress;
+}
+
+void PlayerShip::setShootBMissileFlag( bool keyPress )
+{
+    this->shootBMissileFlag = keyPress;
 }
 

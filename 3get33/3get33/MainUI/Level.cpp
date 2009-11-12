@@ -31,7 +31,7 @@ Level::~Level()
 void Level::addWave()
 {
     QImage theEnemyPicture(":/images/BadGuy4.png");
-    EnemyWave *theEnemyWave = new EnemyWave(myScene, enemyImage,0,50);
+    EnemyWave *theEnemyWave = new EnemyWave(myScene, enemyImage,10,50);
     theEnemyWave->addWave();
 
     advanceTimer = new QTimer;
