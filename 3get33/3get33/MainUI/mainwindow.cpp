@@ -79,7 +79,6 @@ void MainWindow::closeGame()
   *          Todd Silvia
   */
 void MainWindow::loadGame()
-
 {
     QString fileName = QFileDialog::getOpenFileName(this,
                                         tr("Open Level"), ".",
@@ -87,51 +86,53 @@ void MainWindow::loadGame()
 
     if(!fileName.isEmpty())
     {
+        //The player controled PlayerShip is created.
         myShip = new PlayerShip();
-        gameScene->addItem(myShip);
+        gameScene->addItem(myShip); //Adds PlayerShip to scene
+        bool ok = true;
         QFile levelFile(fileName);
         QString line;
 
-        if(levelFile.open(QIODevice::ReadOnly))
+        if(levelFile.open(QIODevice::ReadWrite))
         {
             QTextStream t(&levelFile);
-            while(!t.atEnd() )
+            while(!t.atEnd())
             {
                 line = t.readLine();
                 QStringList tokLine = line.split("#");
-                if(tokLine.first().compare(QString("Background")) == 0)
+
+                if(tokLine.first().compare(QString("PlayerArmor")) == 0)
                 {
-                    QString temp(tokLine.at(1));
-                    gameScene->setBackgroundBrush(QBrush(QImage(temp)));
-                }
-                else if(tokLine.first().compare(QString("PlayerArmor")) == 0)
-                {
-                    bool ok = true;
                     myShip->setArmor(tokLine.at(1).toInt(&ok));
                     ui->armorDisplay->display(myShip->getArmor());
                 }
-                else if(tokLine.first().compare(QString("PlayerImage")) == 0)
-                {
-                    myShip->setImage(QImage(tokLine.at(1)));
-                }
                 else if(tokLine.first().compare(QString("PlayerShield")) == 0)
                 {
-                    bool ok = true;
                     myShip->setShield(tokLine.at(1).toInt(&ok));
                     ui->shieldDisplay->display(myShip->getShield());
-
                 }
                 else if(tokLine.first().compare(QString("PlayerLives")) == 0)
                 {
-                    bool ok = true;
                     myShip->setLives(tokLine.at(1).toInt(&ok));
                     ui->livesDisplay->display(myShip->getLives());
                 }
-
+                else if(tokLine.first().compare(QString("PlayerBigBombs")) == 0)
+                {
+                    myShip->setsMissile(tokLine.at(1).toInt(&ok));
+                    ui->smallMissilesDisplay->display(myShip->getsMissile());
+                }
+                else if(tokLine.first().compare(QString("PlayerSmallBombs")) == 0)
+                {
+                    myShip->setbMissile(tokLine.at(1).toInt(&ok));
+                    ui->bigMissilesDisplay->display(myShip->getbMissile());
+                }
+                else
+                {
+                    continue;
+                }
             }
-            levelFile.close();
-
         }
+        levelFile.close();
     }
 }
 
