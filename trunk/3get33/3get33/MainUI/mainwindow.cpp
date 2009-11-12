@@ -87,7 +87,7 @@ void MainWindow::loadGame()
 
     if(!fileName.isEmpty())
     {
-        myShip = new PlayerShip();
+        //myShip = new PlayerShip(gameScene);
         gameScene->addItem(myShip);
         QFile levelFile(fileName);
         QString line;
@@ -161,7 +161,7 @@ void MainWindow::playGame()
     actions.insert( Qt::Key_Escape, Pause );
 
     //The player controled PlayerShip is created.
-    myShip = new PlayerShip();
+    myShip = new PlayerShip(gameScene);
     gameScene->addItem(myShip); //Adds PlayerShip to scene
 
     //Updates the armor, shield, and lives displays.
@@ -195,10 +195,12 @@ void MainWindow::gamelvl()
 
         QTimer *kk = new QTimer;
         QObject::connect(kk,SIGNAL(timeout()), this, SLOT(updateArmor()));
-        kk->start(1000/33);
+        QObject::connect(kk,SIGNAL(timeout()), this, SLOT(playerShoot()));
+        kk->start(1000/3);
        // QTimer *moreWaves = new QTimer;
         //moreWaves->start(38000);
         this->spawnPowerUp();
+
     }
 
 }
@@ -228,25 +230,13 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
             myShip->setDFlag( true );
         break;
         case ShootBBomb:    //Shoot Big Bomb
-            if(myShip->getbMissile() > 0)
-            {
-                Missile *aBigMissile = new Missile(myShip->x()+30, myShip->y()-41,QImage(":/images/bMissile.png"), true, true);
-                gameScene->addItem(aBigMissile);
-                myShip->setbMissile(myShip->getbMissile() -1);
-            }
+            myShip->setShootBMissileFlag(true);
         break;
         case ShootSBomb:    //Shoot Small Bomb
-            if(myShip->getsMissile() > 0)
-            {
-                Missile *aSmallMissile = new Missile(myShip->x()+35, myShip->y()-21,QImage(":/images/sMissile.png"), true, false);
-                gameScene->addItem(aSmallMissile);
-                myShip->setsMissile(myShip->getsMissile() -1);
-            }
+            myShip->setShootSMissileFlag(true);
         break;
         case ShootGun:      //Shoot normal gun
-            Bullet *aBullet = new Bullet(myShip->x()+36,myShip->y()-9,QImage(":/images/WhiteBullet.png"), true);
-            gameScene->addItem(aBullet);
-            QSound::play(QString("pew2.wav"));
+            myShip->setShootGunFlag(true);
         break;
         case Pause:         //Pause the game
         break;
@@ -270,22 +260,25 @@ void MainWindow::keyReleaseEvent(QKeyEvent *key) {
     Action a = actions[ key->key() ];
     switch(a) {
         case Left:
-        myShip->setLFlag( false );
+            myShip->setLFlag( false );
         break;
         case Right:
-        myShip->setRFlag( false );
+            myShip->setRFlag( false );
         break;
         case Up:
-        myShip->setUFlag( false );
+            myShip->setUFlag( false );
         break;
         case Down:
-        myShip->setDFlag( false );
+            myShip->setDFlag( false );
         break;
-        case ShootBBomb:
+        case ShootBBomb:    //Shoot Big Bomb
+            myShip->setShootBMissileFlag(false);
         break;
-        case ShootSBomb:
+        case ShootSBomb:    //Shoot Small Bomb
+            myShip->setShootSMissileFlag(false);
         break;
-        case ShootGun:
+        case ShootGun:      //Shoot normal gun
+            myShip->setShootGunFlag(false);
         break;
         case Pause:
         break;
@@ -352,4 +345,35 @@ void MainWindow::spawnPowerUp()
     QTimer *powerUpTimer = new QTimer();
     QObject::connect(powerUpTimer, SIGNAL(timeout()), this, SLOT(makePowerUp()));
     powerUpTimer->start((qrand() % 40) + (10000) );
+}
+
+void MainWindow::playerShoot()
+{
+    if(myShip->getShootGunFlag())
+    {
+        Bullet *aBullet = new Bullet(myShip->x()+36,myShip->y()-9,QImage(":/images/WhiteBullet.png"), true);
+        gameScene->addItem(aBullet);
+        QSound::play(QString("pew2.wav"));
+    }
+
+    if(myShip->getShootSMissileFlag())
+    {
+        if(myShip->getsMissile() > 0)
+        {
+            Missile *aSmallMissile = new Missile(myShip->x()+35, myShip->y()-21,QImage(":/images/sMissile.png"), true, false);
+            gameScene->addItem(aSmallMissile);
+            myShip->setsMissile(myShip->getsMissile() -1);
+        }
+
+    }
+
+    if(myShip->getShootBMissileFlag())
+    {
+        if(myShip->getbMissile() > 0)
+        {
+            Missile *aBigMissile = new Missile(myShip->x()+30, myShip->y()-41,QImage(":/images/bMissile.png"), true, true);
+            gameScene->addItem(aBigMissile);
+            myShip->setbMissile(myShip->getbMissile() -1);
+        }
+    }
 }

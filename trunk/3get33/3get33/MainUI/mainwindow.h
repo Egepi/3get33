@@ -13,7 +13,7 @@
 #include <QKeyEvent>
 #include <QMessageBox>
 #include <QTextStream>
- #include <QFile>
+#include <QFile>
 #include <QString>
 #include "Bullet.h"
 #include "Missile.h"
@@ -46,6 +46,7 @@ public slots:
     void enemyShoot();
     void updateArmor();
     void makePowerUp();
+    void playerShoot();
 private:
     Ui::MainWindow *ui;
     PlayerShip *myShip;
