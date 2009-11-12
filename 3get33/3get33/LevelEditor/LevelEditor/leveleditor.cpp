@@ -5,8 +5,8 @@ LevelEditor::LevelEditor(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::LevelEditor)
 {
     previousIndex = -1;
-    valuePlayerArmor = 1;
-    valuePlayerShield = 1;
+    valuePlayerArmor = 0;
+    valuePlayerShield = 0;
     valuePlayerLives = 0;
     valuePlayerBigBombs = 0;
     valuePlayerSmallBombs = 0;
@@ -111,35 +111,41 @@ void LevelEditor::categoryChanged(int theIndex)
     if(previousIndex != -1)
     {
         playerArmor->hide();
-        playerArmorIn->setCurrentIndex(valuePlayerArmor-1);
+        playerArmorIn->setCurrentIndex(valuePlayerArmor);
         playerArmorIn->hide();
         playerShield->hide();
-        playerShieldIn->setCurrentIndex(valuePlayerShield-1);
+        playerShieldIn->setCurrentIndex(valuePlayerShield);
         playerShieldIn->hide();
         playerLives->hide();
+        playerLivesIn->setCurrentIndex(valuePlayerLives);
         playerLivesIn->hide();
         playerSmallBombIn->hide();
+        playerSmallBombIn->setCurrentIndex(valuePlayerSmallBombs);
         playerSmallBomb->hide();
         playerBigBombIn->hide();
+        playerBigBombIn->setCurrentIndex(valuePlayerBigBombs);
         playerBigBomb->hide();
     }
     if(theIndex == 1)
     {
         playerArmor->show();
-        playerArmorIn->setCurrentIndex(valuePlayerArmor-1);
+        playerArmorIn->setCurrentIndex(valuePlayerArmor);
         playerArmorIn->show();
 
         playerShield->show();
-        playerShieldIn->setCurrentIndex(valuePlayerShield-1);
+        playerShieldIn->setCurrentIndex(valuePlayerShield);
         playerShieldIn->show();
 
         playerLives->show();
+        playerLivesIn->setCurrentIndex(valuePlayerLives);
         playerLivesIn->show();
 
         playerSmallBomb->show();
+        playerSmallBombIn->setCurrentIndex(valuePlayerSmallBombs);
         playerSmallBombIn->show();
 
         playerBigBombIn->show();
+        playerBigBombIn->setCurrentIndex(valuePlayerBigBombs);
         playerBigBomb->show();
 
         //ui->categoryCombo->setDisabled(true);
@@ -151,8 +157,11 @@ void LevelEditor::categoryChanged(int theIndex)
 
 void LevelEditor::savePlayer()
 {
-    valuePlayerArmor = playerArmorIn->currentIndex()+1;
-    valuePlayerShield = playerShieldIn->currentIndex()+1;
+    valuePlayerArmor = playerArmorIn->currentIndex();
+    valuePlayerShield = playerShieldIn->currentIndex();
+    valuePlayerLives = playerLivesIn->currentIndex();
+    valuePlayerSmallBombs = playerSmallBombIn->currentIndex();
+    valuePlayerBigBombs = playerBigBombIn->currentIndex();
     ui->categoryCombo->setDisabled(false);
 }
 
@@ -162,8 +171,11 @@ void LevelEditor::writeFile()
     QFile f(fileName);
     f.open(QIODevice::WriteOnly);
         QTextStream stream(&f);
-        //stream<<"PlayerArmor#"<<playerArmorIn->currentText() << "\n";
-        //stream<<"PlayerShield#"<<playerShieldIn->currentText() <<"\n";
+        stream << "PlayerArmor#" << playerArmorIn->currentText() << endl;
+        stream << "PlayerShield#" << playerShieldIn->currentText() << endl;
+        stream << "PlayerLives#" << playerLivesIn->currentText() << endl;
+        stream << "PlayerSmallBombs#" << playerSmallBombIn->currentText() << endl;
+        stream << "PlayerBigBombs#" << playerBigBombIn->currentText() << endl;
     f.close();
 
     this->close();
