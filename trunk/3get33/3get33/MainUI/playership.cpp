@@ -23,6 +23,8 @@ PlayerShip::PlayerShip()
     shootGunFlag = false;
     shootSMissileFlag = false;
     shootBMissileFlag = false;
+    shieldMax = 100;
+    armorMax = 100;
     this->setPos(260,400);
     this->setArmor(100);
     this->setShield(100);
@@ -98,129 +100,48 @@ void PlayerShip::advance(int phase)
     this->collCheck();
 
     //left movement
-    if(( lFlag ) && ( !dFlag ) && ( !rFlag ) && ( !uFlag )){
-        advanceLeft();
+    if( (lFlag) && (!dFlag) && (!rFlag) && (!uFlag)  )
+    {
+        this->move(-5,0);
     }
     //right movement
-    else if(( !lFlag ) && ( !dFlag ) && ( rFlag ) && ( !uFlag )){
-        advanceRight();
+    else if(( !lFlag ) && ( !dFlag ) && ( rFlag ) && ( !uFlag ))
+    {
+        this->move(5,0);
     }
     //down movement
-    else if(( !lFlag ) && ( dFlag ) && ( !rFlag ) && ( !uFlag )){
-        advanceDown();
-    }
-    else if(( !lFlag ) && ( !dFlag ) && ( !rFlag ) && ( uFlag )){
-        advanceUp();
+    else if(( !lFlag ) && ( dFlag ) && ( !rFlag ) && ( !uFlag ))
+    {
+        this->move(0,5);
     }
     //up movement
-    else if(( lFlag ) && ( dFlag ) && ( !rFlag ) && ( !uFlag )){
-        advanceLeftDown();
+    else if(( !lFlag ) && ( !dFlag ) && ( !rFlag ) && ( uFlag ))
+    {
+        this->move(0,-5);
+    }
+    //leftdown
+    else if(( lFlag ) && ( dFlag ) && ( !rFlag ) && ( !uFlag ))
+    {
+        this->move(-3.53,3.53);
     }
     //left-up movement
-    else if(( lFlag ) && ( uFlag ) && ( !rFlag ) && ( !dFlag )){
-        advanceLeftUp();
+    else if(( lFlag ) && ( uFlag ) && ( !rFlag ) && ( !dFlag ))
+    {
+        this->move(-3.53,-3.53);
     }
     //right-down movement
-    else if(( rFlag ) && ( dFlag ) && ( !lFlag ) && ( !uFlag )){
-        advanceRightDown();
+    else if(( rFlag ) && ( dFlag ) && ( !lFlag ) && ( !uFlag ))
+    {
+        this->move(3.53,3.53);
     }
     //right-up movement
-    else if(( rFlag ) && ( uFlag ) && ( !lFlag ) && ( !dFlag )){
-        advanceRightUp();
+    else if(( rFlag ) && ( uFlag ) && ( !lFlag ) && ( !dFlag ))
+    {
+        this->move(3.53,-3.53);
     }
 
 
 
-}
-
-/**********************************************************************/
-/*! Moves the PlayerShip Left 5 pixels.
- *
- *  Author: Karan Chakrapani,
- *          Jennifer Kinahan
- */
-void PlayerShip::advanceLeft()
-{
-    this->move(-5,0);
-}
-
-/**********************************************************************/
-/*! Moves the Player Ship Left and Down diagonally equal to 5 pixels each direction.
- *
- *  Author: Karan Chakrapani,
- *          Jennifer Kinahan
- */
-void PlayerShip::advanceLeftDown()
-{
-    // half of the hypotenuse
-    this->move(-3.53,3.53);
-}
-
-/**********************************************************************/
-/*! Moves the PlayerShip Left and Up diagonally equal to 5 pixels each direction.
- *
- *  Author: Karan Chakrapani,
- *          Jennifer Kinahan
- */
-void PlayerShip::advanceLeftUp()
-{
-    // half of the hypotenuse
-    this->move(-3.53,-3.53);
-}
-
-/**********************************************************************/
-/*! Moves the PlayerShip right 5 pixels.
- *
- *  Author: Karan Chakrapani,
- *          Jennifer Kinahan
- */
-void PlayerShip::advanceRight()
-{
-    this->move(5,0);
-}
-
-/**********************************************************************/
-/*! Moves the PlayerShip Right and Down diagonally equal to 5 pixels each direction.
- *
- *  Author: Karan Chakrapani,
- *          Jennifer Kinahan
- */
-void PlayerShip::advanceRightDown()
-{
-    this->move(3.53,3.53);
-}
-
-/**********************************************************************/
-/*! Moves the PlayerShip Right and Up diagonally equal to 5 pixels each direction.
- *
- *  Author: Karan Chakrapani,
- *          Jennifer Kinahan
- */
-void PlayerShip::advanceRightUp()
-{
-    this->move(3.53,-3.53);
-}
-
-/**********************************************************************/
-/*! Moves the PlayerShip up 5 pixels.
- *
- *  Author: Karan Chakrapani,
- *          Jennifer Kinahan
- */
-void PlayerShip::advanceUp()
-{
-    this->move(0,-5);
-}
-
-/**********************************************************************/
-/*! Moves the PlayerShip down 5 pixels.
- *
- *  Author: Karan Chakrapani,
- *          Jennifer Kinahan
- */
-void PlayerShip::advanceDown()
-{
-       this->move(0,5);
 }
 
 /**********************************************************************/
@@ -302,13 +223,13 @@ void PlayerShip::setShield(int theShield)
                 //if shield powerup
                 if (item->type() == 65543)
                 {
-                    if(this->getShield() <= 90)
+                    if(this->getShield() < this->shieldMax - 10)
                     {
                         this->setShield(this->getShield()+10);
                         item->setPos(500,500);
                     }
 
-                    else if(this->getShield() <= 99)
+                    else if(this->getShield() < this->shieldMax)
                     {
                         this->setShield(100);
                         item->setPos(500,500);
@@ -322,12 +243,12 @@ void PlayerShip::setShield(int theShield)
                 //if armor powerup
                 if (item->type() == 65544)
                 {
-                    if(this->getArmor() <= 90)
+                    if(this->getArmor() < this->armorMax - 10)
                     {
                         this->setArmor(this->getArmor()+10);
                         item->setPos(500,500);
                     }
-                    else if(this->getArmor() <= 99)
+                    else if(this->getArmor() < this->armorMax)
                     {
                         this->setArmor(100);
                         item->setPos(500,500);
@@ -377,8 +298,8 @@ void PlayerShip::setShield(int theShield)
      else if (this->getLives() > 0)
      {
          this->setLives(this->getLives()-1);
-         this->setShield(100);
-         this->setArmor(100);
+         this->setShield(this->shieldMax);
+         this->setArmor(this->shieldMax);
      }
      else
      {
@@ -475,4 +396,12 @@ bool PlayerShip::getShootSMissileFlag()
 bool PlayerShip::getShootBMissileFlag()
 {
     return this->shootBMissileFlag;
+}
+void PlayerShip::setShieldMax( int value )
+{
+    this->shieldMax = value;
+}
+void PlayerShip::setArmorMax( int value )
+{
+    this->armorMax = value;
 }
