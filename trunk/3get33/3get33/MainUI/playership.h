@@ -18,6 +18,9 @@ class PlayerShip : public BasicShip
         void PlayerShip::setRFlag( bool );
         void PlayerShip::setDFlag( bool );
         void PlayerShip::setUFlag( bool );
+        void PlayerShip::setShootGunFlag( bool );
+        void PlayerShip::setShootSMissileFlag( bool );
+        void PlayerShip::setShootBMissileFlag( bool );
         void PlayerShip::advanceLeft();
         void PlayerShip::advanceLeftDown();
         void PlayerShip::advanceLeftUp();
@@ -57,6 +60,11 @@ class PlayerShip : public BasicShip
         bool dFlag;
         /*! Flag for ship moving up. */
         bool uFlag;
+        bool shootGunFlag;
+        bool shootSMissileFlag;
+        bool shootBMissileFlag;
+
+
 };
 
 #endif // PLAYERSHIP_H
