@@ -24,14 +24,6 @@ class PlayerShip : public BasicShip
         void PlayerShip::setShootGunFlag( bool );
         void PlayerShip::setShootSMissileFlag( bool );
         void PlayerShip::setShootBMissileFlag( bool );
-        void PlayerShip::advanceLeft();
-        void PlayerShip::advanceLeftDown();
-        void PlayerShip::advanceLeftUp();
-        void PlayerShip::advanceRight();
-        void PlayerShip::advanceRightDown();
-        void PlayerShip::advanceRightUp();
-        void PlayerShip::advanceUp();
-        void PlayerShip::advanceDown();
         void PlayerShip::setShield(int theShield);
         int PlayerShip::getShield();
         enum { Type = 65536 + 2 };
@@ -45,6 +37,8 @@ class PlayerShip : public BasicShip
         bool PlayerShip::getShootGunFlag();
         bool PlayerShip::getShootSMissileFlag();
         bool PlayerShip::getShootBMissileFlag();
+        void PlayerShip::setShieldMax( int value );
+        void PlayerShip::setArmorMax( int value );
 
 
     private:
@@ -67,7 +61,8 @@ class PlayerShip : public BasicShip
         bool shootGunFlag;
         bool shootSMissileFlag;
         bool shootBMissileFlag;
-
+        int shieldMax;
+        int armorMax;
 
 };
 

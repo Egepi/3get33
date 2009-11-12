@@ -197,7 +197,7 @@ void MainWindow::gamelvl()
         QTimer *kk = new QTimer;
         QObject::connect(kk,SIGNAL(timeout()), this, SLOT(updateArmor()));
         QObject::connect(kk,SIGNAL(timeout()), this, SLOT(playerShoot()));
-        kk->start(1000/3);
+        kk->start(1000/10);
        // QTimer *moreWaves = new QTimer;
         //moreWaves->start(38000);
         this->spawnPowerUp();
