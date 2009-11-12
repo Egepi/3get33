@@ -26,8 +26,8 @@ PlayerShip::PlayerShip()
     shieldMax = 100;
     armorMax = 100;
     this->setPos(260,400);
-    this->setArmor(100);
-    this->setShield(100);
+    this->setArmor(this->armorMax);
+    this->setShield(this->shieldMax);
     this->setLives(3);
     this->setImage(QImage(":/images/GoodGuy.png"));
     this->shipSizeX = 80;
@@ -294,12 +294,13 @@ void PlayerShip::setShield(int theShield)
      else if (this->getArmor() > 0)
      {
          this->setArmor(this->getArmor()-dTaken);
-     }
-     else if (this->getLives() > 0)
-     {
-         this->setLives(this->getLives()-1);
-         this->setShield(this->shieldMax);
-         this->setArmor(this->shieldMax);
+         if(this->getArmor() == 0)
+         {
+             this->setLives(this->getLives()-1);
+             this->setShield(this->shieldMax);
+             this->setArmor(this->armorMax);
+         }
+
      }
      else
      {
