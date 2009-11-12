@@ -6,12 +6,15 @@
 #include <QPixmap>
 #include <QPainter>
 #include <QMessageBox>
+#include <QSound>
 #include "BasicShip.h"
+#include "Missile.h"
+#include "Bullet.h"
 
 class PlayerShip : public BasicShip
 {
     public:
-        PlayerShip();
+        PlayerShip(QGraphicsScene *par);
         ~PlayerShip();
         void PlayerShip::advance(int phase);
         void PlayerShip::setLFlag( bool );
@@ -39,8 +42,9 @@ class PlayerShip : public BasicShip
         int PlayerShip::getsMissile();
         void PlayerShip::setbMissile(int bMissile);
         int PlayerShip::getbMissile();
-
-
+        bool PlayerShip::getShootGunFlag();
+        bool PlayerShip::getShootSMissileFlag();
+        bool PlayerShip::getShootBMissileFlag();
 
 
     private:
@@ -63,6 +67,7 @@ class PlayerShip : public BasicShip
         bool shootGunFlag;
         bool shootSMissileFlag;
         bool shootBMissileFlag;
+        QGraphicsScene *parentScene;
 
 
 };

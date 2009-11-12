@@ -14,7 +14,7 @@
  *  Author: Karan Chakrapani,
  *          Jennifer Kinahan
  */
-PlayerShip::PlayerShip()
+PlayerShip::PlayerShip(QGraphicsScene *par)
 {
     lFlag = false;
     rFlag = false;
@@ -23,7 +23,7 @@ PlayerShip::PlayerShip()
     shootGunFlag = false;
     shootSMissileFlag = false;
     shootBMissileFlag = false;
-
+    this->parentScene = par;
     this->setPos(260,400);
     this->setArmor(100);
     this->setShield(100);
@@ -129,6 +129,9 @@ void PlayerShip::advance(int phase)
     else if(( rFlag ) && ( uFlag ) && ( !lFlag ) && ( !dFlag )){
         advanceRightUp();
     }
+
+
+
 }
 
 /**********************************************************************/
@@ -462,4 +465,15 @@ void PlayerShip::setShootBMissileFlag( bool keyPress )
 {
     this->shootBMissileFlag = keyPress;
 }
-
+bool PlayerShip::getShootGunFlag()
+{
+    return this->shootGunFlag;
+}
+bool PlayerShip::getShootSMissileFlag()
+{
+    return this->shootSMissileFlag;
+}
+bool PlayerShip::getShootBMissileFlag()
+{
+    return this->shootBMissileFlag;
+}
