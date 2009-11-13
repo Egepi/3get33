@@ -1,9 +1,5 @@
 #include "BasicShip.h"
-#include <QGraphicsItem>
-#include <QPixmap>
-#include <QPainter>
-#include <QObject>
-#include <QTimer>
+
 
 /**********************************************************************/
 /*! Constructor for BasicShip.
