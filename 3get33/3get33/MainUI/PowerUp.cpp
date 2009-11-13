@@ -1,6 +1,6 @@
 #include "PowerUp.h"
 
-// power up type 1 = sheild
+// power up type 1 = shield
 // power up type 2 = health
 // power up type 3 = small missile
 // power up type 4 = big missile
