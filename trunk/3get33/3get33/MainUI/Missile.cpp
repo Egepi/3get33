@@ -1,8 +1,5 @@
 #include "Missile.h"
 
-#include <QGraphicsItem>
-#include <QPixmap>
-#include <QPainter>
 
 Missile::Missile()
 {
@@ -25,11 +22,6 @@ void Missile::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget
 {
     //draws the Missile to the screen
     painter->drawImage(0,0, MissileImage);
-}
-
-void Missile::setMissileImage(QImage theMissileImage)
-{
-    Missile::MissileImage = theMissileImage;
 }
 
 QRectF Missile::boundingRect() const
