@@ -15,9 +15,17 @@
 #include <QTextStream>
 #include <QFile>
 #include <QString>
+#include <QSound>
+#include <QDialog>
+#include <QFileDialog>
+
 #include "Bullet.h"
 #include "Missile.h"
 #include "PowerUp.h"
+#include "BasicShip.h"
+#include "PlayerShip.h"
+#include "Level.h"
+#include "ui_mainwindow.h"
 
 namespace Ui
 {
@@ -31,11 +39,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void MainWindow::keyPressEvent(QKeyEvent *key);
-    void MainWindow::keyReleaseEvent(QKeyEvent *key);
-    void gamelvl();
-    QGraphicsScene *gameScene;
-    void spawnPowerUp();
+
 
 public slots:
     void closeGame();
@@ -61,6 +65,12 @@ private:
     Missile *aSmallMissile;
     QTimer *enemyShootTimer;
     PowerUp *aPU;
+    void MainWindow::keyPressEvent(QKeyEvent *key);
+    void MainWindow::keyReleaseEvent(QKeyEvent *key);
+    void gamelvl();
+    QGraphicsScene *gameScene;
+    void spawnPowerUp();
+
 
 };
 #endif // MAINWINDOW_H

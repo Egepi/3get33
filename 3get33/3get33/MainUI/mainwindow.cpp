@@ -1,15 +1,5 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "BasicShip.h"
-#include "PlayerShip.h"
-#include "Level.h"
-#include <QPushButton>
-#include <QObject>
-#include <QSound>
-#include <QPixmap>
-#include <QGraphicsScene>
-#include <QDialog>
-#include <QFileDialog>
+
 
 /**********************************************************************/
 /*! Constructor for a new MainWindow in which the whole program/game is run.

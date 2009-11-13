@@ -1,6 +1,5 @@
 #include "Level.h"
-#include "BasicShip.h"
-#include <QGraphicsScene>
+
 
 /**********************************************************************/
 /*!
