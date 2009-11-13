@@ -1,10 +1,5 @@
 #include "playership.h"
-#include "BasicShip.h"
-#include <QGraphicsItem>
-#include <QPixmap>
-#include <QKeyEvent>
-#include <QPainter>
-#include <QPushButton>
+
 
 /**********************************************************************/
 /*! Constructor for PlayerShip. Sets default characteristics.

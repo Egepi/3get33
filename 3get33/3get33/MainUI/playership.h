@@ -1,22 +1,19 @@
 #ifndef PLAYERSHIP_H
 #define PLAYERSHIP_H
 
-#include <QWidget>
 #include <QGraphicsItem>
-#include <QPixmap>
 #include <QPainter>
 #include <QMessageBox>
 #include <QSound>
 #include "BasicShip.h"
-#include "Missile.h"
-#include "Bullet.h"
+
 
 class PlayerShip : public BasicShip
 {
     public:
         PlayerShip();
         ~PlayerShip();
-        void PlayerShip::advance(int phase);
+
         void PlayerShip::setLFlag( bool );
         void PlayerShip::setRFlag( bool );
         void PlayerShip::setDFlag( bool );
@@ -25,21 +22,21 @@ class PlayerShip : public BasicShip
         void PlayerShip::setShootSMissileFlag( bool );
         void PlayerShip::setShootBMissileFlag( bool );
         void PlayerShip::setShield(int theShield);
-        int PlayerShip::getShield();
-        enum { Type = 65536 + 2 };
-        int PlayerShip::type() const;
-        void PlayerShip::collCheck();
-        void PlayerShip::damage(int dTaken);
         void PlayerShip::setsMissile(int sMissile);
-        int PlayerShip::getsMissile();
         void PlayerShip::setbMissile(int bMissile);
+        void PlayerShip::setShieldMax(int value);
+        void PlayerShip::setArmorMax(int value);
+
+        int PlayerShip::getShield();
+        int PlayerShip::getsMissile();
         int PlayerShip::getbMissile();
         bool PlayerShip::getShootGunFlag();
         bool PlayerShip::getShootSMissileFlag();
         bool PlayerShip::getShootBMissileFlag();
-        void PlayerShip::setShieldMax( int value );
-        void PlayerShip::setArmorMax( int value );
 
+        enum { Type = 65536 + 2 };
+        int PlayerShip::type() const;
+        void PlayerShip::collCheck();
 
     private:
         /*! The amount of shield the ship has. */
@@ -63,6 +60,11 @@ class PlayerShip : public BasicShip
         bool shootBMissileFlag;
         int shieldMax;
         int armorMax;
+
+        void PlayerShip::damage(int dTaken);
+        void PlayerShip::advance(int phase);
+
+
 
 };
 
