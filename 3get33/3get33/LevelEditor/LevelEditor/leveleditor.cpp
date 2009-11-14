@@ -83,6 +83,9 @@ LevelEditor::LevelEditor(QWidget *parent)
 
 
     /**********************************************************/
+
+    //levelBackgroundIn->addItem(QString("Space")
+    /**********************************************************/
     saveButton = new QPushButton(this);
     saveButton->setGeometry(20,81,100,30);
     saveButton->setText(QString("Save Settings"));
@@ -152,6 +155,12 @@ void LevelEditor::categoryChanged(int theIndex)
         saveButton->show();
 
         previousIndex = ui->categoryCombo->currentIndex();
+    }
+    else if(theIndex == 2)
+    {
+        levelBackground->show();
+        levelBackgroundIn->setCurrentIndex(valueLevelBackground);
+        levelBackgroundIn->show();
     }
 }
 
