@@ -31,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->loadButton->setFlat(true);
 
     QObject::connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(checkQuit()));
+    QObject::connect(ui->playButton, SIGNAL(clicked()),this, SLOT(gamelvl()));
 
 }
 
@@ -125,6 +126,9 @@ void MainWindow::loadGame()
             }
         }
         levelFile.close();
+        QImage theType(":/images/BadGuy4.png");
+        preLevel = new Level(gameScene, theType, 20);
+        this->playGame();
     }
 }
 
@@ -140,7 +144,6 @@ void MainWindow::loadGame()
   */
 void MainWindow::playGame()
 {
-    gameScene->setBackgroundBrush(QBrush(QImage(":/images/background640480.png")));
     ui->loadButton->hide();
     ui->playButton->hide();
     //Maps the keys to play the game
@@ -163,7 +166,21 @@ void MainWindow::playGame()
     ui->livesDisplay->display(myShip->getLives());
     ui->quitButton->clearFocus();
     gameStarted = true;
-    this->gamelvl();
+    if(gameStarted == true)
+    {
+        QTimer::singleShot(5000, this, SLOT(startBoss()));
+        preLevel->addWave();
+        enemyShootTimer = new QTimer();
+        QObject::connect(enemyShootTimer, SIGNAL(timeout()), this, SLOT(enemyShoot()));
+        enemyShootTimer->start(5000);
+
+        QTimer *kk = new QTimer;
+        QObject::connect(kk,SIGNAL(timeout()), this, SLOT(updateArmor()));
+        QObject::connect(kk,SIGNAL(timeout()), this, SLOT(playerShoot()));
+        kk->start(1000/10);
+        this->spawnPowerUp();
+    }
+    //this->gamelvl();
 
 
 
@@ -177,25 +194,9 @@ void MainWindow::playGame()
 void MainWindow::gamelvl()
 {
     QImage theType(":/images/BadGuy4.png");
+    gameScene->setBackgroundBrush(QBrush(QImage(":/images/background640480.png")));
     preLevel = new Level(gameScene, theType, 20);
-    if(gameStarted == true)
-    {
-        QTimer::singleShot(5000, this, SLOT(startBoss()));
-        preLevel->addWave();
-        enemyShootTimer = new QTimer();
-        QObject::connect(enemyShootTimer, SIGNAL(timeout()), this, SLOT(enemyShoot()));
-        enemyShootTimer->start(5000);
-
-        QTimer *kk = new QTimer;
-        QObject::connect(kk,SIGNAL(timeout()), this, SLOT(updateArmor()));
-        QObject::connect(kk,SIGNAL(timeout()), this, SLOT(playerShoot()));
-        kk->start(1000/10);
-       // QTimer *moreWaves = new QTimer;
-        //moreWaves->start(38000);
-        this->spawnPowerUp();
-
-    }
-
+    this->playGame();
 }
 /**********************************************************************/
 /*! When ever a key is pressed this method is called to decide what action to take.

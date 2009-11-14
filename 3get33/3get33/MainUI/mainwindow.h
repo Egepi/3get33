@@ -51,6 +51,7 @@ public slots:
     void updateArmor();
     void makePowerUp();
     void playerShoot();
+    void gamelvl();
 private:
     Ui::MainWindow *ui;
     PlayerShip *myShip;
@@ -67,7 +68,6 @@ private:
     PowerUp *aPU;
     void MainWindow::keyPressEvent(QKeyEvent *key);
     void MainWindow::keyReleaseEvent(QKeyEvent *key);
-    void gamelvl();
     QGraphicsScene *gameScene;
     void spawnPowerUp();
 
