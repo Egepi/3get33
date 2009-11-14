@@ -83,7 +83,7 @@ void MainWindow::loadGame()
         QFile levelFile(fileName);
         QString line;
 
-        if(levelFile.open(QIODevice::ReadWrite))
+                if(levelFile.open(QIODevice::ReadWrite))
         {
             QTextStream t(&levelFile);
             while(!t.atEnd())
@@ -94,11 +94,13 @@ void MainWindow::loadGame()
                 if(tokLine.first().compare(QString("PlayerArmor")) == 0)
                 {
                     myShip->setArmor(tokLine.at(1).toInt(&ok));
+                    myShip->setArmorMax(tokLine.at(1).toInt(&ok));
                     ui->armorDisplay->display(myShip->getArmor());
                 }
                 else if(tokLine.first().compare(QString("PlayerShield")) == 0)
                 {
                     myShip->setShield(tokLine.at(1).toInt(&ok));
+                    myShip->setShieldMax(tokLine.at(1).toInt(&ok));
                     ui->shieldDisplay->display(myShip->getShield());
                 }
                 else if(tokLine.first().compare(QString("PlayerLives")) == 0)
