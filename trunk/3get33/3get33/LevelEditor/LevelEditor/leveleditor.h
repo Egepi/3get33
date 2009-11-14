@@ -45,6 +45,9 @@ private:
     QLabel *playerBigBomb;
     QComboBox *playerBigBombIn;
 
+    QLabel *levelBackground;
+    QComboBox *levelBackgroundIn;
+
     QPushButton *saveLevel;
 
     int valuePlayerArmor;
@@ -52,6 +55,7 @@ private:
     int valuePlayerLives;
     int valuePlayerSmallBombs;
     int valuePlayerBigBombs;
+    int valueLevelBackground;
 };
 
 #endif // LEVELEDITOR_H
