@@ -168,8 +168,12 @@ void MainWindow::playGame()
     gameStarted = true;
     if(gameStarted == true)
     {
-        QTimer::singleShot(5000, this, SLOT(startBoss()));
+        preLevel->shipAdvance();
         preLevel->addWave();
+        QTimer::singleShot(5000, this, SLOT(startBoss()));
+        waveTimer = new QTimer();
+        QObject::connect(waveTimer, SIGNAL(timeout()), this, SLOT(addingWave()));
+        waveTimer->start(10000);
         enemyShootTimer = new QTimer();
         QObject::connect(enemyShootTimer, SIGNAL(timeout()), this, SLOT(enemyShoot()));
         enemyShootTimer->start(5000);
@@ -186,6 +190,13 @@ void MainWindow::playGame()
 
 }
 
+/**********************************************************************/
+/*!
+ * STUFF
+ */
+void MainWindow::addingWave(){
+    preLevel->addWave();
+}
 /**********************************************************************/
 /*!
  *

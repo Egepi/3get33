@@ -17,6 +17,7 @@ class Level
         //void set
         BossShip *theBoss;
         static const int ROW_SIZE = 5;
+        void shipAdvance();
 
     private:
         QImage enemyImage;
@@ -25,6 +26,7 @@ class Level
         BasicShip *enemy;
         QList<BasicShip*> waveList;
         QTimer *advanceTimer;
+
 };
 
 
