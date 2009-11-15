@@ -12,7 +12,7 @@ class Bullet : public QGraphicsItem
         Bullet(qreal locX, qreal locY, QImage bulletImage, bool owner);
         ~Bullet();       
         enum { Type = 65536 + 4 };
-        int Bullet::type() const;
+        int type() const;
 
     private:
         qreal shipX;
@@ -20,10 +20,10 @@ class Bullet : public QGraphicsItem
         QImage bulletImage;
         bool owner;
 
-        void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
-        QRectF Bullet::boundingRect() const;
-        QPainterPath Bullet::shape() const;
-        void Bullet::advance(int phase);
+        void paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
+        QRectF boundingRect() const;
+        QPainterPath shape() const;
+        void advance(int phase);
 };
 
 #endif // BULLET_H

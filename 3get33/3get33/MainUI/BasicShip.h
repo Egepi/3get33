@@ -13,16 +13,18 @@ class BasicShip : public QGraphicsItem
     ~BasicShip();
 
     int getArmor();
-    int BasicShip::getLives();
-    void BasicShip::setLives( int theLives );
+    int getLives();
+    void setLives( int theLives );
     void setArmor(int theArmor);
     void setImage(QImage theImage);
+    void setShipSizeX(int);
+    void setShipSizeY(int);
     void move(qreal xMove, qreal yMove);
     enum { Type = 65536 + 1 };
-    int BasicShip::type() const;
+    int type() const;
     int shipSizeX;
     int shipSizeY;
-    void BasicShip::collCheck();
+    void collCheck();
 
     signals:
          void armorChanged();
@@ -47,7 +49,7 @@ class BasicShip : public QGraphicsItem
         void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 
-        void BasicShip::damage(int dTaken);
+        void damage(int dTaken);
 };
 
 #endif // BASICSHIP_H

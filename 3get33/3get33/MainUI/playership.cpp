@@ -190,7 +190,6 @@ void PlayerShip::setShield(int theShield)
                 //if a player ship
                 if (item->type() == 65538)
                 {
-                    decr = 10;
                 }
                 //if a boss ship
                 if (item->type() == 65539)
@@ -200,7 +199,7 @@ void PlayerShip::setShield(int theShield)
                 //if a bullet
                 if (item->type() == 65540)
                 {
-                    decr = 10;
+                    decr = 15;
                     item->setPos(500,500);
                 }
                 //if big missile
@@ -284,26 +283,80 @@ void PlayerShip::setShield(int theShield)
  {
      if (this->getShield() > 0)
      {
-        this->setShield(this->getShield()-dTaken);
+        if(this->getShield() - dTaken < 0)
+        {
+            dTaken = dTaken - this->getShield();\
+            this->setShield(0);
+            if(this->getArmor()-dTaken <= 0)
+            {
+                this->setArmor(0);
+                if (this->getLives()-1 == 0)
+                {
+                    this->setLives(0);
+                    this->hide();
+                    this->setEnabled(false);
+                }
+                else
+                {
+                    this->setLives(this->getLives()-1);
+                    this->setShield(this->shieldMax);
+                    this->setArmor(this->armorMax);
+                }
+            }
+            else
+            {
+                this->setArmor(this->getArmor()-dTaken);
+            }
+
+        }
+        else
+        {
+            this->setShield(this->getShield()-dTaken);
+        }
      }
      else if (this->getArmor() > 0)
      {
-         this->setArmor(this->getArmor()-dTaken);
-         if(this->getArmor() == 0)
+         if(this->getArmor()-dTaken <= 0)
+         {
+             this->setArmor(0);
+             if (this->getLives()-1 == 0)
+             {
+                 this->setLives(0);
+                 this->hide();
+                 this->setEnabled(false);
+             }
+             else
+             {
+                 this->setLives(this->getLives()-1);
+                 this->setShield(this->shieldMax);
+                 this->setArmor(this->armorMax);
+             }
+         }
+         else
+         {
+             this->setArmor(this->getArmor()-dTaken);
+         }
+     }
+     else if(this->getLives()>0)
+     {
+         if (this->getLives()-1 == 0)
+         {
+             this->setLives(0);
+             this->hide();
+             this->setEnabled(false);
+         }
+         else
          {
              this->setLives(this->getLives()-1);
              this->setShield(this->shieldMax);
              this->setArmor(this->armorMax);
          }
-
      }
      else
      {
          this->hide();
          this->setEnabled(false);
 
-         //this->setImage(QImage(":/images/explosion.png"));
-         //this->move(0,0);
 
 //         if(this->getLives() >= 0)
 //         {

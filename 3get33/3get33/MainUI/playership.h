@@ -14,29 +14,29 @@ class PlayerShip : public BasicShip
         PlayerShip();
         ~PlayerShip();
 
-        void PlayerShip::setLFlag( bool );
-        void PlayerShip::setRFlag( bool );
-        void PlayerShip::setDFlag( bool );
-        void PlayerShip::setUFlag( bool );
-        void PlayerShip::setShootGunFlag( bool );
-        void PlayerShip::setShootSMissileFlag( bool );
-        void PlayerShip::setShootBMissileFlag( bool );
-        void PlayerShip::setShield(int theShield);
-        void PlayerShip::setsMissile(int sMissile);
-        void PlayerShip::setbMissile(int bMissile);
-        void PlayerShip::setShieldMax(int value);
-        void PlayerShip::setArmorMax(int value);
+        void setLFlag( bool );
+        void setRFlag( bool );
+        void setDFlag( bool );
+        void setUFlag( bool );
+        void setShootGunFlag( bool );
+        void setShootSMissileFlag( bool );
+        void setShootBMissileFlag( bool );
+        void setShield(int theShield);
+        void setsMissile(int sMissile);
+        void setbMissile(int bMissile);
+        void setShieldMax(int value);
+        void setArmorMax(int value);
 
-        int PlayerShip::getShield();
-        int PlayerShip::getsMissile();
-        int PlayerShip::getbMissile();
-        bool PlayerShip::getShootGunFlag();
-        bool PlayerShip::getShootSMissileFlag();
-        bool PlayerShip::getShootBMissileFlag();
+        int getShield();
+        int getsMissile();
+        int getbMissile();
+        bool getShootGunFlag();
+        bool getShootSMissileFlag();
+        bool getShootBMissileFlag();
 
         enum { Type = 65536 + 2 };
         int PlayerShip::type() const;
-        void PlayerShip::collCheck();
+        void collCheck();
 
     private:
         /*! The amount of shield the ship has. */
@@ -61,8 +61,8 @@ class PlayerShip : public BasicShip
         int shieldMax;
         int armorMax;
 
-        void PlayerShip::damage(int dTaken);
-        void PlayerShip::advance(int phase);
+        void damage(int dTaken);
+        void advance(int phase);
 
 
 

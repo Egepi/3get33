@@ -11,17 +11,17 @@ public:
         Missile(qreal locX, qreal locY, QImage missImage, bool owner, bool big);
         ~Missile();
         enum {Type = 65536 + 5};
-        int Missile::type() const;
+        int type() const;
 
     private:
         QImage MissileImage;
         bool bigMissile;
         bool owner;
 
-        void Missile::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
-        QRectF Missile::boundingRect() const;
-        QPainterPath Missile::shape() const;
-        void Missile::advance(int phase);
+        void paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
+        QRectF boundingRect() const;
+        QPainterPath shape() const;
+        void advance(int phase);
 
 };
 #endif // MISSILE_H

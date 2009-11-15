@@ -32,6 +32,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     QObject::connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(checkQuit()));
     QObject::connect(ui->playButton, SIGNAL(clicked()),this, SLOT(gamelvl()));
+    QSound::play(QString("EX_1.wav"));
 
 }
 
@@ -156,9 +157,7 @@ void MainWindow::playGame()
     actions.insert( Qt::Key_B, ShootBBomb );
     actions.insert( Qt::Key_Escape, Pause );
 
-    //The player controled PlayerShip is created.
-    myShip = new PlayerShip();
-    gameScene->addItem(myShip); //Adds PlayerShip to scene
+
 
     //Updates the armor, shield, and lives displays.
     ui->armorDisplay->display(myShip->getArmor());
@@ -204,6 +203,10 @@ void MainWindow::addingWave(){
  */
 void MainWindow::gamelvl()
 {
+    //The player controled PlayerShip is created.
+    myShip = new PlayerShip();
+    gameScene->addItem(myShip); //Adds PlayerShip to scene
+
     QImage theType(":/images/BadGuy4.png");
     gameScene->setBackgroundBrush(QBrush(QImage(":/images/background640480.png")));
     preLevel = new Level(gameScene, theType, 20);
