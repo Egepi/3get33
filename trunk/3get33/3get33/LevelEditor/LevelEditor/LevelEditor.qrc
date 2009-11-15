@@ -2,5 +2,6 @@
     <qresource prefix="/images" >
         <file>Background.jpg</file>
         <file>background640480.png</file>
+        <file>MenuWithoutButtons640480.jpg</file>
     </qresource>
 </RCC>
