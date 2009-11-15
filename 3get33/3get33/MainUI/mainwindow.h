@@ -52,6 +52,8 @@ public slots:
     void makePowerUp();
     void playerShoot();
     void gamelvl();
+    void addingWave();
+
 private:
     Ui::MainWindow *ui;
     PlayerShip *myShip;
@@ -65,12 +67,12 @@ private:
     Missile *aBigMissile;
     Missile *aSmallMissile;
     QTimer *enemyShootTimer;
+    QTimer *waveTimer;
     PowerUp *aPU;
     void MainWindow::keyPressEvent(QKeyEvent *key);
     void MainWindow::keyReleaseEvent(QKeyEvent *key);
     QGraphicsScene *gameScene;
     void spawnPowerUp();
-
 
 };
 #endif // MAINWINDOW_H
