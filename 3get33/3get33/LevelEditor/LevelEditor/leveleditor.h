@@ -10,7 +10,7 @@
 #include <QFileDialog>
 #include <iostream>
 #include <QTextStream>
-using namespace std;
+#include <qpixmap.h>
 
 namespace Ui
 {
@@ -44,6 +44,9 @@ private:
     QComboBox *playerSmallBombIn;
     QLabel *playerBigBomb;
     QComboBox *playerBigBombIn;
+    QLabel *background1;
+    QLabel *background2;
+    QLabel *background3;
 
     QLabel *levelBackground;
     QComboBox *levelBackgroundIn;

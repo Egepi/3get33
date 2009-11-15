@@ -83,8 +83,18 @@ LevelEditor::LevelEditor(QWidget *parent)
 
 
     /**********************************************************/
-
-    //levelBackgroundIn->addItem(QString("Space")
+    QPixmap back1(200,200);
+    back1.load(":/images/MenuWithoutButtons640480.jpg");
+    //back1.
+    background1 = new QLabel(this);
+    background1->setScaledContents(true);
+    background1->setPixmap(back1);
+    background1->setGeometry(50,150,200,200);
+    background1->hide();
+    //levelBackgroundIn->addItem("Space");
+    //levelBackgroundIn->addItem("Blank1");
+    //levelBackgroundIn->addItem("Blank2");
+    //levelBackgroundIn->hide();
     /**********************************************************/
     saveButton = new QPushButton(this);
     saveButton->setGeometry(20,81,100,30);
@@ -111,7 +121,7 @@ LevelEditor::~LevelEditor()
 
 void LevelEditor::categoryChanged(int theIndex)
 {
-    if(previousIndex != -1)
+    /*if(previousIndex != -1)
     {
         playerArmor->hide();
         playerArmorIn->setCurrentIndex(valuePlayerArmor);
@@ -128,7 +138,7 @@ void LevelEditor::categoryChanged(int theIndex)
         playerBigBombIn->hide();
         playerBigBombIn->setCurrentIndex(valuePlayerBigBombs);
         playerBigBomb->hide();
-    }
+    }*/
     if(theIndex == 1)
     {
         playerArmor->show();
@@ -154,13 +164,15 @@ void LevelEditor::categoryChanged(int theIndex)
         //ui->categoryCombo->setDisabled(true);
         saveButton->show();
 
-        previousIndex = ui->categoryCombo->currentIndex();
+        //previousIndex = ui->categoryCombo->currentIndex();
     }
     else if(theIndex == 2)
     {
-        levelBackground->show();
-        levelBackgroundIn->setCurrentIndex(valueLevelBackground);
-        levelBackgroundIn->show();
+        background1->show();
+    }
+    else
+    {
+        return;
     }
 }
 
