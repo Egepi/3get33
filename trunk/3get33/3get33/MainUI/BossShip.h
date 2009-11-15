@@ -10,9 +10,9 @@ class BossShip : public BasicShip
         BossShip();
         ~BossShip();
         enum { Type = 65536 + 3 };
-        int BossShip::type() const;
+        int type() const;
     private:
-        void BossShip::advance(int phase);
+        void advance(int phase);
         bool moveLeft;
         
         
