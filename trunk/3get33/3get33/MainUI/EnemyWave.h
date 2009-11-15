@@ -3,9 +3,9 @@
 #include "BasicShip.h"
 #include <QGraphicsScene>
 #include <QList>
-class EnemyWave : QObject
+#include <QObject>
+class EnemyWave
 {
-    Q_OBJECT
     public:
         EnemyWave(QGraphicsScene *theScene, QImage theEnemyType, int theWaveSize, int theArmor);
         ~EnemyWave();
@@ -14,8 +14,6 @@ class EnemyWave : QObject
         static const int SHIP_LIVES = 1;
         static const int VIEW_SIZE = 600;
         static const int SHIP_SPACING = 30;
-   public slots:
-        void moveWave();
 
    private:
         int shipArmor;
