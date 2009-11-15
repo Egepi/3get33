@@ -48,15 +48,3 @@ void EnemyWave::addWave()
     }
 }
 
-void EnemyWave::moveWave()
-{
-
-    if((waveRight + 10) <= VIEW_SIZE)
-    {
-        for(int i=0; i < waveSize; i++)
-        {
-            waveList.at(i)->setPos(waveList.at(i)->x() + 10, 0);
-        }
-    }
-}
-

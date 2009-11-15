@@ -35,7 +35,7 @@ BasicShip::BasicShip()
  */
 BasicShip::~BasicShip()
 {
-    delete this;
+
 }
 
 /**********************************************************************/
@@ -175,6 +175,7 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
  {
 
 
+
    /*
      if(!phase) return;
      qreal moveDelta = 5;
@@ -310,11 +311,14 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
 
  void BasicShip::damage(int dTaken)
  {
+
      if (this->getArmor() > 0)
      {
          this->setArmor(this->getArmor()-dTaken);
          if (this->getArmor() <= 0)
          {
+             //this->setPos(1000,1000);
+             //this->getridof();
              this->hide();
              this->setEnabled(false);
              //this->~BasicShip();
@@ -326,5 +330,7 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
 
 void BasicShip::getridof()
 {
+    this->~BasicShip();
 
 }
+

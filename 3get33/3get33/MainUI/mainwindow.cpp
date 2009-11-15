@@ -182,6 +182,7 @@ void MainWindow::playGame()
         QObject::connect(kk,SIGNAL(timeout()), this, SLOT(playerShoot()));
         kk->start(1000/10);
         this->spawnPowerUp();
+
     }
     //this->gamelvl();
 
@@ -341,6 +342,8 @@ void MainWindow::updateArmor()
     ui->livesDisplay->display(myShip->getLives());
     ui->smallMissilesDisplay->display(myShip->getsMissile());
     ui->bigMissilesDisplay->display(myShip->getbMissile());
+
+
 }
 void MainWindow::makePowerUp()
 {

@@ -9,6 +9,7 @@
 
 class Level
 {
+
     public:
         Level(QGraphicsScene *theScene, QImage enemyType, int theWaveSize);
         ~Level();

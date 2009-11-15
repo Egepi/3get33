@@ -25,12 +25,12 @@ class BasicShip : public QGraphicsItem
     int shipSizeX;
     int shipSizeY;
     void collCheck();
+    void getridof();
 
     signals:
          void armorChanged();
 
-    public slots:
-        void getridof();
+
 
     private:
         /*! The amount of armor. */
