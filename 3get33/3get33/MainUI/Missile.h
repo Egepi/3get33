@@ -12,12 +12,15 @@ public:
         ~Missile();
         enum {Type = 65536 + 5};
         int type() const;
+        bool getOwner();
+        void updateScore(int);
+        int getScore();
 
     private:
         QImage MissileImage;
         bool bigMissile;
         bool owner;
-
+        int score;
         void paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
         QRectF boundingRect() const;
         QPainterPath shape() const;

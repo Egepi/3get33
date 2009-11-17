@@ -18,6 +18,7 @@
 #include <QSound>
 #include <QDialog>
 #include <QFileDialog>
+#include <QLinkedList>
 
 #include "Bullet.h"
 #include "Missile.h"
@@ -57,6 +58,7 @@ public slots:
 private:
     Ui::MainWindow *ui;
     PlayerShip *myShip;
+
     bool gameStarted;
     bool atBoss;
     enum Action {Blank, Left, Right, Up, Down, ShootGun, ShootSBomb, ShootBBomb, Pause};
@@ -73,6 +75,9 @@ private:
     void MainWindow::keyReleaseEvent(QKeyEvent *key);
     QGraphicsScene *gameScene;
     void spawnPowerUp();
+    QLinkedList<Bullet*> bulletList;
+    QLinkedList<Missile*> missileList;
+    int score;
 
 };
 #endif // MAINWINDOW_H

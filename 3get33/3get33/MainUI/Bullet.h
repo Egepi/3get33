@@ -3,8 +3,6 @@
 
 #include <QPainter>
 #include <QGraphicsItem>
-
-
 class Bullet : public QGraphicsItem
 {
     public:
@@ -13,13 +11,16 @@ class Bullet : public QGraphicsItem
         ~Bullet();       
         enum { Type = 65536 + 4 };
         int type() const;
+        bool getOwner();
+        void updateScore(int);
+        int getScore();
 
     private:
         qreal shipX;
         qreal shipY;
         QImage bulletImage;
         bool owner;
-
+        int score;
         void paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
         QRectF boundingRect() const;
         QPainterPath shape() const;

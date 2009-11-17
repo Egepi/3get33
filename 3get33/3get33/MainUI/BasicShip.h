@@ -3,7 +3,8 @@
 
 #include <QGraphicsItem>
 #include <QPainter>
-
+#include "Bullet.h"
+#include "Missile.h"
 
 class BasicShip : public QGraphicsItem
 {
