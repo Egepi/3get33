@@ -11,6 +11,7 @@ Missile::Missile(qreal locX, qreal locY, QImage missImage, bool theOwner, bool b
     MissileImage = missImage;
     owner = theOwner;
     setPos(locX, locY);
+    score = 0;
 }
 
 Missile::~Missile()
@@ -105,5 +106,21 @@ void Missile::advance(int phase)
      {
          return Type + 1;
      }
+ }
+
+ bool Missile::getOwner()
+ {
+     return this->owner;
+ }
+
+ void Missile::updateScore(int value)
+ {
+     this->score = this->score + value;
+
+ }
+
+ int Missile::getScore()
+ {
+     return this->score;
  }
 

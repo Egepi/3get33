@@ -11,6 +11,7 @@ Bullet::Bullet(qreal locX, qreal locY, QImage bullImage, bool theOwner)
     bulletImage = bullImage;
     owner = theOwner;
     setPos(locX, locY);
+    score = 0;
 }
 
 Bullet::~Bullet()
@@ -88,3 +89,19 @@ void Bullet::advance(int phase)
 //{
 
 //}
+
+ bool Bullet::getOwner()
+ {
+     return this->owner;
+ }
+
+ void Bullet::updateScore(int value)
+ {
+     this->score = this->score + value;
+
+ }
+
+ int Bullet::getScore()
+ {
+     return this->score;
+ }

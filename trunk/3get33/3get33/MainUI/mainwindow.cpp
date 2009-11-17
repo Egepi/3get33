@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     ui->setupUi(this);  //Sets up the user interface based of mainwindow.ui
     atBoss = false;
+    score = 0;
 
     gameScene = new QGraphicsScene; //Scene to display the whole game
     int width = ui->Display->geometry().width();
@@ -33,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(checkQuit()));
     QObject::connect(ui->playButton, SIGNAL(clicked()),this, SLOT(gamelvl()));
     //QSound::play(QString("EX_1.wav"));
+    
 
 }
 
@@ -342,7 +344,26 @@ void MainWindow::updateArmor()
     ui->livesDisplay->display(myShip->getLives());
     ui->smallMissilesDisplay->display(myShip->getsMissile());
     ui->bigMissilesDisplay->display(myShip->getbMissile());
-
+    score = 0;
+    if(!this->bulletList.isEmpty())
+    {
+       QLinkedList<Bullet*>::iterator iterator;
+       for(iterator = bulletList.begin(); iterator != bulletList.end(); ++iterator)
+       {
+           Bullet *a = *iterator;
+           score = score + a->getScore();
+       }
+    }
+    if(!this->missileList.isEmpty())
+    {
+       QLinkedList<Missile*>::iterator iterator2;
+       for(iterator2 = missileList.begin(); iterator2 != missileList.end(); ++iterator2)
+       {
+           Missile *b = *iterator2;
+           score = score + b->getScore();
+       }
+    }
+    ui->scoreDisplay->display(score);
 
 }
 void MainWindow::makePowerUp()
@@ -355,7 +376,7 @@ void MainWindow::spawnPowerUp()
 {
     QTimer *powerUpTimer = new QTimer();
     QObject::connect(powerUpTimer, SIGNAL(timeout()), this, SLOT(makePowerUp()));
-    powerUpTimer->start((qrand() % 40) + (10000) );
+    powerUpTimer->start(20000);
 }
 
 void MainWindow::playerShoot()
@@ -365,6 +386,7 @@ void MainWindow::playerShoot()
         Bullet *aBullet = new Bullet(myShip->x()+36,myShip->y()-9,QImage(":/images/WhiteBullet.png"), true);
         gameScene->addItem(aBullet);
         QSound::play(QString("pew2.wav"));
+        this->bulletList.append(aBullet);
     }
 
     if(myShip->getShootSMissileFlag())
@@ -374,6 +396,7 @@ void MainWindow::playerShoot()
             Missile *aSmallMissile = new Missile(myShip->x()+35, myShip->y()-21,QImage(":/images/sMissile.png"), true, false);
             gameScene->addItem(aSmallMissile);
             myShip->setsMissile(myShip->getsMissile() -1);
+            this->missileList.append(aSmallMissile);
         }
 
     }
@@ -385,6 +408,7 @@ void MainWindow::playerShoot()
             Missile *aBigMissile = new Missile(myShip->x()+30, myShip->y()-41,QImage(":/images/bMissile.png"), true, true);
             gameScene->addItem(aBigMissile);
             myShip->setbMissile(myShip->getbMissile() -1);
+            this->missileList.append(aBigMissile);
         }
     }
 }
