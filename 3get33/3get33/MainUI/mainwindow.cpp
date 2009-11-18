@@ -16,11 +16,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     gameScene->setSceneRect(0, 0, width,height);
     //Sets the default background for the gameScene
     //ui->Display->setBackgroundBrush(QBrush(QImage(":/images/background640480.png")));
-    gameScene->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
+    //gameScene->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
     ui->Display->setScene(gameScene);
    // ui->Display->setFocus();
     //ui->Display->centerOn(myShip);
     yDelta = 0;
+
+
 
 
     //Creates and displays the "Play", "Load Game", and "Quit" buttons
@@ -216,7 +218,9 @@ void MainWindow::gamelvl()
     gameScene->addItem(myShip); //Adds PlayerShip to scene
 
     QImage theType(":/images/BadGuy4.png");
-    gameScene->setBackgroundBrush(QBrush(QImage(":/images/background640480.png")));
+    //gameScene->setBackgroundBrush(QBrush(QImage(":/images/background640480.png")));
+    bg = new BGround();
+    gameScene->addItem(bg);
     preLevel = new Level(gameScene, theType, 20);
     this->playGame();
 }
@@ -344,7 +348,17 @@ void MainWindow::enemyShoot()
 
 void MainWindow::updateArmor()
 {
-    ui->Display->scene()->setSceneRect(0,yDelta,width,height);
+    this->bg->setPos(0, yDelta);
+    if(yDelta > -480)
+    {
+        yDelta += -1;
+    }
+    else
+    {
+        yDelta =0;
+    }
+
+    //ui->Display->scene()->setSceneRect(0,yDelta,width,height);
     //ui->Display->sceneRect().adjust(0, yDelta, width, height);
     //ui->Display->setViewportMargins(0, 0, 90, 90);
     ui->armorDisplay->display(myShip->getArmor());
@@ -372,7 +386,7 @@ void MainWindow::updateArmor()
        }
     }
     ui->scoreDisplay->display(score);
-    yDelta += -1;
+
 
 }
 void MainWindow::makePowerUp()

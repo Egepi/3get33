@@ -26,6 +26,7 @@
 #include "BasicShip.h"
 #include "PlayerShip.h"
 #include "Level.h"
+#include "bground.h"
 #include "ui_mainwindow.h"
 
 namespace Ui
@@ -81,6 +82,7 @@ private:
     int width;
     int height;
     int yDelta;
+    BGround *bg;
 
 };
 #endif // MAINWINDOW_H

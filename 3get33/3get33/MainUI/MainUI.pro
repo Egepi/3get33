@@ -12,7 +12,8 @@ SOURCES += main.cpp \
     Missile.cpp \
     BossShip.cpp \
     EnemyWave.cpp \
-    PowerUp.cpp
+    PowerUp.cpp \
+    bground.cpp
 HEADERS += mainwindow.h \
     BasicShip.h \
     playership.h \
@@ -21,6 +22,7 @@ HEADERS += mainwindow.h \
     Missile.h \
     BossShip.h \
     EnemyWave.h \
-    PowerUp.h
+    PowerUp.h \
+    bground.h
 FORMS += mainwindow.ui
 RESOURCES += uiimages.qrc

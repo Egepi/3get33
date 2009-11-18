@@ -20,6 +20,7 @@ BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int 
     this->shipSizeX = 80;
     this->shipSizeY = 80;
     this->moveRight = true;
+    this->setZValue(10);
 
 }
 
@@ -109,7 +110,9 @@ void BasicShip::move(qreal xMove, qreal yMove)
 
     qreal xLoc = this->x();
     qreal yLoc = this->y();
-
+    //QRectF *bound = this->sceneBoundingRect();
+    //int width = bound->width();
+    //int heigth = bound->height();
     //Checks if the object is within the x-axis bounds of the gameScene
     if(( this->x() + xMove >= 0 )&&( this->x() + xMove <= 600 - this->shipSizeX ))
     {// The object was within the gameScene bounds so the ship is moved

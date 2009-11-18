@@ -35,6 +35,7 @@ PowerUp::PowerUp()
     {
         puImage = QImage(":/images/shieldpowerup.gif");
     }
+    this->setZValue(10);
 }
 
 PowerUp::~PowerUp()
