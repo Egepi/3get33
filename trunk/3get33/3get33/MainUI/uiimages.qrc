@@ -25,5 +25,7 @@
         <file>purpleDS.png</file>
         <file>purpleLS.png</file>
         <file>shieldpowerup.gif</file>
+        <file>apples.png</file>
+        <file>wine.jpeg</file>
     </qresource>
 </RCC>

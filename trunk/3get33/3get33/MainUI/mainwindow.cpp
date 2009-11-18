@@ -11,12 +11,17 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     score = 0;
 
     gameScene = new QGraphicsScene; //Scene to display the whole game
-    int width = ui->Display->geometry().width();
-    int height = ui->Display->geometry().height();
+    width = ui->Display->geometry().width();
+    height = ui->Display->geometry().height();
     gameScene->setSceneRect(0, 0, width,height);
     //Sets the default background for the gameScene
+    //ui->Display->setBackgroundBrush(QBrush(QImage(":/images/background640480.png")));
     gameScene->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
     ui->Display->setScene(gameScene);
+   // ui->Display->setFocus();
+    //ui->Display->centerOn(myShip);
+    yDelta = 0;
+
 
     //Creates and displays the "Play", "Load Game", and "Quit" buttons
     ui->playButton->setIconSize(QSize(140,50));
@@ -339,6 +344,9 @@ void MainWindow::enemyShoot()
 
 void MainWindow::updateArmor()
 {
+    ui->Display->scene()->setSceneRect(0,yDelta,width,height);
+    //ui->Display->sceneRect().adjust(0, yDelta, width, height);
+    //ui->Display->setViewportMargins(0, 0, 90, 90);
     ui->armorDisplay->display(myShip->getArmor());
     ui->shieldDisplay->display(myShip->getShield());
     ui->livesDisplay->display(myShip->getLives());
@@ -364,6 +372,7 @@ void MainWindow::updateArmor()
        }
     }
     ui->scoreDisplay->display(score);
+    yDelta += -1;
 
 }
 void MainWindow::makePowerUp()

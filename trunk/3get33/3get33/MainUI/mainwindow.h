@@ -78,6 +78,9 @@ private:
     QLinkedList<Bullet*> bulletList;
     QLinkedList<Missile*> missileList;
     int score;
+    int width;
+    int height;
+    int yDelta;
 
 };
 #endif // MAINWINDOW_H
