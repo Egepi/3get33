@@ -13,6 +13,7 @@ BossShip::BossShip()
     this->shipSizeX = 150;
     this->shipSizeY = 63;
     this->setArmor(20);
+    this->setZValue(10);
 }
 
 /**********************************************************************/

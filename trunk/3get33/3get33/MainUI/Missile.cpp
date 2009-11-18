@@ -12,6 +12,7 @@ Missile::Missile(qreal locX, qreal locY, QImage missImage, bool theOwner, bool b
     owner = theOwner;
     setPos(locX, locY);
     score = 0;
+    this->setZValue(10);
 }
 
 Missile::~Missile()

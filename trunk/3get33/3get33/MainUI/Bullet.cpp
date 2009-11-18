@@ -12,6 +12,7 @@ Bullet::Bullet(qreal locX, qreal locY, QImage bullImage, bool theOwner)
     owner = theOwner;
     setPos(locX, locY);
     score = 0;
+    this->setZValue(10);
 }
 
 Bullet::~Bullet()
