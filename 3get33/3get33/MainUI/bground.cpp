@@ -27,5 +27,5 @@ void BGround::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget
 {
 
         //Draws the BGround object.
-        painter->drawImage(0,0, QImage(":/images/background640480.png"));
+        painter->drawImage(0,0, QImage(":/images/LargeBG.png"));
 }
