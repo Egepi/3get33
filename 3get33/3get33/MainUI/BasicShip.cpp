@@ -264,21 +264,13 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
             QGraphicsItem *item = listOfCollidingItems.at(i);
             if(item->isEnabled() ==true)
             {
-                //if a basic enemy ship
-                if (item->type() == 65537)
-                {
-                }
                 //if a player ship
                 if (item->type() == 65538)
                 {
                     decr = 10;
                 }
-                //if a boss ship
-                if (item->type() == 65539)
-                {
-                }
                 //if a bullet
-                if (item->type() == 65540)
+                else if (item->type() == 65540)
                 {
                     Bullet *abit = dynamic_cast<Bullet*> (item);
                     if(abit->getOwner())
@@ -288,7 +280,7 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
                     }
                     item->setPos(500,500);
                 }
-                if (item->type() == 65541)
+                else if (item->type() == 65541)
                 {
                     Missile *bbit = dynamic_cast<Missile*> (item);
                     if(bbit->getOwner())
@@ -298,7 +290,7 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
                     }
                     item->setPos(500,500);
                 }
-                if (item->type() == 65542)
+                else if (item->type() == 65542)
                 {
                     Missile *cbit = dynamic_cast<Missile*> (item);
                     if(cbit->getOwner())
@@ -308,19 +300,13 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
                     }
                     item->setPos(500,500);
                 }
-                if (item->type() == 65543)
+                else
                 {
                 }
-                if (item->type() == 65544)
+                if(decr > 0)
                 {
+                    this->damage(decr);
                 }
-                if (item->type() == 65545)
-                {
-                }
-                if (item->type() == 65546)
-                {
-                }
-                this->damage(decr);
             }
         }
 
