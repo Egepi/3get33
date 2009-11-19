@@ -15,12 +15,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     height = ui->Display->geometry().height();
     gameScene->setSceneRect(0, 0, width,height);
     //Sets the default background for the gameScene
-    //ui->Display->setBackgroundBrush(QBrush(QImage(":/images/background640480.png")));
+    ui->Display->setBackgroundBrush(QBrush(QImage(":/images/background640480.png")));
     //gameScene->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
     ui->Display->setScene(gameScene);
    // ui->Display->setFocus();
     //ui->Display->centerOn(myShip);
-    yDelta = 0;
+    yDelta = -480;
 
 
 
@@ -349,13 +349,13 @@ void MainWindow::enemyShoot()
 void MainWindow::updateArmor()
 {
     this->bg->setPos(0, yDelta);
-    if(yDelta > -480)
+    if(yDelta < 0)
     {
-        yDelta += -1;
+        yDelta += 1;
     }
     else
     {
-        yDelta =0;
+        yDelta = -480;
     }
 
     //ui->Display->scene()->setSceneRect(0,yDelta,width,height);
