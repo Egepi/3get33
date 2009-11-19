@@ -187,35 +187,31 @@ void PlayerShip::setShield(int theShield)
                 {
                     decr = 10;
                 }
-                //if a player ship
-                if (item->type() == 65538)
-                {
-                }
                 //if a boss ship
-                if (item->type() == 65539)
+                else if (item->type() == 65539)
                 {
                     decr = 30;
                 }
                 //if a bullet
-                if (item->type() == 65540)
+                else if (item->type() == 65540)
                 {
                     decr = 15;
                     item->setPos(500,500);
                 }
                 //if big missile
-                if (item->type() == 65541)
+                else if (item->type() == 65541)
                 {
                     decr = 50;
                     item->setPos(500,500);
                 }
                 //if small missile
-                if (item->type() == 65542)
+                else if (item->type() == 65542)
                 {
                     decr = 25;
                     item->setPos(500,500);
                 }
                 //if shield powerup
-                if (item->type() == 65543)
+                else if (item->type() == 65543)
                 {
                     if(this->getShield() < this->shieldMax - 10)
                     {
@@ -235,7 +231,7 @@ void PlayerShip::setShield(int theShield)
 
                 }
                 //if armor powerup
-                if (item->type() == 65544)
+                else if (item->type() == 65544)
                 {
                     if(this->getArmor() < this->armorMax - 10)
                     {
@@ -253,7 +249,7 @@ void PlayerShip::setShield(int theShield)
                     }
                 }
                 //if small missile powerup
-                if (item->type() == 65545)
+                else if (item->type() == 65545)
                 {
                     if(this->getsMissile() < 99)
                     {
@@ -272,7 +268,13 @@ void PlayerShip::setShield(int theShield)
                     }
                     item->setPos(500,500);
                 }
-                this->damage(decr);
+                else
+                {
+                }
+                if(decr > 0)
+                {
+                    this->damage(decr);
+                }
             }
         }
 
