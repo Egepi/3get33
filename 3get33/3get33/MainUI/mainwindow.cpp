@@ -40,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     QObject::connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(checkQuit()));
     QObject::connect(ui->playButton, SIGNAL(clicked()),this, SLOT(gamelvl()));
-    //QSound::play(QString("EX_1.wav"));
+    QSound::play(QString("EX_1.wav"));
     
 
 }
@@ -181,7 +181,7 @@ void MainWindow::playGame()
         QTimer::singleShot(5000, this, SLOT(startBoss()));
         waveTimer = new QTimer();
         QObject::connect(waveTimer, SIGNAL(timeout()), this, SLOT(addingWave()));
-        waveTimer->start(10000);
+        waveTimer->start(20000);
         enemyShootTimer = new QTimer();
         QObject::connect(enemyShootTimer, SIGNAL(timeout()), this, SLOT(enemyShoot()));
         enemyShootTimer->start(5000);
