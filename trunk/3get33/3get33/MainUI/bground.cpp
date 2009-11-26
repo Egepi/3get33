@@ -12,14 +12,14 @@ BGround::~BGround()
 
 QRectF BGround::boundingRect() const
 {
-    return QRectF(0,0,600,480);
+    return QRectF(0,0,600,960);
 }
 
 
 QPainterPath BGround::shape() const
 {
     QPainterPath path;
-    path.addRect(0, 0, 600,480);
+    path.addRect(0, 0, 600,960);
     return path;
 }
 
