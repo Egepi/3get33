@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     height = ui->Display->geometry().height();
     gameScene->setSceneRect(0, 0, width,height);
     //Sets the default background for the gameScene
-    ui->Display->setBackgroundBrush(QBrush(QImage(":/images/background640480.png")));
+    ui->Display->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
     //gameScene->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
     ui->Display->setScene(gameScene);
    // ui->Display->setFocus();
@@ -178,10 +178,10 @@ void MainWindow::playGame()
     {
         preLevel->shipAdvance();
         preLevel->addWave();
-        QTimer::singleShot(5000, this, SLOT(startBoss()));
+        QTimer::singleShot(180000, this, SLOT(startBoss()));
         waveTimer = new QTimer();
         QObject::connect(waveTimer, SIGNAL(timeout()), this, SLOT(addingWave()));
-        waveTimer->start(20000);
+        waveTimer->start(30000);
         enemyShootTimer = new QTimer();
         QObject::connect(enemyShootTimer, SIGNAL(timeout()), this, SLOT(enemyShoot()));
         enemyShootTimer->start(5000);

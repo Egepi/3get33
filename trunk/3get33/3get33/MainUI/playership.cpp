@@ -358,6 +358,7 @@ void PlayerShip::setShield(int theShield)
      {
          this->hide();
          this->setEnabled(false);
+         this->setImage(QImage(":/images/explosion.png"));
 
 
 //         if(this->getLives() >= 0)

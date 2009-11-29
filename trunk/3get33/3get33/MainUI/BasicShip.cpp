@@ -10,7 +10,7 @@
  *
  * Author: Todd Silvia
  */
-BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int theY)
+BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int theY, int advancing)
 {
     BasicShip::shipArmor = theArmor;
     BasicShip::shipLives = theLives;
@@ -21,6 +21,7 @@ BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int 
     this->shipSizeY = 80;
     this->moveRight = true;
     this->setZValue(10);
+    this->advanceType = advancing;
 
 }
 
@@ -176,8 +177,29 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
 
  void BasicShip::advance(int phase)
  {
+     if(!phase) return;
+     if(this->isEnabled()==false) return;
+     this->collCheck();
 
+     if(this->advanceType == 1)
+     {
+         this->horizontalAdvance();
+     }
+     else if(this->advanceType == 2)
+     {
+         this->diagonalAdvance();
+     }
+     else
+     {
+     }
+ }
 
+ void BasicShip::diagonalAdvance()
+ {
+ }
+
+ void BasicShip::horizontalAdvance()
+ {
 
    /*
      if(!phase) return;
@@ -194,9 +216,9 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     setPos(xLoc, yLoc);
     */
 
-     if(!phase) return;
-     if(this->isEnabled()==false) return;
-     this->collCheck();
+
+
+
 
      qreal xDelta = 3;
      qreal xLoc = this->x();
@@ -321,13 +343,9 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
          this->setArmor(this->getArmor()-dTaken);
          if (this->getArmor() <= 0)
          {
-             //this->setPos(1000,1000);
-             //this->getridof();
              this->hide();
              this->setEnabled(false);
-             //this->~BasicShip();
              //this->setImage(QImage(":/images/explosion.png"));
-             //this->move(0,0);
          }
      }
  }
