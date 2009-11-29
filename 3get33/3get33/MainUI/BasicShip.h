@@ -9,7 +9,7 @@
 class BasicShip : public QGraphicsItem
 {
     public:
-    BasicShip(int theArmor, int theLives, QImage theImage, int theX, int theY);
+    BasicShip(int theArmor, int theLives, QImage theImage, int theX, int theY, int);
     BasicShip();
     ~BasicShip();
 
@@ -27,6 +27,7 @@ class BasicShip : public QGraphicsItem
     int shipSizeY;
     void collCheck();
     void getridof();
+
 
     signals:
          void armorChanged();
@@ -48,7 +49,9 @@ class BasicShip : public QGraphicsItem
         QRectF boundingRect() const;
         QPainterPath shape() const;
         void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-
+        int advanceType;
+        void horizontalAdvance();
+        void diagonalAdvance();
 
         void damage(int dTaken);
 };
