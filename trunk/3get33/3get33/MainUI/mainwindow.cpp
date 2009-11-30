@@ -357,10 +357,6 @@ void MainWindow::updateArmor()
     {
         yDelta = -480;
     }
-
-    //ui->Display->scene()->setSceneRect(0,yDelta,width,height);
-    //ui->Display->sceneRect().adjust(0, yDelta, width, height);
-    //ui->Display->setViewportMargins(0, 0, 90, 90);
     ui->armorDisplay->display(myShip->getArmor());
     ui->shieldDisplay->display(myShip->getShield());
     ui->livesDisplay->display(myShip->getLives());
