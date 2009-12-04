@@ -11,6 +11,7 @@
 #include <iostream>
 #include <QTextStream>
 #include <qpixmap.h>
+#include <QRadioButton>
 
 namespace Ui
 {
@@ -50,6 +51,8 @@ private:
 
     QLabel *levelBackground;
     QComboBox *levelBackgroundIn;
+    QRadioButton *radioBack1;
+    QRadioButton *radioBack2;
 
     QPushButton *saveLevel;
 

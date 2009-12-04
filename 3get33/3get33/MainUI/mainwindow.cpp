@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->Display->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
     //gameScene->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
     ui->Display->setScene(gameScene);
-   // ui->Display->setFocus();
+    // ui->Display->setFocus();
     //ui->Display->centerOn(myShip);
     yDelta = -480;
 
@@ -85,7 +85,7 @@ void MainWindow::loadGame()
                                         tr("Open Level"), ".",
                                         tr("Level Files (*.lvl)"));
 
-    if(!fileName.isEmpty())
+    if(!fileName.isEmpty()) //Checks if the file name is valid
     {
         //The player controled PlayerShip is created.
         myShip = new PlayerShip();
@@ -94,14 +94,14 @@ void MainWindow::loadGame()
         QFile levelFile(fileName);
         QString line;
 
-                if(levelFile.open(QIODevice::ReadWrite))
+        if(levelFile.open(QIODevice::ReadWrite))
         {
             QTextStream t(&levelFile);
+            line = t.readLine();
+            QStringList tokLine;
             while(!t.atEnd())
             {
-                line = t.readLine();
-                QStringList tokLine = line.split("#");
-
+                tokLine = line.split("#");
                 if(tokLine.first().compare(QString("PlayerArmor")) == 0)
                 {
                     myShip->setArmor(tokLine.at(1).toInt(&ok));
@@ -131,6 +131,7 @@ void MainWindow::loadGame()
                 }
                 else
                 {
+                    line = t.readLine();
                     continue;
                 }
             }
@@ -166,7 +167,8 @@ void MainWindow::playGame()
     actions.insert( Qt::Key_B, ShootBBomb );
     actions.insert( Qt::Key_Escape, Pause );
 
-
+    bg = new BGround();
+    gameScene->addItem(bg);
 
     //Updates the armor, shield, and lives displays.
     ui->armorDisplay->display(myShip->getArmor());
@@ -218,9 +220,6 @@ void MainWindow::gamelvl()
     gameScene->addItem(myShip); //Adds PlayerShip to scene
 
     QImage theType(":/images/BadGuy4.png");
-    //gameScene->setBackgroundBrush(QBrush(QImage(":/images/background640480.png")));
-    bg = new BGround();
-    gameScene->addItem(bg);
     preLevel = new Level(gameScene, theType, 20);
     this->playGame();
 }
@@ -337,6 +336,7 @@ void MainWindow::startBoss()
     preLevel->startBoss();
 }
 
+/**********************************************************************/
 void MainWindow::enemyShoot()
 {
     if(atBoss == true && preLevel->theBoss->isEnabled() == true)
@@ -346,6 +346,7 @@ void MainWindow::enemyShoot()
     }
 }
 
+/**********************************************************************/
 void MainWindow::updateArmor()
 {
     this->bg->setPos(0, yDelta);
@@ -385,12 +386,14 @@ void MainWindow::updateArmor()
 
 
 }
+/**********************************************************************/
 void MainWindow::makePowerUp()
 {
     PowerUp *aPU = new PowerUp();
     gameScene->addItem(aPU);
 }
 
+/**********************************************************************/
 void MainWindow::spawnPowerUp()
 {
     QTimer *powerUpTimer = new QTimer();
@@ -398,6 +401,7 @@ void MainWindow::spawnPowerUp()
     powerUpTimer->start(20000);
 }
 
+/**********************************************************************/
 void MainWindow::playerShoot()
 {
     if(myShip->getShootGunFlag())
