@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     ui->setupUi(this);  //Sets up the user interface based of mainwindow.ui
     atBoss = false;
+	bossLife = new QProgressBar(this);
+    bossLife->setVisible(false);
     score = 0;
 
     gameScene = new QGraphicsScene; //Scene to display the whole game
@@ -334,6 +336,11 @@ void MainWindow::startBoss()
 {
     atBoss = true;
     preLevel->startBoss();
+    bossLife->setGeometry(10,230,121,23);
+    bossLife->setMinimum(0);
+    bossLife->setMaximum(preLevel->theBoss->getArmor());
+    bossLife->setValue(preLevel->theBoss->getArmor());
+    bossLife->setVisible(true);
 }
 
 /**********************************************************************/
@@ -393,6 +400,8 @@ void MainWindow::updateArmor()
        }
     }
     ui->scoreDisplay->display(score);
+    if(atBoss == true)
+        bossLife->setValue(preLevel->theBoss->getArmor());
 
 
 }
