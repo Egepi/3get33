@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     // ui->Display->setFocus();
     //ui->Display->centerOn(myShip);
     yDelta = -480;
-
+    alternate = false;
 
 
 
@@ -361,11 +361,36 @@ void MainWindow::enemyShoot()
         Bullet *fBullet = new Bullet(preLevel->theBoss->x()+94,preLevel->theBoss->y()+92,QImage(":/images/greenBossBullet.png"), false);
         gameScene->addItem(fBullet);
     }
+if(alternate)
+    {
+        alternate = false;
+    }
+    else
+    {
+        alternate = true;
+    }
     if(!this->theWavePtr->isEmpty())
-    {  //ui->armorLabel->setText("LOL");
-       for( int i = 0; i <= theWavePtr->length(); i++ )
+    {
+       for( int i = 0; i < theWavePtr->length(); i=i+2 )
        {
-
+           if(alternate)
+           {
+               BasicShip *waveShip = theWavePtr->at(i);
+               if(waveShip->isEnabled())
+               {
+                   Bullet *gBullet = new Bullet(waveShip->x()+36,waveShip->y()+89,QImage(":/images/BlueBullet.png"), false);
+                   gameScene->addItem(gBullet);
+               }
+           }
+           else
+           {
+               BasicShip *waveShip = theWavePtr->at(i+1);
+               if(waveShip->isEnabled())
+               {
+                   Bullet *gBullet = new Bullet(waveShip->x()+36,waveShip->y()+89,QImage(":/images/BlueBullet.png"), false);
+                   gameScene->addItem(gBullet);
+               }
+           }
        }
     }
 }
@@ -414,7 +439,9 @@ void MainWindow::updateArmor()
     {
         gameUpdate->stop();
         gameScene->removeItem(bg);
+        ui->Display->setBackgroundBrush(QBrush(QImage(":/images/MGS_GameOver.jpg")));
     }
+
     if((atBoss == true)&&(!(preLevel->theBoss->isEnabled())))
     {
         ui->scoreDisplay->display(9999);

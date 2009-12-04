@@ -87,6 +87,7 @@ private:
     QProgressBar *bossLife;
     QList<BasicShip*>* theWavePtr;
     QTimer *gameUpdate;
+    bool alternate;
 
 };
 #endif // MAINWINDOW_H
