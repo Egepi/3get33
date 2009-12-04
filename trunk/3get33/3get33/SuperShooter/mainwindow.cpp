@@ -190,10 +190,10 @@ void MainWindow::playGame()
         QObject::connect(enemyShootTimer, SIGNAL(timeout()), this, SLOT(enemyShoot()));
         enemyShootTimer->start(3000);
 
-        QTimer *kk = new QTimer;
-        QObject::connect(kk,SIGNAL(timeout()), this, SLOT(updateArmor()));
-        QObject::connect(kk,SIGNAL(timeout()), this, SLOT(playerShoot()));
-        kk->start(1000/10);
+        gameUpdate = new QTimer;
+        QObject::connect(gameUpdate,SIGNAL(timeout()), this, SLOT(updateArmor()));
+        QObject::connect(gameUpdate,SIGNAL(timeout()), this, SLOT(playerShoot()));
+        gameUpdate->start(1000/10);
         this->spawnPowerUp();
 
     }
@@ -409,6 +409,12 @@ void MainWindow::updateArmor()
     ui->scoreDisplay->display(score);
     if(atBoss == true)
         bossLife->setValue(preLevel->theBoss->getArmor());
+
+    if(myShip->isShipDead())
+    {
+        gameUpdate->stop();
+        gameScene->removeItem(bg);
+    }
 
 
 }
