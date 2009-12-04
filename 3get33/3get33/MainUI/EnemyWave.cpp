@@ -25,7 +25,8 @@ QList<BasicShip*>* EnemyWave::addWave()
         //Allocates memory for new enemy
        enemy = new BasicShip(shipArmor,SHIP_LIVES,enemyImage,tempX, tempY, 1);
        //Inserts enemy into QList, also as part of the enemy wave
-       waveList.insert(i, enemy);
+       //waveList.insert(i, enemy);
+       waveList.append(enemy);
        //Add enemy to the scene
        myScene->addItem(enemy);
        tempX += 110;
