@@ -179,13 +179,14 @@ void MainWindow::playGame()
     {
         preLevel->shipAdvance();
         preLevel->addWave();
-        QTimer::singleShot(180000, this, SLOT(startBoss()));
+        //Actual value 180000
+        QTimer::singleShot(1800, this, SLOT(startBoss()));
         waveTimer = new QTimer();
         QObject::connect(waveTimer, SIGNAL(timeout()), this, SLOT(addingWave()));
         waveTimer->start(30000);
         enemyShootTimer = new QTimer();
         QObject::connect(enemyShootTimer, SIGNAL(timeout()), this, SLOT(enemyShoot()));
-        enemyShootTimer->start(5000);
+        enemyShootTimer->start(3000);
 
         QTimer *kk = new QTimer;
         QObject::connect(kk,SIGNAL(timeout()), this, SLOT(updateArmor()));
@@ -340,8 +341,18 @@ void MainWindow::enemyShoot()
 {
     if(atBoss == true && preLevel->theBoss->isEnabled() == true)
     {
-        Bullet *aBullet = new Bullet(preLevel->theBoss->x()+75,preLevel->theBoss->y()+72,QImage(":/images/BlueBullet.png"), false);
+        Bullet *aBullet = new Bullet(preLevel->theBoss->x()+75,preLevel->theBoss->y()+72,QImage(":/images/greenBossBullet.png"), false);
         gameScene->addItem(aBullet);
+        Bullet *bBullet = new Bullet(preLevel->theBoss->x()+56,preLevel->theBoss->y()+72,QImage(":/images/greenBossBullet.png"), false);
+        gameScene->addItem(bBullet);
+        Bullet *cBullet = new Bullet(preLevel->theBoss->x()+94,preLevel->theBoss->y()+72,QImage(":/images/greenBossBullet.png"), false);
+        gameScene->addItem(cBullet);
+        Bullet *dBullet = new Bullet(preLevel->theBoss->x()+75,preLevel->theBoss->y()+92,QImage(":/images/greenBossBullet.png"), false);
+        gameScene->addItem(dBullet);
+        Bullet *eBullet = new Bullet(preLevel->theBoss->x()+56,preLevel->theBoss->y()+92,QImage(":/images/greenBossBullet.png"), false);
+        gameScene->addItem(eBullet);
+        Bullet *fBullet = new Bullet(preLevel->theBoss->x()+94,preLevel->theBoss->y()+92,QImage(":/images/greenBossBullet.png"), false);
+        gameScene->addItem(fBullet);
     }
 }
 
