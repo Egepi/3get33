@@ -28,11 +28,11 @@ Level::~Level()
  *
  * Author: Todd Silvia
  */
-void Level::addWave()
+QList<BasicShip*>* Level::addWave()
 {
     QImage theEnemyPicture(":/images/BadGuy4.png");
     EnemyWave *theEnemyWave = new EnemyWave(myScene, enemyImage,10,100);
-    theEnemyWave->addWave();
+    return theEnemyWave->addWave();
 }
 
 /**********************************************************************/

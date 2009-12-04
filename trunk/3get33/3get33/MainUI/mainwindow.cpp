@@ -361,13 +361,13 @@ void MainWindow::enemyShoot()
         Bullet *fBullet = new Bullet(preLevel->theBoss->x()+94,preLevel->theBoss->y()+92,QImage(":/images/greenBossBullet.png"), false);
         gameScene->addItem(fBullet);
     }
-   // if(!this->theWavePtr->isEmpty())
-   // {  //ui->armorLabel->setText("LOL");
-     //  for( int i = 0; i <= theWavePtr->length(); i++ )
-    //   {
+    if(!this->theWavePtr->isEmpty())
+    {  //ui->armorLabel->setText("LOL");
+       for( int i = 0; i <= theWavePtr->length(); i++ )
+       {
 
-    //   }
-    //}
+       }
+    }
 }
 
 /**********************************************************************/

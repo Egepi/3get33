@@ -20,7 +20,7 @@ BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int 
     this->shipSizeX = 80;
     this->shipSizeY = 80;
     this->moveRight = true;
-    this->setZValue(10);
+    this->setZValue(45);
     this->advanceType = advancing;
 
 }

@@ -13,7 +13,7 @@ class Level
     public:
         Level(QGraphicsScene *theScene, QImage enemyType, int theWaveSize);
         ~Level();
-        void addWave();
+        QList<BasicShip*>* addWave();
         void startBoss();
         //void set
         BossShip *theBoss;

@@ -85,6 +85,7 @@ private:
     int yDelta;
     BGround *bg;
     QProgressBar *bossLife;
+    QList<BasicShip*>* theWavePtr;
 
 };
 #endif // MAINWINDOW_H
