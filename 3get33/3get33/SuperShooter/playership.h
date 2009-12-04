@@ -5,6 +5,7 @@
 #include <QPainter>
 #include <QMessageBox>
 #include <QSound>
+#include <QTimer>
 #include "BasicShip.h"
 
 
@@ -63,7 +64,7 @@ class PlayerShip : public BasicShip
         int shieldMax;
         int armorMax;
         bool shipIsDead;
-
+        int reset;
         void damage(int dTaken);
         void advance(int phase);
 

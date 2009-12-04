@@ -438,13 +438,24 @@ void MainWindow::updateArmor()
     if(myShip->isShipDead())
     {
         gameUpdate->stop();
+        waveTimer->stop();
+        enemyShootTimer->stop();
+        preLevel->advanceTimer->stop();
+        powerUpTimer->stop();
         gameScene->removeItem(bg);
         ui->Display->setBackgroundBrush(QBrush(QImage(":/images/MGS_GameOver.jpg")));
+        gameScene->items();
     }
 
     if((atBoss == true)&&(!(preLevel->theBoss->isEnabled())))
     {
-        ui->scoreDisplay->display(9999);
+        gameUpdate->stop();
+        waveTimer->stop();
+        enemyShootTimer->stop();
+        preLevel->advanceTimer->stop();
+        gameScene->removeItem(bg);
+        ui->Display->setBackgroundBrush(QBrush(QImage(":/images/youwin.gif")));
+       // gameScene->clear();
     }
 
 
@@ -459,7 +470,7 @@ void MainWindow::makePowerUp()
 /**********************************************************************/
 void MainWindow::spawnPowerUp()
 {
-    QTimer *powerUpTimer = new QTimer();
+    powerUpTimer = new QTimer();
     QObject::connect(powerUpTimer, SIGNAL(timeout()), this, SLOT(makePowerUp()));
     powerUpTimer->start(20000);
 }

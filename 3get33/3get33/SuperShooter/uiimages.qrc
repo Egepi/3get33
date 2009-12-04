@@ -28,5 +28,6 @@
         <file>LargeBG.png</file>
         <file>health.gif</file>
         <file>MGS_GameOver.jpg</file>
+        <file>youwon.gif</file>
     </qresource>
 </RCC>

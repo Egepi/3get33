@@ -87,6 +87,7 @@ private:
     QProgressBar *bossLife;
     QList<BasicShip*>* theWavePtr;
     QTimer *gameUpdate;
+    QTimer *powerUpTimer;
     bool alternate;
 
 };
