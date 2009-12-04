@@ -85,7 +85,6 @@ LevelEditor::LevelEditor(QWidget *parent)
     /**********************************************************/
     QPixmap back1(200,200);
     back1.load(":/images/MenuWithoutButtons640480.jpg");
-    //back1.
     background1 = new QLabel(this);
     background1->setScaledContents(true);
     background1->setPixmap(back1);
