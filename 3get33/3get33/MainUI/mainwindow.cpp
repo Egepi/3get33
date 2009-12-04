@@ -41,7 +41,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QObject::connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(checkQuit()));
     QObject::connect(ui->playButton, SIGNAL(clicked()),this, SLOT(gamelvl()));
     QSound::play(QString("EX_1.wav"));
-    
 
 }
 

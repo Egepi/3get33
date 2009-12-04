@@ -18,7 +18,7 @@ PowerUp::PowerUp()
     //armor
     else if(this->puType == 2 )
     {
-        puImage = QImage(":/images/greenBossBullet.png");
+        puImage = QImage(":/images/health.gif");
     }
     //smissile
     else if(this->puType == 3 )
@@ -130,5 +130,38 @@ int PowerUp::type() const
     {
         return Type;
     }
+}
+
+void PowerUp::advance(int phase)
+{
+    if(!phase) return;
+    qreal xLoc = this->x();
+    qreal yLoc = this->y();
+    qreal yMove = 1;
+    qreal xMove = 0;
+    //Checks if the object is within the x-axis bounds of the gameScene
+    if(( this->x() + xMove >= 0 )&&( this->x() + xMove <= 592 ))
+    {// The object was within the gameScene bounds so the ship is moved
+     // along the x-axis as determined from xMove.
+        xLoc += xMove;
+    }
+
+    else
+    {
+        this->~PowerUp();
+    }
+
+    //Checks if the object is within the y-axis bounds of the gameScene
+    if(( this->y() + yMove >= 0 )&&( this->y() + yMove <= 472 ))
+    {// The object was within the gameScene bounds so the ship is moved
+     // along the y-axis as determined from yMove.
+        yLoc += yMove;
+    }
+
+    else
+    {
+        this->~PowerUp();
+    }
+    setPos(xLoc, yLoc);
 }
 

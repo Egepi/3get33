@@ -12,7 +12,7 @@ BossShip::BossShip()
     moveLeft = true;
     this->shipSizeX = 150;
     this->shipSizeY = 63;
-    this->setArmor(20);
+    this->setArmor(500);
     this->setZValue(10);
 }
 

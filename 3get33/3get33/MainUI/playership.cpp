@@ -27,8 +27,8 @@ PlayerShip::PlayerShip()
     this->setImage(QImage(":/images/GoodGuy.png"));
     this->shipSizeX = 80;
     this->shipSizeY = 80;
-    this->setsMissile(98);
-    this->setbMissile(98);
+    this->setsMissile(10);
+    this->setbMissile(10);
     this->setZValue(50);
 }
 
