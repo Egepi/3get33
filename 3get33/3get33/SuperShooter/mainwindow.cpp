@@ -415,6 +415,10 @@ void MainWindow::updateArmor()
         gameUpdate->stop();
         gameScene->removeItem(bg);
     }
+    if((atBoss == true)&&(!(preLevel->theBoss->isEnabled())))
+    {
+        ui->scoreDisplay->display(9999);
+    }
 
 
 }
