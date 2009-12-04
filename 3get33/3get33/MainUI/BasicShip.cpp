@@ -299,8 +299,9 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
                     {
                         abit->updateScore(10);
                         decr = 10;
+                        item->setPos(500,500);
                     }
-                    item->setPos(500,500);
+
                 }
                 else if (item->type() == 65541)
                 {
