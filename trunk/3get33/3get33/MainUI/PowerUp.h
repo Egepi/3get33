@@ -22,6 +22,7 @@ class PowerUp : public QGraphicsItem
         void paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
         QRectF boundingRect() const;
         QPainterPath shape() const;
+        void advance(int);
 };
 
 #endif // POWERUP_H
