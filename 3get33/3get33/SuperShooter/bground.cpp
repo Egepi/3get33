@@ -1,5 +1,16 @@
 #include "bground.h"
 
+
+
+
+/**********************************************************************/
+/*! Constructor for the scrolling background object
+ *
+ *
+ *
+ *  Author: Karan Chakrapani
+ *
+ */
 BGround::BGround()
 {
     this->setZValue(5);
