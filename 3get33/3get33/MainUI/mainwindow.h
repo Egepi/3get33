@@ -86,6 +86,7 @@ private:
     BGround *bg;
     QProgressBar *bossLife;
     QList<BasicShip*>* theWavePtr;
+    QTimer *gameUpdate;
 
 };
 #endif // MAINWINDOW_H
