@@ -1,7 +1,7 @@
 # -------------------------------------------------
 # Project created by QtCreator 2009-09-27T10:23:42
 # -------------------------------------------------
-TARGET = MainUI
+TARGET = SuperShooter
 TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
