@@ -26,6 +26,7 @@ class PlayerShip : public BasicShip
         void setbMissile(int bMissile);
         void setShieldMax(int value);
         void setArmorMax(int value);
+        void setIsDead(bool lifeStatus);
 
         int getShield();
         int getsMissile();
@@ -33,6 +34,7 @@ class PlayerShip : public BasicShip
         bool getShootGunFlag();
         bool getShootSMissileFlag();
         bool getShootBMissileFlag();
+        bool isDead();
 
         enum { Type = 65536 + 2 };
         int PlayerShip::type() const;
@@ -58,6 +60,7 @@ class PlayerShip : public BasicShip
         bool shootGunFlag;
         bool shootSMissileFlag;
         bool shootBMissileFlag;
+        bool playerIsDead;
         int shieldMax;
         int armorMax;
 

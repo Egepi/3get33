@@ -30,6 +30,7 @@ PlayerShip::PlayerShip()
     this->setsMissile(10);
     this->setbMissile(10);
     this->setZValue(50);
+    this->setIsDead(false);
 }
 
 /**********************************************************************/
@@ -326,6 +327,7 @@ void PlayerShip::setShield(int theShield)
                  this->setLives(0);
                  this->hide();
                  this->setEnabled(false);
+                 this->setIsDead(true);
              }
              else
              {
@@ -456,4 +458,12 @@ void PlayerShip::setShieldMax( int value )
 void PlayerShip::setArmorMax( int value )
 {
     this->armorMax = value;
+}
+bool PlayerShip::isDead()
+{
+    return this->playerIsDead;
+}
+void PlayerShip::setIsDead(bool lifeStatus)
+{
+    this->playerIsDead = lifeStatus;
 }
