@@ -180,7 +180,7 @@ void MainWindow::playGame()
     if(gameStarted == true)
     {
         preLevel->shipAdvance();
-        preLevel->addWave();
+        theWavePtr = preLevel->addWave();
         //Actual value 180000
         QTimer::singleShot(1800, this, SLOT(startBoss()));
         waveTimer = new QTimer();
@@ -208,7 +208,7 @@ void MainWindow::playGame()
  * STUFF
  */
 void MainWindow::addingWave(){
-    preLevel->addWave();
+    theWavePtr = preLevel->addWave();
 }
 /**********************************************************************/
 /*!
@@ -361,6 +361,13 @@ void MainWindow::enemyShoot()
         Bullet *fBullet = new Bullet(preLevel->theBoss->x()+94,preLevel->theBoss->y()+92,QImage(":/images/greenBossBullet.png"), false);
         gameScene->addItem(fBullet);
     }
+   // if(!this->theWavePtr->isEmpty())
+   // {  //ui->armorLabel->setText("LOL");
+     //  for( int i = 0; i <= theWavePtr->length(); i++ )
+    //   {
+
+    //   }
+    //}
 }
 
 /**********************************************************************/
