@@ -418,6 +418,7 @@ void MainWindow::playerShoot()
             Missile *aSmallMissile = new Missile(myShip->x()+35, myShip->y()-21,QImage(":/images/sMissile.png"), true, false);
             gameScene->addItem(aSmallMissile);
             myShip->setsMissile(myShip->getsMissile() -1);
+             QSound::play(QString("missileShot.wav"));
             this->missileList.append(aSmallMissile);
         }
 
@@ -430,6 +431,7 @@ void MainWindow::playerShoot()
             Missile *aBigMissile = new Missile(myShip->x()+30, myShip->y()-41,QImage(":/images/bMissile.png"), true, true);
             gameScene->addItem(aBigMissile);
             myShip->setbMissile(myShip->getbMissile() -1);
+             QSound::play(QString("missileshot.wav"));
             this->missileList.append(aBigMissile);
         }
     }

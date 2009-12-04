@@ -9,7 +9,7 @@ class EnemyWave
     public:
         EnemyWave(QGraphicsScene *theScene, QImage theEnemyType, int theWaveSize, int theArmor);
         ~EnemyWave();
-        void addWave();
+        QList<BasicShip*>* addWave();
         static const int ROW_SIZE = 5;
         static const int SHIP_LIVES = 1;
         static const int VIEW_SIZE = 600;
