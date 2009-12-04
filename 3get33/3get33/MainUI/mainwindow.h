@@ -19,6 +19,7 @@
 #include <QDialog>
 #include <QFileDialog>
 #include <QLinkedList>
+#include <QProgressBar>
 
 #include "Bullet.h"
 #include "Missile.h"
@@ -83,6 +84,7 @@ private:
     int height;
     int yDelta;
     BGround *bg;
+    QProgressBar *bossLife;
 
 };
 #endif // MAINWINDOW_H
