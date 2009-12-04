@@ -92,6 +92,17 @@ void PlayerShip::setUFlag( bool keyPress )
 void PlayerShip::advance(int phase)
 {
     if(!phase) return;
+    if(reset>0)
+    {
+        reset--;
+        return;
+    }
+    else
+    {
+        this->setImage(QImage(":/images/GoodGuy.png"));
+        this->setEnabled(true);
+    }
+
     if (this->isEnabled() == false) return;
     this->collCheck();
 
@@ -302,6 +313,10 @@ void PlayerShip::setShield(int theShield)
                 }
                 else
                 {
+                    this->setImage(QImage(":/images/explosion.png"));
+                    this->setEnabled(false);
+                    this->setPos(260,400);
+                    reset = 25;
                     this->setLives(this->getLives()-1);
                     this->setShield(this->shieldMax);
                     this->setArmor(this->armorMax);
@@ -332,6 +347,10 @@ void PlayerShip::setShield(int theShield)
              }
              else
              {
+                 this->setImage(QImage(":/images/explosion.png"));
+                 this->setEnabled(false);
+                 this->setPos(260,400);
+                 reset = 25;
                  this->setLives(this->getLives()-1);
                  this->setShield(this->shieldMax);
                  this->setArmor(this->armorMax);
@@ -353,6 +372,10 @@ void PlayerShip::setShield(int theShield)
          }
          else
          {
+             this->setImage(QImage(":/images/explosion.png"));
+             this->setEnabled(false);
+             this->setPos(260,400);
+             reset = 25;
              this->setLives(this->getLives()-1);
              this->setShield(this->shieldMax);
              this->setArmor(this->armorMax);
@@ -362,7 +385,7 @@ void PlayerShip::setShield(int theShield)
      {
          this->hide();
          this->setEnabled(false);
-         this->setImage(QImage(":/images/explosion.png"));
+
 
 
 //         if(this->getLives() >= 0)
