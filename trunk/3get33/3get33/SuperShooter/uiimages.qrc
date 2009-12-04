@@ -27,5 +27,6 @@
         <file>shieldpowerup.gif</file>
         <file>LargeBG.png</file>
         <file>health.gif</file>
+        <file>MGS_GameOver.jpg</file>
     </qresource>
 </RCC>
