@@ -15,7 +15,7 @@ EnemyWave::~EnemyWave()
 {
 }
 
-void EnemyWave::addWave()
+QList<BasicShip*>* EnemyWave::addWave()
 {
     int tempX = 0;
     int tempY = 50;
@@ -46,5 +46,7 @@ void EnemyWave::addWave()
     {
         //waveRight = waveList.last()->x() + SHIP_SIZE;
     }
+    QList<BasicShip*> *ptr = &(waveList);
+    return ptr;
 }
 
