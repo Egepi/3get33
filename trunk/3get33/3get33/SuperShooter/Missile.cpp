@@ -1,10 +1,22 @@
 #include "Missile.h"
 
 
+/**********************************************************************/
+/*! Blank Constructor for Missile
+ *
+ * Author: Jennifer Kinahan
+ *
+ */
 Missile::Missile()
 {
 }
 
+/**********************************************************************/
+/*! Missile Constructor
+ *
+ * Author: Jennifer Kinahan
+ *
+ */
 Missile::Missile(qreal locX, qreal locY, QImage missImage, bool theOwner, bool big)
 {
     bigMissile = big;
@@ -15,11 +27,28 @@ Missile::Missile(qreal locX, qreal locY, QImage missImage, bool theOwner, bool b
     this->setZValue(10);
 }
 
+/**********************************************************************/
+/*! Missile Deconstructor
+ *
+ * Author: Jennifer Kinahan
+ *
+ */
 Missile::~Missile()
 {
 
 }
 
+/**********************************************************************/
+/*! Missile paint function
+ *
+ * Draws the missile to the screen, sets the boundint rectangle of big and
+ * small missiles.  Also moves either big or small missiles, updates and
+ * returns the score.  Returns whether or not it is a large or small missile
+ * and who the owner of the missile is.
+ *
+ * Author: Jennifer Kinahan
+ *
+ */
 void Missile::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     //draws the Missile to the screen

@@ -1,11 +1,22 @@
 #include "Bullet.h"
 
 
-
+/**********************************************************************/
+/*! Blank Constructor for Bullet
+ *
+ * Author: Jennifer Kinahan
+ *
+ */
 Bullet::Bullet()
 {
 }
 
+/**********************************************************************/
+/*! Constructor for Bullet
+ *
+ * Author: Jennifer Kinahan
+ *
+ */
 Bullet::Bullet(qreal locX, qreal locY, QImage bullImage, bool theOwner)
 {
     bulletImage = bullImage;
@@ -14,18 +25,35 @@ Bullet::Bullet(qreal locX, qreal locY, QImage bullImage, bool theOwner)
     score = 0;
     this->setZValue(40);
 }
-
+/**********************************************************************/
+/*! Destructor for Bullet
+ *
+ * Author: Jennifer Kinahan
+ *
+ */
 Bullet::~Bullet()
 {
 
 }
 
+/**********************************************************************/
+/*! Draws Bullet on the Screen
+ *
+ * Author: Jennifer Kinahan
+ *
+ */
 void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     //draws the bullet to the screen
     painter->drawImage(0,0, bulletImage);
 }
 
+/**********************************************************************/
+/*! Creates bounding rectangle of the bullet
+ *
+ * Author: Jennifer Kinahan
+ *
+ */
 QRectF Bullet::boundingRect() const
 {
     return QRectF(0,0,8,8);
@@ -38,6 +66,15 @@ QPainterPath Bullet::shape() const
     return path;
 }
 
+/**********************************************************************/
+/*!
+ * Draws the bullet to the screen, sets the bounding rectangle of bullet.
+ * Also moves bullet, updates and returns the score.  Returns the score
+ * and type.
+ *
+ * Author: Jennifer Kinahan
+ *
+ */
 void Bullet::advance(int phase)
 {
     if(!phase) return;
@@ -85,11 +122,6 @@ void Bullet::advance(int phase)
     // Enable the use of qgraphicsitem_cast with this item.
     return Type;
  }
-
-//void Bullet::shoot()
-//{
-
-//}
 
  bool Bullet::getOwner()
  {
