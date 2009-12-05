@@ -191,7 +191,7 @@ void MainWindow::playGame()
         enemyShootTimer->start(3000);
 
         gameUpdate = new QTimer;
-        QObject::connect(gameUpdate,SIGNAL(timeout()), this, SLOT(updateArmor()));
+        QObject::connect(gameUpdate,SIGNAL(timeout()), this, SLOT(updateDisplay()));
         QObject::connect(gameUpdate,SIGNAL(timeout()), this, SLOT(playerShoot()));
         gameUpdate->start(1000/10);
         this->spawnPowerUp();
@@ -399,7 +399,7 @@ if(alternate)
 }
 
 /**********************************************************************/
-void MainWindow::updateArmor()
+void MainWindow::updateDisplay()
 {
     this->bg->setPos(0, yDelta);
     if(yDelta < 0)
