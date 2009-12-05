@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Untitled Gantt Project" company="" webLink="http://" view-date="2009-09-06" view-index="0" gantt-divider-location="485" resource-divider-location="301" version="2.0">
+<project name="Untitled Gantt Project" company="" webLink="http://" view-date="2009-09-20" view-index="0" gantt-divider-location="485" resource-divider-location="301" version="2.0">
     <description/>
-    <view zooming-state="default:4" id="gantt-chart"/>
+    <view zooming-state="default:2" id="gantt-chart"/>
     <view id="resource-table">
         <field id="0" name="Name" width="55" order="0"/>
         <field id="1" name="Default role" width="44" order="1"/>
@@ -31,7 +31,7 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Project Length" color="#8cb6ce" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2009-09-01" duration="85" complete="71" priority="1" expand="true">
+        <task id="0" name="Project Length" color="#8cb6ce" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2009-09-01" duration="87" complete="86" priority="1" expand="true">
             <notes><![CDATA[How long we have for project]]></notes>
             <task id="1" name="Mid point Date" color="#ff9933" meeting="false" start="2009-09-01" duration="44" complete="100" priority="1" expand="true"/>
             <task id="2" name="Decisions/Discussion/Planning" color="#ff9900" meeting="false" start="2009-09-01" duration="22" complete="100" priority="1" expand="true"/>
@@ -42,39 +42,46 @@
             <task id="4" name="StoryBoard" color="#00ff00" meeting="false" start="2009-09-23" duration="8" complete="100" priority="1" expand="true"/>
             <task id="5" name="Basic UI" color="#ff0000" meeting="false" start="2009-09-23" duration="7" complete="100" priority="1" expand="true"/>
             <task id="6" name="Images" color="#ffff00" meeting="false" start="2009-09-29" duration="2" complete="100" priority="1" expand="true"/>
-            <task id="39" name="Backgrounds" color="#8cb6ce" meeting="false" start="2009-09-06" duration="1" complete="0" priority="1" expand="true"/>
-            <task id="40" name="Sprites" color="#8cb6ce" meeting="false" start="2009-09-06" duration="1" complete="0" priority="1" expand="true"/>
-            <task id="7" name="Ship" color="#8cb6ce" meeting="false" start="2009-09-06" duration="33" complete="78" priority="1" expand="true">
+            <task id="39" name="Backgrounds" color="#ffff00" meeting="false" start="2009-10-21" duration="5" complete="100" priority="1" expand="true"/>
+            <task id="40" name="Sprites" color="#ffff00" meeting="false" start="2009-10-02" duration="4" complete="100" priority="1" expand="true"/>
+            <task id="7" name="Ship" color="#8cb6ce" meeting="false" start="2009-09-28" duration="18" complete="70" priority="1" expand="true">
                 <task id="8" name="Ship Basic" color="#cc66ff" meeting="false" start="2009-09-28" duration="4" complete="100" priority="1" expand="true"/>
-                <task id="9" name="Ship Movement" color="#00ff00" meeting="false" start="2009-10-02" duration="4" complete="100" priority="1" expand="true"/>
+                <task id="9" name="Player Ship Movement" color="#ffff00" meeting="false" start="2009-10-02" duration="4" complete="100" priority="1" expand="true"/>
                 <task id="10" name="Ship Reactions" color="#33ffff" meeting="false" start="2009-10-02" duration="7" complete="100" priority="1" expand="true"/>
                 <task id="11" name="Player Ship" color="#00ff00" meeting="false" start="2009-10-02" duration="7" complete="100" priority="1" expand="true"/>
                 <task id="12" name="Enemy Ship" color="#ff0000" meeting="false" start="2009-10-02" duration="7" complete="100" priority="1" expand="true"/>
-                <task id="36" name="Enemy Shooting" color="#8cb6ce" meeting="false" start="2009-09-06" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="36" name="Enemy Shooting" color="#ff3300" meeting="false" start="2009-10-09" duration="7" complete="100" priority="1" expand="true"/>
+                <task id="45" name="Enemy Movement" color="#ff3300" meeting="false" start="2009-10-09" duration="7" complete="100" priority="1" expand="true"/>
                 <task id="13" name="Boss Ship" color="#ff0000" meeting="false" start="2009-10-02" duration="7" complete="100" priority="1" expand="true"/>
-                <task id="37" name="Boss Ship Progress Bar" color="#8cb6ce" meeting="false" start="2009-09-06" duration="1" complete="0" priority="1" expand="true"/>
+                <task id="46" name="Boss Ship Movement" color="#8cb6ce" meeting="false" start="2009-10-02" duration="7" complete="0" priority="1" expand="true"/>
+                <task id="37" name="Boss Ship Progress Bar" color="#8cb6ce" meeting="false" start="2009-10-02" duration="7" complete="0" priority="1" expand="true"/>
                 <task id="34" name="Wave Class" color="#ff9900" meeting="false" start="2009-10-02" duration="7" complete="0" priority="1" expand="true"/>
-                <task id="38" name="Power Ups" color="#8cb6ce" meeting="false" start="2009-09-06" duration="1" complete="0" priority="1" expand="true"/>
             </task>
             <task id="32" name="Bullet Class" color="#00ff00" meeting="false" start="2009-10-16" duration="7" complete="100" priority="1" expand="true"/>
-            <task id="33" name="Bomb Class" color="#00ff00" meeting="false" start="2009-10-16" duration="7" complete="100" priority="1" expand="true"/>
+            <task id="33" name="Missile Class" color="#00ff00" meeting="false" start="2009-10-16" duration="7" complete="100" priority="1" expand="true"/>
+            <task id="51" name="Background Scrolling" color="#8cb6ce" meeting="false" start="2009-11-23" duration="4" complete="0" priority="1" expand="true"/>
+            <task id="44" name="Power Ups" color="#8cb6ce" meeting="false" start="2009-10-09" duration="7" complete="0" priority="1" expand="false"/>
+            <task id="47" name="Power Up Spawning" color="#8cb6ce" meeting="false" start="2009-10-09" duration="7" complete="0" priority="1" expand="true"/>
+            <task id="48" name="Power Up interactions" color="#8cb6ce" meeting="false" start="2009-10-09" duration="7" complete="0" priority="1" expand="true"/>
             <task id="14" name="Levels" color="#8cb6ce" meeting="false" start="2009-10-09" duration="22" complete="97" priority="1" expand="true">
                 <task id="15" name="Level Filies Formating" color="#33ffff" meeting="false" start="2009-10-09" duration="14" complete="100" priority="1" expand="true"/>
-                <task id="16" name="Level Filies Reading" color="#ff0000" meeting="false" start="2009-10-09" duration="7" complete="100" priority="1" expand="true"/>
-                <task id="17" name="Generating Content from Level Filies" color="#ff0000" meeting="false" start="2009-10-16" duration="7" complete="100" priority="1" expand="true"/>
-                <task id="18" name="Level(Display) Class" color="#ff0000" meeting="false" start="2009-10-23" duration="8" complete="100" priority="1" expand="true"/>
+                <task id="16" name="Level Filies Reading" color="#ff3300" meeting="false" start="2009-10-09" duration="7" complete="100" priority="1" expand="true"/>
+                <task id="17" name="Generating Content from Level Filies" color="#ff3300" meeting="false" start="2009-10-16" duration="7" complete="100" priority="1" expand="true"/>
+                <task id="18" name="Level(Display) Class" color="#ff3300" meeting="false" start="2009-10-23" duration="8" complete="100" priority="1" expand="true"/>
             </task>
             <task id="19" name="Displaying Score etc." color="#00ff00" meeting="false" start="2009-10-19" duration="5" complete="100" priority="1" expand="true"/>
-            <task id="20" name="Implement diff weapons" color="#00ff00" meeting="false" start="2009-10-23" duration="8" complete="0" priority="1" expand="true"/>
-            <task id="21" name="Main game Implementation" color="#ff9900" meeting="false" start="2009-11-02" duration="23" complete="0" priority="1" expand="true"/>
-            <task id="42" name="Ending game and Displaying end game" color="#8cb6ce" meeting="false" start="2009-09-06" duration="1" complete="0" priority="1" expand="true"/>
-            <task id="22" name="Testing" color="#ff9900" meeting="false" start="2009-11-02" duration="23" complete="0" priority="1" expand="true"/>
-            <task id="23" name="Level Editor" color="#8cb6ce" meeting="false" start="2009-10-09" duration="15" complete="50" priority="1" expand="true">
-                <task id="24" name="Level Editor Gui" color="#33ffff" meeting="false" start="2009-10-09" duration="15" complete="50" priority="1" expand="true"/>
-                <task id="25" name="Level Editor Options" color="#33ffff" meeting="false" start="2009-10-09" duration="15" complete="50" priority="1" expand="true"/>
-                <task id="26" name="Level Editor saving" color="#33ffff" meeting="false" start="2009-10-09" duration="15" complete="50" priority="1" expand="true"/>
+            <task id="20" name="Implement diff weapons" color="#00ff00" meeting="false" start="2009-10-23" duration="8" complete="100" priority="1" expand="true"/>
+            <task id="21" name="Main game Implementation" color="#ff9900" meeting="false" start="2009-11-02" duration="23" complete="100" priority="1" expand="true"/>
+            <task id="42" name="Ending game and Displaying end game" color="#ff3300" meeting="false" start="2009-10-27" duration="3" complete="100" priority="1" expand="true"/>
+            <task id="22" name="Testing" color="#ff9900" meeting="false" start="2009-11-02" duration="23" complete="100" priority="1" expand="true"/>
+            <task id="23" name="Level Editor" color="#8cb6ce" meeting="false" start="2009-10-09" duration="15" complete="30" priority="1" expand="true">
+                <task id="24" name="Level Editor Gui" color="#33ffff" meeting="false" start="2009-10-09" duration="15" complete="30" priority="1" expand="true"/>
+                <task id="25" name="Level Editor Options" color="#33ffff" meeting="false" start="2009-10-09" duration="15" complete="30" priority="1" expand="true"/>
+                <task id="26" name="Level Editor saving" color="#33ffff" meeting="false" start="2009-10-09" duration="15" complete="30" priority="1" expand="true"/>
             </task>
-            <task id="27" name="Sound" color="#00ff00" meeting="false" start="2009-10-09" duration="15" complete="100" priority="1" expand="true"/>
+            <task id="27" name="Sound Recording" color="#00ff00" meeting="false" start="2009-10-09" duration="15" complete="100" priority="1" expand="true"/>
+            <task id="49" name="Sound Editing" color="#ff3300" meeting="false" start="2009-10-09" duration="15" complete="100" priority="1" expand="true"/>
+            <task id="50" name="Sound Implementation" color="#ff3300" meeting="false" start="2009-10-09" duration="15" complete="100" priority="1" expand="true"/>
         </task>
     </tasks>
     <resources/>
