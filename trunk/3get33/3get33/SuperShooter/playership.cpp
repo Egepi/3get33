@@ -1,16 +1,25 @@
+/** File: PlayerShip.cpp
+  * Header: playership.h
+  * Author: 3get33 - Jennifer Kinahan, Karan Chakrapani, Todd Silvia
+  * Last Modified: December 4th 2009
+  * Purpose: This class extends BasicShip and is used to create the
+  *          space ship that will be controlled by the user. Also
+  *          Has overridden methods for movement among some other
+  *          unique properties to a player controlled ship.
+  */
 #include "playership.h"
 
 
 /**********************************************************************/
 /*! Constructor for PlayerShip. Sets default characteristics.
  *
- *
- *
  *  Author: Karan Chakrapani,
  *          Jennifer Kinahan
+ *          Todd Silvia
  */
 PlayerShip::PlayerShip()
 {
+    //Sets default values.
     lFlag = false;
     rFlag = false;
     dFlag = false;
@@ -146,16 +155,14 @@ void PlayerShip::advance(int phase)
     {
         this->move(3.53,-3.53);
     }
-
-
-
 }
 
 /**********************************************************************/
-/*! Returns the amoung of shield the PlayerShip has.
+/*! Returns the amount of shield the PlayerShip has.
  *
  *  Author: Karan Chakrapani,
  *          Jennifer Kinahan
+ *          Todd Silvia
  */
 int PlayerShip::getShield()
 {
@@ -167,6 +174,7 @@ int PlayerShip::getShield()
  *
  *  Author: Karan Chakrapani,
  *          Jennifer Kinahan
+ *          Todd Silvia
  */
 void PlayerShip::setShield(int theShield)
 {
