@@ -1,3 +1,12 @@
+/** File: BasicShip.cpp
+  * Header: BasicShip.h
+  * Author: 3get33 - Jennifer Kinahan, Karan Chakrapani, Todd Silvia
+  * Last Modified: December 4th 2009
+  * Purpose: This class is used as a base class for all ships used in
+  *          the SuperShooter game. This class contains properties that
+  *          hold true for all space ships. This class is also used
+  *          directly for the basic enemies.
+  */
 #include "BasicShip.h"
 
 
@@ -12,6 +21,7 @@
  */
 BasicShip::BasicShip(int theArmor, int theLives, QImage theImage, int theX, int theY, int advancing)
 {
+    //Sets all of the variables to set up a BasicShip
     BasicShip::shipArmor = theArmor;
     BasicShip::shipLives = theLives;
     BasicShip::shipImage = theImage;
@@ -37,11 +47,10 @@ BasicShip::BasicShip()
  */
 BasicShip::~BasicShip()
 {
-
 }
 
 /**********************************************************************/
-/*! Returns the amount of armor the given ship has, as an int
+/*! Returns the amount of armor the given ship has, as an int.
  *
  * Author: Todd Silvia
  */
@@ -58,8 +67,8 @@ int BasicShip::getArmor()
 int BasicShip::getLives()
 {
     return shipLives;
-
 }
+
 /**********************************************************************/
 /*! Sets the number of lives of the given ship equal to theLives.
  *
@@ -77,7 +86,9 @@ void BasicShip::setLives( int theLives )
  */
 void BasicShip::setArmor(int theArmor)
 {
+    //Updates the armor for the BasicShip
     BasicShip::shipArmor = theArmor;
+    //Tells the mainwindow that the armor has changed
     emit void armorChanged();
 }
 
@@ -107,13 +118,8 @@ void BasicShip::setImage(QImage theImage)
  */
 void BasicShip::move(qreal xMove, qreal yMove)
 {
-
-
     qreal xLoc = this->x();
     qreal yLoc = this->y();
-    //QRectF *bound = this->sceneBoundingRect();
-    //int width = bound->width();
-    //int heigth = bound->height();
     //Checks if the object is within the x-axis bounds of the gameScene
     if(( this->x() + xMove >= 0 )&&( this->x() + xMove <= 600 - this->shipSizeX ))
     {// The object was within the gameScene bounds so the ship is moved
@@ -129,7 +135,6 @@ void BasicShip::move(qreal xMove, qreal yMove)
     }
 
     setPos(xLoc, yLoc); //Sets the new position of the object.
-
 }
 
 /**********************************************************************/
@@ -175,102 +180,106 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
         painter->drawImage(0,0, shipImage);    
 }
 
+/**********************************************************************/
+/*! Responsible for choosing either horizontal or diagonal movement.
+  *
+  * Diagonal moving was eventually abandoned, so the method currently only
+  * calls the advance horizontal.
+  *
+  * Author: Karan Chakrapani
+  */
  void BasicShip::advance(int phase)
  {
      if(!phase) return;
+     //Return if the object is not enabled
      if(this->isEnabled()==false) return;
+     //Checks collisions
      this->collCheck();
 
      if(this->advanceType == 1)
-     {
+     {//Move the ship horizontally
          this->horizontalAdvance();
      }
      else if(this->advanceType == 2)
-     {
+     {//Move the ship diagonally
+         //NOTE: This abandoned before final version
          this->diagonalAdvance();
      }
+     //Used inorder to implement further movement types
+     //And also used for error checking incase advanceType is neither 1 or 2
      else
      {
      }
  }
 
- void BasicShip::diagonalAdvance()
- {
- }
-
+/**********************************************************************/
+/*! Determines the movement for all base BasicShip objects.
+  *
+  * This method is overridden for PlayerShip and BossShip. \n
+  * Moves the basic enemy ships only by default. Checks for bounding
+  * and then determines movement.
+  *
+  * Author: Karan Chakrapani,
+  *         Todd Silvia
+  */
  void BasicShip::horizontalAdvance()
  {
+     qreal xDelta = 3;          //The amount of movement per method call
+     qreal xLoc = this->x();    //Loads current x value of BasicShip
+     qreal yLoc = this->y();    //Loads current y value of BasicShip
 
-   /*
-     if(!phase) return;
-     qreal moveDelta = 5;
-     qreal xLoc = this->x();
-     qreal yLoc = this->y();
-
-    //Checks if the object is within the y-axis bounds of the gameScene
-    if(( this->y() + moveDelta >= 0 )&&( this->y() + moveDelta <= 480 - this->shipSizeY ))
-    {// The object was within the gameScene bounds so the ship is moved
-     // along the y-axis as determined from yMove.
-        yLoc += moveDelta;
-    }
-    setPos(xLoc, yLoc);
-    */
-
-
-
-
-
-     qreal xDelta = 3;
-     qreal xLoc = this->x();
-     qreal yLoc = this->y();
-
-     if(yLoc >= SCENE_HEIGHT)
-     {
-         //remove me from scene.
-     }
-     if(this->moveRight == true)
+     if(this->moveRight == true)    //Begins to move right after being made by default
      {
          if((xLoc + xDelta + shipSizeX) <= SCENE_WIDTH)
-         {
+         {//The ship is with in bounds so move right.
              this->setPos(xLoc + xDelta, yLoc);
          }
          else
-         {
+         {//The ship is at the right edge of scene so move down instead
              this->setPos(xLoc, yLoc + shipSizeY);
+             //Switch moveRight so that ship moves left on next call
              moveRight = false;
          }
      }
      else
-     {
+     {//Ship is supposed to move left based on bool moveRight
          if((xLoc - xDelta) >= 0)
-         {
+         {//Ship is within bounds so move the ship left
              this->setPos(xLoc - xDelta, yLoc);
          }
          else
-         {
+         {//The ship is on the left edge of scene, so move down instead
              this->setPos(xLoc, yLoc + shipSizeY);
+             //Switch moveRight so that ship moves right on next call
              moveRight = true;
          }
      }
+ }
 
+/**********************************************************************/
+/*! Was orignally going to be used to move ship diagonally, but was later abandoned.
+  *
+  */
+void BasicShip::diagonalAdvance()
+{}
 
-    /*
-    //Checks if the object is within the y-axis bounds of the gameScene
-    if(( this->y() + moveDelta >= 0 )&&( this->y() + moveDelta <= 480 - this->shipSize ))
-    {// The object was within the gameScene bounds so the ship is moved
-     // along the y-axis as determined from yMove.
-        yLoc += moveDelta;
-    }
-    setPos(xLoc, yLoc);
-    */
-}
-
+/**********************************************************************/
+/*! Karan DO THIS
+  *
+  *
+  *
+  */
   int BasicShip::type() const
  {
     // Enable the use of qgraphicsitem_cast with this item.
     return Type;
  }
 
+/**********************************************************************/
+  /*! KARAN DO THIS
+    *
+    *
+    */
  void BasicShip::collCheck()
  {
     QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
@@ -336,6 +345,11 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     }
  }
 
+/**********************************************************************/
+ /*! KARAN DOES
+   *
+   *
+   */
  void BasicShip::damage(int dTaken)
  {
 
@@ -351,6 +365,11 @@ void BasicShip::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
      }
  }
 
+/**********************************************************************/
+ /*! KARAN DOES
+   *
+   *
+   */
 void BasicShip::getridof()
 {
     this->~BasicShip();

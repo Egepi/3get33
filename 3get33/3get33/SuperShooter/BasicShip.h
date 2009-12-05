@@ -12,7 +12,6 @@ class BasicShip : public QGraphicsItem
     BasicShip(int theArmor, int theLives, QImage theImage, int theX, int theY, int);
     BasicShip();
     ~BasicShip();
-
     int getArmor();
     int getLives();
     void setLives( int theLives );
@@ -28,11 +27,8 @@ class BasicShip : public QGraphicsItem
     void collCheck();
     void getridof();
 
-
     signals:
          void armorChanged();
-
-
 
     private:
         /*! The amount of armor. */
@@ -52,7 +48,6 @@ class BasicShip : public QGraphicsItem
         int advanceType;
         void horizontalAdvance();
         void diagonalAdvance();
-
         void damage(int dTaken);
 };
 
