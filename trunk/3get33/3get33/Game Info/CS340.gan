@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Untitled Gantt Project" company="" webLink="http://" view-date="2009-08-30" view-index="0" gantt-divider-location="485" resource-divider-location="301" version="2.0">
     <description/>
-    <view zooming-state="default:4" id="gantt-chart"/>
+    <view zooming-state="default:3" id="gantt-chart"/>
     <view id="resource-table">
         <field id="0" name="Name" width="55" order="0"/>
         <field id="1" name="Default role" width="44" order="1"/>
