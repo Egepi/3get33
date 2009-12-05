@@ -310,13 +310,11 @@ void PlayerShip::setShield(int theShield)
                     this->setLives(0);
                     this->hide();
                     this->setEnabled(false);
+                    this->setAllFlags(false);
                 }
                 else
                 {
-                    this->setImage(QImage(":/images/explosion.png"));
-                    this->setEnabled(false);
-                    this->setPos(260,400);
-                    reset = 25;
+                    this->respawn();
                     this->setLives(this->getLives()-1);
                     this->setShield(this->shieldMax);
                     this->setArmor(this->armorMax);
@@ -344,13 +342,11 @@ void PlayerShip::setShield(int theShield)
                  this->setLives(0);
                  this->hide();
                  this->setEnabled(false);
+                 this->setAllFlags(false);
              }
              else
              {
-                 this->setImage(QImage(":/images/explosion.png"));
-                 this->setEnabled(false);
-                 this->setPos(260,400);
-                 reset = 25;
+                 this->respawn();
                  this->setLives(this->getLives()-1);
                  this->setShield(this->shieldMax);
                  this->setArmor(this->armorMax);
@@ -369,13 +365,11 @@ void PlayerShip::setShield(int theShield)
              this->setLives(0);
              this->hide();
              this->setEnabled(false);
+             this->setAllFlags(false);
          }
          else
          {
-             this->setImage(QImage(":/images/explosion.png"));
-             this->setEnabled(false);
-             this->setPos(260,400);
-             reset = 25;
+             this->respawn();
              this->setLives(this->getLives()-1);
              this->setShield(this->shieldMax);
              this->setArmor(this->armorMax);
@@ -385,6 +379,7 @@ void PlayerShip::setShield(int theShield)
      {
          this->hide();
          this->setEnabled(false);
+         this->setAllFlags(false);
 
 
 
@@ -491,4 +486,26 @@ bool PlayerShip::isShipDead()
 void PlayerShip::setShipIsDead(bool shipLife)
 {
     this->shipIsDead = shipLife;
+}
+
+void PlayerShip::respawn()
+{
+    this->setImage(QImage(":/images/explosion.png"));
+    this->setEnabled(false);
+    this->setPos(260,400);
+    reset = 25;
+    QSound::play(QString("GameOver.wav"));
+    this->setAllFlags(false);
+}
+
+void PlayerShip::setAllFlags(bool flagger)
+{
+    this->setLFlag( flagger );
+    this->setRFlag( flagger );
+    this->setUFlag( flagger );
+    this->setDFlag( flagger );
+    this->setShootBMissileFlag(flagger);
+    this->setShootSMissileFlag(flagger);
+    this->setShootGunFlag(flagger);
+
 }
