@@ -11,7 +11,7 @@
 
 
 /**********************************************************************/
-/*! Blank Constructor for Bullet
+/*! Blank Constructor for a Bullet object.
  *
  * Author: Jennifer Kinahan
  */
@@ -20,7 +20,7 @@ Bullet::Bullet()
 }
 
 /**********************************************************************/
-/*! Constructor for Bullet
+/*! Constructor for a Bullet object with values to be passed.
  *
  * Author: Jennifer Kinahan
  */
@@ -33,7 +33,7 @@ Bullet::Bullet(qreal locX, qreal locY, QImage bullImage, bool theOwner)
     this->setZValue(40);
 }
 /**********************************************************************/
-/*! Destructor for Bullet
+/*! Destructor for a Bullet object.
  *
  * Author: Jennifer Kinahan
  */
@@ -54,7 +54,7 @@ void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget 
 }
 
 /**********************************************************************/
-/*! Creates bounding rectangle of the bullet
+/*! Creates bounding rectangle of the Bullet
  *
  * Author: Jennifer Kinahan
  */

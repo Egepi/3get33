@@ -16,14 +16,10 @@ class EnemyWave
         static const int SHIP_SPACING = 30;
 
    private:
-        /*! */
+        /*! The amount of armor for the enemy ship*/
         int shipArmor;
-        /*! */
+        /*! Number of enemy ships in 1 wave*/
         int waveSize;
-        /*! */
-        int waveRight;
-        /*! */
-        bool moveRight;
         /*! */
         BasicShip *enemy;
         /*! */

@@ -182,6 +182,10 @@ void PlayerShip::setShield(int theShield)
 }
 
 /**********************************************************************/
+/*! Returns the type of QGraphicsItem for the use in collision detection.
+ *
+ * Author: Karan Chakrapani
+ */
  int PlayerShip::type() const
  {
     // Enable the use of qgraphicsitem_cast with this item.
@@ -189,6 +193,10 @@ void PlayerShip::setShield(int theShield)
  }
 
  /**********************************************************************/
+ /*! KARAN HAVE FUN
+  *
+  *
+  */
  void PlayerShip::collCheck()
  {
     QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
@@ -304,6 +312,10 @@ void PlayerShip::setShield(int theShield)
  }
 
  /**********************************************************************/
+ /*! KARAN HAVE MORE FUN
+  *
+  *
+  */
  void PlayerShip::damage(int dTaken)
  {
      if (this->getShield() > 0)
@@ -442,66 +454,110 @@ int PlayerShip::getbMissile()
 }
 
 /**********************************************************************/
+/*!
+ *
+ *
+ */
 void PlayerShip::setShootGunFlag( bool keyPress )
 {
     this->shootGunFlag = keyPress;
 }
 
 /**********************************************************************/
+/*!
+ *
+ *
+ */
 void PlayerShip::setShootSMissileFlag( bool keyPress )
 {
     this->shootSMissileFlag = keyPress;
 }
 
 /**********************************************************************/
+/*!
+ *
+ *
+ */
 void PlayerShip::setShootBMissileFlag( bool keyPress )
 {
     this->shootBMissileFlag = keyPress;
 }
 
 /**********************************************************************/
+/*!
+ *
+ *
+ */
 bool PlayerShip::getShootGunFlag()
 {
     return this->shootGunFlag;
 }
 
 /**********************************************************************/
+/*!
+ *
+ *
+ */
 bool PlayerShip::getShootSMissileFlag()
 {
     return this->shootSMissileFlag;
 }
 
 /**********************************************************************/
+/*!
+ *
+ *
+ */
 bool PlayerShip::getShootBMissileFlag()
 {
     return this->shootBMissileFlag;
 }
 
 /**********************************************************************/
+/*! For use in loading a level file. It sets the max possible shield.
+ *
+ * Author: Todd Silvia
+ */
 void PlayerShip::setShieldMax( int value )
 {
     this->shieldMax = value;
 }
 
 /**********************************************************************/
+/*! For use in loading a level file. It sets the max possible armor.
+ *
+ * Author: Todd Silvia
+ */
 void PlayerShip::setArmorMax( int value )
 {
     this->armorMax = value;
 }
 
 /**********************************************************************/
+/*! Returns the bool value of if the PlayerShip is dead or not.
+ *
+ * Author: Todd Silvia
+ */
 bool PlayerShip::isShipDead()
 {
     return this->shipIsDead;
 }
 
 /**********************************************************************/
+/*! Sets the boolean value of if the PlayerShip still has more lives or not.
+ *
+ * Author: Todd Silvia
+ */
 void PlayerShip::setShipIsDead(bool shipLife)
 {
     this->shipIsDead = shipLife;
 }
 
 /**********************************************************************/
+/*!
+ *
+ *
+ */
 void PlayerShip::respawn()
 {
     this->setImage(QImage(":/images/explosion.png"));
@@ -513,6 +569,10 @@ void PlayerShip::respawn()
 }
 
 /**********************************************************************/
+/*!
+ *
+ *
+ */
 void PlayerShip::setAllFlags(bool flagger)
 {
     this->setLFlag( flagger );
