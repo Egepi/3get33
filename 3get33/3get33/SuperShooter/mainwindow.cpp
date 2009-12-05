@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     atBoss = false;
 	bossLife = new QProgressBar(this);
     bossLife->setVisible(false);
+    ui->bossLifeLabel->setVisible(false);
     score = 0;
 
     gameScene = new QGraphicsScene; //Scene to display the whole game
@@ -181,7 +182,7 @@ void MainWindow::playGame()
         preLevel->shipAdvance();
         theWavePtr = preLevel->addWave();
         //Actual value 180000
-        QTimer::singleShot(1800, this, SLOT(startBoss()));
+        QTimer::singleShot(180000, this, SLOT(startBoss()));
         waveTimer = new QTimer();
         QObject::connect(waveTimer, SIGNAL(timeout()), this, SLOT(addingWave()));
         waveTimer->start(30000);
