@@ -8,7 +8,6 @@
 #include <QTimer>
 #include "BasicShip.h"
 
-
 class PlayerShip : public BasicShip
 {
     public:
@@ -28,18 +27,19 @@ class PlayerShip : public BasicShip
         void setShieldMax(int value);
         void setArmorMax(int value);
         void setShipIsDead(bool shipLife);
+        void collCheck();
 
         int getShield();
         int getsMissile();
         int getbMissile();
+        int PlayerShip::type() const;
         bool getShootGunFlag();
         bool getShootSMissileFlag();
         bool getShootBMissileFlag();
         bool isShipDead();
 
         enum { Type = 65536 + 2 };
-        int PlayerShip::type() const;
-        void collCheck();
+
 
     private:
         /*! The amount of shield the ship has. */
@@ -58,20 +58,28 @@ class PlayerShip : public BasicShip
         bool dFlag;
         /*! Flag for ship moving up. */
         bool uFlag;
+        /*! */
         bool shootGunFlag;
+        /*! */
         bool shootSMissileFlag;
+        /*! */
         bool shootBMissileFlag;
+        /*! */
         int shieldMax;
+        /*! */
         int armorMax;
+        /*! */
         bool shipIsDead;
+        /*! */
         int reset;
+        /*! */
         void damage(int dTaken);
+        /*! */
         void advance(int phase);
+        /*! */
         void respawn();
+        /*! */
         void setAllFlags(bool);
-
-
-
 };
 
 #endif // PLAYERSHIP_H
