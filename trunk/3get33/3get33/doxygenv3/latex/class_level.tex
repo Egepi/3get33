@@ -1,0 +1,132 @@
+\hypertarget{class_level}{
+\section{Level Class Reference}
+\label{class_level}\index{Level@{Level}}
+}
+Collaboration diagram for Level:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_level__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_level_a5c64deb4b53abe03a9a31ff1d087aaf2}{Level} (QGraphicsScene $\ast$theScene, QImage enemyType, int theWaveSize)
+\item 
+\hyperlink{class_level_a249eac1e8f19ff44134efa5e986feaca}{$\sim$Level} ()
+\item 
+QList$<$ \hyperlink{class_basic_ship}{BasicShip} $\ast$ $>$ $\ast$ \hyperlink{class_level_a80431ecc50b0496e4fb11cda0b92905a}{addWave} ()
+\item 
+void \hyperlink{class_level_ae82e5c51006651333ba3ec36541ef12c}{startBoss} ()
+\item 
+void \hyperlink{class_level_ab15684c527719fa1568c3c0e90e71714}{shipAdvance} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_level_a2a7c5c783f6c3b05dae215f7f5af5bac}{
+QTimer $\ast$ {\bfseries advanceTimer}}
+\label{class_level_a2a7c5c783f6c3b05dae215f7f5af5bac}
+
+\item 
+\hypertarget{class_level_a441c165d5ff1bfcf5fb02d363682f3f4}{
+\hyperlink{class_boss_ship}{BossShip} $\ast$ {\bfseries theBoss}}
+\label{class_level_a441c165d5ff1bfcf5fb02d363682f3f4}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_level_aae8ab47bdfd70934cc7928f69d656e1a}{
+static const int {\bfseries ROW\_\-SIZE} = 5}
+\label{class_level_aae8ab47bdfd70934cc7928f69d656e1a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_level_a5c64deb4b53abe03a9a31ff1d087aaf2}{
+\index{Level@{Level}!Level@{Level}}
+\index{Level@{Level}!Level@{Level}}
+\subsubsection[{Level}]{\setlength{\rightskip}{0pt plus 5cm}Level::Level (QGraphicsScene $\ast$ {\em theScene}, \/  QImage {\em enemyType}, \/  int {\em theWaveSize})}}
+\label{class_level_a5c64deb4b53abe03a9a31ff1d087aaf2}
+File: Level.cpp Header: \hyperlink{_level_8h_source}{Level.h} Author: 3get33 -\/ Jennifer Kinahan, Karan Chakrapani, Todd Silvia Last Modified: December 4th 2009 Purpose: This class is used to handle the operation of a level in a SuperShooter game. It is responsible for creating the enemy ships, the boss ship, as well as moving the enemy ships.
+
+Basic constructor for a SuperShooter level.
+
+Author: Todd Silvia \hypertarget{class_level_a249eac1e8f19ff44134efa5e986feaca}{
+\index{Level@{Level}!$\sim$Level@{$\sim$Level}}
+\index{$\sim$Level@{$\sim$Level}!Level@{Level}}
+\subsubsection[{$\sim$Level}]{\setlength{\rightskip}{0pt plus 5cm}Level::$\sim$Level ()}}
+\label{class_level_a249eac1e8f19ff44134efa5e986feaca}
+Basic de-\/structur for a SuperShooter level.
+
+Author: Todd Silvia 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_level_a80431ecc50b0496e4fb11cda0b92905a}{
+\index{Level@{Level}!addWave@{addWave}}
+\index{addWave@{addWave}!Level@{Level}}
+\subsubsection[{addWave}]{\setlength{\rightskip}{0pt plus 5cm}QList$<$ {\bf BasicShip} $\ast$ $>$ $\ast$ Level::addWave ()}}
+\label{class_level_a80431ecc50b0496e4fb11cda0b92905a}
+Creates a QList of enemy ships, creating an entire wave of enemy ships.
+
+The enemy ships are by default \char`\"{}BadGuy4.png\char`\"{} Which are the blue diamonds.
+
+Author: Todd Silvia 
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{class_level_a80431ecc50b0496e4fb11cda0b92905a_cgraph}
+\end{center}
+\end{figure}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=390pt]{class_level_a80431ecc50b0496e4fb11cda0b92905a_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_level_ab15684c527719fa1568c3c0e90e71714}{
+\index{Level@{Level}!shipAdvance@{shipAdvance}}
+\index{shipAdvance@{shipAdvance}!Level@{Level}}
+\subsubsection[{shipAdvance}]{\setlength{\rightskip}{0pt plus 5cm}void Level::shipAdvance ()}}
+\label{class_level_ab15684c527719fa1568c3c0e90e71714}
+Creates the advance timer for the purpose of moving the ships on the scene.
+
+Author: Jennifer Kinahan 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_level_ab15684c527719fa1568c3c0e90e71714_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_level_ae82e5c51006651333ba3ec36541ef12c}{
+\index{Level@{Level}!startBoss@{startBoss}}
+\index{startBoss@{startBoss}!Level@{Level}}
+\subsubsection[{startBoss}]{\setlength{\rightskip}{0pt plus 5cm}void Level::startBoss ()}}
+\label{class_level_ae82e5c51006651333ba3ec36541ef12c}
+Creates the boss ship, and adds it to the scene.
+
+Author: Todd Silvia 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=386pt]{class_level_ae82e5c51006651333ba3ec36541ef12c_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/Level.h\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/Level.cpp\end{DoxyCompactItemize}

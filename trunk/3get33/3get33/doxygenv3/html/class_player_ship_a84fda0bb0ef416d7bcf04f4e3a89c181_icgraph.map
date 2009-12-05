@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_player_ship.html#a9c3745489576a8c3027b9e17ac2046fb" title="PlayerShip::collCheck" alt="" coords="219,5,368,33"/>
+<area shape="rect" id="node5" href="$class_main_window.html#af32531cf9be0011b3b3aa9cb1c159633" title="MainWindow::loadGame" alt="" coords="645,55,808,83"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a400071005bde6fee0623aafdb071ba89" title="MainWindow::playGame" alt="" coords="435,106,597,134"/>
+<area shape="rect" id="node14" href="$class_main_window.html#a260413ba6ca75a0e6164fdbd667afd58" title="MainWindow::updateDisplay" alt="" coords="201,157,385,185"/>
+<area shape="rect" id="node9" href="$class_main_window.html#a18edf6e25d25b890fb889dae523d45f9" title="MainWindow::gamelvl" alt="" coords="653,106,800,134"/>
+<area shape="rect" id="node11" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="857,106,1033,134"/>
+</map>

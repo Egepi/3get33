@@ -1,0 +1,85 @@
+\hypertarget{class_enemy_wave}{
+\section{EnemyWave Class Reference}
+\label{class_enemy_wave}\index{EnemyWave@{EnemyWave}}
+}
+Collaboration diagram for EnemyWave:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=114pt]{class_enemy_wave__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_enemy_wave_a187dbe0f6d62c4b72570c707bdd06cdc}{EnemyWave} (QGraphicsScene $\ast$theScene, QImage theEnemyType, int theWaveSize, int theArmor)
+\item 
+\hyperlink{class_enemy_wave_aa33b60498a02e1543cdcf479e004ef1c}{$\sim$EnemyWave} ()
+\item 
+QList$<$ \hyperlink{class_basic_ship}{BasicShip} $\ast$ $>$ $\ast$ \hyperlink{class_enemy_wave_a804ba9a3d38d5050decbf58c18c06851}{addWave} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_enemy_wave_a92747d9224953345e5faea27510f4313}{
+static const int {\bfseries ROW\_\-SIZE} = 5}
+\label{class_enemy_wave_a92747d9224953345e5faea27510f4313}
+
+\item 
+\hypertarget{class_enemy_wave_aa42be52305fb12e33a6af3f1573ce086}{
+static const int {\bfseries SHIP\_\-LIVES} = 1}
+\label{class_enemy_wave_aa42be52305fb12e33a6af3f1573ce086}
+
+\item 
+\hypertarget{class_enemy_wave_aa6369824dce6f573abc34beb253f2202}{
+static const int {\bfseries VIEW\_\-SIZE} = 600}
+\label{class_enemy_wave_aa6369824dce6f573abc34beb253f2202}
+
+\item 
+\hypertarget{class_enemy_wave_a34c69f43a3011326088680a398f5da42}{
+static const int {\bfseries SHIP\_\-SPACING} = 30}
+\label{class_enemy_wave_a34c69f43a3011326088680a398f5da42}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_enemy_wave_a187dbe0f6d62c4b72570c707bdd06cdc}{
+\index{EnemyWave@{EnemyWave}!EnemyWave@{EnemyWave}}
+\index{EnemyWave@{EnemyWave}!EnemyWave@{EnemyWave}}
+\subsubsection[{EnemyWave}]{\setlength{\rightskip}{0pt plus 5cm}EnemyWave::EnemyWave (QGraphicsScene $\ast$ {\em theScene}, \/  QImage {\em theEnemyType}, \/  int {\em theWaveSize}, \/  int {\em theArmor})}}
+\label{class_enemy_wave_a187dbe0f6d62c4b72570c707bdd06cdc}
+File: EnemyWave.cpp Header: \hyperlink{_enemy_wave_8h_source}{EnemyWave.h} Author: 3get33 -\/ Jennifer Kinahan, Karan Chakrapani, Todd Silvia Last Modified: December 4th 2009 Purpose: This class is used to create a entire wave of enemy ships. So that all of the enemy ships in a wave are contained in a single QList.
+
+Constructor for a \hyperlink{class_enemy_wave}{EnemyWave} object, with values passed in.
+
+Author: Todd Silvia \hypertarget{class_enemy_wave_aa33b60498a02e1543cdcf479e004ef1c}{
+\index{EnemyWave@{EnemyWave}!$\sim$EnemyWave@{$\sim$EnemyWave}}
+\index{$\sim$EnemyWave@{$\sim$EnemyWave}!EnemyWave@{EnemyWave}}
+\subsubsection[{$\sim$EnemyWave}]{\setlength{\rightskip}{0pt plus 5cm}EnemyWave::$\sim$EnemyWave ()}}
+\label{class_enemy_wave_aa33b60498a02e1543cdcf479e004ef1c}
+Basic deconstructor for \hyperlink{class_enemy_wave}{EnemyWave} object. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_enemy_wave_a804ba9a3d38d5050decbf58c18c06851}{
+\index{EnemyWave@{EnemyWave}!addWave@{addWave}}
+\index{addWave@{addWave}!EnemyWave@{EnemyWave}}
+\subsubsection[{addWave}]{\setlength{\rightskip}{0pt plus 5cm}QList$<$ {\bf BasicShip} $\ast$ $>$ $\ast$ EnemyWave::addWave ()}}
+\label{class_enemy_wave_a804ba9a3d38d5050decbf58c18c06851}
+Creates and adds QList of \hyperlink{class_basic_ship}{BasicShip} objects to add to the scene.
+
+Author: Todd Silvia 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{class_enemy_wave_a804ba9a3d38d5050decbf58c18c06851_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/EnemyWave.h\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/EnemyWave.cpp\end{DoxyCompactItemize}

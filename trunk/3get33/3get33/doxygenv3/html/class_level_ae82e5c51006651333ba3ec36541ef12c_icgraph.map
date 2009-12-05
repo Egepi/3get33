@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_main_window.html#addd77660e768b2eedb30c34815e9f1ab" title="MainWindow::startBoss" alt="" coords="168,30,328,58"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a400071005bde6fee0623aafdb071ba89" title="MainWindow::playGame" alt="" coords="376,30,539,58"/>
+<area shape="rect" id="node7" href="$class_main_window.html#a18edf6e25d25b890fb889dae523d45f9" title="MainWindow::gamelvl" alt="" coords="595,5,741,33"/>
+<area shape="rect" id="node11" href="$class_main_window.html#af32531cf9be0011b3b3aa9cb1c159633" title="MainWindow::loadGame" alt="" coords="587,55,749,83"/>
+<area shape="rect" id="node9" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="799,5,975,33"/>
+</map>

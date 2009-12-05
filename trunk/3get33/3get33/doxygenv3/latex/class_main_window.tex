@@ -1,0 +1,320 @@
+\hypertarget{class_main_window}{
+\section{MainWindow Class Reference}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+}
+Collaboration diagram for MainWindow:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_main_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_main_window_a57a17b24a0c1a25ea3f2575febfa2daa}{closeGame} ()
+\item 
+void \hyperlink{class_main_window_af32531cf9be0011b3b3aa9cb1c159633}{loadGame} ()
+\item 
+void \hyperlink{class_main_window_a400071005bde6fee0623aafdb071ba89}{playGame} ()
+\item 
+void \hyperlink{class_main_window_af5fe3a1a1b28d5a77f91ffb2ca755dc9}{checkQuit} ()
+\item 
+void \hyperlink{class_main_window_addd77660e768b2eedb30c34815e9f1ab}{startBoss} ()
+\item 
+void \hyperlink{class_main_window_ac609f6dbbde76c9bc720a36aac05b633}{enemyShoot} ()
+\item 
+void \hyperlink{class_main_window_a260413ba6ca75a0e6164fdbd667afd58}{updateDisplay} ()
+\item 
+void \hyperlink{class_main_window_afa51f8b618e297e7b2ed6e9d1bfd38d7}{makePowerUp} ()
+\item 
+void \hyperlink{class_main_window_a82a6ee47ad6e73ab2eb6816ee6324708}{playerShoot} ()
+\item 
+void \hyperlink{class_main_window_a18edf6e25d25b890fb889dae523d45f9}{gamelvl} ()
+\item 
+void \hyperlink{class_main_window_aa5e6f6d450a8cca11ebe714ac36146b0}{addingWave} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{MainWindow} (QWidget $\ast$parent=0)
+\item 
+\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$MainWindow} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\subsubsection[{MainWindow}]{\setlength{\rightskip}{0pt plus 5cm}MainWindow::MainWindow (QWidget $\ast$ {\em parent} = {\ttfamily 0})}}
+\label{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}
+File: MainWindow.cpp Header: \hyperlink{mainwindow_8h_source}{mainwindow.h} Author: 3get33 -\/ Jennifer Kinahan, Karan Chakrapani, Todd Silvia Last Modified: December 4th 2009 Purpose: This class is the main class for the entire SuperShooter game. Handles everything with the user interface, and user interaction, including all of the buttons, and key bindings. Also controls all of the gameplay.
+
+Constructor for a new \hyperlink{class_main_window}{MainWindow} in which the whole program/game is run. 
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{
+\index{MainWindow@{MainWindow}!$\sim$MainWindow@{$\sim$MainWindow}}
+\index{$\sim$MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\subsubsection[{$\sim$MainWindow}]{\setlength{\rightskip}{0pt plus 5cm}MainWindow::$\sim$MainWindow ()}}
+\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}
+Destructor for \hyperlink{class_main_window}{MainWindow} 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_main_window_aa5e6f6d450a8cca11ebe714ac36146b0}{
+\index{MainWindow@{MainWindow}!addingWave@{addingWave}}
+\index{addingWave@{addingWave}!MainWindow@{MainWindow}}
+\subsubsection[{addingWave}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::addingWave ()\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_main_window_aa5e6f6d450a8cca11ebe714ac36146b0}
+Slot to add a wave of enemy ships to the scene
+
+Author: Karan Chakrapani 
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_main_window_aa5e6f6d450a8cca11ebe714ac36146b0_cgraph}
+\end{center}
+\end{figure}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_main_window_aa5e6f6d450a8cca11ebe714ac36146b0_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_main_window_af5fe3a1a1b28d5a77f91ffb2ca755dc9}{
+\index{MainWindow@{MainWindow}!checkQuit@{checkQuit}}
+\index{checkQuit@{checkQuit}!MainWindow@{MainWindow}}
+\subsubsection[{checkQuit}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::checkQuit ()\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_main_window_af5fe3a1a1b28d5a77f91ffb2ca755dc9}
+Slot that is called when the user clicks on the 'Quit' button.
+
+Asks user via a message box if they want to exit the game or continue.
+
+Author: Todd Silvia 
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{class_main_window_af5fe3a1a1b28d5a77f91ffb2ca755dc9_cgraph}
+\end{center}
+\end{figure}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{class_main_window_af5fe3a1a1b28d5a77f91ffb2ca755dc9_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_main_window_a57a17b24a0c1a25ea3f2575febfa2daa}{
+\index{MainWindow@{MainWindow}!closeGame@{closeGame}}
+\index{closeGame@{closeGame}!MainWindow@{MainWindow}}
+\subsubsection[{closeGame}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::closeGame ()\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_main_window_a57a17b24a0c1a25ea3f2575febfa2daa}
+Closes the program.
+
+Slot that is called when the 'Quit' button is clicked in the \hyperlink{class_main_window}{MainWindow}.
+
+Author: Karan Chakrapani 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_main_window_a57a17b24a0c1a25ea3f2575febfa2daa_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_main_window_ac609f6dbbde76c9bc720a36aac05b633}{
+\index{MainWindow@{MainWindow}!enemyShoot@{enemyShoot}}
+\index{enemyShoot@{enemyShoot}!MainWindow@{MainWindow}}
+\subsubsection[{enemyShoot}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::enemyShoot ()\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_main_window_ac609f6dbbde76c9bc720a36aac05b633}
+KARAN DO THIS 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_main_window_ac609f6dbbde76c9bc720a36aac05b633_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_main_window_a18edf6e25d25b890fb889dae523d45f9}{
+\index{MainWindow@{MainWindow}!gamelvl@{gamelvl}}
+\index{gamelvl@{gamelvl}!MainWindow@{MainWindow}}
+\subsubsection[{gamelvl}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::gamelvl ()\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_main_window_a18edf6e25d25b890fb889dae523d45f9}
+Is called when the 'PlayGame' button is pressed to load default level.
+
+Author: Todd Silvia 
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{class_main_window_a18edf6e25d25b890fb889dae523d45f9_cgraph}
+\end{center}
+\end{figure}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{class_main_window_a18edf6e25d25b890fb889dae523d45f9_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_main_window_af32531cf9be0011b3b3aa9cb1c159633}{
+\index{MainWindow@{MainWindow}!loadGame@{loadGame}}
+\index{loadGame@{loadGame}!MainWindow@{MainWindow}}
+\subsubsection[{loadGame}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::loadGame ()\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_main_window_af32531cf9be0011b3b3aa9cb1c159633}
+Prompts user to load a level file using OS generic load file ui.
+
+Slot is called when the 'Load Game' button is clicked from \hyperlink{class_main_window}{MainWindow}.
+
+The generic OS file load window is opened and the current directory from which the game is running is the default folder it opens up to.\par
+ The user loads a level file and the game will then run with the level specifications.
+
+NOTE: THIS METHOD IS NOT FULLY FUNCTIONAL YET, AND WAS ABANDONED FOR FINAL RELEASE
+
+Author: Karan Chakrapani, Todd Silvia 
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{class_main_window_af32531cf9be0011b3b3aa9cb1c159633_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_main_window_afa51f8b618e297e7b2ed6e9d1bfd38d7}{
+\index{MainWindow@{MainWindow}!makePowerUp@{makePowerUp}}
+\index{makePowerUp@{makePowerUp}!MainWindow@{MainWindow}}
+\subsubsection[{makePowerUp}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::makePowerUp ()\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_main_window_afa51f8b618e297e7b2ed6e9d1bfd38d7}
+Slot to create a powerup and places it on the screen.
+
+Author: Jennifer Kinahan \hypertarget{class_main_window_a82a6ee47ad6e73ab2eb6816ee6324708}{
+\index{MainWindow@{MainWindow}!playerShoot@{playerShoot}}
+\index{playerShoot@{playerShoot}!MainWindow@{MainWindow}}
+\subsubsection[{playerShoot}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::playerShoot ()\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_main_window_a82a6ee47ad6e73ab2eb6816ee6324708}
+Allows the user to shoot bullets and missiles
+
+This method runs at at a certain time interval and if flags are true it fires a projectile of that type
+
+Author: Karan Chakrapani, Jennifer Kinahan 
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_main_window_a82a6ee47ad6e73ab2eb6816ee6324708_cgraph}
+\end{center}
+\end{figure}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_main_window_a82a6ee47ad6e73ab2eb6816ee6324708_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_main_window_a400071005bde6fee0623aafdb071ba89}{
+\index{MainWindow@{MainWindow}!playGame@{playGame}}
+\index{playGame@{playGame}!MainWindow@{MainWindow}}
+\subsubsection[{playGame}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::playGame ()\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_main_window_a400071005bde6fee0623aafdb071ba89}
+Loads and iniates the pre-\/loaded game.
+
+A new \hyperlink{class_player_ship}{PlayerShip} is created and added to the scene. The method then proceeds to up date the armor, shield, and lives displays. \par
+ The pre-\/loaded game then is iniated.
+
+Author: Karan Chakrapani, Todd Silvia 
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_main_window_a400071005bde6fee0623aafdb071ba89_cgraph}
+\end{center}
+\end{figure}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{class_main_window_a400071005bde6fee0623aafdb071ba89_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_main_window_addd77660e768b2eedb30c34815e9f1ab}{
+\index{MainWindow@{MainWindow}!startBoss@{startBoss}}
+\index{startBoss@{startBoss}!MainWindow@{MainWindow}}
+\subsubsection[{startBoss}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::startBoss ()\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_main_window_addd77660e768b2eedb30c34815e9f1ab}
+Loads the boss on the scene, and the progress bar for boss life.
+
+Author: Todd Silvia 
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{class_main_window_addd77660e768b2eedb30c34815e9f1ab_cgraph}
+\end{center}
+\end{figure}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_main_window_addd77660e768b2eedb30c34815e9f1ab_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_main_window_a260413ba6ca75a0e6164fdbd667afd58}{
+\index{MainWindow@{MainWindow}!updateDisplay@{updateDisplay}}
+\index{updateDisplay@{updateDisplay}!MainWindow@{MainWindow}}
+\subsubsection[{updateDisplay}]{\setlength{\rightskip}{0pt plus 5cm}void MainWindow::updateDisplay ()\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_main_window_a260413ba6ca75a0e6164fdbd667afd58}
+KARAN FINSISH
+
+Author: Todd Silvia, Karan Chakrapani 
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_main_window_a260413ba6ca75a0e6164fdbd667afd58_cgraph}
+\end{center}
+\end{figure}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_main_window_a260413ba6ca75a0e6164fdbd667afd58_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/mainwindow.h\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/mainwindow.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,117 @@
+\hypertarget{class_missile}{
+\section{Missile Class Reference}
+\label{class_missile}\index{Missile@{Missile}}
+}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries Type} =  65536 + 5
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_missile_aa5ce8791a8e7ebd4ea0afab390b73a1a}{Missile} ()
+\item 
+\hyperlink{class_missile_a4698129ffe314da23ae2fdc074c1aaa4}{Missile} (qreal locX, qreal locY, QImage missImage, bool owner, bool big)
+\item 
+\hyperlink{class_missile_ad42379e48a46ec3556056f98ce8bd912}{$\sim$Missile} ()
+\item 
+int \hyperlink{class_missile_aa176a8e8b698167fe1b901c4f91a6a31}{type} () const 
+\item 
+bool \hyperlink{class_missile_ae5d94b0814411d51750eb919f919a440}{getOwner} ()
+\item 
+void \hyperlink{class_missile_adf81e1df24765a7a9c9878beacd67842}{updateScore} (int)
+\item 
+int \hyperlink{class_missile_a1287c194f7a2b619fc5ebc126707d29b}{getScore} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_missile_aa5ce8791a8e7ebd4ea0afab390b73a1a}{
+\index{Missile@{Missile}!Missile@{Missile}}
+\index{Missile@{Missile}!Missile@{Missile}}
+\subsubsection[{Missile}]{\setlength{\rightskip}{0pt plus 5cm}Missile::Missile ()}}
+\label{class_missile_aa5ce8791a8e7ebd4ea0afab390b73a1a}
+File: Missile.cpp Header: \hyperlink{_missile_8h_source}{Missile.h} Author: 3get33 -\/ Jennifer Kinahan, Karan Chakrapani, Todd Silvia Last Modified: December 4th 2009 Purpose: The \hyperlink{class_missile}{Missile} class' purpose is to draw a missile on the screen either big or small, and shoot it across the screen. It also updates score and holds data for the owner.
+
+Blank Constructor for \hyperlink{class_missile}{Missile}
+
+Author: Jennifer Kinahan \hypertarget{class_missile_a4698129ffe314da23ae2fdc074c1aaa4}{
+\index{Missile@{Missile}!Missile@{Missile}}
+\index{Missile@{Missile}!Missile@{Missile}}
+\subsubsection[{Missile}]{\setlength{\rightskip}{0pt plus 5cm}Missile::Missile (qreal {\em locX}, \/  qreal {\em locY}, \/  QImage {\em missImage}, \/  bool {\em theOwner}, \/  bool {\em big})}}
+\label{class_missile_a4698129ffe314da23ae2fdc074c1aaa4}
+Parameterized constructor for creating a missile
+
+Author: Jennifer Kinahan \hypertarget{class_missile_ad42379e48a46ec3556056f98ce8bd912}{
+\index{Missile@{Missile}!$\sim$Missile@{$\sim$Missile}}
+\index{$\sim$Missile@{$\sim$Missile}!Missile@{Missile}}
+\subsubsection[{$\sim$Missile}]{\setlength{\rightskip}{0pt plus 5cm}Missile::$\sim$Missile ()}}
+\label{class_missile_ad42379e48a46ec3556056f98ce8bd912}
+\hyperlink{class_missile}{Missile} Deconstructor
+
+Author: Jennifer Kinahan 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_missile_ae5d94b0814411d51750eb919f919a440}{
+\index{Missile@{Missile}!getOwner@{getOwner}}
+\index{getOwner@{getOwner}!Missile@{Missile}}
+\subsubsection[{getOwner}]{\setlength{\rightskip}{0pt plus 5cm}bool Missile::getOwner ()}}
+\label{class_missile_ae5d94b0814411d51750eb919f919a440}
+Determines if the missile was shot from an enemy or player ship.
+
+Author: Todd Silvia, Karan Chakrapani, Jennifer Kinahan 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{class_missile_ae5d94b0814411d51750eb919f919a440_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_missile_a1287c194f7a2b619fc5ebc126707d29b}{
+\index{Missile@{Missile}!getScore@{getScore}}
+\index{getScore@{getScore}!Missile@{Missile}}
+\subsubsection[{getScore}]{\setlength{\rightskip}{0pt plus 5cm}int Missile::getScore ()}}
+\label{class_missile_a1287c194f7a2b619fc5ebc126707d29b}
+Returns the current score based on this missle being shot.
+
+Author: Karan Chakrapani 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=399pt]{class_missile_a1287c194f7a2b619fc5ebc126707d29b_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_missile_aa176a8e8b698167fe1b901c4f91a6a31}{
+\index{Missile@{Missile}!type@{type}}
+\index{type@{type}!Missile@{Missile}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}int Missile::type () const}}
+\label{class_missile_aa176a8e8b698167fe1b901c4f91a6a31}
+Determines the type of QGraphicsItem this is for collision detection.
+
+Author: Karan Chakrapani \hypertarget{class_missile_adf81e1df24765a7a9c9878beacd67842}{
+\index{Missile@{Missile}!updateScore@{updateScore}}
+\index{updateScore@{updateScore}!Missile@{Missile}}
+\subsubsection[{updateScore}]{\setlength{\rightskip}{0pt plus 5cm}void Missile::updateScore (int {\em value})}}
+\label{class_missile_adf81e1df24765a7a9c9878beacd67842}
+Update overall score for the game based on this missile being shot.
+
+Author: Karan Chakrapani 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{class_missile_adf81e1df24765a7a9c9878beacd67842_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/Missile.h\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/Missile.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$class_basic_ship.html" title="BasicShip" alt="" coords="5,6,85,34"/>
+<area shape="rect" id="node4" href="$class_boss_ship.html" title="BossShip" alt="" coords="75,86,152,114"/>
+</map>

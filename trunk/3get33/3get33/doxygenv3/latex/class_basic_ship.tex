@@ -1,0 +1,222 @@
+\hypertarget{class_basic_ship}{
+\section{BasicShip Class Reference}
+\label{class_basic_ship}\index{BasicShip@{BasicShip}}
+}
+
+
+Inherited by \hyperlink{class_boss_ship}{BossShip}, and \hyperlink{class_player_ship}{PlayerShip}.\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries Type} =  65536 + 1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_basic_ship_a88b2200dd98dd629d9c7fc9d056c93e6}{
+void {\bfseries armorChanged} ()}
+\label{class_basic_ship_a88b2200dd98dd629d9c7fc9d056c93e6}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_basic_ship_ad7432632bd796076e9f5c25b5447807a}{BasicShip} (int theArmor, int theLives, QImage theImage, int theX, int theY, int)
+\item 
+\hyperlink{class_basic_ship_aa7993a536c700061baa1d0846801a111}{BasicShip} ()
+\item 
+\hyperlink{class_basic_ship_a54dac10003c33f1a21f6500ed33dcd6c}{$\sim$BasicShip} ()
+\item 
+int \hyperlink{class_basic_ship_a54134d4fe367db9649ffb4bd6a1123b7}{getArmor} ()
+\item 
+int \hyperlink{class_basic_ship_a3df2d25ee4bda266b5087ae6581f0162}{getLives} ()
+\item 
+void \hyperlink{class_basic_ship_a4f4ffdf5a17c9148478ada53b06d3e2e}{setLives} (int theLives)
+\item 
+void \hyperlink{class_basic_ship_ad7fbff0029da6b55b5a5f60fcad4030f}{setArmor} (int theArmor)
+\item 
+void \hyperlink{class_basic_ship_ad0dc07d6f5934c938efd31be0ca56a06}{setImage} (QImage theImage)
+\item 
+\hypertarget{class_basic_ship_a90777677113834e75c83c54e6b55f32c}{
+void {\bfseries setShipSizeX} (int)}
+\label{class_basic_ship_a90777677113834e75c83c54e6b55f32c}
+
+\item 
+\hypertarget{class_basic_ship_a5537c5c3e6b4908e97329dfe80de996e}{
+void {\bfseries setShipSizeY} (int)}
+\label{class_basic_ship_a5537c5c3e6b4908e97329dfe80de996e}
+
+\item 
+void \hyperlink{class_basic_ship_a18da035282b9ecb5f5fdab232bf7ac27}{move} (qreal xMove, qreal yMove)
+\item 
+int \hyperlink{class_basic_ship_a6d498fc95af4562fcec7273897f98067}{type} () const 
+\item 
+void \hyperlink{class_basic_ship_a30787afde7d49a62891c1b9e73e9b7d9}{collCheck} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_basic_ship_a2a6848c14d821cff1eec17e861801d88}{
+int {\bfseries shipSizeX}}
+\label{class_basic_ship_a2a6848c14d821cff1eec17e861801d88}
+
+\item 
+\hypertarget{class_basic_ship_aa4b9d1ebf9a66bb7b35b57a065a2c1d2}{
+int {\bfseries shipSizeY}}
+\label{class_basic_ship_aa4b9d1ebf9a66bb7b35b57a065a2c1d2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_basic_ship_ad7432632bd796076e9f5c25b5447807a}{
+\index{BasicShip@{BasicShip}!BasicShip@{BasicShip}}
+\index{BasicShip@{BasicShip}!BasicShip@{BasicShip}}
+\subsubsection[{BasicShip}]{\setlength{\rightskip}{0pt plus 5cm}BasicShip::BasicShip (int {\em theArmor}, \/  int {\em theLives}, \/  QImage {\em theImage}, \/  int {\em theX}, \/  int {\em theY}, \/  int {\em advancing})}}
+\label{class_basic_ship_ad7432632bd796076e9f5c25b5447807a}
+File: BasicShip.cpp Header: \hyperlink{_basic_ship_8h_source}{BasicShip.h} Author: 3get33 -\/ Jennifer Kinahan, Karan Chakrapani, Todd Silvia Last Modified: December 4th 2009 Purpose: This class is used as a base class for all ships used in the SuperShooter game. This class contains properties that hold true for all space ships. This class is also used directly for the basic enemies.
+
+Constructor for \hyperlink{class_basic_ship}{BasicShip}.
+
+This constructor only accepts an integer to set the shipArmor and shipLives because they are the only universal properties among the different types of ship in the game.
+
+Author: Todd Silvia \hypertarget{class_basic_ship_aa7993a536c700061baa1d0846801a111}{
+\index{BasicShip@{BasicShip}!BasicShip@{BasicShip}}
+\index{BasicShip@{BasicShip}!BasicShip@{BasicShip}}
+\subsubsection[{BasicShip}]{\setlength{\rightskip}{0pt plus 5cm}BasicShip::BasicShip ()}}
+\label{class_basic_ship_aa7993a536c700061baa1d0846801a111}
+A blank constructor for \hyperlink{class_basic_ship}{BasicShip}. \hypertarget{class_basic_ship_a54dac10003c33f1a21f6500ed33dcd6c}{
+\index{BasicShip@{BasicShip}!$\sim$BasicShip@{$\sim$BasicShip}}
+\index{$\sim$BasicShip@{$\sim$BasicShip}!BasicShip@{BasicShip}}
+\subsubsection[{$\sim$BasicShip}]{\setlength{\rightskip}{0pt plus 5cm}BasicShip::$\sim$BasicShip ()}}
+\label{class_basic_ship_a54dac10003c33f1a21f6500ed33dcd6c}
+A deconstructor for \hyperlink{class_basic_ship}{BasicShip}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_basic_ship_a30787afde7d49a62891c1b9e73e9b7d9}{
+\index{BasicShip@{BasicShip}!collCheck@{collCheck}}
+\index{collCheck@{collCheck}!BasicShip@{BasicShip}}
+\subsubsection[{collCheck}]{\setlength{\rightskip}{0pt plus 5cm}void BasicShip::collCheck ()}}
+\label{class_basic_ship_a30787afde7d49a62891c1b9e73e9b7d9}
+Resnposible detecting collisions with other ships, bullets, missiles
+
+This method uses the type enum to figure out what class the QGraphicsItem that is colliding Different actions are performed when colliding with different objects If there was damage to be taken after the collision checks it is done by calling the damage method
+
+Author: Karan Chakrapani 
+
+Reimplemented in \hyperlink{class_player_ship_a9c3745489576a8c3027b9e17ac2046fb}{PlayerShip}.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{class_basic_ship_a30787afde7d49a62891c1b9e73e9b7d9_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_basic_ship_a54134d4fe367db9649ffb4bd6a1123b7}{
+\index{BasicShip@{BasicShip}!getArmor@{getArmor}}
+\index{getArmor@{getArmor}!BasicShip@{BasicShip}}
+\subsubsection[{getArmor}]{\setlength{\rightskip}{0pt plus 5cm}int BasicShip::getArmor ()}}
+\label{class_basic_ship_a54134d4fe367db9649ffb4bd6a1123b7}
+Returns the amount of armor the given ship has, as an int.
+
+Author: Todd Silvia 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=406pt]{class_basic_ship_a54134d4fe367db9649ffb4bd6a1123b7_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_basic_ship_a3df2d25ee4bda266b5087ae6581f0162}{
+\index{BasicShip@{BasicShip}!getLives@{getLives}}
+\index{getLives@{getLives}!BasicShip@{BasicShip}}
+\subsubsection[{getLives}]{\setlength{\rightskip}{0pt plus 5cm}int BasicShip::getLives ()}}
+\label{class_basic_ship_a3df2d25ee4bda266b5087ae6581f0162}
+Returns the number of lives of given \hyperlink{class_basic_ship}{BasicShip} object.
+
+Author: Todd Silvia 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=404pt]{class_basic_ship_a3df2d25ee4bda266b5087ae6581f0162_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_basic_ship_a18da035282b9ecb5f5fdab232bf7ac27}{
+\index{BasicShip@{BasicShip}!move@{move}}
+\index{move@{move}!BasicShip@{BasicShip}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void BasicShip::move (qreal {\em xMove}, \/  qreal {\em yMove})}}
+\label{class_basic_ship_a18da035282b9ecb5f5fdab232bf7ac27}
+Moves the \hyperlink{class_basic_ship}{BasicShip} a number of pixels based on the value of xMove \& yMove passed in.
+
+This is the generic move method for all \hyperlink{class_basic_ship}{BasicShip}.\par
+ This method also takes into account the bounds of gameScene.
+
+Author: Karan Chakrapani, Jennifer Kinahan \hypertarget{class_basic_ship_ad7fbff0029da6b55b5a5f60fcad4030f}{
+\index{BasicShip@{BasicShip}!setArmor@{setArmor}}
+\index{setArmor@{setArmor}!BasicShip@{BasicShip}}
+\subsubsection[{setArmor}]{\setlength{\rightskip}{0pt plus 5cm}void BasicShip::setArmor (int {\em theArmor})}}
+\label{class_basic_ship_ad7fbff0029da6b55b5a5f60fcad4030f}
+Sets the given \hyperlink{class_basic_ship}{BasicShip} 's shipArmor equal to theArmor.
+
+Author: Todd Silvia 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{class_basic_ship_ad7fbff0029da6b55b5a5f60fcad4030f_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_basic_ship_ad0dc07d6f5934c938efd31be0ca56a06}{
+\index{BasicShip@{BasicShip}!setImage@{setImage}}
+\index{setImage@{setImage}!BasicShip@{BasicShip}}
+\subsubsection[{setImage}]{\setlength{\rightskip}{0pt plus 5cm}void BasicShip::setImage (QImage {\em theImage})}}
+\label{class_basic_ship_ad0dc07d6f5934c938efd31be0ca56a06}
+Sets the image to be displayed for the ship in gameScene.
+
+Note: The image generally has to be a of type .png inorder for the picture to have a tansparent background.
+
+Author: Karan Chakrapani 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{class_basic_ship_ad0dc07d6f5934c938efd31be0ca56a06_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_basic_ship_a4f4ffdf5a17c9148478ada53b06d3e2e}{
+\index{BasicShip@{BasicShip}!setLives@{setLives}}
+\index{setLives@{setLives}!BasicShip@{BasicShip}}
+\subsubsection[{setLives}]{\setlength{\rightskip}{0pt plus 5cm}void BasicShip::setLives (int {\em theLives})}}
+\label{class_basic_ship_a4f4ffdf5a17c9148478ada53b06d3e2e}
+Sets the number of lives of the given ship equal to theLives.
+
+Author: Todd Silvia 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{class_basic_ship_a4f4ffdf5a17c9148478ada53b06d3e2e_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_basic_ship_a6d498fc95af4562fcec7273897f98067}{
+\index{BasicShip@{BasicShip}!type@{type}}
+\index{type@{type}!BasicShip@{BasicShip}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}int BasicShip::type () const}}
+\label{class_basic_ship_a6d498fc95af4562fcec7273897f98067}
+This function returns the type used for type casting and for collision detection
+
+Author: Karan Chakrapani 
+
+Reimplemented in \hyperlink{class_boss_ship_aa6e1eb6f89978d9608560c8bfacc4906}{BossShip}, and \hyperlink{class_player_ship_a81bc25f1369bf55d02c3f71b312b70a4}{PlayerShip}.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/BasicShip.h\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/BasicShip.cpp\end{DoxyCompactItemize}

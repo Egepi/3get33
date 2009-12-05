@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$class_power_up.html" title="PowerUp" alt="" coords="5,193,77,221"/>
+<area shape="rect" id="node4" href="$class_missile.html" title="Missile" alt="" coords="101,193,163,221"/>
+<area shape="rect" id="node6" href="$class_ui_1_1_main_window.html" title="Ui::MainWindow" alt="" coords="187,193,301,221"/>
+<area shape="rect" id="node8" href="$class_ui___main_window.html" title="Ui_MainWindow" alt="" coords="187,86,301,114"/>
+<area shape="rect" id="node10" href="$class_b_ground.html" title="BGround" alt="" coords="325,193,397,221"/>
+<area shape="rect" id="node12" href="$class_player_ship.html" title="PlayerShip" alt="" coords="404,139,487,167"/>
+<area shape="rect" id="node14" href="$class_basic_ship.html" title="BasicShip" alt="" coords="467,6,547,34"/>
+<area shape="rect" id="node18" href="$class_level.html" title="Level" alt="" coords="513,193,564,221"/>
+<area shape="rect" id="node21" href="$class_boss_ship.html" title="BossShip" alt="" coords="569,86,647,114"/>
+<area shape="rect" id="node16" href="$class_bullet.html" title="Bullet" alt="" coords="588,193,641,221"/>
+</map>

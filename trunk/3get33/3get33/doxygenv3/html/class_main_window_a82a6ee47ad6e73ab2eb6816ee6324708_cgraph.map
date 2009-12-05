@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_player_ship.html#ac6e2929a3b840cd1fea30795b49d5063" title="PlayerShip::getbMissile" alt="" coords="259,5,416,33"/>
+<area shape="rect" id="node5" href="$class_player_ship.html#af05e367beced958cbf5cac5bc67fd3f4" title="PlayerShip::getShootBMissileFlag" alt="" coords="228,55,447,83"/>
+<area shape="rect" id="node7" href="$class_player_ship.html#ae5bc443b4609f8f0b691425960a9a419" title="PlayerShip::getShootGunFlag" alt="" coords="241,106,433,134"/>
+<area shape="rect" id="node9" href="$class_player_ship.html#a06484c119b8aec9bd2b6758bb630c942" title="PlayerShip::getShootSMissileFlag" alt="" coords="228,157,447,185"/>
+<area shape="rect" id="node11" href="$class_player_ship.html#a57d57596b57715d14fc4c488b3911aef" title="PlayerShip::getsMissile" alt="" coords="259,207,416,235"/>
+<area shape="rect" id="node13" href="$class_player_ship.html#a83a451bcbd09a63094402ba83e73db2a" title="PlayerShip::setbMissile" alt="" coords="259,258,416,286"/>
+<area shape="rect" id="node15" href="$class_player_ship.html#a69f905cfd109b61000c2eaccb1741fae" title="PlayerShip::setsMissile" alt="" coords="259,309,416,337"/>
+</map>
