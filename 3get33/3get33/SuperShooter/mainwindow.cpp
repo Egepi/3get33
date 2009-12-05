@@ -328,7 +328,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *key) {
  *
  * Asks user via a message box if they want to exit the game or continue.
  *
- *  Author: Todd Silvia
+ * Author: Todd Silvia
  */
 void MainWindow::checkQuit()
 {
@@ -338,15 +338,15 @@ void MainWindow::checkQuit()
                          QMessageBox::No | QMessageBox::Default,
                          QMessageBox::Yes | QMessageBox::Escape)) {
     case QMessageBox::No:
-            break;
+            break; //User clicked the 'No' button
     case QMessageBox::Yes:
-            this->closeGame();
+            this->closeGame(); //User clicked the 'Yes' button
             break;
         }
 }
 
 /**********************************************************************/
-/*!
+/*! Loads the boss on the scene, and the progress bar for boss life.
  *
  *  Author: Todd Silvia
  */
@@ -354,17 +354,22 @@ void MainWindow::startBoss()
 {
     atBoss = true;
     preLevel->startBoss();
+    //Sets up boss life progress bar, and displays it
     bossLife->setGeometry(10,230,150,23);
     bossLife->setMinimum(0);
     bossLife->setMaximum(preLevel->theBoss->getArmor());
     bossLife->setValue(preLevel->theBoss->getArmor());
     bossLife->setVisible(true);
     ui->bossLifeLabel->setVisible(true);
+    //Stops timer, so that no more enemy waves are added after the boss is out
     waveTimer->stop();
-
 }
 
 /**********************************************************************/
+/*! KARAN DO THIS
+  *
+  *
+  */
 void MainWindow::enemyShoot()
 {
     if(atBoss == true && preLevel->theBoss->isEnabled() == true)
@@ -417,23 +422,32 @@ if(alternate)
 }
 
 /**********************************************************************/
+/*! KARAN FINSISH
+  *
+  *
+  * Author: Todd Silvia,
+  *         Karan Chakrapani
+  */
 void MainWindow::updateDisplay()
 {
-    this->bg->setPos(0, yDelta);
+    this->bg->setPos(0, yDelta);    //Move the scrolling background
     if(yDelta < 0)
     {
-        yDelta += 1;
+        yDelta += 1;                //Set yDelta for next method call
     }
     else
     {
-        yDelta = -480;
+        yDelta = -480;              //Background has reached the end, reset position.
     }
+    //Upate the LCD displays for the PlayerShip
     ui->armorDisplay->display(myShip->getArmor());
     ui->shieldDisplay->display(myShip->getShield());
     ui->livesDisplay->display(myShip->getLives());
     ui->smallMissilesDisplay->display(myShip->getsMissile());
     ui->bigMissilesDisplay->display(myShip->getbMissile());
-    score = 0;
+
+    score = 0;  //Reset the score to zero for recalculation
+
     if(!this->bulletList.isEmpty())
     {
        QLinkedList<Bullet*>::iterator iterator;
@@ -453,52 +467,83 @@ void MainWindow::updateDisplay()
        }
     }
     ui->scoreDisplay->display(score);
+
+    //Checks if the boss is on the screen, if so then update the boss life progress bar
     if(atBoss == true)
         bossLife->setValue(preLevel->theBoss->getArmor());
 
+    //Checks if the ship still has more lives or not
     if(myShip->isShipDead())
-    {
+    {//The ship has zero lives so the game needs to be stopped.
+        //Stop the timers controling the game play
         gameUpdate->stop();
         waveTimer->stop();
         enemyShootTimer->stop();
         preLevel->advanceTimer->stop();
         powerUpTimer->stop();
+
+        //Remove the scrolling background
         gameScene->removeItem(bg);
+        //Change the background to game over screen
         ui->Display->setBackgroundBrush(QBrush(QImage(":/images/MGS_GameOver.jpg")));
-        gameScene->items();
+        //Play game over sound.
         QSound::play(QString("GameOver.wav"));
     }
 
+    //Checks if the level is currently at the boss, and he is still alive.
     if((atBoss == true)&&(!(preLevel->theBoss->isEnabled())))
-    {
+    {//The boss was out, and is now dead
+        //Stop the timers controling the game play
         gameUpdate->stop();
         waveTimer->stop();
         enemyShootTimer->stop();
         preLevel->advanceTimer->stop();
-         powerUpTimer->stop();
+        powerUpTimer->stop();
+
+        //Remove the scrolling background
         gameScene->removeItem(bg);
+        //Change background picture to the player won screen
         ui->Display->setBackgroundBrush(QBrush(QImage(":/images/youwon.gif")));
+        //Update the boss life progress bar one last time.
         bossLife->setValue(preLevel->theBoss->getArmor());
     }
-
-
 }
+
 /**********************************************************************/
+/*! Slot to create a powerup and places it on the screen.
+  *
+  * Author: Jennifer Kinahan
+  */
 void MainWindow::makePowerUp()
 {
+    //Creates new powerup object
     PowerUp *aPU = new PowerUp();
+    //Adds new power up to the game scene.
     gameScene->addItem(aPU);
 }
 
 /**********************************************************************/
+/*! Runs on a timer, to create power ups on the screen. Calls makePowerUp()
+  *
+  * Author: Jennifer Kinahan
+  *
+  */
 void MainWindow::spawnPowerUp()
 {
+    //Creates a new QTimer
     powerUpTimer = new QTimer();
+    //Connects timer to makePowerUp() slot
     QObject::connect(powerUpTimer, SIGNAL(timeout()), this, SLOT(makePowerUp()));
+    //Sets interval for timer
     powerUpTimer->start(20000);
 }
 
 /**********************************************************************/
+/*! KARAN DO THIS
+  *
+  * Author: Karan Chakrapani,
+  *         Jennifer Kinahan
+  */
 void MainWindow::playerShoot()
 {
     if(myShip->getShootGunFlag())
