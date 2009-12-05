@@ -7,13 +7,20 @@
   */
 #include "PowerUp.h"
 
-// power up type 1 = shield
-// power up type 2 = health
-// power up type 3 = small missile
-// power up type 4 = big missile
 /**********************************************************************/
+/*! Missile Constructor
+ *
+ * Creates different powerups that help the player in different ways
+ *
+ * Author: Jennifer Kinahan
+ */
+
 PowerUp::PowerUp()
 {
+    //power up type 1 = shield
+    //power up type 2 = health
+    //power up type 3 = small missile
+    //power up type 4 = big missile
     puType = (qrand() % 4) +1;
     puLocX = qrand() % 560;
     puLocY = qrand() % 440;
@@ -28,17 +35,17 @@ PowerUp::PowerUp()
     {
         puImage = QImage(":/images/health.gif");
     }
-    //smissile
+    //small missile
     else if(this->puType == 3 )
     {
         puImage = QImage(":/images/purpleDS.png");
     }
-    //bmissile
+    //big missile
     else if(this->puType == 4 )
     {
         puImage = QImage(":/images/greenDM.png");
     }
-    //sheild if nothin
+    //sheild if nothing
     else
     {
         puImage = QImage(":/images/shieldpowerup.gif");
@@ -47,10 +54,19 @@ PowerUp::PowerUp()
 }
 
 /**********************************************************************/
+/*! Missile Deconstructor
+ *
+ * Author: Jennifer Kinahan
+ */
+
 PowerUp::~PowerUp()
 {
 }
 
+/*! Paints missile on the scene
+ *
+ * Author: Jennifer Kinahan
+ */
 /**********************************************************************/
 void PowerUp::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
@@ -59,24 +75,36 @@ void PowerUp::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget
 }
 
 /**********************************************************************/
+/*! Bounding rectangle for collision detection and drawing
+ *
+ * Creates different bounding rectangles for diffeerent powerups
+ *
+ * Author: Jennifer Kinahan
+ */
+
 QRectF PowerUp::boundingRect() const
 {
+    //if shield
     if(this->puType == 1 )
     {
         return QRectF(0,0,20,20);
     }
+    //if armor
     else if(this->puType == 2 )
     {
         return QRectF(0,0,20,20);
     }
+    //if small missile
     else if(this->puType == 3 )
     {
         return QRectF(0,0,15,38);
     }
+    //if big missile
     else if(this->puType == 4 )
     {
         return QRectF(0,0,15,38);
     }
+    //sheild if nothing
     else
     {
         return QRectF(0,0,20,20);
@@ -84,32 +112,41 @@ QRectF PowerUp::boundingRect() const
 }
 
 /**********************************************************************/
+/*! Eeturns the painter path for drawing the powerup
+ *
+ * Author: Jennifer Kinahan
+ */
 QPainterPath PowerUp::shape() const
 {
+    //if sheild
     if(this->puType == 1 )
     {
         QPainterPath path;
         path.addRect(0, 0, 20, 20);
         return path;
     }
+    //if armor
     else if(this->puType == 2 )
     {
         QPainterPath path;
         path.addRect(0, 0, 20, 20);
         return path;
     }
+    //if small missile
     else if(this->puType == 3 )
     {
         QPainterPath path;
         path.addRect(0, 0, 15, 38);
         return path;
     }
+    //if big missile
     else if(this->puType == 4 )
     {
         QPainterPath path;
         path.addRect(0, 0, 15, 38);
         return path;
     }
+    //sheild if no type
     else
     {
         QPainterPath path;
@@ -120,25 +157,34 @@ QPainterPath PowerUp::shape() const
 }
 
 /**********************************************************************/
+/*! Function used for type castng and figuring out proper type in collision detection
+ *
+ * Author: Jennifer Kinahan
+ */
 int PowerUp::type() const
 {
    // Enable the use of qgraphicsitem_cast with this item.
+    //if sheild
     if(this->puType == 1 )
     {
         return Type;
     }
+    //if armor
     else if(this->puType == 2 )
     {
         return Type + 1;
     }
+    //if small missile
     else if(this->puType == 3 )
     {
         return Type + 2;
     }
+    //if big missile
     else if(this->puType == 4 )
     {
         return Type + 3;
     }
+    //sheild if nothing
     else
     {
         return Type;
@@ -146,6 +192,12 @@ int PowerUp::type() const
 }
 
 /**********************************************************************/
+/*! Allows movement for Missiles
+ *
+ * Moves based on who the owner is, either player or enemy.
+ *
+ * Author: Jennifer Kinahan
+ */
 void PowerUp::advance(int phase)
 {
     if(!phase) return;
