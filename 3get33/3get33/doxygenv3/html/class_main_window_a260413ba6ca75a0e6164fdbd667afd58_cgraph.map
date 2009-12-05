@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_basic_ship.html#a54134d4fe367db9649ffb4bd6a1123b7" title="BasicShip::getArmor" alt="" coords="249,5,391,33"/>
+<area shape="rect" id="node5" href="$class_player_ship.html#ac6e2929a3b840cd1fea30795b49d5063" title="PlayerShip::getbMissile" alt="" coords="241,55,399,83"/>
+<area shape="rect" id="node7" href="$class_basic_ship.html#a3df2d25ee4bda266b5087ae6581f0162" title="BasicShip::getLives" alt="" coords="252,106,388,134"/>
+<area shape="rect" id="node9" href="$class_missile.html#a1287c194f7a2b619fc5ebc126707d29b" title="Missile::getScore" alt="" coords="259,157,381,185"/>
+<area shape="rect" id="node11" href="$class_bullet.html#adf5073e03d5eb9ce5cbf2af3653d02ef" title="Bullet::getScore" alt="" coords="263,207,377,235"/>
+<area shape="rect" id="node13" href="$class_player_ship.html#a84fda0bb0ef416d7bcf04f4e3a89c181" title="PlayerShip::getShield" alt="" coords="247,258,393,286"/>
+<area shape="rect" id="node15" href="$class_player_ship.html#a57d57596b57715d14fc4c488b3911aef" title="PlayerShip::getsMissile" alt="" coords="241,309,399,337"/>
+<area shape="rect" id="node17" href="$class_player_ship.html#a96bfd17f802f5d33d2083dad6c7240a0" title="PlayerShip::isShipDead" alt="" coords="241,359,399,387"/>
+</map>

@@ -1,0 +1,117 @@
+\hypertarget{class_bullet}{
+\section{Bullet Class Reference}
+\label{class_bullet}\index{Bullet@{Bullet}}
+}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries Type} =  65536 + 4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_bullet_acd7befc0bc18907cc1d871d37bbdddeb}{Bullet} ()
+\item 
+\hyperlink{class_bullet_ae5ffe28b85e0c71327b1d400f3b065a3}{Bullet} (qreal locX, qreal locY, QImage bulletImage, bool owner)
+\item 
+\hyperlink{class_bullet_aaeb5cb41d7db89f49007b08b41f1bfcf}{$\sim$Bullet} ()
+\item 
+int \hyperlink{class_bullet_a2c7acaad02de31fa4d0e4c837a05be4f}{type} () const 
+\item 
+bool \hyperlink{class_bullet_ab2959056bba728b7f0a84b15aca1bee3}{getOwner} ()
+\item 
+void \hyperlink{class_bullet_a6a304710eaa8ea9337c27e827a0f2400}{updateScore} (int)
+\item 
+int \hyperlink{class_bullet_adf5073e03d5eb9ce5cbf2af3653d02ef}{getScore} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_bullet_acd7befc0bc18907cc1d871d37bbdddeb}{
+\index{Bullet@{Bullet}!Bullet@{Bullet}}
+\index{Bullet@{Bullet}!Bullet@{Bullet}}
+\subsubsection[{Bullet}]{\setlength{\rightskip}{0pt plus 5cm}Bullet::Bullet ()}}
+\label{class_bullet_acd7befc0bc18907cc1d871d37bbdddeb}
+File: Bullet.cpp Header: \hyperlink{_bullet_8h_source}{Bullet.h} Author: 3get33 -\/ Jennifer Kinahan, Karan Chakrapani, Todd Silvia Last Modified: December 4th 2009 Purpose: The \hyperlink{class_bullet}{Bullet} class' purpose is to draw a bullet on the screen and shoot it across the screen. It also updates score and holds data for the owner.
+
+Blank Constructor for a \hyperlink{class_bullet}{Bullet} object.
+
+Author: Jennifer Kinahan \hypertarget{class_bullet_ae5ffe28b85e0c71327b1d400f3b065a3}{
+\index{Bullet@{Bullet}!Bullet@{Bullet}}
+\index{Bullet@{Bullet}!Bullet@{Bullet}}
+\subsubsection[{Bullet}]{\setlength{\rightskip}{0pt plus 5cm}Bullet::Bullet (qreal {\em locX}, \/  qreal {\em locY}, \/  QImage {\em bullImage}, \/  bool {\em theOwner})}}
+\label{class_bullet_ae5ffe28b85e0c71327b1d400f3b065a3}
+Constructor for a \hyperlink{class_bullet}{Bullet} object with values to be passed.
+
+Author: Jennifer Kinahan \hypertarget{class_bullet_aaeb5cb41d7db89f49007b08b41f1bfcf}{
+\index{Bullet@{Bullet}!$\sim$Bullet@{$\sim$Bullet}}
+\index{$\sim$Bullet@{$\sim$Bullet}!Bullet@{Bullet}}
+\subsubsection[{$\sim$Bullet}]{\setlength{\rightskip}{0pt plus 5cm}Bullet::$\sim$Bullet ()}}
+\label{class_bullet_aaeb5cb41d7db89f49007b08b41f1bfcf}
+Destructor for a \hyperlink{class_bullet}{Bullet} object.
+
+Author: Jennifer Kinahan 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_bullet_ab2959056bba728b7f0a84b15aca1bee3}{
+\index{Bullet@{Bullet}!getOwner@{getOwner}}
+\index{getOwner@{getOwner}!Bullet@{Bullet}}
+\subsubsection[{getOwner}]{\setlength{\rightskip}{0pt plus 5cm}bool Bullet::getOwner ()}}
+\label{class_bullet_ab2959056bba728b7f0a84b15aca1bee3}
+This function returns the owner of the bullet
+
+Author: Karan Chakrapani 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{class_bullet_ab2959056bba728b7f0a84b15aca1bee3_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_bullet_adf5073e03d5eb9ce5cbf2af3653d02ef}{
+\index{Bullet@{Bullet}!getScore@{getScore}}
+\index{getScore@{getScore}!Bullet@{Bullet}}
+\subsubsection[{getScore}]{\setlength{\rightskip}{0pt plus 5cm}int Bullet::getScore ()}}
+\label{class_bullet_adf5073e03d5eb9ce5cbf2af3653d02ef}
+This function returns the score caused by this bullet
+
+Author: Karan Chakrapani 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=396pt]{class_bullet_adf5073e03d5eb9ce5cbf2af3653d02ef_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_bullet_a2c7acaad02de31fa4d0e4c837a05be4f}{
+\index{Bullet@{Bullet}!type@{type}}
+\index{type@{type}!Bullet@{Bullet}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}int Bullet::type () const}}
+\label{class_bullet_a2c7acaad02de31fa4d0e4c837a05be4f}
+This function returns the type used for type casting and for collision detection
+
+Author: Karan Chakrapani \hypertarget{class_bullet_a6a304710eaa8ea9337c27e827a0f2400}{
+\index{Bullet@{Bullet}!updateScore@{updateScore}}
+\index{updateScore@{updateScore}!Bullet@{Bullet}}
+\subsubsection[{updateScore}]{\setlength{\rightskip}{0pt plus 5cm}void Bullet::updateScore (int {\em value})}}
+\label{class_bullet_a6a304710eaa8ea9337c27e827a0f2400}
+This function updates this bullets score from collision detection
+
+Author: Karan Chakrapani 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_bullet_a6a304710eaa8ea9337c27e827a0f2400_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/Bullet.h\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/Bullet.cpp\end{DoxyCompactItemize}

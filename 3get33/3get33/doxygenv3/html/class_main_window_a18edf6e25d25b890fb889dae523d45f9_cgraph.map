@@ -1,0 +1,25 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_main_window.html#a400071005bde6fee0623aafdb071ba89" title="MainWindow::playGame" alt="" coords="200,227,363,255"/>
+<area shape="rect" id="node5" href="$class_main_window.html#aa5e6f6d450a8cca11ebe714ac36146b0" title="MainWindow::addingWave" alt="" coords="417,49,591,77"/>
+<area shape="rect" id="node7" href="$class_level.html#a80431ecc50b0496e4fb11cda0b92905a" title="Level::addWave" alt="" coords="700,24,812,52"/>
+<area shape="rect" id="node12" href="$class_main_window.html#ac609f6dbbde76c9bc720a36aac05b633" title="MainWindow::enemyShoot" alt="" coords="416,100,592,128"/>
+<area shape="rect" id="node14" href="$class_basic_ship.html#a54134d4fe367db9649ffb4bd6a1123b7" title="BasicShip::getArmor" alt="" coords="685,201,827,229"/>
+<area shape="rect" id="node16" href="$class_basic_ship.html#a3df2d25ee4bda266b5087ae6581f0162" title="BasicShip::getLives" alt="" coords="688,252,824,280"/>
+<area shape="rect" id="node18" href="$class_player_ship.html#a84fda0bb0ef416d7bcf04f4e3a89c181" title="PlayerShip::getShield" alt="" coords="683,303,829,331"/>
+<area shape="rect" id="node20" href="$class_main_window.html#a82a6ee47ad6e73ab2eb6816ee6324708" title="MainWindow::playerShoot" alt="" coords="419,607,589,635"/>
+<area shape="rect" id="node36" href="$class_level.html#ab15684c527719fa1568c3c0e90e71714" title="Level::shipAdvance" alt="" coords="439,657,569,685"/>
+<area shape="rect" id="node38" href="$class_main_window.html#addd77660e768b2eedb30c34815e9f1ab" title="MainWindow::startBoss" alt="" coords="424,151,584,179"/>
+<area shape="rect" id="node43" href="$class_main_window.html#a260413ba6ca75a0e6164fdbd667afd58" title="MainWindow::updateDisplay" alt="" coords="412,353,596,381"/>
+<area shape="rect" id="node9" href="$class_enemy_wave.html#a804ba9a3d38d5050decbf58c18c06851" title="EnemyWave::addWave" alt="" coords="916,24,1071,52"/>
+<area shape="rect" id="node22" href="$class_player_ship.html#ac6e2929a3b840cd1fea30795b49d5063" title="PlayerShip::getbMissile" alt="" coords="677,556,835,584"/>
+<area shape="rect" id="node24" href="$class_player_ship.html#af05e367beced958cbf5cac5bc67fd3f4" title="PlayerShip::getShootBMissileFlag" alt="" coords="647,607,865,635"/>
+<area shape="rect" id="node26" href="$class_player_ship.html#ae5bc443b4609f8f0b691425960a9a419" title="PlayerShip::getShootGunFlag" alt="" coords="660,657,852,685"/>
+<area shape="rect" id="node28" href="$class_player_ship.html#a06484c119b8aec9bd2b6758bb630c942" title="PlayerShip::getShootSMissileFlag" alt="" coords="647,708,865,736"/>
+<area shape="rect" id="node30" href="$class_player_ship.html#a57d57596b57715d14fc4c488b3911aef" title="PlayerShip::getsMissile" alt="" coords="677,505,835,533"/>
+<area shape="rect" id="node32" href="$class_player_ship.html#a83a451bcbd09a63094402ba83e73db2a" title="PlayerShip::setbMissile" alt="" coords="677,759,835,787"/>
+<area shape="rect" id="node34" href="$class_player_ship.html#a69f905cfd109b61000c2eaccb1741fae" title="PlayerShip::setsMissile" alt="" coords="677,809,835,837"/>
+<area shape="rect" id="node41" href="$class_level.html#ae82e5c51006651333ba3ec36541ef12c" title="Level::startBoss" alt="" coords="699,151,813,179"/>
+<area shape="rect" id="node48" href="$class_missile.html#a1287c194f7a2b619fc5ebc126707d29b" title="Missile::getScore" alt="" coords="695,353,817,381"/>
+<area shape="rect" id="node50" href="$class_bullet.html#adf5073e03d5eb9ce5cbf2af3653d02ef" title="Bullet::getScore" alt="" coords="699,404,813,432"/>
+<area shape="rect" id="node54" href="$class_player_ship.html#a96bfd17f802f5d33d2083dad6c7240a0" title="PlayerShip::isShipDead" alt="" coords="677,455,835,483"/>
+</map>

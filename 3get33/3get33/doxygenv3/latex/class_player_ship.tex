@@ -1,0 +1,382 @@
+\hypertarget{class_player_ship}{
+\section{PlayerShip Class Reference}
+\label{class_player_ship}\index{PlayerShip@{PlayerShip}}
+}
+
+
+Inherits \hyperlink{class_basic_ship}{BasicShip}.Collaboration diagram for PlayerShip:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=106pt]{class_player_ship__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries Type} =  65536 + 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_player_ship_a7e4ea77e9ad9182c6277575d82366719}{PlayerShip} ()
+\item 
+\hyperlink{class_player_ship_a167478327150c2a6e12539fcfabe8d6c}{$\sim$PlayerShip} ()
+\item 
+void \hyperlink{class_player_ship_a52c30b5039d38b1d285fbc65689b377b}{setLFlag} (bool)
+\item 
+void \hyperlink{class_player_ship_a56bef96439b3cd3e061b391808ec2e98}{setRFlag} (bool)
+\item 
+void \hyperlink{class_player_ship_afa576113093b15958d5b64bea60c302a}{setDFlag} (bool)
+\item 
+void \hyperlink{class_player_ship_ac49a1a6d117dc84b84c8c6b3ad1ecd83}{setUFlag} (bool)
+\item 
+void \hyperlink{class_player_ship_a01ccc6b6aeb1a8633ebf4caeab995ff6}{setShootGunFlag} (bool)
+\item 
+void \hyperlink{class_player_ship_a445b0862199571801e5b3f62b1439b67}{setShootSMissileFlag} (bool)
+\item 
+void \hyperlink{class_player_ship_a9bab47afe26e4a08171c07043670905b}{setShootBMissileFlag} (bool)
+\item 
+void \hyperlink{class_player_ship_a2d736a12bc12fa351810aea18ccd1433}{setShield} (int theShield)
+\item 
+void \hyperlink{class_player_ship_a69f905cfd109b61000c2eaccb1741fae}{setsMissile} (int sMissile)
+\item 
+void \hyperlink{class_player_ship_a83a451bcbd09a63094402ba83e73db2a}{setbMissile} (int bMissile)
+\item 
+void \hyperlink{class_player_ship_a26c3da7df2435e3d6b114db177ea1e92}{setShieldMax} (int value)
+\item 
+void \hyperlink{class_player_ship_af7378ca18726f28160c2ac30d091c9b8}{setArmorMax} (int value)
+\item 
+void \hyperlink{class_player_ship_aa5d50b87e6af5b579e851dd216cee0f3}{setShipIsDead} (bool shipLife)
+\item 
+void \hyperlink{class_player_ship_a9c3745489576a8c3027b9e17ac2046fb}{collCheck} ()
+\item 
+int \hyperlink{class_player_ship_a84fda0bb0ef416d7bcf04f4e3a89c181}{getShield} ()
+\item 
+int \hyperlink{class_player_ship_a57d57596b57715d14fc4c488b3911aef}{getsMissile} ()
+\item 
+int \hyperlink{class_player_ship_ac6e2929a3b840cd1fea30795b49d5063}{getbMissile} ()
+\item 
+int \hyperlink{class_player_ship_a81bc25f1369bf55d02c3f71b312b70a4}{type} () const 
+\item 
+bool \hyperlink{class_player_ship_ae5bc443b4609f8f0b691425960a9a419}{getShootGunFlag} ()
+\item 
+bool \hyperlink{class_player_ship_a06484c119b8aec9bd2b6758bb630c942}{getShootSMissileFlag} ()
+\item 
+bool \hyperlink{class_player_ship_af05e367beced958cbf5cac5bc67fd3f4}{getShootBMissileFlag} ()
+\item 
+bool \hyperlink{class_player_ship_a96bfd17f802f5d33d2083dad6c7240a0}{isShipDead} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_player_ship_a7e4ea77e9ad9182c6277575d82366719}{
+\index{PlayerShip@{PlayerShip}!PlayerShip@{PlayerShip}}
+\index{PlayerShip@{PlayerShip}!PlayerShip@{PlayerShip}}
+\subsubsection[{PlayerShip}]{\setlength{\rightskip}{0pt plus 5cm}PlayerShip::PlayerShip ()}}
+\label{class_player_ship_a7e4ea77e9ad9182c6277575d82366719}
+File: PlayerShip.cpp Header: \hyperlink{playership_8h_source}{playership.h} Author: 3get33 -\/ Jennifer Kinahan, Karan Chakrapani, Todd Silvia Last Modified: December 4th 2009 Purpose: This class extends \hyperlink{class_basic_ship}{BasicShip} and is used to create the space ship that will be controlled by the user. Also Has overridden methods for movement among some other unique properties to a player controlled ship.
+
+Constructor for \hyperlink{class_player_ship}{PlayerShip}. Sets default characteristics.
+
+Author: Karan Chakrapani, Jennifer Kinahan Todd Silvia 
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{class_player_ship_a7e4ea77e9ad9182c6277575d82366719_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_a167478327150c2a6e12539fcfabe8d6c}{
+\index{PlayerShip@{PlayerShip}!$\sim$PlayerShip@{$\sim$PlayerShip}}
+\index{$\sim$PlayerShip@{$\sim$PlayerShip}!PlayerShip@{PlayerShip}}
+\subsubsection[{$\sim$PlayerShip}]{\setlength{\rightskip}{0pt plus 5cm}PlayerShip::$\sim$PlayerShip ()}}
+\label{class_player_ship_a167478327150c2a6e12539fcfabe8d6c}
+Destructor for \hyperlink{class_player_ship}{PlayerShip}
+
+Author: Todd Silvia 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_player_ship_a9c3745489576a8c3027b9e17ac2046fb}{
+\index{PlayerShip@{PlayerShip}!collCheck@{collCheck}}
+\index{collCheck@{collCheck}!PlayerShip@{PlayerShip}}
+\subsubsection[{collCheck}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::collCheck ()}}
+\label{class_player_ship_a9c3745489576a8c3027b9e17ac2046fb}
+Checks Collision Detection for the player ship
+
+Author: Karan Chakrapani 
+
+Reimplemented from \hyperlink{class_basic_ship_a30787afde7d49a62891c1b9e73e9b7d9}{BasicShip}.
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{class_player_ship_a9c3745489576a8c3027b9e17ac2046fb_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_ac6e2929a3b840cd1fea30795b49d5063}{
+\index{PlayerShip@{PlayerShip}!getbMissile@{getbMissile}}
+\index{getbMissile@{getbMissile}!PlayerShip@{PlayerShip}}
+\subsubsection[{getbMissile}]{\setlength{\rightskip}{0pt plus 5cm}int PlayerShip::getbMissile ()}}
+\label{class_player_ship_ac6e2929a3b840cd1fea30795b49d5063}
+Returns the amoung of shield the \hyperlink{class_player_ship}{PlayerShip} has.
+
+Author: Karan Chakrapani, Jennifer Kinahan 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=413pt]{class_player_ship_ac6e2929a3b840cd1fea30795b49d5063_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_a84fda0bb0ef416d7bcf04f4e3a89c181}{
+\index{PlayerShip@{PlayerShip}!getShield@{getShield}}
+\index{getShield@{getShield}!PlayerShip@{PlayerShip}}
+\subsubsection[{getShield}]{\setlength{\rightskip}{0pt plus 5cm}int PlayerShip::getShield ()}}
+\label{class_player_ship_a84fda0bb0ef416d7bcf04f4e3a89c181}
+Returns the amount of shield the \hyperlink{class_player_ship}{PlayerShip} has.
+
+Author: Karan Chakrapani, Jennifer Kinahan Todd Silvia 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=408pt]{class_player_ship_a84fda0bb0ef416d7bcf04f4e3a89c181_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_af05e367beced958cbf5cac5bc67fd3f4}{
+\index{PlayerShip@{PlayerShip}!getShootBMissileFlag@{getShootBMissileFlag}}
+\index{getShootBMissileFlag@{getShootBMissileFlag}!PlayerShip@{PlayerShip}}
+\subsubsection[{getShootBMissileFlag}]{\setlength{\rightskip}{0pt plus 5cm}bool PlayerShip::getShootBMissileFlag ()}}
+\label{class_player_ship_af05e367beced958cbf5cac5bc67fd3f4}
+Return the Shoot Big \hyperlink{class_missile}{Missile} Flag
+
+Author: Karan Chakrapani 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{class_player_ship_af05e367beced958cbf5cac5bc67fd3f4_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_ae5bc443b4609f8f0b691425960a9a419}{
+\index{PlayerShip@{PlayerShip}!getShootGunFlag@{getShootGunFlag}}
+\index{getShootGunFlag@{getShootGunFlag}!PlayerShip@{PlayerShip}}
+\subsubsection[{getShootGunFlag}]{\setlength{\rightskip}{0pt plus 5cm}bool PlayerShip::getShootGunFlag ()}}
+\label{class_player_ship_ae5bc443b4609f8f0b691425960a9a419}
+Return the Shoot Gun flag value
+
+Author: Karan Chakrapani 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{class_player_ship_ae5bc443b4609f8f0b691425960a9a419_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_a06484c119b8aec9bd2b6758bb630c942}{
+\index{PlayerShip@{PlayerShip}!getShootSMissileFlag@{getShootSMissileFlag}}
+\index{getShootSMissileFlag@{getShootSMissileFlag}!PlayerShip@{PlayerShip}}
+\subsubsection[{getShootSMissileFlag}]{\setlength{\rightskip}{0pt plus 5cm}bool PlayerShip::getShootSMissileFlag ()}}
+\label{class_player_ship_a06484c119b8aec9bd2b6758bb630c942}
+Return the Shoot Small \hyperlink{class_missile}{Missile} Flag
+
+Author: Karan Chakrapani 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=420pt]{class_player_ship_a06484c119b8aec9bd2b6758bb630c942_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_a57d57596b57715d14fc4c488b3911aef}{
+\index{PlayerShip@{PlayerShip}!getsMissile@{getsMissile}}
+\index{getsMissile@{getsMissile}!PlayerShip@{PlayerShip}}
+\subsubsection[{getsMissile}]{\setlength{\rightskip}{0pt plus 5cm}int PlayerShip::getsMissile ()}}
+\label{class_player_ship_a57d57596b57715d14fc4c488b3911aef}
+Returns the amoung of sMissiles the \hyperlink{class_player_ship}{PlayerShip} has.
+
+Author: Karan Chakrapani, Jennifer Kinahan 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=413pt]{class_player_ship_a57d57596b57715d14fc4c488b3911aef_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_a96bfd17f802f5d33d2083dad6c7240a0}{
+\index{PlayerShip@{PlayerShip}!isShipDead@{isShipDead}}
+\index{isShipDead@{isShipDead}!PlayerShip@{PlayerShip}}
+\subsubsection[{isShipDead}]{\setlength{\rightskip}{0pt plus 5cm}bool PlayerShip::isShipDead ()}}
+\label{class_player_ship_a96bfd17f802f5d33d2083dad6c7240a0}
+Returns the bool value of if the \hyperlink{class_player_ship}{PlayerShip} is dead or not.
+
+Author: Todd Silvia 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=413pt]{class_player_ship_a96bfd17f802f5d33d2083dad6c7240a0_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_af7378ca18726f28160c2ac30d091c9b8}{
+\index{PlayerShip@{PlayerShip}!setArmorMax@{setArmorMax}}
+\index{setArmorMax@{setArmorMax}!PlayerShip@{PlayerShip}}
+\subsubsection[{setArmorMax}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::setArmorMax (int {\em value})}}
+\label{class_player_ship_af7378ca18726f28160c2ac30d091c9b8}
+For use in loading a level file. It sets the max possible armor.
+
+Author: Todd Silvia 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{class_player_ship_af7378ca18726f28160c2ac30d091c9b8_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_a83a451bcbd09a63094402ba83e73db2a}{
+\index{PlayerShip@{PlayerShip}!setbMissile@{setbMissile}}
+\index{setbMissile@{setbMissile}!PlayerShip@{PlayerShip}}
+\subsubsection[{setbMissile}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::setbMissile (int {\em thebMissile})}}
+\label{class_player_ship_a83a451bcbd09a63094402ba83e73db2a}
+Sets the amount of bMissile the \hyperlink{class_player_ship}{PlayerShip} has equal to theShield.
+
+Author: Karan Chakrapani, Jennifer Kinahan 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=408pt]{class_player_ship_a83a451bcbd09a63094402ba83e73db2a_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_afa576113093b15958d5b64bea60c302a}{
+\index{PlayerShip@{PlayerShip}!setDFlag@{setDFlag}}
+\index{setDFlag@{setDFlag}!PlayerShip@{PlayerShip}}
+\subsubsection[{setDFlag}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::setDFlag (bool {\em keyPress})}}
+\label{class_player_ship_afa576113093b15958d5b64bea60c302a}
+Sets flag to true if user is pressing 's' and false if 's' is released.
+
+Author: Jennifer Kinahan \hypertarget{class_player_ship_a52c30b5039d38b1d285fbc65689b377b}{
+\index{PlayerShip@{PlayerShip}!setLFlag@{setLFlag}}
+\index{setLFlag@{setLFlag}!PlayerShip@{PlayerShip}}
+\subsubsection[{setLFlag}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::setLFlag (bool {\em keyPress})}}
+\label{class_player_ship_a52c30b5039d38b1d285fbc65689b377b}
+Sets flag to true if user is pressing 'a' and false if 'a' is released.
+
+Author: Jennifer Kinahan \hypertarget{class_player_ship_a56bef96439b3cd3e061b391808ec2e98}{
+\index{PlayerShip@{PlayerShip}!setRFlag@{setRFlag}}
+\index{setRFlag@{setRFlag}!PlayerShip@{PlayerShip}}
+\subsubsection[{setRFlag}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::setRFlag (bool {\em keyPress})}}
+\label{class_player_ship_a56bef96439b3cd3e061b391808ec2e98}
+Sets flag to true if user is pressing 'd' and false if 'd' is released.
+
+Author: Jennifer Kinahan \hypertarget{class_player_ship_a2d736a12bc12fa351810aea18ccd1433}{
+\index{PlayerShip@{PlayerShip}!setShield@{setShield}}
+\index{setShield@{setShield}!PlayerShip@{PlayerShip}}
+\subsubsection[{setShield}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::setShield (int {\em theShield})}}
+\label{class_player_ship_a2d736a12bc12fa351810aea18ccd1433}
+Sets the amount of shield the \hyperlink{class_player_ship}{PlayerShip} has equal to theShield.
+
+Author: Karan Chakrapani, Jennifer Kinahan Todd Silvia 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{class_player_ship_a2d736a12bc12fa351810aea18ccd1433_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_a26c3da7df2435e3d6b114db177ea1e92}{
+\index{PlayerShip@{PlayerShip}!setShieldMax@{setShieldMax}}
+\index{setShieldMax@{setShieldMax}!PlayerShip@{PlayerShip}}
+\subsubsection[{setShieldMax}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::setShieldMax (int {\em value})}}
+\label{class_player_ship_a26c3da7df2435e3d6b114db177ea1e92}
+For use in loading a level file. It sets the max possible shield.
+
+Author: Todd Silvia 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_player_ship_a26c3da7df2435e3d6b114db177ea1e92_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_aa5d50b87e6af5b579e851dd216cee0f3}{
+\index{PlayerShip@{PlayerShip}!setShipIsDead@{setShipIsDead}}
+\index{setShipIsDead@{setShipIsDead}!PlayerShip@{PlayerShip}}
+\subsubsection[{setShipIsDead}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::setShipIsDead (bool {\em shipLife})}}
+\label{class_player_ship_aa5d50b87e6af5b579e851dd216cee0f3}
+Sets the boolean value of if the \hyperlink{class_player_ship}{PlayerShip} still has more lives or not.
+
+Author: Todd Silvia \hypertarget{class_player_ship_a9bab47afe26e4a08171c07043670905b}{
+\index{PlayerShip@{PlayerShip}!setShootBMissileFlag@{setShootBMissileFlag}}
+\index{setShootBMissileFlag@{setShootBMissileFlag}!PlayerShip@{PlayerShip}}
+\subsubsection[{setShootBMissileFlag}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::setShootBMissileFlag (bool {\em keyPress})}}
+\label{class_player_ship_a9bab47afe26e4a08171c07043670905b}
+Set the shoot Big \hyperlink{class_missile}{Missile} Flag
+
+Author: Karan Chakrapani \hypertarget{class_player_ship_a01ccc6b6aeb1a8633ebf4caeab995ff6}{
+\index{PlayerShip@{PlayerShip}!setShootGunFlag@{setShootGunFlag}}
+\index{setShootGunFlag@{setShootGunFlag}!PlayerShip@{PlayerShip}}
+\subsubsection[{setShootGunFlag}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::setShootGunFlag (bool {\em keyPress})}}
+\label{class_player_ship_a01ccc6b6aeb1a8633ebf4caeab995ff6}
+Set the Shoot Gun flag
+
+Author: Karan Chakrapani \hypertarget{class_player_ship_a445b0862199571801e5b3f62b1439b67}{
+\index{PlayerShip@{PlayerShip}!setShootSMissileFlag@{setShootSMissileFlag}}
+\index{setShootSMissileFlag@{setShootSMissileFlag}!PlayerShip@{PlayerShip}}
+\subsubsection[{setShootSMissileFlag}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::setShootSMissileFlag (bool {\em keyPress})}}
+\label{class_player_ship_a445b0862199571801e5b3f62b1439b67}
+Set the Shoot Small \hyperlink{class_missile}{Missile} flag
+
+Author: Karan Chakrapani \hypertarget{class_player_ship_a69f905cfd109b61000c2eaccb1741fae}{
+\index{PlayerShip@{PlayerShip}!setsMissile@{setsMissile}}
+\index{setsMissile@{setsMissile}!PlayerShip@{PlayerShip}}
+\subsubsection[{setsMissile}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::setsMissile (int {\em thesMissile})}}
+\label{class_player_ship_a69f905cfd109b61000c2eaccb1741fae}
+Sets the amount of shield the \hyperlink{class_player_ship}{PlayerShip} has equal to theShield.
+
+Author: Karan Chakrapani, Jennifer Kinahan 
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=408pt]{class_player_ship_a69f905cfd109b61000c2eaccb1741fae_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_player_ship_ac49a1a6d117dc84b84c8c6b3ad1ecd83}{
+\index{PlayerShip@{PlayerShip}!setUFlag@{setUFlag}}
+\index{setUFlag@{setUFlag}!PlayerShip@{PlayerShip}}
+\subsubsection[{setUFlag}]{\setlength{\rightskip}{0pt plus 5cm}void PlayerShip::setUFlag (bool {\em keyPress})}}
+\label{class_player_ship_ac49a1a6d117dc84b84c8c6b3ad1ecd83}
+Sets flag to true if user is pressing 'w' and false if 'w' is released.
+
+Author: Jennifer Kinahan \hypertarget{class_player_ship_a81bc25f1369bf55d02c3f71b312b70a4}{
+\index{PlayerShip@{PlayerShip}!type@{type}}
+\index{type@{type}!PlayerShip@{PlayerShip}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}int PlayerShip::type () const}}
+\label{class_player_ship_a81bc25f1369bf55d02c3f71b312b70a4}
+Returns the type of QGraphicsItem for the use in collision detection.
+
+Author: Karan Chakrapani 
+
+Reimplemented from \hyperlink{class_basic_ship_a6d498fc95af4562fcec7273897f98067}{BasicShip}.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/playership.h\item 
+C:/Users/Jennifer/Documents/CS340/SVN/3get33/3get33/3get33/SuperShooter/playership.cpp\end{DoxyCompactItemize}
