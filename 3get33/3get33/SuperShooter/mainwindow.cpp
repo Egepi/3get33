@@ -467,7 +467,6 @@ void MainWindow::updateDisplay()
         ui->Display->setBackgroundBrush(QBrush(QImage(":/images/MGS_GameOver.jpg")));
         gameScene->items();
         QSound::play(QString("GameOver.wav"));
-        bossLife->setValue(preLevel->theBoss->getArmor());
     }
 
     if((atBoss == true)&&(!(preLevel->theBoss->isEnabled())))
