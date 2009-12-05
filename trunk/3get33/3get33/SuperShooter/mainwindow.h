@@ -51,7 +51,7 @@ public slots:
     void checkQuit();
     void startBoss();
     void enemyShoot();
-    void updateArmor();
+    void updateDisplay();
     void makePowerUp();
     void playerShoot();
     void gamelvl();
