@@ -1,3 +1,12 @@
+/** File: MainWindow.cpp
+  * Header: mainwindow.h
+  * Author: 3get33 - Jennifer Kinahan, Karan Chakrapani, Todd Silvia
+  * Last Modified: December 4th 2009
+  * Purpose: This class is the main class for the entire SuperShooter game.
+  *          Handles everything with the user interface, and user interaction,
+  *          including all of the buttons, and key bindings. Also controls all
+  *          of the gameplay.
+  */
 #include "mainwindow.h"
 
 
@@ -5,25 +14,23 @@
 /*! Constructor for a new MainWindow in which the whole program/game is run.
  */
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
-{
-    ui->setupUi(this);  //Sets up the user interface based of mainwindow.ui
-    atBoss = false;
-	bossLife = new QProgressBar(this);
-    bossLife->setVisible(false);
-    ui->bossLifeLabel->setVisible(false);
-    score = 0;
+{   //Sets up the user interface based of mainwindow.ui
+    ui->setupUi(this);
+    atBoss = false; //The level is not at the boss
+    bossLife = new QProgressBar(this); //Creates the boss progress bar
+    bossLife->setVisible(false);       //Sets the prgress bar to invisible
+    ui->bossLifeLabel->setVisible(false);   //Sets label to invisible
+    score = 0;  //Sets beginning score to zero
 
     gameScene = new QGraphicsScene; //Scene to display the whole game
-    width = ui->Display->geometry().width();
-    height = ui->Display->geometry().height();
-    gameScene->setSceneRect(0, 0, width,height);
+    width = ui->Display->geometry().width();    //Loads gameScene width
+    height = ui->Display->geometry().height();  //Loads gameScene height
+    gameScene->setSceneRect(0, 0, width,height);//Sets height and width of gameScene
     //Sets the default background for the gameScene
     ui->Display->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
     ui->Display->setScene(gameScene);
-    // ui->Display->setFocus();
-    //ui->Display->centerOn(myShip);
-    yDelta = -480;
-    alternate = false;
+    yDelta = -480;  //Calculates where the top of the background is compared to (0,0)
+    alternate = false;  //Change which enemy ships in the wave are firing.
 
 
 
@@ -39,11 +46,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->loadButton->setIconSize(QSize(140,50));
     ui->loadButton->setIcon(QIcon(":/images/loadButton.jpg"));
     ui->loadButton->setFlat(true);
+    ui->loadButton->setEnabled(false);
 
     QObject::connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(checkQuit()));
     QObject::connect(ui->playButton, SIGNAL(clicked()),this, SLOT(gamelvl()));
-    QSound::play(QString("MenuBGM.wav"));
 
+    QSound::play(QString("MenuBGM.wav"));   //Plays menu music.
 }
 
 /**********************************************************************/
@@ -77,11 +85,14 @@ void MainWindow::closeGame()
   * The user loads a level file and the game will then run with the level
   * specifications.
   *
+  * NOTE: THIS METHOD IS NOT FULLY FUNCTIONAL YET, AND WAS ABANDONED FOR FINAL RELEASE
+  *
   *  Author: Karan Chakrapani,
   *          Todd Silvia
   */
 void MainWindow::loadGame()
 {
+    //Opens a new OS generic load file window, with *.lvl filter
     QString fileName = QFileDialog::getOpenFileName(this,
                                         tr("Open Level"), ".",
                                         tr("Level Files (*.lvl)"));
@@ -91,56 +102,58 @@ void MainWindow::loadGame()
         //The player controled PlayerShip is created.
         myShip = new PlayerShip();
         gameScene->addItem(myShip); //Adds PlayerShip to scene
-        bool ok = true;
-        QFile levelFile(fileName);
+        bool ok = true; //Used to convert from QString to integer
+        QFile levelFile(fileName);  //Initializes the file to be read
         QString line;
 
+        //Open the file if it is a Readable and Writeable file
         if(levelFile.open(QIODevice::ReadWrite))
         {
-            QTextStream t(&levelFile);
-            line = t.readLine();
-            QStringList tokLine;
+            QTextStream t(&levelFile);  //Create a QTextStream to read in from the file
+            line = t.readLine();        //Read in the first line from the file
+            QStringList tokLine;        //Creates a string tokenizer
+            //Loop while the file has another line to read from
             while(!t.atEnd())
             {
-                tokLine = line.split("#");
+                tokLine = line.split("#");  //Split the line at each '#' char
                 if(tokLine.first().compare(QString("PlayerArmor")) == 0)
-                {
+                {//Set the defualt armor value of myShip if specified in the file
                     myShip->setArmor(tokLine.at(1).toInt(&ok));
                     myShip->setArmorMax(tokLine.at(1).toInt(&ok));
                     ui->armorDisplay->display(myShip->getArmor());
                 }
                 else if(tokLine.first().compare(QString("PlayerShield")) == 0)
-                {
+                {//Set default shield value of myShip if specified in the file
                     myShip->setShield(tokLine.at(1).toInt(&ok));
                     myShip->setShieldMax(tokLine.at(1).toInt(&ok));
                     ui->shieldDisplay->display(myShip->getShield());
                 }
                 else if(tokLine.first().compare(QString("PlayerLives")) == 0)
-                {
+                {//Set default number of lives value of myShip if specified in the file
                     myShip->setLives(tokLine.at(1).toInt(&ok));
                     ui->livesDisplay->display(myShip->getLives());
                 }
                 else if(tokLine.first().compare(QString("PlayerBigBombs")) == 0)
-                {
+                {//Set default number of big missiles of myShip if specified in the file.
                     myShip->setsMissile(tokLine.at(1).toInt(&ok));
                     ui->smallMissilesDisplay->display(myShip->getsMissile());
                 }
                 else if(tokLine.first().compare(QString("PlayerSmallBombs")) == 0)
-                {
+                {//Set default number of small missiles of myShip if specified in the file.
                     myShip->setbMissile(tokLine.at(1).toInt(&ok));
                     ui->bigMissilesDisplay->display(myShip->getbMissile());
                 }
                 else
-                {
+                {//This line of the file was none of the above so load next line in file.
                     line = t.readLine();
                     continue;
                 }
             }
         }
-        levelFile.close();
-        QImage theType(":/images/BadGuy4.png");
-        preLevel = new Level(gameScene, theType, 20);
-        this->playGame();
+        levelFile.close();  //Close the level file
+        QImage theType(":/images/BadGuy4.png"); //Set default picture of enemy ships
+        preLevel = new Level(gameScene, theType, 20);   //Creates a new level object for the game
+        this->playGame();   //Begin SuperShooter level implementation.
     }
 }
 
@@ -152,10 +165,12 @@ void MainWindow::loadGame()
   * shield, and lives displays. \n
   * The pre-loaded game then is iniated.
   *
-  *  Author: Karan Chakrapani
+  *  Author: Karan Chakrapani,
+  *          Todd Silvia
   */
 void MainWindow::playGame()
 {
+    //Hides both load and play button
     ui->loadButton->hide();
     ui->playButton->hide();
     //Maps the keys to play the game
@@ -168,8 +183,8 @@ void MainWindow::playGame()
     actions.insert( Qt::Key_B, ShootBBomb );
     actions.insert( Qt::Key_Escape, Pause );
 
-    bg = new BGround();
-    gameScene->addItem(bg);
+    bg = new BGround();     //Create scrolling background object
+    gameScene->addItem(bg); //Add scrolling background to the scene
 
     //Updates the armor, shield, and lives displays.
     ui->armorDisplay->display(myShip->getArmor());
@@ -177,41 +192,42 @@ void MainWindow::playGame()
     ui->livesDisplay->display(myShip->getLives());
     ui->quitButton->clearFocus();
     gameStarted = true;
+
     if(gameStarted == true)
     {
+        //Move the ships on the screen
         preLevel->shipAdvance();
+        //Add a enemy wave to the screen
         theWavePtr = preLevel->addWave();
-        //Actual value 180000
+        //Actual value 180000, sets time to load the boss at.
         QTimer::singleShot(180000, this, SLOT(startBoss()));
-        waveTimer = new QTimer();
+        waveTimer = new QTimer();   //Timer to determine how often a new wave is created
         QObject::connect(waveTimer, SIGNAL(timeout()), this, SLOT(addingWave()));
         waveTimer->start(30000);
-        enemyShootTimer = new QTimer();
+        enemyShootTimer = new QTimer(); //Timer to determine how fast the enimes shoot
         QObject::connect(enemyShootTimer, SIGNAL(timeout()), this, SLOT(enemyShoot()));
         enemyShootTimer->start(3000);
 
-        gameUpdate = new QTimer;
+        gameUpdate = new QTimer;    //Timer to determine the pace of the game updating
         QObject::connect(gameUpdate,SIGNAL(timeout()), this, SLOT(updateDisplay()));
         QObject::connect(gameUpdate,SIGNAL(timeout()), this, SLOT(playerShoot()));
         gameUpdate->start(1000/10);
-        this->spawnPowerUp();
-
+        this->spawnPowerUp();   //Begin the spawing of powerups
     }
-    //this->gamelvl();
-
-
-
 }
 
 /**********************************************************************/
-/*!
- * STUFF
+/*! Slot to add a wave of enemy ships to the scene
+ *
+ * Author: Karan Chakrapani
  */
-void MainWindow::addingWave(){
+void MainWindow::addingWave()
+{
     theWavePtr = preLevel->addWave();
 }
+
 /**********************************************************************/
-/*!
+/*! Is called when the 'PlayGame' button is pressed to load default level.
  *
  *  Author: Todd Silvia
  */
@@ -221,9 +237,9 @@ void MainWindow::gamelvl()
     myShip = new PlayerShip();
     gameScene->addItem(myShip); //Adds PlayerShip to scene
 
-    QImage theType(":/images/BadGuy4.png");
-    preLevel = new Level(gameScene, theType, 20);
-    this->playGame();
+    QImage theType(":/images/BadGuy4.png"); //Loads default image for enemy ships
+    preLevel = new Level(gameScene, theType, 20);   //Creates a new level object for the SuperShooter level
+    this->playGame();   //Go to the rest of the game play implementation
 }
 /**********************************************************************/
 /*! When ever a key is pressed this method is called to decide what action to take.
@@ -265,7 +281,6 @@ void MainWindow::keyPressEvent(QKeyEvent *key) {
         break;
     }
 }
-
 
 /**********************************************************************/
 /*! When ever a key has been released this method decides to stop the current action.
@@ -309,12 +324,15 @@ void MainWindow::keyReleaseEvent(QKeyEvent *key) {
 }
 
 /**********************************************************************/
-/*!
+/*! Slot that is called when the user clicks on the 'Quit' button.
+ *
+ * Asks user via a message box if they want to exit the game or continue.
  *
  *  Author: Todd Silvia
  */
 void MainWindow::checkQuit()
 {
+    //Displays a message box asking user if they would like to quit the game.
     switch (QMessageBox::warning(this, "Quit Program ?",
                          "Are you sure you want to quit the game?",
                          QMessageBox::No | QMessageBox::Default,
