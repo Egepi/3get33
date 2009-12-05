@@ -106,6 +106,7 @@ void PlayerShip::advance(int phase)
         reset--;
         return;
     }
+    //reset the player image back to normal
     else
     {
         this->setImage(QImage(":/images/GoodGuy.png"));

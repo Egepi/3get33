@@ -198,8 +198,8 @@ void MainWindow::playGame()
         preLevel->shipAdvance();
         //Add a enemy wave to the screen
         theWavePtr = preLevel->addWave();
-        //Actual value 60000, sets time to load the boss at.
-        QTimer::singleShot(60000, this, SLOT(startBoss()));
+        //Actual value 180000, sets time to load the boss at.
+        QTimer::singleShot(180000, this, SLOT(startBoss()));
         waveTimer = new QTimer();   //Timer to determine how often a new wave is created
         QObject::connect(waveTimer, SIGNAL(timeout()), this, SLOT(addingWave()));
         waveTimer->start(30000);

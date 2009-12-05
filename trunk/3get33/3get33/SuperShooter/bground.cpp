@@ -1,3 +1,9 @@
+/** File: BGround.cpp
+  * Header: BGround.h
+  * Author: 3get33 - Jennifer Kinahan, Karan Chakrapani, Todd Silvia
+  * Last Modified: December 4th 2009
+  * Purpose: This class is used to create and manage the scrolling background.
+  */
 #include "bground.h"
 
 /**********************************************************************/
