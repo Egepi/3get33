@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Fri Dec 4 20:42:49 2009
+** Created: Fri Dec 4 21:31:56 2009
 **      by: Qt User Interface Compiler version 4.5.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -44,6 +44,7 @@ public:
     QLCDNumber *bigMissilesDisplay;
     QLCDNumber *smallMissilesDisplay;
     QLabel *label;
+    QLabel *bossLifeLabel;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -261,6 +262,18 @@ public:
         palette12.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
         label->setPalette(palette12);
         label->setFont(font);
+        bossLifeLabel = new QLabel(centralWidget);
+        bossLifeLabel->setObjectName(QString::fromUtf8("bossLifeLabel"));
+        bossLifeLabel->setGeometry(QRect(10, 215, 120, 10));
+        QPalette palette13;
+        palette13.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette13.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette13.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
+        bossLifeLabel->setPalette(palette13);
+        QFont font1;
+        font1.setPointSize(10);
+        bossLifeLabel->setFont(font1);
+        bossLifeLabel->setAlignment(Qt::AlignCenter);
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
@@ -281,6 +294,7 @@ public:
         shieldLabel->setText(QApplication::translate("MainWindow", "Shield", 0, QApplication::UnicodeUTF8));
         bombsLabel->setText(QApplication::translate("MainWindow", "Missiles", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("MainWindow", "Small:   Large:", 0, QApplication::UnicodeUTF8));
+        bossLifeLabel->setText(QApplication::translate("MainWindow", "Boss Life", 0, QApplication::UnicodeUTF8));
         Q_UNUSED(MainWindow);
     } // retranslateUi
 
