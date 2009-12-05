@@ -25,7 +25,6 @@ class BasicShip : public QGraphicsItem
     int shipSizeX;
     int shipSizeY;
     void collCheck();
-    void getridof();
 
     signals:
          void armorChanged();
