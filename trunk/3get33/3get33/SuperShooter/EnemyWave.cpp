@@ -31,11 +31,15 @@ EnemyWave::~EnemyWave()
 }
 
 /**********************************************************************/
+/*! Creates and adds QList of BasicShip objects to add to the scene.
+  *
+  * Author: Todd Silvia
+  */
 QList<BasicShip*>* EnemyWave::addWave()
 {
     int tempX = 0;
     int tempY = 50;
-    int lineCounter = 0;
+    int lineCounter = 0;                //Loads which row the ship will be on
     for(int i=0; i < waveSize; i++)
     {
         //Allocates memory for new enemy
@@ -45,24 +49,18 @@ QList<BasicShip*>* EnemyWave::addWave()
        waveList.append(enemy);
        //Add enemy to the scene
        myScene->addItem(enemy);
+       //Increase the x location of the next BasicShip object
        tempX += 110;
+       //Increase lineCounter
        lineCounter++;
        if(lineCounter >= ROW_SIZE)
-       {
+       {//This starts a new row for this enemy ship
            lineCounter = 0;
            tempX = 0;
            tempY += 150;
        }
     }
-
-    if(waveSize >= ROW_SIZE)
-    {
-        //waveRight = waveList.at(ROW_SIZE)->x() + SHIP_SIZE;
-    }
-    else
-    {
-        //waveRight = waveList.last()->x() + SHIP_SIZE;
-    }
+    //Creates a pointer to the QList of enemy ships.
     QList<BasicShip*> *ptr = &(waveList);
     return ptr;
 }

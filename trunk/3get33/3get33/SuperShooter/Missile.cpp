@@ -5,7 +5,6 @@
   * Purpose: The Missile class' purpose is to draw a missile on the screen
   *         either big or small, and shoot it across the screen.  It also
   *         updates score and holds data for the owner.
-  *
   */
 
 #include "Missile.h"
@@ -20,7 +19,8 @@ Missile::Missile()
 }
 
 /**********************************************************************/
-/*! Missile Constructor
+/*! Parameterized constructor for creating a missile
+ *
  *
  * Author: Jennifer Kinahan
  */

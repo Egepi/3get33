@@ -16,17 +16,18 @@ BGround::BGround()
     this->setZValue(5);
 }
 
+/**********************************************************************/
 BGround::~BGround()
 {
 }
 
-
+/**********************************************************************/
 QRectF BGround::boundingRect() const
 {
     return QRectF(0,0,600,960);
 }
 
-
+/**********************************************************************/
 QPainterPath BGround::shape() const
 {
     QPainterPath path;
@@ -34,6 +35,7 @@ QPainterPath BGround::shape() const
     return path;
 }
 
+/**********************************************************************/
 void BGround::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
 
