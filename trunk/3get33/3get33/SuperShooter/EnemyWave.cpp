@@ -1,5 +1,19 @@
+/** File: EnemyWave.cpp
+  * Header: EnemyWave.h
+  * Author: 3get33 - Jennifer Kinahan, Karan Chakrapani, Todd Silvia
+  * Last Modified: December 4th 2009
+  * Purpose: This class is used to create a entire wave of enemy ships.
+  *          So that all of the enemy ships in a wave are contained in
+  *          a single QList.
+  */
+
 #include "EnemyWave.h"
 
+/**********************************************************************/
+/*! Constructor for a EnemyWave object, with values passed in.
+  *
+  * Author: Todd Silvia
+  */
 EnemyWave::EnemyWave(QGraphicsScene *theScene, QImage theEnemyType,
                      int theWaveSize, int theArmor)
 {
@@ -7,14 +21,16 @@ EnemyWave::EnemyWave(QGraphicsScene *theScene, QImage theEnemyType,
     waveSize = theWaveSize;
     shipArmor = theArmor;
     enemyImage = theEnemyType;
-
-
 }
 
+/**********************************************************************/
+/*! Basic deconstructor for EnemyWave object.
+  */
 EnemyWave::~EnemyWave()
 {
 }
 
+/**********************************************************************/
 QList<BasicShip*>* EnemyWave::addWave()
 {
     int tempX = 0;
