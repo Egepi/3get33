@@ -264,10 +264,9 @@ void BasicShip::diagonalAdvance()
 {}
 
 /**********************************************************************/
-/*! Karan DO THIS
+/*! This function returns the type used for type casting and for collision detection
   *
-  *
-  *
+  * Author: Karan Chakrapani
   */
   int BasicShip::type() const
  {
@@ -276,65 +275,94 @@ void BasicShip::diagonalAdvance()
  }
 
 /**********************************************************************/
-  /*! KARAN DO THIS
+  /*! Resnposible detecting collisions with other ships, bullets, missiles
     *
+    * This method uses the type enum to figure out what class the QGraphicsItem that is colliding
+    * Different actions are performed when colliding with different objects
+    * If there was damage to be taken after the collision checks it is done by calling the damage method
     *
+    * Author: Karan Chakrapani
     */
  void BasicShip::collCheck()
  {
+    //Retrive the list of colliding items
     QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
     int decr = 0;
-
+    //If nto colliding dont do anything
     if (!listOfCollidingItems.isEmpty())
     {
         int length = listOfCollidingItems.length();
 
+        //For loop iteratign through the list of colliding items
         for (int i = 0; i < length; i++)
         {
             decr = 0;
+            //get item at i in the list
             QGraphicsItem *item = listOfCollidingItems.at(i);
             if(item->isEnabled() ==true)
             {
                 //if a player ship
                 if (item->type() == 65538)
                 {
+                    //take 10 damage
                     decr = 10;
                 }
                 //if a bullet
                 else if (item->type() == 65540)
                 {
+                    //cast to a bullet object
                     Bullet *abit = dynamic_cast<Bullet*> (item);
+                    //chekc if the owner of the bullet is the player
                     if(abit->getOwner())
                     {
+                        //update the score of the bullet for hitting
                         abit->updateScore(10);
+                        //take 10 damage
                         decr = 10;
+                        //"delete" bullet
                         item->setPos(500,500);
                     }
 
                 }
+                //If a big missile
                 else if (item->type() == 65541)
                 {
+                    //cast to a missile object
                     Missile *bbit = dynamic_cast<Missile*> (item);
+                    //chekc if missile is the player's
                     if(bbit->getOwner())
                     {
+                        //take 50 damage
                         decr = 50;
+                        //update the missile's score
                         bbit->updateScore(50);
+                        //"delete" missile
+                        item->setPos(500,500);
                     }
-                    item->setPos(500,500);
+
                 }
+                //If a small Missile
                 else if (item->type() == 65542)
                 {
+                    //cast to a missile object
                     Missile *cbit = dynamic_cast<Missile*> (item);
+                    //check if the owner is the player
                     if(cbit->getOwner())
                     {
+                        //take 25 damage
                         decr = 25;
+                        //update missile's score
                         cbit->updateScore(25);
+                        //"delete" the missile
+                        item->setPos(500,500);
                     }
-                    item->setPos(500,500);
+
                 }
+                //Other random objects we dont need to worry about
                 else
                 {
                 }
+                //if damage needs to be taken call damage with the value
                 if(decr > 0)
                 {
                     this->damage(decr);
@@ -346,33 +374,27 @@ void BasicShip::diagonalAdvance()
  }
 
 /**********************************************************************/
- /*! KARAN DOES
+ /*! Deals damage to this ship based on what collision occured
    *
-   *
+   * Author: Karan Chakrapani
    */
  void BasicShip::damage(int dTaken)
  {
-
+     //deal damage to armor if we have armor
      if (this->getArmor() > 0)
      {
+         //reduce armor by damage
          this->setArmor(this->getArmor()-dTaken);
+         //If the ship goes below 0 armor stop making it interactable
          if (this->getArmor() <= 0)
          {
+             //hide from view
              this->hide();
+             //make it non movable and interactable
              this->setEnabled(false);
-             //this->setImage(QImage(":/images/explosion.png"));
          }
      }
  }
 
-/**********************************************************************/
- /*! KARAN DOES
-   *
-   *
-   */
-void BasicShip::getridof()
-{
-    this->~BasicShip();
 
-}
 

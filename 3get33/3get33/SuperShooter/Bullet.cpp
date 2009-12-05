@@ -128,7 +128,11 @@ void Bullet::advance(int phase)
     setPos(xLoc, yLoc);
 }
 
-/**********************************************************************/
+/*! This function returns the type used for type casting and for collision detection
+  *
+  * Author: Karan Chakrapani
+  */
+
  int Bullet::type() const
  {
     // Enable the use of qgraphicsitem_cast with this item.
@@ -136,18 +140,30 @@ void Bullet::advance(int phase)
  }
 
  /**********************************************************************/
+ /*! This function returns the owner of the bullet
+  *
+  * Author: Karan Chakrapani
+  */
  bool Bullet::getOwner()
  {
      return this->owner;
  }
 
  /**********************************************************************/
+ /*! This function updates this bullets score from collision detection
+  *
+  * Author: Karan Chakrapani
+  */
  void Bullet::updateScore(int value)
  {
      this->score = this->score + value;
 
  }
 /**********************************************************************/
+ /*! This function returns the score caused by this bullet
+  *
+  * Author: Karan Chakrapani
+  */
  int Bullet::getScore()
  {
      return this->score;
