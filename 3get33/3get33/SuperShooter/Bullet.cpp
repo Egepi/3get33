@@ -3,7 +3,8 @@
   * Author: 3get33 - Jennifer Kinahan, Karan Chakrapani, Todd Silvia
   * Last Modified: December 4th 2009
   * Purpose: The Bullet class' purpose is to draw a bullet on the screen  and
-  * shoot it across the screen.  It also updates score and holds data for the owner.
+  *          shoot it across the screen.  It also updates score and holds data
+  *          for the owner.
   *
   */
 
@@ -14,7 +15,6 @@
 /*! Blank Constructor for Bullet
  *
  * Author: Jennifer Kinahan
- *
  */
 Bullet::Bullet()
 {
@@ -24,7 +24,6 @@ Bullet::Bullet()
 /*! Constructor for Bullet
  *
  * Author: Jennifer Kinahan
- *
  */
 Bullet::Bullet(qreal locX, qreal locY, QImage bullImage, bool theOwner)
 {
@@ -38,7 +37,6 @@ Bullet::Bullet(qreal locX, qreal locY, QImage bullImage, bool theOwner)
 /*! Destructor for Bullet
  *
  * Author: Jennifer Kinahan
- *
  */
 Bullet::~Bullet()
 {
@@ -49,7 +47,6 @@ Bullet::~Bullet()
 /*! Draws Bullet on the Screen
  *
  * Author: Jennifer Kinahan
- *
  */
 void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
@@ -61,7 +58,6 @@ void Bullet::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget 
 /*! Creates bounding rectangle of the bullet
  *
  * Author: Jennifer Kinahan
- *
  */
 QRectF Bullet::boundingRect() const
 {
@@ -74,7 +70,6 @@ QRectF Bullet::boundingRect() const
  * implemented for all QGraphicsItems
  *
  * Author: Jennifer Kinahan
- *
  */
 QPainterPath Bullet::shape() const
 {
@@ -90,7 +85,6 @@ QPainterPath Bullet::shape() const
  * and type.
  *
  * Author: Jennifer Kinahan
- *
  */
 void Bullet::advance(int phase)
 {
@@ -134,23 +128,26 @@ void Bullet::advance(int phase)
     setPos(xLoc, yLoc);
 }
 
+/**********************************************************************/
  int Bullet::type() const
  {
     // Enable the use of qgraphicsitem_cast with this item.
     return Type;
  }
 
+ /**********************************************************************/
  bool Bullet::getOwner()
  {
      return this->owner;
  }
 
+ /**********************************************************************/
  void Bullet::updateScore(int value)
  {
      this->score = this->score + value;
 
  }
-
+/**********************************************************************/
  int Bullet::getScore()
  {
      return this->score;
