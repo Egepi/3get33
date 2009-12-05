@@ -28,7 +28,6 @@ Level::Level(QGraphicsScene *theScene, QImage enemyType, int theWaveSize)
  *
  * Author: Todd Silvia
  */
-
 Level::~Level()
 {
 }

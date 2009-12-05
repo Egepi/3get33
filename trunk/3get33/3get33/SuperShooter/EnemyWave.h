@@ -20,13 +20,13 @@ class EnemyWave
         int shipArmor;
         /*! Number of enemy ships in 1 wave*/
         int waveSize;
-        /*! */
+        /*! Holds the BasicShip object to be added to enemy wave*/
         BasicShip *enemy;
-        /*! */
+        /*! List to hold all of the enemy ships in a given wave*/
         QList<BasicShip*> waveList;
-        /*! */
+        /*! Pointer to gameScene*/
         QGraphicsScene *myScene;
-        /*! */
+        /*! Holds image to be used to display the enemy ships*/
         QImage enemyImage;
 
 };

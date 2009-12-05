@@ -21,7 +21,6 @@ Missile::Missile()
 /**********************************************************************/
 /*! Parameterized constructor for creating a missile
  *
- *
  * Author: Jennifer Kinahan
  */
 Missile::Missile(qreal locX, qreal locY, QImage missImage, bool theOwner, bool big)

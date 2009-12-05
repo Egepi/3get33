@@ -33,7 +33,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     alternate = false;  //Change which enemy ships in the wave are firing.
 
 
-
     //Creates and displays the "Play", "Load Game", and "Quit" buttons
     ui->playButton->setIconSize(QSize(140,50));
     ui->playButton->setIcon(QIcon(":/images/playButton.jpg"));
@@ -526,7 +525,6 @@ void MainWindow::makePowerUp()
 /*! Runs on a timer, to create power ups on the screen. Calls makePowerUp()
   *
   * Author: Jennifer Kinahan
-  *
   */
 void MainWindow::spawnPowerUp()
 {
