@@ -1,394 +1,873 @@
 <html xmlns:ganttproject="http://ganttproject.sf.net/">
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="content-type" content="text/html; charset=ISO-8859-2">
-<link href="css/styles.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-	    th {
-			font-family: Tahoma,Arial;
-			font-size: 12pt;
-			font-weight: Bold;
-			color: #002000;
-			background-color: #FFFFFF;
+<title>GanttProject - CS340</title>
+<style>
+	    A:link {
+		FONT-WEIGHT: bold;  TEXT-DECORATION: none;
+		FONT-SIZE: 14px ; COLOR: black;
 	    }
-	    td {
-			font-family: Arial;
-			font-size: 10pt;
-			color: #00194c;
-			text-align: center;
+	    A:visited {
+		FONT-WEIGHT: bold;  TEXT-DECORATION: none;
+		FONT-SIZE: 14px ; COLOR: black; BACKGROUND: none
 	    }
-		a {
-		    text-decoration: bold;
-		    font-family: Arial;
-		    color: rgb(0, 0, 0);
-		    border: none;
+	    A:hover {
+		FONT-WEIGHT: bold;  TEXT-DECORATION: none;
+		FONT-SIZE: 14px ; COLOR: white ; BACKGROUND: #6d9ec6;
 	    }
-	    a:hover {
-		    text-decoration: bold;
-		    font-family: Arial;
-		    color: #dc2dff;
-		    border: none;
+	    .notes {
+	      padding-left: 10px;
 	    }
-	</style>
+	    .notes pre {
+	      font-family: Arial, Helvetica;
+	      font-size: 10px;
+	      margin-top: 0px;
+	      padding-top: 0px;
+	      margin-bottom: 5px;
+	    }
+	    .attachment {
+	      padding-left: 10px;
+	    }
+	    .attachment a:link {
+	      font-weight: normal;
+	      font-size: 12px;
+	      color: #6d9ec6;
+	      background: white;
+	    }
+	    .attachment a:hover {
+	      font-weight: normal;
+	      text-decoration: underline;
+	      font-size: 12px;
+	      color: #6d9ec6;
+	      background: white;
+	    }
+	    .attachment a:visited {
+	      font-weight: normal;
+	      font-size: 12px;
+	      background: white;
+	      color: gray;
+	    }
+	    TD {
+		FONT-SIZE: 12px; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif
+	    }
+	    UL {
+		FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif
+	    }
+	    LI {
+		FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif
+	    }
+	    H1 {
+		FONT-WEIGHT: bold; FONT-SIZE: 16pt; COLOR: #6d9ec6;
+	    }
+	    H2 {
+		FONT-WEIGHT: bold; FONT-SIZE: 16pt; COLOR: #000000;
+	    }
+	    H3 {
+		FONT-WEIGHT: bold; FONT-SIZE: 13pt; COLOR: #6d9ec6;
+	    }
+	    H4 {
+		FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #000000;
+	    }
+	    H5 {
+		FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #6d9ec6;
+	    }
+	    H6 {
+		FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000
+	    }
+
+	    </style>
 </head>
-<body bgcolor="#e0ffb0" background="images/backg.png">
-<div align="center">
-<table width="802" border="0" bgcolor="#002000" cellspacing="0" cellpadding="0">
+<body bgcolor="white">
+<center>
+<style>
+div.project_name {
+  font-size: 150%;
+  color: black;
+  font-weight: bold;
+  border-top: solid #6d9ec6 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+}
+div.page_links {
+  background: #6d9ec6;
+  text-align: center;
+}
+</style>
+<center>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td colspan="3" height="1"></td>
+<td bgcolor="#dddddd">
+<div class="project_name">Untitled Gantt Project</div>
+</td>
 </tr>
 <tr>
-<td width="1"></td><td>
-<table width="800" border="0" bgcolor="#e3f49c" cellspacing="0" cellpadding="0">
+<td>
+<div class="page_links">
+<a href="CS340.html">Home</a>  |
+          <a href="CS340-chart.html">Gantt</a> |
+          <a href="CS340-tasks.html">Tasks</a> |
+          <a href="CS340-resources.html">Resources</a>
+</div>
+</td>
+</tr>
+</table>
+</center>
+<br>
+<style>
+td.header {
+  background: #dddddd;
+  margin: 0;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 2px;
+  padding-bottom:1px;
+  border-bottom: solid black 2px;
+}
+td.cell {
+  margin: 0;
+  margin-top: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 2px;
+  padding-bottom:1px;
+}
+div.cell {
+}
+h5.header {
+  margin-left: 2px;
+  margin-top: 2px;
+}
+</style>
+<table border="0" cellpadding="0" cellspacing="0">
 <tr>
-<th>Name</th><td width="1" bgcolor="#002000"></td><th>Start</th><td width="1" bgcolor="#002000"></td><th>End</th><td width="1" bgcolor="#002000"></td><th>Milestone</th><td width="1" bgcolor="#002000"></td><th>%</th><td width="1" bgcolor="#002000"></td><th>Resources</th><td width="1" bgcolor="#002000"></td><th>Notes</th>
+<td valign="top" class="header">
+<h5 class="header">Name</h5>
+</td><td valign="top" class="header">
+<h5 class="header">Begin date</h5>
+</td><td valign="top" class="header">
+<h5 class="header">End date</h5>
+</td><td valign="top" class="header">
+<h5 class="header">Resources</h5>
+</td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Project Length</b></td><td width="1" bgcolor="#002000"></td><td valign="top">9/1/09</td><td width="1" bgcolor="#002000"></td><td valign="top">11/25/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">48</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0em">
+<div style="margin: 0; padding: 0;">Project Length</div>
+<div class="notes">
 <pre width="40">How long we have for project</pre>
 </div>
-</td>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/1/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">11/25/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Mid point Date</b></td><td width="1" bgcolor="#002000"></td><td valign="top">9/1/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/15/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">100</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Mid point Date</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/1/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/15/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Decisions/Discussion/Planning</b></td><td width="1" bgcolor="#002000"></td><td valign="top">9/1/09</td><td width="1" bgcolor="#002000"></td><td valign="top">9/23/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">100</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Decisions/Discussion/Planning</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/1/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/23/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Website</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/11/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/14/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">100</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Website</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/11/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/14/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Documentation</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/11/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/14/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">100</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Documentation</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/11/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/14/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Gaant Chaart// Task Assignment</b></td><td width="1" bgcolor="#002000"></td><td valign="top">9/23/09</td><td width="1" bgcolor="#002000"></td><td valign="top">9/26/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">100</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Gaant Chaart// Task Assignment</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/23/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/26/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>State Machines</b></td><td width="1" bgcolor="#002000"></td><td valign="top">9/23/09</td><td width="1" bgcolor="#002000"></td><td valign="top">9/30/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">100</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">State Machines</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/23/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/30/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>StoryBoard</b></td><td width="1" bgcolor="#002000"></td><td valign="top">9/23/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/1/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">100</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">StoryBoard</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/23/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/1/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Basic UI</b></td><td width="1" bgcolor="#002000"></td><td valign="top">9/23/09</td><td width="1" bgcolor="#002000"></td><td valign="top">9/30/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">100</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Basic UI</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/23/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/30/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Images</b></td><td width="1" bgcolor="#002000"></td><td valign="top">9/29/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/1/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">100</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Images</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/29/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/1/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Ship</b></td><td width="1" bgcolor="#002000"></td><td valign="top">9/28/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/9/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">75</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Backgrounds</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/21/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/26/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Ship Basic</b></td><td width="1" bgcolor="#002000"></td><td valign="top">9/28/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/2/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">100</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Sprites</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/2/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/6/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Ship Movement</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/2/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/6/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">100</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Ship</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/28/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/16/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Ship Reactions</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/2/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/9/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Ship Basic</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">9/28/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/2/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Player Ship</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/2/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/9/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">80</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Player Ship Movement</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/2/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/6/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Enemy Ship</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/2/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/9/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">100</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Ship Reactions</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/2/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Boss Ship</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/2/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/9/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">100</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Player Ship</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/2/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Bullet Class</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/16/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/23/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Enemy Ship</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/2/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Bomb Class</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/16/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/23/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Enemy Shooting</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/16/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Levels</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/9/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/31/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Enemy Movement</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/16/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Level Filies Formating</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/9/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/23/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Boss Ship</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/2/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Level Filies Reading</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/9/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/16/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Boss Ship Movement</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/2/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Generating Content from Level Filies</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/16/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/23/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Boss Ship Progress Bar</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/2/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Level(Display) Class</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/23/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/31/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Wave Class</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/2/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Displaying Score etc.</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/19/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/24/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Bullet Class</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/16/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/23/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Implement diff weapons</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/23/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/31/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Missile Class</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/16/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/23/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Main game Implementation</b></td><td width="1" bgcolor="#002000"></td><td valign="top">11/2/09</td><td width="1" bgcolor="#002000"></td><td valign="top">11/25/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Background Scrolling</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">11/20/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">11/24/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Testing</b></td><td width="1" bgcolor="#002000"></td><td valign="top">11/2/09</td><td width="1" bgcolor="#002000"></td><td valign="top">11/25/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Power Ups</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/16/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Level Editor</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/9/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/24/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Power Up Spawning</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/16/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Level Editor Gui</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/9/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/24/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Power Up interactions</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/16/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Level Editor Options</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/9/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/24/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Levels</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/31/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#9bc9ef">
-<td valign="top"><b>Level Editor saving</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/9/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/24/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Level Filies Formating</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/23/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 <tr>
-<td colspan="13" height="1" bgcolor="#002000"></td>
-</tr>
-<tr bgcolor="#dbfff8">
-<td valign="top"><b>Sound</b></td><td width="1" bgcolor="#002000"></td><td valign="top">10/9/09</td><td width="1" bgcolor="#002000"></td><td valign="top">10/24/09</td><td width="1" bgcolor="#002000"></td><td valign="top" align="center">&nbsp;</td><td width="1" bgcolor="#002000"></td><td valign="top">0</td><td width="1" bgcolor="#002000"></td><td valign="top"></td><td width="1" bgcolor="#002000"></td><td valign="top">
-<div align="left">
-<pre width="40"></pre>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Level Filies Reading</div>
 </div>
-</td>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/16/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Generating Content from Level Filies</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/16/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/23/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Level(Display) Class</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/23/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/31/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">net.sourceforge.ganttproject.delay.Delay@90d8ea</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/19/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/24/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Implement diff weapons</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/23/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/31/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Main game Implementation</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">11/2/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">11/25/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Ending game and Displaying end game</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/27/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/30/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Testing</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">11/2/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">11/25/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Level Editor</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/24/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Level Editor Gui</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/24/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Level Editor Options</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/24/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:1em">
+<div style="margin: 0; padding: 0;">Level Editor saving</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/24/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Sound Recording</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/24/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Sound Editing</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/24/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
+</tr>
+<tr>
+<td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">Sound Implementation</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/9/09</div>
+</div>
+</td><td valign="top" class="cell">
+<div style="margin:0; padding:0; padding-left:0.5em">
+<div style="margin: 0; padding: 0;">10/24/09</div>
+</div>
+</td><td valign="top" class="cell"></td>
 </tr>
 </table>
-</td><td width="1"></td>
-</tr>
+</center>
+<br>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
 <tr>
-<td colspan="3" height="1"></td>
+<td bgcolor="#6d9ec6" width="50%"><font color="#FFFFFF"><b>Ganttproject (2.0.10)</b></font></td><td bgcolor="#6d9ec6" width="50%" align="right"><b><a href="http://ganttproject.biz">ganttproject.biz</a></b>
+<br>
+<b>12/5/09 - 12:00:00 AM</b></td>
 </tr>
 </table>
-<br>
-<br>
-<br>
-<b>Ganttproject (2.0.10)</b>
-<br>
-<b><a href="http://ganttproject.sourceforge.net">ganttproject.sf.net</a></b>
-<br>
-<b>10/14/09 - 12:00:00 AM</b>
-<br>
-</div>
 </body>
 </html>
