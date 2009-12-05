@@ -16,13 +16,21 @@ class EnemyWave
         static const int SHIP_SPACING = 30;
 
    private:
+        /*! */
         int shipArmor;
+        /*! */
         int waveSize;
+        /*! */
         int waveRight;
+        /*! */
         bool moveRight;
+        /*! */
         BasicShip *enemy;
+        /*! */
         QList<BasicShip*> waveList;
+        /*! */
         QGraphicsScene *myScene;
+        /*! */
         QImage enemyImage;
 
 };
