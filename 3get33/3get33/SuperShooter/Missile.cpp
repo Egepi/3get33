@@ -3,8 +3,8 @@
   * Author: 3get33 - Jennifer Kinahan, Karan Chakrapani, Todd Silvia
   * Last Modified: December 4th 2009
   * Purpose: The Missile class' purpose is to draw a missile on the screen
-  * either big or small, and shoot it across the screen.  It also updates score
-  * and holds data for the owner.
+  *         either big or small, and shoot it across the screen.  It also
+  *         updates score and holds data for the owner.
   *
   */
 
@@ -14,7 +14,6 @@
 /*! Blank Constructor for Missile
  *
  * Author: Jennifer Kinahan
- *
  */
 Missile::Missile()
 {
@@ -24,7 +23,6 @@ Missile::Missile()
 /*! Missile Constructor
  *
  * Author: Jennifer Kinahan
- *
  */
 Missile::Missile(qreal locX, qreal locY, QImage missImage, bool theOwner, bool big)
 {
@@ -40,7 +38,6 @@ Missile::Missile(qreal locX, qreal locY, QImage missImage, bool theOwner, bool b
 /*! Missile Deconstructor
  *
  * Author: Jennifer Kinahan
- *
  */
 Missile::~Missile()
 {
@@ -56,7 +53,6 @@ Missile::~Missile()
  * and who the owner of the missile is.
  *
  * Author: Jennifer Kinahan
- *
  */
 void Missile::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
@@ -67,7 +63,6 @@ void Missile::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget
 /*! Creates bounding rectangle for big and small missiles used for collision detection
  *
  * Author: Jennifer Kinahan
- *
  */
 QRectF Missile::boundingRect() const
 {
@@ -87,7 +82,6 @@ QRectF Missile::boundingRect() const
  * implemented for all QGraphicsItems
  *
  *  Author: Jennifer Kinahan
- *
  */
 QPainterPath Missile::shape() const
 {
@@ -153,6 +147,11 @@ void Missile::advance(int phase)
     setPos(xLoc, yLoc);
 }
 
+/**********************************************************************/
+/*! Determines the type of QGraphicsItem this is for collision detection.
+ *
+ * Author: Karan Chakrapani
+ */
  int Missile::type() const
  {
     // Enable the use of qgraphicsitem_cast with this item.
@@ -166,17 +165,34 @@ void Missile::advance(int phase)
      }
  }
 
+ /**********************************************************************/
+ /*! Determines if the missile was shot from an enemy or player ship.
+  *
+  * Author: Todd Silvia,
+  *         Karan Chakrapani,
+  *         Jennifer Kinahan
+  */
  bool Missile::getOwner()
  {
      return this->owner;
  }
 
+ /**********************************************************************/
+ /*! Update overall score for the game based on this missile being shot.
+   *
+   * Author: Karan Chakrapani
+   */
  void Missile::updateScore(int value)
  {
      this->score = this->score + value;
 
  }
 
+ /**********************************************************************/
+ /*! Returns the current score based on this missle being shot.
+   *
+   * Author: Karan Chakrapani
+   */
  int Missile::getScore()
  {
      return this->score;
