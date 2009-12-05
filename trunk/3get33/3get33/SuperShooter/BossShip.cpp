@@ -1,3 +1,11 @@
+/** File: BossShip.cpp
+  * Header: BossShip.h
+  * Author: 3get33 - Jennifer Kinahan, Karan Chakrapani, Todd Silvia
+  * Last Modified: December 4th 2009
+  * Purpose: This class extends BasicShip, to make the boss ship for the
+  *          SuperShooter level. Responsible for constructing and implementing
+  *          the boss's movement.
+  */
 #include "BossShip.h"
 
 /**********************************************************************/
