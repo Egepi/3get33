@@ -445,6 +445,7 @@ void MainWindow::updateArmor()
         gameScene->removeItem(bg);
         ui->Display->setBackgroundBrush(QBrush(QImage(":/images/MGS_GameOver.jpg")));
         gameScene->items();
+        QSound::play(QString("GameOver.wav"));
     }
 
     if((atBoss == true)&&(!(preLevel->theBoss->isEnabled())))
@@ -453,9 +454,9 @@ void MainWindow::updateArmor()
         waveTimer->stop();
         enemyShootTimer->stop();
         preLevel->advanceTimer->stop();
+         powerUpTimer->stop();
         gameScene->removeItem(bg);
-        ui->Display->setBackgroundBrush(QBrush(QImage(":/images/youwin.gif")));
-       // gameScene->clear();
+        ui->Display->setBackgroundBrush(QBrush(QImage(":/images/youwon.gif")));
     }
 
 
@@ -482,7 +483,7 @@ void MainWindow::playerShoot()
     {
         Bullet *aBullet = new Bullet(myShip->x()+36,myShip->y()-9,QImage(":/images/WhiteBullet.png"), true);
         gameScene->addItem(aBullet);
-        QSound::play(QString("pew2.wav"));
+        QSound::play(QString("pew.wav"));
         this->bulletList.append(aBullet);
     }
 
@@ -493,7 +494,7 @@ void MainWindow::playerShoot()
             Missile *aSmallMissile = new Missile(myShip->x()+35, myShip->y()-21,QImage(":/images/sMissile.png"), true, false);
             gameScene->addItem(aSmallMissile);
             myShip->setsMissile(myShip->getsMissile() -1);
-             QSound::play(QString("missileShot.wav"));
+            QSound::play(QString("missileShot.wav"));
             this->missileList.append(aSmallMissile);
         }
 
@@ -506,7 +507,7 @@ void MainWindow::playerShoot()
             Missile *aBigMissile = new Missile(myShip->x()+30, myShip->y()-41,QImage(":/images/bMissile.png"), true, true);
             gameScene->addItem(aBigMissile);
             myShip->setbMissile(myShip->getbMissile() -1);
-             QSound::play(QString("missileshot.wav"));
+            QSound::play(QString("missileShot.wav"));
             this->missileList.append(aBigMissile);
         }
     }

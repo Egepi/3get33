@@ -67,6 +67,8 @@ class PlayerShip : public BasicShip
         int reset;
         void damage(int dTaken);
         void advance(int phase);
+        void respawn();
+        void setAllFlags(bool);
 
 
 
