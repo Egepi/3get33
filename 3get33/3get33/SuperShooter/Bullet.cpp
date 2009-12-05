@@ -5,7 +5,6 @@
   * Purpose: The Bullet class' purpose is to draw a bullet on the screen  and
   *          shoot it across the screen.  It also updates score and holds data
   *          for the owner.
-  *
   */
 
 #include "Bullet.h"
@@ -79,7 +78,8 @@ QPainterPath Bullet::shape() const
 }
 
 /**********************************************************************/
-/*!
+/*! Responsible for moving the bullet on the scene
+ *
  * Draws the bullet to the screen, sets the bounding rectangle of bullet.
  * Also moves bullet, updates and returns the score.  Returns the score
  * and type.
@@ -93,11 +93,11 @@ void Bullet::advance(int phase)
     qreal yLoc = this->y();
     qreal yMove = 0;
     if(owner == true)
-    {
+    {//The bullet was shot from the PlayerShip
         yMove = -10;
     }
     else
-    {
+    {//The bullet was shot from an enemy ship or BossShip
         yMove = 10;
     }
 
@@ -110,7 +110,7 @@ void Bullet::advance(int phase)
     }
 
     else
-    {
+    {//Delete the bullet from memory
         this->~Bullet();
     }
 
@@ -122,17 +122,17 @@ void Bullet::advance(int phase)
     }
 
     else
-    {
+    {//Delete the bullet from memory
         this->~Bullet();
     }
     setPos(xLoc, yLoc);
 }
 
+ /**********************************************************************/
 /*! This function returns the type used for type casting and for collision detection
   *
   * Author: Karan Chakrapani
   */
-
  int Bullet::type() const
  {
     // Enable the use of qgraphicsitem_cast with this item.
@@ -159,6 +159,7 @@ void Bullet::advance(int phase)
      this->score = this->score + value;
 
  }
+
 /**********************************************************************/
  /*! This function returns the score caused by this bullet
   *
