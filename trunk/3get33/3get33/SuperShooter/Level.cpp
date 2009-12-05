@@ -6,7 +6,6 @@
   *          a SuperShooter game. It is responsible for creating the
   *          enemy ships, the boss ship, as well as moving the enemy
   *          ships.
-  *
   */
 
 #include "Level.h"
