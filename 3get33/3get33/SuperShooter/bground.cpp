@@ -3,10 +3,9 @@
 /**********************************************************************/
 /*! Constructor for the scrolling background object
  *
- *
+ *  Default constructor that sets the zvalue low enough to be below other items but above the scene
  *
  *  Author: Karan Chakrapani
- *
  */
 BGround::BGround()
 {
@@ -14,17 +13,29 @@ BGround::BGround()
 }
 
 /**********************************************************************/
+/*! Deconstructor for BGrouns object
+ *
+ *  Author: Karan Chakrapani
+ */
 BGround::~BGround()
 {
 }
 
 /**********************************************************************/
+/*! Bounding rectangle for the BGround object
+ *
+ *  Author: Karan Chakrapani
+ */
 QRectF BGround::boundingRect() const
 {
     return QRectF(0,0,600,960);
 }
 
 /**********************************************************************/
+/*! Returns the painter path for the BGround object
+ *
+ *  Author: Karan Chakrapani
+ */
 QPainterPath BGround::shape() const
 {
     QPainterPath path;
@@ -33,6 +44,10 @@ QPainterPath BGround::shape() const
 }
 
 /**********************************************************************/
+/*! Paints the BGround object
+ *
+ *  Author: Karan Chakrapani
+ */
 void BGround::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
 

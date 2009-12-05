@@ -58,27 +58,23 @@ class PlayerShip : public BasicShip
         bool dFlag;
         /*! Flag for ship moving up. */
         bool uFlag;
-        /*! */
+        /*! Flag for ship shootign the gun*/
         bool shootGunFlag;
-        /*! */
+        /*! Flag for ship shooting small missiles */
         bool shootSMissileFlag;
-        /*! */
+        /*! Flag for ship shooting big missiles */
         bool shootBMissileFlag;
-        /*! */
+        /*! Max value shield is reset to. */
         int shieldMax;
-        /*! */
+        /*! Max value armor is reset to. */
         int armorMax;
-        /*! */
+        /*! Holds whether the ship is alive or dead */
         bool shipIsDead;
-        /*! */
+        /*! Holds how many advances the user ship is invincible for */
         int reset;
-        /*! */
         void damage(int dTaken);
-        /*! */
         void advance(int phase);
-        /*! */
         void respawn();
-        /*! */
         void setAllFlags(bool);
 };
 

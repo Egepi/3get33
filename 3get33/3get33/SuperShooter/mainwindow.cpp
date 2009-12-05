@@ -537,42 +537,63 @@ void MainWindow::spawnPowerUp()
 }
 
 /**********************************************************************/
-/*! KARAN DO THIS
+/*! Allows the user to shoot bullets and missiles
+  *
+  * This method runs at at a certain time interval and if flags are true it fires a projectile of that type
   *
   * Author: Karan Chakrapani,
   *         Jennifer Kinahan
   */
 void MainWindow::playerShoot()
 {
+    //if the shoot gun flag is turned on
     if(myShip->getShootGunFlag())
     {
+        //create a bullet
         Bullet *aBullet = new Bullet(myShip->x()+36,myShip->y()-9,QImage(":/images/WhiteBullet.png"), true);
+        //add it to the scene
         gameScene->addItem(aBullet);
+        //play shoot sound file
         QSound::play(QString("pew.wav"));
+        //add tot he bullet list
         this->bulletList.append(aBullet);
     }
 
+    //if the shoot small missile flag is on
     if(myShip->getShootSMissileFlag())
     {
+        //if the player has missiles
         if(myShip->getsMissile() > 0)
         {
+            //create the missile
             Missile *aSmallMissile = new Missile(myShip->x()+35, myShip->y()-21,QImage(":/images/sMissile.png"), true, false);
+            //add the missile to the screen
             gameScene->addItem(aSmallMissile);
+            //decrement missile counter
             myShip->setsMissile(myShip->getsMissile() -1);
+            //play missile sound
             QSound::play(QString("missileShot.wav"));
+            //add to missile list
             this->missileList.append(aSmallMissile);
         }
 
     }
 
+    //if the shoot big missile flag is on
     if(myShip->getShootBMissileFlag())
     {
+        //if the player has missiles
         if(myShip->getbMissile() > 0)
         {
+            //create the missile
             Missile *aBigMissile = new Missile(myShip->x()+30, myShip->y()-41,QImage(":/images/bMissile.png"), true, true);
+            //add the missile to the screen
             gameScene->addItem(aBigMissile);
+            //decrement missile counter
             myShip->setbMissile(myShip->getbMissile() -1);
+            //play missile sound
             QSound::play(QString("missileShot.wav"));
+            //add to missile list
             this->missileList.append(aBigMissile);
         }
     }
