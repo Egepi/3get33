@@ -17,9 +17,13 @@ public:
         int getScore();
 
     private:
+        /*! Missile Image */
         QImage MissileImage;
+        /*! Bool to determine whether or not Missile is big or small */
         bool bigMissile;
+        /*! Decides whether enemy or player */
         bool owner;
+        /*! Holds the score value */
         int score;
         void paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
         QRectF boundingRect() const;

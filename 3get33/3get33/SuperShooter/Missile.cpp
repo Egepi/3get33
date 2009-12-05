@@ -1,5 +1,14 @@
-#include "Missile.h"
+/** File: Missile.cpp
+  * Header: Missile.h
+  * Author: 3get33 - Jennifer Kinahan, Karan Chakrapani, Todd Silvia
+  * Last Modified: December 4th 2009
+  * Purpose: The Missile class' purpose is to draw a missile on the screen
+  * either big or small, and shoot it across the screen.  It also updates score
+  * and holds data for the owner.
+  *
+  */
 
+#include "Missile.h"
 
 /**********************************************************************/
 /*! Blank Constructor for Missile
@@ -54,7 +63,12 @@ void Missile::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget
     //draws the Missile to the screen
     painter->drawImage(0,0, MissileImage);
 }
-
+/**********************************************************************/
+/*! Creates bounding rectangle for big and small missiles used for collision detection
+ *
+ * Author: Jennifer Kinahan
+ *
+ */
 QRectF Missile::boundingRect() const
 {
     if (this->bigMissile == false)
@@ -66,7 +80,15 @@ QRectF Missile::boundingRect() const
         return QRectF(0,0,20,40);
     }
 }
-
+/**********************************************************************/
+/*! Sets the type of shape that the BasicShip 's image will be drawn under.
+ *
+ * This is a virtual function nessecary to be
+ * implemented for all QGraphicsItems
+ *
+ *  Author: Jennifer Kinahan
+ *
+ */
 QPainterPath Missile::shape() const
 {
     if (this->bigMissile == false)
@@ -82,7 +104,11 @@ QPainterPath Missile::shape() const
         return path;
     }
 }
-
+/*! Advances the Missile
+ *
+ * Author: Jennifer Kinahan
+ *
+ */
 void Missile::advance(int phase)
 {
     if(!phase) return;

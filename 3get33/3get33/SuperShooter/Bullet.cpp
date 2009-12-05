@@ -1,3 +1,12 @@
+/** File: Bullet.cpp
+  * Header: Bullet.h
+  * Author: 3get33 - Jennifer Kinahan, Karan Chakrapani, Todd Silvia
+  * Last Modified: December 4th 2009
+  * Purpose: The Bullet class' purpose is to draw a bullet on the screen  and
+  * shoot it across the screen.  It also updates score and holds data for the owner.
+  *
+  */
+
 #include "Bullet.h"
 
 
@@ -58,7 +67,15 @@ QRectF Bullet::boundingRect() const
 {
     return QRectF(0,0,8,8);
 }
-
+/**********************************************************************/
+/*! Sets the type of shape that the Bullet's image will be drawn under.
+ *
+ * This is a virtual function nessecary to be
+ * implemented for all QGraphicsItems
+ *
+ * Author: Jennifer Kinahan
+ *
+ */
 QPainterPath Bullet::shape() const
 {
     QPainterPath path;
