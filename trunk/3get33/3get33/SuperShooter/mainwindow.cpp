@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     QObject::connect(ui->quitButton, SIGNAL(clicked()), this, SLOT(checkQuit()));
     QObject::connect(ui->playButton, SIGNAL(clicked()),this, SLOT(gamelvl()));
-    QSound::play(QString("EX_1.wav"));
+    QSound::play(QString("MenuBGM.wav"));
 
 }
 
@@ -336,7 +336,7 @@ void MainWindow::startBoss()
 {
     atBoss = true;
     preLevel->startBoss();
-    bossLife->setGeometry(10,230,121,23);
+    bossLife->setGeometry(10,230,150,23);
     bossLife->setMinimum(0);
     bossLife->setMaximum(preLevel->theBoss->getArmor());
     bossLife->setValue(preLevel->theBoss->getArmor());
