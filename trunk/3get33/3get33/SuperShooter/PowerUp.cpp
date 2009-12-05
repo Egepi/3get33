@@ -1,9 +1,17 @@
+/** File: PowerUp.cpp
+  * Header: PowerUp.h
+  * Author: 3get33 - Jennifer Kinahan, Karan Chakrapani, Todd Silvia
+  * Last Modified: December 4th 2009
+  * Purpose: This class is used to create and manage the 4 different
+  *          kinds of power ups implemented in the SuperShooter game.
+  */
 #include "PowerUp.h"
 
 // power up type 1 = shield
 // power up type 2 = health
 // power up type 3 = small missile
 // power up type 4 = big missile
+/**********************************************************************/
 PowerUp::PowerUp()
 {
     puType = (qrand() % 4) +1;
@@ -38,16 +46,19 @@ PowerUp::PowerUp()
     this->setZValue(10);
 }
 
+/**********************************************************************/
 PowerUp::~PowerUp()
 {
 }
 
+/**********************************************************************/
 void PowerUp::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     //draws the power up to the screen
     painter->drawImage(0, 0, puImage);
 }
 
+/**********************************************************************/
 QRectF PowerUp::boundingRect() const
 {
     if(this->puType == 1 )
@@ -72,6 +83,7 @@ QRectF PowerUp::boundingRect() const
     }
 }
 
+/**********************************************************************/
 QPainterPath PowerUp::shape() const
 {
     if(this->puType == 1 )
@@ -107,6 +119,7 @@ QPainterPath PowerUp::shape() const
 
 }
 
+/**********************************************************************/
 int PowerUp::type() const
 {
    // Enable the use of qgraphicsitem_cast with this item.
@@ -132,6 +145,7 @@ int PowerUp::type() const
     }
 }
 
+/**********************************************************************/
 void PowerUp::advance(int phase)
 {
     if(!phase) return;
