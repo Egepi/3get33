@@ -494,7 +494,7 @@ void PlayerShip::respawn()
     this->setEnabled(false);
     this->setPos(260,400);
     reset = 25;
-    //QSound::play(QString("GameOver.wav"));
+    QSound::play(QString("exit.wav"));
     this->setAllFlags(false);
 }
 

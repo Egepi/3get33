@@ -90,6 +90,7 @@ private:
     QTimer *powerUpTimer;
     bool alternate;
 
+
 };
 #endif // MAINWINDOW_H
 

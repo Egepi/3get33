@@ -18,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     gameScene->setSceneRect(0, 0, width,height);
     //Sets the default background for the gameScene
     ui->Display->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
-    //gameScene->setBackgroundBrush(QBrush(QImage(":/images/Menu.jpg")));
     ui->Display->setScene(gameScene);
     // ui->Display->setFocus();
     //ui->Display->centerOn(myShip);
@@ -341,6 +340,9 @@ void MainWindow::startBoss()
     bossLife->setMaximum(preLevel->theBoss->getArmor());
     bossLife->setValue(preLevel->theBoss->getArmor());
     bossLife->setVisible(true);
+    ui->bossLifeLabel->setVisible(true);
+    waveTimer->stop();
+
 }
 
 /**********************************************************************/
@@ -446,6 +448,7 @@ void MainWindow::updateArmor()
         ui->Display->setBackgroundBrush(QBrush(QImage(":/images/MGS_GameOver.jpg")));
         gameScene->items();
         QSound::play(QString("GameOver.wav"));
+        bossLife->setValue(preLevel->theBoss->getArmor());
     }
 
     if((atBoss == true)&&(!(preLevel->theBoss->isEnabled())))
@@ -457,6 +460,7 @@ void MainWindow::updateArmor()
          powerUpTimer->stop();
         gameScene->removeItem(bg);
         ui->Display->setBackgroundBrush(QBrush(QImage(":/images/youwon.gif")));
+        bossLife->setValue(preLevel->theBoss->getArmor());
     }
 
 
