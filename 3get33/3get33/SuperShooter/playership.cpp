@@ -181,12 +181,14 @@ void PlayerShip::setShield(int theShield)
     PlayerShip::shipShield = theShield;
 }
 
+/**********************************************************************/
  int PlayerShip::type() const
  {
     // Enable the use of qgraphicsitem_cast with this item.
     return Type;
  }
 
+ /**********************************************************************/
  void PlayerShip::collCheck()
  {
     QList<QGraphicsItem*> listOfCollidingItems = collidingItems();
@@ -301,6 +303,7 @@ void PlayerShip::setShield(int theShield)
     }
  }
 
+ /**********************************************************************/
  void PlayerShip::damage(int dTaken)
  {
      if (this->getShield() > 0)
@@ -388,21 +391,6 @@ void PlayerShip::setShield(int theShield)
          this->hide();
          this->setEnabled(false);
          this->setAllFlags(false);
-
-
-
-//         if(this->getLives() >= 0)
-//         {
-//            switch (QMessageBox::warning(0, "Continue ?",
-//                            "Do you want to continue?",
-//                            QMessageBox::No | QMessageBox::Default,
-//                            QMessageBox::Yes | QMessageBox::Escape)) {
-//           case QMessageBox::No:
-//               break;
-//            case QMessageBox::Yes:
-//                break;
-//           }
-//        }
      }
  }
 
@@ -453,49 +441,67 @@ int PlayerShip::getbMissile()
     return bMissile;
 }
 
+/**********************************************************************/
 void PlayerShip::setShootGunFlag( bool keyPress )
 {
     this->shootGunFlag = keyPress;
 }
 
+/**********************************************************************/
 void PlayerShip::setShootSMissileFlag( bool keyPress )
 {
     this->shootSMissileFlag = keyPress;
 }
 
+/**********************************************************************/
 void PlayerShip::setShootBMissileFlag( bool keyPress )
 {
     this->shootBMissileFlag = keyPress;
 }
+
+/**********************************************************************/
 bool PlayerShip::getShootGunFlag()
 {
     return this->shootGunFlag;
 }
+
+/**********************************************************************/
 bool PlayerShip::getShootSMissileFlag()
 {
     return this->shootSMissileFlag;
 }
+
+/**********************************************************************/
 bool PlayerShip::getShootBMissileFlag()
 {
     return this->shootBMissileFlag;
 }
+
+/**********************************************************************/
 void PlayerShip::setShieldMax( int value )
 {
     this->shieldMax = value;
 }
+
+/**********************************************************************/
 void PlayerShip::setArmorMax( int value )
 {
     this->armorMax = value;
 }
+
+/**********************************************************************/
 bool PlayerShip::isShipDead()
 {
     return this->shipIsDead;
 }
+
+/**********************************************************************/
 void PlayerShip::setShipIsDead(bool shipLife)
 {
     this->shipIsDead = shipLife;
 }
 
+/**********************************************************************/
 void PlayerShip::respawn()
 {
     this->setImage(QImage(":/images/explosion.png"));
@@ -506,6 +512,7 @@ void PlayerShip::respawn()
     this->setAllFlags(false);
 }
 
+/**********************************************************************/
 void PlayerShip::setAllFlags(bool flagger)
 {
     this->setLFlag( flagger );
