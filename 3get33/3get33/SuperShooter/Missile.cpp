@@ -104,10 +104,12 @@ QPainterPath Missile::shape() const
         return path;
     }
 }
-/*! Advances the Missile
+/**********************************************************************/
+/*! This funciton is responsible for moving the missile
+ *
+ * Moves the missile up or down based on if the player or the enemy ships shot it
  *
  * Author: Jennifer Kinahan
- *
  */
 void Missile::advance(int phase)
 {
