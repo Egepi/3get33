@@ -14,9 +14,13 @@ class PowerUp : public QGraphicsItem
         int type() const;
 
     private:
+        /*! Power Up Image */
         QImage puImage;
+        /*! Holds value between 1 and 4 for the type of power up it is */
         int puType;
+        /*! Holds a random x value for the power up*/
         int puLocX;
+        /*! Holds a random y value for the power up */
         int puLocY;
 
         void paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *);
