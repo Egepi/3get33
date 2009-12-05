@@ -1,8 +1,5 @@
 #include "bground.h"
 
-
-
-
 /**********************************************************************/
 /*! Constructor for the scrolling background object
  *
