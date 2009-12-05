@@ -8,8 +8,6 @@
   */
 
 #include "Bullet.h"
-
-
 /**********************************************************************/
 /*! Blank Constructor for a Bullet object.
  *
